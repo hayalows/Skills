@@ -1,0 +1,35 @@
+name: Verify Skills Site
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "site/**"
+      - "*/SKILL.md"
+      - "package.json"
+      - "vercel.json"
+      - ".github/workflows/verify-site.yml"
+  pull_request:
+    paths:
+      - "site/**"
+      - "*/SKILL.md"
+      - "package.json"
+      - "vercel.json"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Build public directory
+        run: npm run build
+      - name: Verify generated output
+        run: |
+          test -f dist/index.html
+          test -f dist/skill-index.json
+          test -f dist/skills/product-design-os.json
+          test -f dist/skills/papa-kojo-writing-style.json
+          node -e "const s=require('./dist/skill-index.json'); if(s.length !== 14) process.exit(1);"
