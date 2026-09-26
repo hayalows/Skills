@@ -1,0 +1,12 @@
+interface:
+  display_name: "Consulting-Grade Reports & Decks"
+  short_description: "Build evidence-led reports and decks"
+  default_prompt: "Use $consulting-grade-reports-decks to create a consulting-style report or presentation from my material."
+
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
