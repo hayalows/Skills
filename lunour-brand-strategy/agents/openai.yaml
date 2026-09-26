@@ -1,0 +1,14 @@
+interface:
+  display_name: "Brand Strategy & Identity"
+  short_description: "Positioning, messaging, identity, and brand systems"
+  default_prompt: "Use $lunour-brand-strategy to build a complete brand strategy and identity system."
+  icon_small: "assets/icon.svg"
+  icon_large: "assets/icon.svg"
+
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
