@@ -1,0 +1,12 @@
+interface:
+  display_name: "Design Taste for Frontend"
+  short_description: "Build intentional, usable marketing websites"
+  default_prompt: "Use $design-taste-frontend to design this page around its audience, real content and brand, then verify the rendered result."
+
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
