@@ -1,0 +1,12 @@
+interface:
+  display_name: "Humanize My Writing"
+  short_description: "Repair stiff drafts while preserving meaning"
+  default_prompt: "Use $humanize-my-writing to revise this draft naturally while keeping my facts, intent and level of certainty."
+
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
