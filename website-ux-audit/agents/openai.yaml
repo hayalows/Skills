@@ -1,0 +1,14 @@
+interface:
+  display_name: "Website UX Audit"
+  short_description: "Audit website UX and user flows"
+  default_prompt: "Use $website-ux-audit to audit this website’s main user journey and give me evidence-backed, prioritized fixes."
+  icon_small: "assets/icon.svg"
+  icon_large: "assets/icon.svg"
+
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
