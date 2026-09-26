@@ -1,0 +1,14 @@
+interface:
+  display_name: "Luna Astra Behavior"
+  short_description: "Improve evidence, execution and honest self-review"
+  default_prompt: "Use $luna-astra-behavior to handle this task with evidence, supported tools and a focused self-review."
+  icon_small: "assets/icon.svg"
+  icon_large: "assets/icon.svg"
+
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
