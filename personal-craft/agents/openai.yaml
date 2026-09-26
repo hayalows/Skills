@@ -1,0 +1,14 @@
+interface:
+  display_name: "Personal Craft"
+  short_description: "Thoughtful design, reliable builds, honest verification"
+  default_prompt: "Use $personal-craft to complete this work with thoughtful design and verifiable results."
+  icon_small: "assets/icon.svg"
+  icon_large: "assets/icon.svg"
+
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
