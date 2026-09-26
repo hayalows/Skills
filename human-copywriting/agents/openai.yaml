@@ -1,0 +1,14 @@
+interface:
+  display_name: "Human Copywriting"
+  short_description: "Write clear copy with relevant, honest persuasion"
+  default_prompt: "Use $human-copywriting to write this for its reader with a clear point, credible support and a suitable next step."
+  icon_small: "assets/icon.svg"
+  icon_large: "assets/icon.svg"
+
+policy:
+  allow_implicit_invocation: true
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
