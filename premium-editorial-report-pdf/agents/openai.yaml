@@ -1,0 +1,4 @@
+interface:
+  display_name: "Premium Editorial Reports & Decks"
+  short_description: "Create refined reports and presentation decks"
+  default_prompt: "Use $premium-editorial-report-pdf to create an editorial report or PowerPoint deck from my material."
