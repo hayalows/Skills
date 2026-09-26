@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f5f0">
+  <meta name="description" content="A public library of reusable Hayalows skills for product design, writing, brand strategy, research, frontend craft and more.">
+  <title>Hayalows Skills</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <a class="brand" href="#/" aria-label="Hayalows Skills home">
+      <span class="brand-mark" aria-hidden="true">H</span>
+      <span class="brand-copy"><strong>Hayalows</strong><span>Skills</span></span>
+    </a>
+    <span class="header-note">Reusable systems for thoughtful work.</span>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section id="directory-view">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-kicker">OPEN SKILL LIBRARY</div>
+        <h1 id="hero-title">Good work gets easier when the thinking is reusable.</h1>
+        <p class="hero-copy">A growing collection of practical skills for product design, writing, frontend craft, brand strategy, research and high-judgment execution. Read the actual instructions, copy a prompt, or download a skill.</p>
+        <div class="hero-meta" aria-label="Library statistics">
+          <span><strong id="skill-count">14</strong> skills</span>
+          <span><strong id="category-count">6</strong> disciplines</span>
+          <span>Source-backed</span>
+        </div>
+      </section>
+
+      <section class="catalog-shell" aria-labelledby="catalog-heading">
+        <div class="catalog-head">
+          <div>
+            <p class="eyebrow">THE LIBRARY</p>
+            <h2 id="catalog-heading">Find the right skill for the work.</h2>
+          </div>
+          <p class="catalog-intro">Search by what you want to make, improve or understand.</p>
+        </div>
+
+        <div class="controls" aria-label="Skill filters">
+          <label class="search-field">
+            <span class="sr-only">Search skills</span>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m21 21-4.35-4.35m1.35-5.65a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"/></svg>
+            <input id="search-input" type="search" placeholder="Search skills, tasks or disciplines…" autocomplete="off">
+          </label>
+          <div id="filters" class="filters" role="group" aria-label="Filter by discipline"></div>
+        </div>
+
+        <div class="results-row">
+          <p id="results-count" aria-live="polite">Loading skills…</p>
+          <button id="clear-filters" class="text-button" type="button" hidden>Clear filters</button>
+        </div>
+
+        <div id="skill-grid" class="skill-grid" aria-live="polite"></div>
+
+        <div id="empty-state" class="empty-state" hidden>
+          <p class="eyebrow">NO MATCHES</p>
+          <h3>Nothing fits that search yet.</h3>
+          <p>Try a broader term or clear the filters.</p>
+          <button class="button secondary" type="button" data-clear>Clear search</button>
+        </div>
+      </section>
+    </section>
+
+    <section id="detail-view" class="detail-view" hidden aria-live="polite">
+      <div class="detail-shell">
+        <a class="back-link" href="#/" aria-label="Back to all skills">← All skills</a>
+        <div id="skill-detail"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Hayalows Skills</p>
+    <p>Built as a public reading layer over the source skill files.</p>
+  </footer>
+
+  <template id="skill-card-template">
+    <a class="skill-card">
+      <div class="card-topline">
+        <span class="card-category"></span>
+        <span class="card-status">SKILL.md</span>
+      </div>
+      <div>
+        <h3 class="card-title"></h3>
+        <p class="card-description"></p>
+      </div>
+      <div class="card-footer">
+        <span>Open skill</span>
+        <span aria-hidden="true">↗</span>
+      </div>
+    </a>
+  </template>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>
