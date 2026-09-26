@@ -1,0 +1,14 @@
+interface:
+  display_name: "UI/UX Craft"
+  short_description: "Design usable flows, states and visual systems"
+  icon_small: "assets/icon.svg"
+  icon_large: "assets/icon.svg"
+  default_prompt: "Use $ui-ux-craft to improve this product’s main task, interaction states and responsive behavior using the available evidence."
+
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
