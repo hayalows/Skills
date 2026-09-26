@@ -1,0 +1,12 @@
+interface:
+  display_name: "Frontend Design"
+  short_description: "Choose visual direction grounded in the brief"
+  default_prompt: "Use $frontend-design to refine this interface’s typography, layout and visual hierarchy while preserving its working behavior."
+
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
