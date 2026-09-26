@@ -1,0 +1,14 @@
+interface:
+  display_name: Papa Kojo Writing Style
+  short_description: Write naturally in Papa Kojo’s voice, for each audience
+  default_prompt: Use $papa-kojo-writing-style to write this in my voice, keeping
+    my meaning and matching the person I am speaking to.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
