@@ -83,3 +83,16 @@ Use Product Design OS to review this retention idea. Apply the ethical behavior-
 A polished screen is not the goal by itself. The goal is a product that helps a real person complete a meaningful task with clarity, confidence, accessibility, resilience, and as little unnecessary effort as possible. Visual quality matters, but it cannot compensate for a broken flow.
 
 The skill treats psychology as an explanatory tool, not a permission slip to manipulate people.
+
+## Public Skills Directory
+
+This repository includes a lightweight public catalogue for browsing the skills.
+
+- Source: `site/`
+- Build command: `npm run build`
+- Generated output: `dist/`
+- Deployment target: any static host; `vercel.json` is included for Vercel
+- Skill content is generated directly from each top-level `SKILL.md`, so the website stays aligned with the source files.
+
+The catalogue includes search, discipline filters, shareable hash routes, readable skill documentation, copyable invocation prompts, and downloadable `SKILL.md` files.
+
