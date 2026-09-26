@@ -2,6 +2,25 @@
 
 A practical library of reusable agent skills.
 
+## Skill Library
+
+- `consulting-grade-reports-decks/`
+- `design-taste-frontend/`
+- `frontend-design/`
+- `human-copywriting/`
+- `humanize-my-writing/`
+- `luna-astra-behavior/`
+- `lunour-brand-strategy/`
+- `lunour-naming/`
+- `papa-kojo-writing-style/`
+- `personal-craft/`
+- `premium-editorial-report-pdf/`
+- `product-design-os/`
+- `ui-ux-craft/`
+- `website-ux-audit/`
+
+Each skill keeps its own `SKILL.md` plus any supporting `references/`, `agents/`, and `assets/` files.
+
 ## Product Design OS
 
 `product-design-os/` is a source-backed product design operating system for designing, reviewing, improving, and specifying digital products at a high standard.
