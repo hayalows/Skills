@@ -1,0 +1,14 @@
+interface:
+  display_name: "Company & Product Naming"
+  short_description: "Strategic naming with testing and clearance checks"
+  default_prompt: "Use $lunour-naming to name and evaluate a company, product, or service."
+  icon_small: "assets/icon.svg"
+  icon_large: "assets/icon.svg"
+
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
