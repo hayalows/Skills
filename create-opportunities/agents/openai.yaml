@@ -1,0 +1,4 @@
+interface:
+  display_name: "Create Opportunities"
+  short_description: "Turn useful work into jobs, clients, and trusted connections"
+  default_prompt: "Use $create-opportunities to turn my goal and current skills into a useful proof of work and a realistic outreach plan."
