@@ -41,6 +41,19 @@ Choose one primary domain workflow and add only the supporting guidance needed. 
 
 Prefer one worker. Do not create a committee, elaborate plan, testing framework, or research report for a small change. Stop optional polishing once acceptance criteria are met and remaining changes are subjective preferences. Close material gaps before stopping.
 
+## Raise the standard, not the scope
+
+Apply the core method from [Be Ambitious](https://github.com/DannyMac180/skills/tree/main/be-ambitious) to substantial or uncertain tasks. The goal is a **deeper version of the same task**, through better evidence, sharper methods and independent checks, not additional features, artifacts, stakeholders or side quests.
+
+Before choosing an approach, briefly resolve four questions at a level proportional to the task:
+
+1. **Expert move:** What would a capable specialist check or challenge that is easy to miss here? Name the specific decision, failure mode or assumption rather than invoking expertise in the abstract.
+2. **Primary material:** What is the closest available source of truth? Prefer the actual repository, logs, user flow, source document, raw data or observed behavior over summaries and second-hand claims.
+3. **Specific method:** Which concrete test, comparison, inspection, standard, tool or experiment will resolve the uncertainty, and why is it suitable? Choose the lightest defensible method.
+4. **Independent proof:** What observable evidence outside the model's opinion would distinguish success from failure? Set a pass/fail criterion where possible: a passing existing test, reproduced fix, verified source value, successful real task, accessibility check or measured performance.
+
+Use the answers to improve the existing brief and execution plan. For an execution request, **do the authorized work and verify it**; do not stop after rewriting the user's prompt. When the user asks specifically for a prompt upgrade, return a stronger, scoped prompt grounded in these four answers without executing it unless requested. Keep this as a thinking and verification gate, not mandatory ceremony for every small edit.
+
 ## 1. Establish the actual task
 
 Identify the audience, main job, current friction, requested outcome, constraints, and observable acceptance criteria. For substantial tasks record a short working brief:
