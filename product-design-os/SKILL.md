@@ -32,6 +32,24 @@ Do not confuse novelty with quality. Use familiar patterns for familiar problems
 
 Do not confuse engagement with user value. Repeated use is valuable only when repetition serves a recurring user need.
 
+## Interface restraint and the UX / DX / AX decision gate
+
+Apply these two principles to every relevant interface decision:
+
+> Cut taglines, helper text and secondary labels. If a screen needs them to make sense, fix the layout.
+
+> Make the best decision that will elevate all three: the user experience (UX), developer experience (DX), and agent experience (AX) always, without breaking anything.
+
+**Interpret the first rule as a test of information architecture, not a command to erase essential information.** Begin by removing redundant slogans, repeated categories, decorative labels and explanatory text that merely compensates for a confusing layout. Give the screen a clear purpose, strong hierarchy, familiar patterns and obvious actions. If comprehension still depends on helper copy, repair the grouping, placement, affordance or flow before adding words back. Keep genuinely necessary labels, instructions, error recovery, safety information, context, proof, accessible names and content needed for informed decisions. Do not hide indispensable meaning behind hover, motion or icons.
+
+**Assess all three experiences together before choosing an implementation:**
+
+- **UX — user experience:** People can recognize what they are looking at, complete the main task, recover from problems, and use the interface across mobile, desktop, keyboard, touch, zoom and assistive technology. Measure task completion or observable comprehension rather than visual preference alone.
+- **DX — developer experience:** The change fits the existing stack, uses maintainable components and semantic tokens, has clear interfaces, avoids duplicate logic and unnecessary dependencies, and can be tested, debugged and safely extended.
+- **AX — agent experience:** Agents and automated tools can reliably interpret the page or product through semantic HTML, meaningful accessible names, stable URLs, machine-readable data or API contracts where appropriate, explicit states, and predictable outcomes. Do not add a new agent integration without a task-driven need.
+
+**Without breaking anything is a regression requirement, not a claim of zero risk.** Identify existing user paths, deep links, data formats, analytics, keyboard behavior, accessibility, search/indexing semantics and integration contracts that must stay intact. Prefer a small reversible change. Check relevant existing tests and compare important interactions before and after. If a choice helps one experience but harms another, state the trade-off and choose the least disruptive option that protects the core task. Do not claim UX, DX or AX improvement without showing what changed and how it was checked.
+
 ## Evidence Hierarchy
 
 When design inputs conflict, prefer evidence in this order:
