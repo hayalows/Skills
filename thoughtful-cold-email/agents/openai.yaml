@@ -1,0 +1,4 @@
+interface:
+  display_name: "Thoughtful Cold Email"
+  short_description: "Research and write relevant cold outreach"
+  default_prompt: "Use thoughtful-cold-email to plan and write an effective, honest cold email for my goal."
