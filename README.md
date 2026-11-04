@@ -101,3 +101,6 @@ This repository includes a lightweight public catalogue for browsing the skills.
 
 The catalogue includes search, discipline filters, shareable hash routes, readable skill documentation, copyable invocation prompts, and downloadable `SKILL.md` files.
 
+## Matt Pocock Skills Collection
+
+A complete MIT-licensed snapshot of Matt Pocock's engineering and productivity skills is saved under [`collections/matt-pocock-skills/`](collections/matt-pocock-skills/README.md). It includes 27 main skills, experimental and miscellaneous skills, and their supporting files. See [PKM usage notes](collections/matt-pocock-skills/PKM-USAGE.md) for setup and project examples. This copy is not automatically installed as an agent plugin.
