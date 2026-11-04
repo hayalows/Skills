@@ -19,8 +19,17 @@ A practical library of reusable agent skills.
 - `security-audit/` (Cloudflare, MIT licensed)
 - `ui-ux-craft/`
 - `website-ux-audit/`
+- `vercel-deployment-steward/`
 
 Each skill keeps its own `SKILL.md` plus any supporting `references/`, `agents/`, and `assets/` files.
+
+## Vercel Deployment Steward
+
+The [Vercel Deployment Steward skill](vercel-deployment-steward/SKILL.md) helps keep Hobby deployments under control across all projects. It audits account-wide deployment history, flags shared-repository fan-out, reviews release readiness, and explains ways to reduce unnecessary preview and production builds.
+
+It includes a read-only Node CLI, an offline test harness, release guidance, current platform references, and an evidence-based Pitch Night case study. It does not deploy projects, change billing, disable Git deployments, or run recurring checks without separate authorization.
+
+See [operations](vercel-deployment-steward/references/operations.md), [CLI usage](vercel-deployment-steward/references/cli-usage.md), and [platform facts](vercel-deployment-steward/references/platform-facts.md).
 
 ## Security Audit
 

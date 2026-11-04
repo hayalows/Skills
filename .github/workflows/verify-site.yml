@@ -6,6 +6,7 @@ on:
     paths:
       - "site/**"
       - "*/SKILL.md"
+      - "vercel-deployment-steward/**"
       - "package.json"
       - "vercel.json"
       - ".github/workflows/verify-site.yml"
@@ -32,4 +33,9 @@ jobs:
           test -f dist/skill-index.json
           test -f dist/skills/product-design-os.json
           test -f dist/skills/papa-kojo-writing-style.json
-          node -e "const s=require('./dist/skill-index.json'); if(s.length !== 14) process.exit(1);"
+          test -f dist/skills/vercel-deployment-steward.json
+          node -e "const s=require('./dist/skill-index.json'); if(s.length !== 15) process.exit(1);"
+      - name: Check deployment audit CLI syntax
+        run: node --check vercel-deployment-steward/scripts/audit-deployments.mjs
+      - name: Run deployment audit CLI end-to-end checks
+        run: node vercel-deployment-steward/tests/cli-smoke.mjs

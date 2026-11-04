@@ -19,6 +19,7 @@ const catalog = {
   "consulting-grade-reports-decks": { category: "Reports & Research", label: "Consulting-Grade Reports & Decks" },
   "premium-editorial-report-pdf": { category: "Reports & Research", label: "Premium Editorial Reports" },
   "personal-craft": { category: "Workflow", label: "Personal Craft" },
+  "vercel-deployment-steward": { category: "Workflow", label: "Vercel Deployment Steward" },
   "luna-astra-behavior": { category: "Workflow", label: "Luna / Astra Behavior" }
 };
 

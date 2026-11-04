@@ -1,0 +1,12 @@
+interface:
+  display_name: "Vercel Deployment Steward"
+  short_description: "Audit deployment allowance and ship safely"
+  default_prompt: "Use $vercel-deployment-steward to inspect my Vercel deployment headroom, identify waste, and recommend a controlled release. Do not change settings or deploy without my request."
+
+policy:
+  products:
+    - chatgpt
+    - codex
+    - api
+    - atlas
+  allow_implicit_invocation: true
