@@ -16,10 +16,15 @@ A practical library of reusable agent skills.
 - `personal-craft/`
 - `premium-editorial-report-pdf/`
 - `product-design-os/`
+- `security-audit/` (Cloudflare, MIT licensed)
 - `ui-ux-craft/`
 - `website-ux-audit/`
 
 Each skill keeps its own `SKILL.md` plus any supporting `references/`, `agents/`, and `assets/` files.
+
+## Security Audit
+
+`security-audit/` is a locally saved copy of Cloudflare's multi-phase defensive security audit skill, including all domain companions, JSON schema, validators, tests, and its MIT licence. Use [the skill](security-audit/SKILL.md) to review code and [PKM usage notes](security-audit/PKM-USAGE.md) for scoped checks and complete-audit setup. Full audits need an isolated OS-enforced sandbox; do not test live services or confuse unverified concerns with confirmed vulnerabilities.
 
 ## Product Design OS
 
