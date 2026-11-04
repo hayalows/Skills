@@ -33,6 +33,9 @@ function write(cwd, file, content) {
 function run(...args) {
   return command(agent, process.execPath, [path.join(agent, "master-craft/scripts/inventory.mjs"), ...args]);
 }
+function runExpectFailure(...args) {
+  return command(agent, process.execPath, [path.join(agent, "master-craft/scripts/inventory.mjs"), ...args], false);
+}
 
 try {
   command(scratch, "git", ["init", "--bare", "--initial-branch=main", bare]);
@@ -83,13 +86,13 @@ try {
   // Offline/failing GitHub refresh is explicit. Never silently call stale
   // instructions 'latest' or delete a user's local changes.
   git(agent, "remote", "set-url", "origin", path.join(scratch, "missing-remote.git"));
-  const failed = run("--latest", "--json");
+  const failed = runExpectFailure("--latest", "--json");
   assert.notEqual(failed.status, 0, "Missing remote must stop strict live refresh");
   assert.match(failed.stderr, /FRESHNESS_BLOCKED/);
   const local = JSON.parse(run("--local", "--json").stdout);
   assert.equal(local.verified_latest, false);
   assert.ok(local.skills.some((item) => item.name === "product-design-os" && item.description.includes("v1")));
-  const unsafe = run("--at", newer.revision, "--read", "../../outside/SKILL.md");
+  const unsafe = runExpectFailure("--at", newer.revision, "--read", "../../outside/SKILL.md");
   assert.notEqual(unsafe.status, 0, "Skill selector must reject traversal");
 
   console.log("PASS: latest revision, updated instructions, new-skill discovery, pinned snapshot, clean worktree, blocked refresh, explicit offline mode and safe paths");
