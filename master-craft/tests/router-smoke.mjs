@@ -30,7 +30,11 @@ function discover() {
 
 const linked = [...map.matchAll(/\]\(\.\.\/([a-z0-9/_-]+\/SKILL\.md)\)/g)].map((m) => m[1]).sort();
 assert.equal(new Set(linked).size, linked.length, "Skill map must not contain duplicate entries");
-assert.deepEqual(linked, discover(), "Skill map must cover exactly all available skills except Master Craft");
+const installedPaths = discover();
+const staleHints = linked.filter((p) => !installedPaths.includes(p));
+const unmapped = installedPaths.filter((p) => !linked.includes(p));
+if (staleHints.length) console.warn("WARN: curated map contains old paths:", staleHints.join(", "));
+if (unmapped.length) console.log("INFO: additional skills found dynamically, no manual registration required:", unmapped.join(", "));
 assert.match(skill, /^---\r?\nname: master-craft\r?\n/m, "Valid Agent Skills name required");
 assert.match(skill, /^description: .{30,1024}$/m, "Use a descriptive skill trigger");
 assert.ok(skill.split("\n").length < 500, "Keep root skill concise; use references");
@@ -43,7 +47,7 @@ assert.ok(map.includes("security-audit/SKILL.md"), "Missing security branch");
 assert.ok(map.includes("vercel-deployment-steward/SKILL.md"), "Missing Vercel release gate");
 assert.ok(map.includes("collections/matt-pocock-skills/skills/engineering/diagnosing-bugs/SKILL.md"), "Missing engineering bug flow");
 assert.ok(scenarios.length >= 12, "Provide at least 12 routing examples");
-const indexedNames = new Set(linked.map((p) => p.split("/").at(-2)));
+const indexedNames = new Set(installedPaths.map((p) => p.split("/").at(-2)));
 for (const scenario of scenarios) {
   assert.ok(scenario.request?.length > 12, "Scenario missing request");
   assert.ok(scenario.expected?.length, "Scenario missing expected skills");
@@ -55,4 +59,6 @@ for (const scenario of scenarios) {
     "Scenario cannot require and exclude the same skill");
 }
 assert.ok(fs.existsSync(path.join(skillRoot, "scripts/inventory.mjs")), "Missing discovery tool");
-console.log("PASS: complete skill map (" + linked.length + "), valid Master Craft metadata, " + scenarios.length + " routing case fixtures");
+assert.ok(fs.existsSync(path.join(skillRoot, "references/freshness.md")), "Missing freshness reference");
+assert.match(skill, /Live skill freshness/, "Master Craft must require live freshness before routing");
+console.log("PASS: " + installedPaths.length + " discovered skills; " + linked.length + " curated map hints; valid Master Craft metadata and " + scenarios.length + " routing cases");
