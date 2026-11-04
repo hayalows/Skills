@@ -43,6 +43,7 @@ jobs:
           node --check master-craft/scripts/inventory.mjs
           node --check master-craft/tests/router-smoke.mjs
           node master-craft/tests/router-smoke.mjs
+          node master-craft/tests/freshness.e2e.mjs
       - name: Check deployment audit CLI syntax
         run: node --check vercel-deployment-steward/scripts/audit-deployments.mjs
       - name: Run deployment audit CLI end-to-end checks
