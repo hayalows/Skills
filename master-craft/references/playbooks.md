@@ -6,7 +6,7 @@ These are conditional stage plans, not a compulsory pipeline. Read the selected 
 
 1. Inspect the project, current routes, real user journeys, existing design system, code and reported pain. If user requested only an audit, use website-ux-audit and end with documented findings.
 2. Use product-design-os to map user tasks, navigation and states. Add ui-ux-craft for design/accessibility details. For marketing websites or portfolios, choose design-taste-frontend OR frontend-design rather than invoking both by default.
-3. Establish before/after user outcomes and relevant mobile, desktop, touch, keyboard, search, error, loading, empty, slow connection and permission behaviors. Avoid clutter and decorative change without benefit.
+3. Use product-evidence when a comparative measurement or decision gate matters. Establish before/after user outcomes and relevant mobile, desktop, touch, keyboard, search, error, loading, empty, slow connection and permission behaviors. Avoid clutter and decorative change without benefit.
 4. On authorization to edit, use personal-craft for implement/verify and Matt's tdd only if aligned with the user's test-first E2E policy. Use diagnosing-bugs if a defect requires reproduction, not for every feature.
 5. Review actual UI, code changes and regressions. For consequential changes add code-review. A complete security audit is not compulsory for a cosmetic improvement.
 6. Release only on permission, with the relevant host preflight, and verify the live revision and representative path.
@@ -39,7 +39,7 @@ These are conditional stage plans, not a compulsory pipeline. Read the selected 
 ## Research, business decisions, finance, reports and decks
 
 1. Define audience, decision, evidence, alternative scenarios, data provenance and uncertainties.
-2. Use consulting-grade-reports-decks to make a disciplined argument. Use specialist domain workflows and current primary data where essential.
+2. Use model-assurance when formulas, forecast validity or scenario assumptions drive the result. Use consulting-grade-reports-decks to make a disciplined argument. Use specialist domain workflows and current primary data where essential.
 3. Use premium-editorial-report-pdf only after the content and evidence are stable. Render the requested file and inspect readability and calculations.
 4. Label illustrative numbers and hypotheses. No invented returns, medical outcomes, testimonials, quotes or citations. Do not route to Product Design OS for an ordinary report.
 

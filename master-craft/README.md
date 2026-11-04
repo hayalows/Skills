@@ -15,6 +15,11 @@ Run from the Skills checkout:
 
 `--latest` fails explicitly if remote access is blocked. Use `--local --json` only as a labeled potentially stale fallback. Read the full [freshness protocol](references/freshness.md) for setup, limitations, and examples. Installed static copies with no live repository access do not magically refresh.
 
+## Two specialists
+
+- [Product Evidence](../product-evidence/SKILL.md) helps decide whether a product change improved a task or is ready to ship, using measurements that match the claim.
+- [Model Assurance](../model-assurance/SKILL.md) helps verify the numbers behind forecasts, financial models, stress tests and decisions.
+
 ## What makes it different
 
 - **Connected library:** a curated map covers all pre-existing top-level Hayalows and Matt Pocock skill definitions, including experimental and tool-specific skills. A live inventory discovers newly added or updated skills in the current GitHub main branch.
@@ -48,7 +53,9 @@ Not all Matt Pocock experiments work in every runtime. Commands, subagent APIs, 
 ## Files
 
 - SKILL.md: main entry point and decision framework.
-- references/skill-map.md: 57 pre-existing skills, with exact paths and short selection triggers.
+- references/skill-map.md: curated skill paths and selection triggers.
+- references/routing.md: scope, tool selection and planner input contract.
+- tests/plan-cases.tsv and tests/plan.e2e.mjs: 55 realistic requests tested at the normalized-plan layer.
 - references/playbooks.md: UI, bug, new product, brand, report, security, deployment and agent workflows.
 - references/quality-gates.md: observable acceptance and risk conditions.
 - scripts/inventory.mjs: local and remote-fresh Git skill discovery, pinned SHA reads (Node 20+ and Git).
@@ -63,6 +70,7 @@ Run from the repository root:
     node master-craft/scripts/inventory.mjs --latest --json
     node master-craft/tests/freshness.e2e.mjs
     node master-craft/tests/router-smoke.mjs
+    node master-craft/tests/plan.e2e.mjs
     npm run build
 
 The validator checks completeness and structure. **It cannot prove actual LLM routing quality or production behavior.** For a new route, run a real prompt evaluation and inspect decisions before claiming improvement.

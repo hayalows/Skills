@@ -85,3 +85,8 @@ This is a **curated routing hint list**, not the authoritative inventory and not
 - `vercel-deployment-steward` is a conditional release gate for Vercel, not a reason to deploy automatically.
 - Matt's experimental or Claude Code-specific skills require supported tools and clear reason. An agent without their prerequisites must explain the limitation or choose a compatible workflow.
 - Resolve contradictory methods by system/platform requirements and explicit current user constraints first, followed by project rules, `personal-craft`, domain skill and optional helpers. The root master skill never overrides authorization.
+
+## Evidence and models
+
+- [Product Evidence](../product-evidence/SKILL.md) for measuring task outcomes, checking instrumentation, comparing alternatives, or deciding from rollout evidence.
+- [Model Assurance](../model-assurance/SKILL.md) for financial models, forecasts, simulations and quantitative decision checks.

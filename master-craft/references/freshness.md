@@ -16,8 +16,8 @@ A task's chosen skill versions are held at a single commit SHA for consistent ex
 ## Connected ChatGPT/GitHub workflow
 
 1. Read the active GitHub repository `hayalows/Skills`; resolve its default `main` branch HEAD commit SHA using the GitHub connector.
-2. Read the recursive Git tree **at that commit**. Include paths ending in `SKILL.md`, regardless of their directories or inclusion in the cached skill map.
-3. Consider current skill names/descriptions and file paths when selecting candidates. Read the current full SKILL.md for the chosen specialists using `ref=<HEAD_SHA>`; load relevant references at the **same SHA**.
+2. Read the recursive Git tree **at that commit**. If the connector has no recursive tree operation, use an available Git checkout and verify its snapshot revision, or use another authorized GitHub interface that exposes the complete tree. If enumeration is unavailable, direct pinned file reads can verify known specialists but cannot establish complete discovery. Label that partial result. Include paths ending in `SKILL.md`, regardless of their directories or inclusion in the cached skill map.
+3. First read Master Craft itself and its relevant references at the pinned SHA. Consider current skill names/descriptions and file paths when selecting candidates. Read the current full SKILL.md for the chosen specialists using `ref=<HEAD_SHA>`; load relevant references at the **same SHA**.
 4. Execute only the relevant skill paths, following scope and permissions. Log the library SHA in consequential work reports. If the user asks for a different branch, label the source and use that branch's exact SHA.
 5. If GitHub is inaccessible, say `FRESHNESS UNVERIFIED`, identify the fallback instructions used, and do not claim that current skill policy or live release readiness was verified.
 
@@ -54,7 +54,7 @@ For diagnostic local-only inspection:
 
 The local mode is explicitly `verified_latest: false`. It is NOT a way to claim remote freshness. The default invocation without `--latest` also inspects the local checkout for compatibility and makes no freshness claim.
 
-The latest and pinned modes read Git object contents directly, **without running git pull, git checkout, git reset or merges**. They do not overwrite your working copy, including uncommitted edits. `git fetch` updates `FETCH_HEAD` and the local Git object store. The latest mode only reads `origin`/`main` and doesn't create local source files. You can use the most recent instructions during a task even while keeping your worktree on a separate older commit.
+The latest and pinned modes read Git object contents directly, **without running git pull, git checkout, git reset or merges**. They do not overwrite your working copy, including uncommitted edits. The current branch SHA is resolved first and fetched by SHA without sharing `FETCH_HEAD`. The latest mode only reads `origin`/`main` and doesn't create local source files. You can use the most recent instructions during a task even while keeping your worktree on a separate older commit.
 
 ## Failure handling
 
