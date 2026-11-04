@@ -20,12 +20,14 @@ Set VERCEL_ACCESS_TOKEN or VERCEL_TOKEN and VERCEL_TEAM_ID in the environment. O
 
 - Normal: prints a compact whole-team audit and always exits zero when a complete report was produced (even if risk is FREEZE).
 - --json: emits machine-readable JSON. Use this for review reports or CI.
-- --gate: exits 0 for GREEN, WATCH and PROTECT; exits 2 for FREEZE; exits 3 for UNKNOWN or technical failure. The gate is intentionally conservative. A zero means the **planning** threshold passed; it does **not** guarantee a deploy can be created.
+- --gate: exits 0 for GREEN, WATCH and PROTECT; exits 2 for FREEZE; exits 3 for UNKNOWN or technical failure. This is an **unattended/discretionary-release policy gate**, not a Vercel API acceptance test. Exit 2 means stop automatic publishing, not "deployment is impossible." A user-authorized, time-sensitive production release may be assessed independently for a single deliberate attempt using the project's normal integration. Exit 0 is not a guaranteed deploy slot.
 - --cap N: planning cap (default 100, Hobby) to accommodate another verified plan.
 - --now UTC_ISO: freezes audit time for reproducible offline checks.
 - --snapshot PATH: read a local JSON payload instead of contacting Vercel. Format: {"complete":true,"deployments":[...]}. Set complete=true only after exhaustively checking the entire 24h window. An incomplete snapshot must report UNKNOWN.
 
 The script paginates at 100 records per request, stops at the 24-hour cutoff, handles duplicate deployment IDs, and fails closed on malformed/unfinished evidence. If pagination stops unexpectedly, the report must not claim green status.
+
+The JSON includes `technicalAvailability: "UNVERIFIED"`, `earliestGuaranteedMinute: null`, and `nextRecordExpiryAt`. The last is the expiry of the *oldest visible record*, **not** the first minute a deployment can succeed. The `estimatedRemaining` number is only planning headroom derived from the visible list and may disagree with the provider's actual quota counter.
 
 ## Integration with GitHub/CI
 
@@ -45,7 +47,9 @@ No token, no user data, no live Vercel deployments, and no network access are re
 - rolling 24-hour filter,
 - one SHA deployed to two projects,
 - failed/canceled count inclusion,
-- report mode (no gate) behaviour.
+- report mode (no gate) behaviour,
+- more than 100 visible records coexisting with successful Git-triggered deployments,
+- no fabricated earliest guaranteed deployment minute even for a small visible count.
 
 A checked-in test is not a passed test. Report its actual execution result, environment and commit SHA when run. The GitHub workflow also executes this E2E harness on changes to this skill.
 
@@ -54,3 +58,5 @@ A checked-in test is not a passed test. Report its actual execution result, envi
 - A scheduled ChatGPT task can request the skill to check connected Vercel usage on a cadence, but scheduling is separate from installing the skill. Do not claim background monitoring unless a schedule really exists.
 - Do not authorize the script to write or edit Vercel settings. It only recommends branch configuration changes.
 - For per-project recommendations, combine the CLI JSON with connected project settings, GitHub branch history and verification evidence.
+- After a manual API 402, do not assume all release methods are technically unavailable. In the verified 4 November incident, Git-connected RouteLab production succeeded about 11 minutes after a manual API request failed. This does not mean Git is quota-exempt. Record method, timestamp and exact result; avoid repeated API attempts and routing around provider restrictions.
+- If asked for the "first possible minute," distinguish the earliest **observed** accepted deployment from the unknown earliest *technically possible* minute. Expiry forecasts are only calculations about the visible history.

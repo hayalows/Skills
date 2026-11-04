@@ -32,7 +32,7 @@ Each skill keeps its own `SKILL.md` plus any supporting `references/`, `agents/`
 
 The [Vercel Deployment Steward skill](vercel-deployment-steward/SKILL.md) helps keep Hobby deployments under control across all projects. It audits account-wide deployment history, flags shared-repository fan-out, reviews release readiness, and explains ways to reduce unnecessary preview and production builds.
 
-It includes a read-only Node CLI, an offline test harness, release guidance, current platform references, and an evidence-based Pitch Night case study. It does not deploy projects, change billing, disable Git deployments, or run recurring checks without separate authorization.
+It includes a read-only Node CLI, an offline test harness, release guidance, current platform references, and an evidence-based Pitch Night case study. Its FREEZE threshold is an advisory safeguard for unattended releases, **not proof that Vercel cannot publish**. Following a verified manual API 402 and subsequent successful Git deployments, the skill now distinguishes the two creation paths and avoids claiming a guaranteed retry minute. It does not deploy projects, change billing, disable Git deployments, or run recurring checks without separate authorization.
 
 See [operations](vercel-deployment-steward/references/operations.md), [CLI usage](vercel-deployment-steward/references/cli-usage.md), and [platform facts](vercel-deployment-steward/references/platform-facts.md).
 

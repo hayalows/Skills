@@ -7,8 +7,9 @@
  * node scripts/audit-deployments.mjs --team team_xxx --gate
  * node scripts/audit-deployments.mjs --snapshot fixture.json --now 2026-11-04T22:30:00Z --gate
  *
- * Gate exits: 0 = headroom sufficient (or report-only); 2 = conservatively
- * blocked by low headroom; 3 = unknown/error, no safe permission to release.
+ * Gate exits: 0 = passes unattended planning policy (or report-only);
+ * 2 = discretionary/unattended releases on hold; 3 = incomplete or unknown.
+ * Exit 2 is NOT proof Vercel will reject a user-authorized release.
  */
 import { readFile } from "node:fs/promises";
 
@@ -48,7 +49,12 @@ function summarize(records,{complete,source,pageCount}){
     seen.add(id);filtered.push(item);
   }
   const count=filtered.length;
+  // A history count is not Vercel's authoritative internal quota counter.
   const estimatedRemaining=Math.max(0,limitNumber-count);
+  const oldestVisible=filtered.length
+    ? Math.min(...filtered.map(d=>Number(d.created??d.createdAt))) : null;
+  const nextRecordExpiryAt=oldestVisible===null ? null
+    : new Date(oldestVisible+24*HOUR).toISOString();
   const usageRatio=count/limitNumber;
   const known=Boolean(complete)&&invalid===0;
   const status=!known?"UNKNOWN":usageRatio>=.85?"FREEZE":
@@ -96,7 +102,7 @@ function summarize(records,{complete,source,pageCount}){
 
   const recommendations=[];
   if(!known)recommendations.push("The deployment record is incomplete or contains invalid timestamps. Do not treat the headroom estimate as authoritative.");
-  if(status==="FREEZE")recommendations.push("Pause discretionary releases. Do not retry a 402 quota error; work and test offline.");
+  if(status==="FREEZE")recommendations.push("Pause discretionary and unattended releases. A single explicitly authorized production attempt may be considered with recent route-specific evidence; a FREEZE history count is NOT proof of technical unavailability. Never repeatedly retry a 402 from the same method.");
   else if(status==="PROTECT")recommendations.push("Protect the remaining capacity. Group approved changes and plan one release only when needed.");
   else if(status==="WATCH")recommendations.push("Reduce deployment frequency and review branch preview settings before more pushes.");
   if(sharedRepositories.length)recommendations.push("Review multiple Vercel projects connected to the same repository; a single commit can deploy several sites.");
@@ -109,6 +115,11 @@ function summarize(records,{complete,source,pageCount}){
     windowStart:new Date(cutoff).toISOString(),cap:limitNumber,capNote:"Configured Hobby planning cap, not Vercel's authoritative remaining quota.",
     count,estimatedRemaining,invalid,pageCount,states,targets,projects,
     sharedRepositories,crossProjectDuplicates,recommendations,
+    countMeaning:"Visible deployment records; not Vercel's official quota counter.",
+    technicalAvailability:"UNVERIFIED",
+    earliestGuaranteedMinute:null,
+    nextRecordExpiryAt,
+    releaseGateMeaning:"Policy for unattended/discretionary releases, not proof of platform acceptance.",
     gateAllowed:known&&status!=="FREEZE"
   };
 }
@@ -157,8 +168,11 @@ function writeText(result){
   process.stdout.write(
     "Deployment Steward | "+result.status+" | "+result.generatedAt+"\n"+
     "Team-wide rolling 24h: "+result.count+"/"+result.cap+
-    " (estimated headroom "+result.estimatedRemaining+")"+
+    " (planning headroom "+result.estimatedRemaining+"; NOT a verified quota balance)"+
     (result.complete?"":" [INCOMPLETE]")+"\n"+
+    "Technical availability: UNVERIFIED; earliest guaranteed retry: unknown.\n"+
+    "Next visible record expiry: "+(result.nextRecordExpiryAt??"none in window")+
+    " (not a guaranteed free slot).\n"+
     "Recorded states: "+JSON.stringify(result.states)+"\n"+
     "Projects:\n"+result.projects.map(p=>
       "  "+p.project+": "+p.count+" records, "+p.production+" production, "+
@@ -168,7 +182,7 @@ function writeText(result){
     "Shared repositories: "+JSON.stringify(result.sharedRepositories)+"\n"+
     "Repeated commit across projects: "+JSON.stringify(result.crossProjectDuplicates)+"\n"+
     "Next: "+result.recommendations.join(" ")+"\n"+
-    "Note: visible deployment records may differ from Vercel's private quota counter.\n"
+    "Note: an API 402 does not prove the Git-triggered path is blocked. Do not infer an exemption either.\n"
   );
 }
 async function main(){
