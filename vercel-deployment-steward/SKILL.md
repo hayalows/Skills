@@ -49,9 +49,9 @@ These are **our safety margins**, not official Vercel limits beyond the 100/day 
 - **Connected ChatGPT:** use the Vercel project/deployment tools and GitHub history. Prefer connected tools over asking the user for tokens.
 - **Local/CI audit:** Node 20+ CLI in [audit-deployments.mjs](scripts/audit-deployments.mjs). With token held only in an environment variable, run the command below from this skill folder:
   
-  \`\`\`sh
+  ```sh
   node scripts/audit-deployments.mjs --team "$VERCEL_TEAM_ID" --gate
-  \`\`\`
+  ```
 
 - **Offline investigation:** provide a complete, dated, redacted snapshot and use --snapshot and --now. Incomplete snapshots are UNKNOWN.
 - **CLI acceptance:** run the [disposable end-to-end harness](tests/cli-smoke.mjs) with Node 20+: node tests/cli-smoke.mjs.
