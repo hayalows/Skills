@@ -7,11 +7,13 @@ on:
       - "site/**"
       - "*/SKILL.md"
       - "vercel-deployment-steward/**"
+      - "master-craft/**"
       - "package.json"
       - "vercel.json"
       - ".github/workflows/verify-site.yml"
   pull_request:
     paths:
+      - "master-craft/**"
       - "site/**"
       - "*/SKILL.md"
       - "package.json"
@@ -34,7 +36,13 @@ jobs:
           test -f dist/skills/product-design-os.json
           test -f dist/skills/papa-kojo-writing-style.json
           test -f dist/skills/vercel-deployment-steward.json
-          node -e "const s=require('./dist/skill-index.json'); if(s.length !== 15) process.exit(1);"
+          test -f dist/skills/master-craft.json
+          node -e "const s=require('./dist/skill-index.json'); if(s.length !== 16) process.exit(1);"
+      - name: Validate Master Craft files and skill routing index
+        run: |
+          node --check master-craft/scripts/inventory.mjs
+          node --check master-craft/tests/router-smoke.mjs
+          node master-craft/tests/router-smoke.mjs
       - name: Check deployment audit CLI syntax
         run: node --check vercel-deployment-steward/scripts/audit-deployments.mjs
       - name: Run deployment audit CLI end-to-end checks

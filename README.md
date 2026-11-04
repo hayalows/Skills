@@ -2,6 +2,10 @@
 
 A practical library of reusable agent skills.
 
+## Master Craft: one-call orchestration
+
+[Master Craft](master-craft/SKILL.md) is the single entry point for selecting and sequencing relevant skills across this repository. It uses Personal Craft for substantial execution, Product Design OS for real UI/UX, engineering/research/brand specialists as needed, and Vercel Deployment Steward for eligible releases. The [routing map](master-craft/references/skill-map.md) currently covers every other saved skill, including Matt Pocock's collection. See [usage and installation](master-craft/README.md). It does not automatically grant tools, launch agents or publish anything.
+
 ## Skill Library
 
 - `consulting-grade-reports-decks/`
@@ -13,6 +17,7 @@ A practical library of reusable agent skills.
 - `lunour-brand-strategy/`
 - `lunour-naming/`
 - `papa-kojo-writing-style/`
+- `master-craft/`
 - `personal-craft/`
 - `premium-editorial-report-pdf/`
 - `product-design-os/`
