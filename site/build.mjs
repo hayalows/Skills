@@ -6,6 +6,7 @@ const siteDir = path.join(root, "site");
 const distDir = path.join(root, "dist");
 
 const catalog = {
+  "master-craft": { category: "Workflow", featured: true, label: "Master Craft" },
   "product-design-os": { category: "Product & UX", featured: true, label: "Product Design OS" },
   "website-ux-audit": { category: "Product & UX", label: "Website UX Audit" },
   "ui-ux-craft": { category: "Product & UX", label: "UI/UX Craft" },

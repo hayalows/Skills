@@ -1,0 +1,181 @@
+[
+  {
+    "request": "Refine mobile navigation, search filters and loading states in RouteLab. Keep it fast and don't break existing routes.",
+    "expected": [
+      "personal-craft",
+      "product-design-os",
+      "ui-ux-craft",
+      "tdd",
+      "code-review"
+    ],
+    "excluded": [
+      "security-audit",
+      "lunour-naming"
+    ],
+    "rationale": "Product interaction work needs task flows, usability, scoped implementation and regression evidence; a complete security audit or naming exercise is unnecessary."
+  },
+  {
+    "request": "Audit my portfolio website UX and make no edits.",
+    "expected": [
+      "website-ux-audit"
+    ],
+    "excluded": [
+      "implement",
+      "tdd",
+      "vercel-deployment-steward"
+    ],
+    "rationale": "Read-only diagnostic scope forbids implementation, new tests and production release."
+  },
+  {
+    "request": "My mobile theme toggle changes the color but displays the wrong icon. Find and fix it with proof.",
+    "expected": [
+      "personal-craft",
+      "diagnosing-bugs",
+      "tdd",
+      "code-review"
+    ],
+    "excluded": [
+      "lunour-brand-strategy"
+    ],
+    "rationale": "Reproduce the regression then fix narrowly, honoring existing project verification policy."
+  },
+  {
+    "request": "Build a new learning video library from scratch with unknown recommendation behavior.",
+    "expected": [
+      "personal-craft",
+      "product-design-os",
+      "grill-with-docs",
+      "to-spec"
+    ],
+    "excluded": [
+      "lunour-naming"
+    ],
+    "rationale": "Ambiguous substantial product requires discovery, user flows, measurable requirements and staged implementation."
+  },
+  {
+    "request": "Make five possible names for a new skincare brand and explain the strongest two.",
+    "expected": [
+      "lunour-naming"
+    ],
+    "excluded": [
+      "tdd",
+      "security-audit"
+    ],
+    "rationale": "A bounded naming task should not trigger an engineering pipeline."
+  },
+  {
+    "request": "Write a short outreach email proposing a website design audit to a local business.",
+    "expected": [
+      "thoughtful-cold-email",
+      "human-copywriting"
+    ],
+    "excluded": [
+      "implement-spec"
+    ],
+    "rationale": "Reader-centered outreach and appropriate offer are central, not application development."
+  },
+  {
+    "request": "Write a full evidence-based commodities investment research report and presentation for a client.",
+    "expected": [
+      "consulting-grade-reports-decks",
+      "premium-editorial-report-pdf"
+    ],
+    "excluded": [
+      "frontend-design"
+    ],
+    "rationale": "Research evidence and durable document production are the primary workflows."
+  },
+  {
+    "request": "Investigate a suspected cross-user authorization problem in my app; source-only and do not test production.",
+    "expected": [
+      "personal-craft",
+      "security-audit"
+    ],
+    "excluded": [
+      "vercel-deployment-steward"
+    ],
+    "rationale": "Specific trust-boundary examination, no live probing and no deployment."
+  },
+  {
+    "request": "Deploy my finished portfolio update to Vercel production, checking my account deployment quota and release.",
+    "expected": [
+      "personal-craft",
+      "vercel-deployment-steward"
+    ],
+    "excluded": [
+      "lunour-naming"
+    ],
+    "rationale": "Vercel preflight and verified publication take precedence over unrelated creative work."
+  },
+  {
+    "request": "Review the pull request without merging or changing files.",
+    "expected": [
+      "code-review"
+    ],
+    "excluded": [
+      "implement",
+      "tdd"
+    ],
+    "rationale": "The task is only to inspect a fixed diff and report evidence."
+  },
+  {
+    "request": "Teach me TypeScript architecture and give me exercises to practice.",
+    "expected": [
+      "teach",
+      "codebase-design"
+    ],
+    "excluded": [
+      "security-audit"
+    ],
+    "rationale": "Structured learning and module reasoning are useful; do not trigger an unrelated vulnerability audit."
+  },
+  {
+    "request": "Build an internal finance admin dashboard with private customer data and deploy it.",
+    "expected": [
+      "personal-craft",
+      "product-design-os",
+      "security-audit",
+      "vercel-deployment-steward",
+      "code-review"
+    ],
+    "excluded": [
+      "lunour-naming"
+    ],
+    "rationale": "Private data requires explicit authorization boundaries, product usability checks and a safe release gate."
+  },
+  {
+    "request": "Please rewrite my LinkedIn post so it sounds like me and preserve the exact achievements.",
+    "expected": [
+      "papa-kojo-writing-style",
+      "humanize-my-writing"
+    ],
+    "excluded": [
+      "implement"
+    ],
+    "rationale": "Voice-preserving revision is a writing task, not a coding assignment."
+  },
+  {
+    "request": "Create a maintenance pipeline for ten repositories with agents handling PRs and tests over time.",
+    "expected": [
+      "personal-craft",
+      "software-factory",
+      "to-spec"
+    ],
+    "excluded": [
+      "lunour-naming"
+    ],
+    "rationale": "A multi-project automation architecture needs contracts, explicit authority limits and plans before implementation."
+  },
+  {
+    "request": "Analyze why a Vercel preview deployment returned 402; make no configuration changes.",
+    "expected": [
+      "vercel-deployment-steward",
+      "diagnosing-bugs"
+    ],
+    "excluded": [
+      "implement",
+      "product-design-os"
+    ],
+    "rationale": "Quota-aware deployment diagnosis is read-only and does not call for UI changes."
+  }
+]

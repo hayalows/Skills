@@ -1,0 +1,12 @@
+interface:
+  display_name: "Master Craft"
+  short_description: "Choose the right skills and deliver verified work"
+  default_prompt: "Use $master-craft to select relevant skills from my Hayalows Skills repository, complete this task within my permissions, and verify the actual result."
+
+policy:
+  products:
+    - chatgpt
+    - codex
+    - api
+    - atlas
+  allow_implicit_invocation: true
