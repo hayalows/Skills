@@ -31,6 +31,10 @@ The script never edits source files or silently pulls/merges local branches. A s
 - **Real capabilities only.** Skills do not create agents, browsers, credentials, repository access, model upgrades, deployments or background jobs. Delegate only through available authorized tools; otherwise run the workflow directly.
 - **Evidence instead of confidence.** Separate observations, risks, assumptions and unknowns. Record source revision, environment, actual tests and incomplete verification where relevant.
 
+## Required execution record
+
+For substantial, consequential, security-audit or hosted work, follow [execution and verification](references/execution.md) before specialist execution. Run the trusted pinned planner at the beginning and again at close. A selected skill is only a candidate until its current instructions and required references have been read, its requirements have owners, and its stages have evidence. When the checker cannot run, record the exact blocker and perform the documented alternative. Keep partial work visibly incomplete.
+
 ## Choose the route
 
 Read [routing and tool selection](references/routing.md). Use its scope and capability checks before selecting tools, and run the structured checker for consequential routes when Node is available.
@@ -43,6 +47,8 @@ Read [routing and tool selection](references/routing.md). Use its scope and capa
 6. **Choose sequence.** Read [task playbooks](references/playbooks.md) for a matching branch. Use the order dependencies demand, not a fixed sequence of every skill. Check [quality gates](references/quality-gates.md) before consequential actions. Keep a concise internal route of owner, helpers, stages, acceptance evidence and blockers.
 
 Conflicts are resolved by platform requirements and explicit user instructions first, followed by project rules, Personal Craft verification policy, the domain owner and optional helpers. Do not weaken existing tests or skip authorization to resolve a conflict.
+
+When asked to find, adapt, or create skills, use [Scout and Factory procedures](references/skill-development.md) and existing authoring tools as applicable.
 
 ## Execute the sequence
 
