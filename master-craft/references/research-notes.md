@@ -19,3 +19,19 @@ Architectural decisions:
 6. **No hidden agent claim.** Delegation uses available services only; a skill file cannot spawn agents or run asynchronously by itself.
 
 These sources and decisions describe the design; they are not proof that every target runtime supports all stages. Verify installed runtimes and connectors per task.
+
+
+## Routing and specialist design review
+
+The review covered the names, descriptions and routing hints of all 58 existing definitions, with deeper review of nearby workflows. The imported engineering skills cover diagnosis, design, specs and implementation. The productivity and experimental groups already cover interviewing, teaching, handoff and agent coordination. The native product skills cover design, audit and verification, while the report skills cover evidence and presentation. The two additions handle narrower outputs missing from that set:
+
+| Gap | Nearby coverage | New output |
+| --- | --- | --- |
+| Evidence for a product decision | Product Design OS, UI/UX Craft, Website UX Audit | Comparable tasks or measurements, instrumentation integrity, thresholds, guardrails and a bounded ship decision |
+| Decision model challenge | Consulting-Grade Reports, Personal Craft | Reproducible cash-flow or forecast logic, independent recalculation, a flip point or benchmark, and validity limits |
+
+- [Agent Skills specification](https://agentskills.io/specification) and [Anthropic's composable skill design](https://www.anthropic.com/research/equipping-agents-for-the-real-world-with-agent-skills) support progressive loading from a current inventory.
+- [Anthropic's effective agents guide](https://www.anthropic.com/engineering/building-effective-agents) separates routing from execution and recommends the simplest sufficient workflow. Master Craft keeps semantic judgment with the agent and uses deterministic gates for scope and release ordering.
+- [OpenAI's skill eval guide](https://developers.openai.com/blog/eval-skills) distinguishes captured agent behavior from static checks. The planner suite exercises 55 independently specified request plans and extension/release edge cases. A separate five-request agent dry run covered product repair, search evidence, a read-only model, unavailable Vercel access and a short voice rewrite. That run identified a missing release-tool gate, now covered by the planner suite. Two additional independent passes interpreted 50 raw requests without the fixture labels. They distinguished the evidence and model workflows, preserved read-only boundaries, and withheld production on missing target or approval. They also exposed one accidental explicit-only skill selection in a simple explanation and an extra design owner in a read-only UX audit. The entrypoint, playbook and metadata check now clarify both cases. A preview route was appropriately limited to preview even though the reviewer used “publish” for the preview operation. The planner uses separate hosted-build and production-publish stages to disambiguate this. Some routes reasonably used different modes or optional skills while keeping the same authority and outcome. These dry runs tested routing decisions. They did not execute the target projects or estimate a general routing accuracy.
+
+The specialist references document the analytical assurance, usability, experimentation and release sources behind their procedures.

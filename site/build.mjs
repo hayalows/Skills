@@ -8,6 +8,8 @@ const distDir = path.join(root, "dist");
 const catalog = {
   "master-craft": { category: "Workflow", featured: true, label: "Master Craft" },
   "product-design-os": { category: "Product & UX", featured: true, label: "Product Design OS" },
+  "product-evidence": { category: "Product & UX", label: "Product Evidence" },
+  "model-assurance": { category: "Reports & Research", label: "Model Assurance" },
   "website-ux-audit": { category: "Product & UX", label: "Website UX Audit" },
   "ui-ux-craft": { category: "Product & UX", label: "UI/UX Craft" },
   "design-taste-frontend": { category: "Design & Frontend", featured: true, label: "Design Taste: Frontend" },
