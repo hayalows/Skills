@@ -58,4 +58,13 @@ const future = { path: "extensions/accessibility-lab/SKILL.md", name: "accessibi
 const expanded = { ...current, skills: [...current.skills, future] };
 assert.ok(run({ ...release, specialists: [future.path] }, expanded).skills.includes(future.path));
 
+const restricted = current.skills.find((skill) => skill.name === "wait-what");
+assert.equal(restricted.requires_explicit_invocation, true);
+const restrictedIntent = { ...release, mode: "answer", host: "none", releaseAuthorized: false, specialists: [restricted.path] };
+assert.throws(() => execFileSync(process.execPath, [file("../scripts/plan.mjs")], {
+  input: JSON.stringify({ intent: restrictedIntent, snapshot: current }),
+  stdio: ["pipe", "pipe", "pipe"]
+}), /requires explicit invocation/);
+assert.ok(run({ ...restrictedIntent, explicitSkills: [restricted.path] }).skills.includes(restricted.path));
+
 console.log("PASS: " + cases.length + " structured scenario plans and release/extension edge cases");

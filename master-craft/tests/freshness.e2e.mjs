@@ -57,6 +57,7 @@ try {
   assert.ok(first.skills.some((item) => item.name === "product-design-os" && item.description.includes("v1")));
 
   // User updates an existing skill and adds an entirely new skill on GitHub.
+  write(author, "master-craft/SKILL.md", skill("master-craft", "current"));
   write(author, "product-design-os/SKILL.md", skill("product-design-os", "v2"));
   write(author, "novel-skill/SKILL.md", skill("novel-skill", "initial"));
   git(author, "add", ".");
@@ -66,6 +67,8 @@ try {
   assert.notEqual(fresh.revision, first.revision, "Snapshot SHA must advance");
   assert.ok(fresh.skills.some((item) => item.name === "novel-skill"), "Previously unmapped skill must be discovered");
   assert.ok(fresh.skills.some((item) => item.name === "product-design-os" && item.description.includes("v2")), "Updated metadata must come from fetched version");
+  assert.ok(run("--at", fresh.revision, "--read", "master-craft").stdout.includes("VERSION: current"));
+  assert.ok(run("--at", first.revision, "--read", "master-craft").stdout.includes("VERSION: initial"));
   const chosen = run("--at", fresh.revision, "--read", "product-design-os").stdout;
   assert.ok(chosen.includes("VERSION: v2"), "Selected skill must come from the latest remote revision");
   assert.ok(chosen.endsWith("\n"), "Skill content must be returned without trimming");

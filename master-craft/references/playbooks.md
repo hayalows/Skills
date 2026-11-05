@@ -61,7 +61,7 @@ These are conditional stage plans, not a compulsory pipeline. Read the selected 
 
 ## Learning and agent automation
 
-- For teaching use teach or wait-what; avoid engineering release processes.
+- For teaching or re-explaining, answer directly unless the user explicitly asks for the Teach or Wait What skill.
 - For rewriting use humanize-my-writing and relevant voice. Avoid invoking an entire marketing strategy.
 - For writing skills or agent instructions use writing-for-agents. Model invocation, actual tool support and progressive disclosure matter.
 - For multi-agent design, software-factory and chief-of-staff are experimental; their instructions do not create runtimes or background schedules. Use a real tool or single-worker plan.
