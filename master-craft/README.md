@@ -15,6 +15,10 @@ Run from the Skills checkout:
 
 `--latest` fails explicitly if remote access is blocked. Use `--local --json` only as a labeled potentially stale fallback. Read the full [freshness protocol](references/freshness.md) for setup, limitations, and examples. Installed static copies with no live repository access do not magically refresh.
 
+## Execution records
+
+Substantial tasks run the planner before work and at close. The [execution contract](references/execution.md) covers skill versions, authorized effects, dependencies, tool readiness, and evidence. Exit code 2 marks an incomplete checked record. The [Scout and Factory procedures](references/skill-development.md) cover evaluating and developing skills.
+
 ## Two specialists
 
 - [Product Evidence](../product-evidence/SKILL.md) helps decide whether a product change improved a task or is ready to ship, using measurements that match the claim.
@@ -71,6 +75,7 @@ Run from the repository root:
     node master-craft/tests/freshness.e2e.mjs
     node master-craft/tests/router-smoke.mjs
     node master-craft/tests/plan.e2e.mjs
+    node master-craft/tests/execution.e2e.mjs
     npm run build
 
 The validator checks completeness and structure. **It cannot prove actual LLM routing quality or production behavior.** For a new route, run a real prompt evaluation and inspect decisions before claiming improvement.

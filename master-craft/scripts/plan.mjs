@@ -1,4 +1,5 @@
 import fs from "node:fs";
+import { checkExecution, executionPlan } from "./execution.mjs";
 import { pathToFileURL } from "node:url";
 
 const modes = ["answer", "inspect", "create", "repair", "release"];
@@ -17,7 +18,9 @@ export function plan(intent, snapshot) {
   const blockers = [];
   const stages = ["baseline"];
   const skills = [];
-  const verified = snapshot.verified_latest === true || snapshot.source === "pinned-git-commit";
+  const verified = /^[0-9a-f]{40}$/i.test(snapshot.revision ?? "") &&
+    ((snapshot.verified_latest === true && ["git-origin-main", "github-main"].includes(snapshot.source)) ||
+      (snapshot.source === "pinned-git-commit" && intent.pinnedRevision === snapshot.revision));
 
   function select(file, required = false, explicit = false) {
     const skill = inventory.get(file);
@@ -34,6 +37,7 @@ export function plan(intent, snapshot) {
 
   if (intent.substantial) select("personal-craft/SKILL.md", true);
   if (intent.productDesign && !readOnly) select("product-design-os/SKILL.md", true);
+  if (intent.securityReview === true) select("security-audit/SKILL.md", true);
   if (intent.measureProduct) select("product-evidence/SKILL.md", true);
   if (intent.validateModel) select("model-assurance/SKILL.md", true);
   for (const file of intent.specialists ?? []) {
@@ -43,9 +47,10 @@ export function plan(intent, snapshot) {
 
   if (intent.mode === "repair") stages.push("reproduce");
   if (intent.measureProduct || intent.validateModel) stages.push("define-evidence");
-  if (intent.mode === "repair" || intent.mode === "create") stages.push("implement");
+  if (intent.mode === "repair" || (intent.mode === "create" && !(intent.hostedBuild && intent.existingArtifact === true))) stages.push("implement");
   if (intent.mode === "inspect") stages.push("inspect");
   stages.push("verify");
+  if (readOnly && (intent.releaseAuthorized || intent.hostedBuild)) blockers.push("read-only-host-action-conflict");
   if (intent.mode === "release" && !release) blockers.push("release-authorization-missing");
   if (hosting && ["unknown", "none"].includes(intent.host)) blockers.push("host-unresolved");
   if (hosting && !intent.releaseToolAvailable) blockers.push("host-tool-unavailable");
@@ -62,8 +67,16 @@ export function plan(intent, snapshot) {
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   try {
-    const { intent, snapshot } = JSON.parse(fs.readFileSync(0, "utf8"));
-    console.log(JSON.stringify(plan(intent, snapshot), null, 2));
+    const { intent, snapshot, execution } = JSON.parse(fs.readFileSync(0, "utf8"));
+    const route = plan(intent, snapshot);
+    if (execution != null) {
+      route.execution = checkExecution(route, intent, snapshot, execution);
+    } else if (intent.substantial || intent.freshnessRequired || intent.releaseAuthorized || intent.hostedBuild ||
+               route.skills.includes("security-audit/SKILL.md")) {
+      route.execution = { ...executionPlan(route, intent), state: "unrecorded" };
+    }
+    console.log(JSON.stringify(route, null, 2));
+    if (execution?.results != null && route.execution.state !== "complete") process.exitCode = 2;
   } catch (error) {
     console.error(error.message);
     process.exitCode = 1;

@@ -18,7 +18,7 @@ For a routine answer or tiny reversible edit, zero supporting skills may be appr
 
 ## Structured checks
 
-When Node is available, use `node master-craft/scripts/plan.mjs < plan-input.json` for substantial or consequential routes. Build the input from the interpreted request and live inventory. In connector-only sessions apply the same checks directly. The checker is read-only.
+Run the read-only planner at planning and close for substantial, consequential, security-audit or hosted work. Build the input from the interpreted request and live inventory. Follow the [execution record and fallback contract](execution.md).
 
 Input is JSON with `snapshot` (the inventory JSON) and `intent`:
 
@@ -28,8 +28,11 @@ Input is JSON with `snapshot` (the inventory JSON) and `intent`:
 | host | none, unknown, vercel, or other, based on the actual target |
 | substantial | Work needs Personal Craft |
 | productDesign | Designing or changing a real product interaction |
+| securityReview | Set true for a security review even if the specialist has not been proposed |
 | measureProduct | Product measurements will inform a decision, including an audit of those measurements |
 | validateModel | Material model construction, stress testing or validation |
+| pinnedRevision | Exact user-selected commit SHA when using a pinned snapshot |
+| existingArtifact | True for a hosted preview of an already approved artifact that needs no implementation |
 | hostedBuild | Authorized provider-side build or preview |
 | releaseAuthorized | User has authorized publication of this scope to the intended target |
 | releaseToolAvailable | An authorized, usable route exists for the intended host action, including the ability to verify its outcome |
@@ -38,3 +41,5 @@ Input is JSON with `snapshot` (the inventory JSON) and `intent`:
 | explicitSkills | Optional subset of paths expressly requested by the user |
 
 The result supplies mandatory skills, ordered checkpoints, and blockers. A blocker must be resolved before its affected stage. Missing required skills prevent that domain work until resolved. Host preflight includes provider-specific approval, quota, target, scope and rollback checks. Treat a hosted build or Git operation with automatic deployment as a release action when it can publish. The script never authorizes, publishes, or establishes that the agent interpreted the request correctly. The agent chooses candidates and reads them before action. Use the playbooks for task-specific details.
+
+For connector inventory, set source to `github-main` and verified_latest to true only after resolving current main and enumerating the complete pinned tree. A user-selected pin uses source `pinned-git-commit` and the matching intent.pinnedRevision.
