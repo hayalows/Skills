@@ -1,0 +1,4 @@
+interface:
+  display_name: "Behavioral Interaction Design"
+  short_description: "Design useful motivation, feedback, and play"
+  default_prompt: "Use $behavioral-interaction-design to diagnose this interaction and propose a user-aligned design and test."

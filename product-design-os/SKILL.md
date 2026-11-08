@@ -452,6 +452,8 @@ Include:
 
 Use `references/behavior-ethics.md`. Only design a habit loop when repeated behavior is necessary to the user's own recurring goal.
 
+For a focused analysis of activation, progress feedback, curiosity, play, or voluntary repeat use, load [Behavioral Interaction Design](../behavioral-interaction-design/SKILL.md) when available. Use it to diagnose one moment and compare the proposed mechanism with a simpler change.
+
 ### Landing / marketing surface
 
 Use the same user-centered principles. A hero should quickly answer:

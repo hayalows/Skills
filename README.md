@@ -8,6 +8,7 @@ A practical library of reusable agent skills.
 
 ## Skill Library
 
+- [`behavioral-interaction-design/`](behavioral-interaction-design/SKILL.md)
 - `consulting-grade-reports-decks/`
 - `design-taste-frontend/`
 - `frontend-design/`

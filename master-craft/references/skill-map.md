@@ -8,6 +8,7 @@ This is a **curated routing hint list**, not the authoritative inventory and not
 
 - [personal-craft](../personal-craft/SKILL.md) — Execution baseline for substantial code, research, design, QA; obey verification policy.
 - [product-design-os](../product-design-os/SKILL.md) — Product tasks: flows, UI/UX, accessibility, interaction states, responsive systems.
+- [behavioral-interaction-design](../behavioral-interaction-design/SKILL.md) — Specialist for user-chosen activation, progress, feedback, delight, and voluntary repeat use. Pair with Product Design OS when the wider flow needs design work.
 - [ui-ux-craft](../ui-ux-craft/SKILL.md) — Detailed interface craft and critique, backed by evidence.
 - [website-ux-audit](../website-ux-audit/SKILL.md) — Read-only or evidence-first usability diagnosis of an existing site.
 - [design-taste-frontend](../design-taste-frontend/SKILL.md) — Marketing pages, portfolios, aesthetic composition and implementation.
