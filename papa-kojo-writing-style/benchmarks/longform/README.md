@@ -17,7 +17,7 @@ The short-form approval of v1.2 refined covers a 361-word counselling example, n
 
 ## Research design
 
-Eight original essays across faith, work, finance, design, mentoring, data interpretation and relationships. Six prompts are for development and two are sealed as held-out assessments until revisions are frozen. Each version receives **the same task wording and allowed facts** for each prompt, and each version gets **three independent, clean-context model invocations**.
+Eight original essays across faith, work, finance, design, mentoring, data interpretation and relationships. Six prompts are for development and two are reserved as held-out assessments until revisions are frozen. Their briefs are visible in this public repository, so they are not cryptographically sealed or secret; enforce the holdout by excluding them from tuning. Each version receives **the same task wording and allowed facts** for each prompt, and each version gets **three independent, clean-context model invocations**.
 
 Pre-register model name and exact configuration. Use the same model, temperature, top_p, context access, source material, and word-range requirements for all four versions. Do not feed one candidate's outputs or feedback into another's context. Store a distinct response ID, model settings and input prompt hash for every call. Change nothing in the skill between the three draws for a frozen evaluation. Independent provider requests matter; four role-played styles in a single AI conversation **do not qualify**.
 
