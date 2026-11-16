@@ -168,6 +168,7 @@ def validate_review(row, rubric, fulltext):
     expected = set(dims)
     if set(row.get('ratings', {})) != expected:
         raise ValueError('All 13 editorial ratings are required')
+    quoted = []
     for k, v in row['ratings'].items():
         if type(v) is not int or not 0<=v<=4:
             raise ValueError(f'Invalid rating {k}')
@@ -175,12 +176,17 @@ def validate_review(row, rubric, fulltext):
         req = 2 if k in rubric['require_evidence']['focus_dimensions'] else 1
         if len(items)<req:
             raise ValueError(f'Missing quoted evidence for {k} ({req} required)')
+        if len({x.get('quote','') for x in items}) < req:
+            raise ValueError(f'Quoted evidence for {k} must use distinct lines')
         for item in items:
             quote, why = item.get('quote',''), item.get('reason','')
+            quoted.append(quote)
             if not 12<=len(quote)<=400 or quote not in fulltext:
                 raise ValueError(f'Evidence quote for {k} must match actual candidate text')
             if len(why.strip())<20:
                 raise ValueError(f'Provide a specific reason for {k}')
+    if len(set(quoted)) < 8:
+        raise ValueError('A long essay needs evidence from at least 8 distinct passages')
     gate = row.get('gate',{})
     if set(gate) != set(rubric['truth_gate']['fields']) or any(type(x) is not bool for x in gate.values()):
         raise ValueError('All truth gate fields must be verified booleans')
@@ -191,8 +197,13 @@ def validate_review(row, rubric, fulltext):
         if type(idx) is not int or idx<0 or idx>=len(sentences(fulltext)) or idx in seen or label not in labels:
             raise ValueError('Invalid, duplicate or unknown sentence annotation')
         seen.add(idx)
-    if len(seen)<min(30,len(sentences(fulltext))):
+    ss=sentences(fulltext)
+    if len(seen)<min(30,len(ss)):
         raise ValueError('Need 30 distinct sentence annotations from across the essay')
+    thirds=[range(0,len(ss)//3),range(len(ss)//3,2*len(ss)//3),range(2*len(ss)//3,len(ss))]
+    for region in thirds:
+        if len(seen.intersection(region)) < min(10,len(region)):
+            raise ValueError('Sentence sample needs 10 annotations in each essay third')
 
 
 def score(folder, reviews_path):
