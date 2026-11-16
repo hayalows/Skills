@@ -3,6 +3,12 @@
 **Status:** experimentally defined, tested in one six-version evaluation on 16 November 2026. This is a benchmark design, **not** an independently validated measure of authorship or a certification of human-sounding writing. Its author was also the first evaluator. Never market its scores as objective quality.
 
 ## Why this is different from a readability checker
+### Long-form extension: new evidence requirements
+
+The original 18 samples across three shorter writing tasks did **not** establish performance on a 3,000-word essay. The user tested a Divine Design essay at **66.3 Flesch Reading Ease, Grade 7.3, 3,052 words**, against the shorter approved refined v1.2 calibration at **93.0 FRE, Grade 3.6, 361 words**. These are different texts, so the difference is not a causal length estimate.
+
+The new [long-form suite](../benchmarks/longform/README.md) specifies eight longer writing prompts, matched across four versions (v1.2, v1.2.1, v1.3, v1.4) and three isolated model invocations each. Human reviewers use a sharper 13-series rubric, must quote the specific text behind their ratings, and audit 30 sentences from the beginning, middle and end. **Natural personal voice (18), emotional honesty (14) and sentence craft (11) together receive 43/100**; factual safeguards remain a blocking gate. Scores stay pending until real model runs and blind reviews exist. Do not add these scores to the original 100-point total, and do not imply that 96 completed essays already exist.
+
 
 Flesch Reading Ease is an estimate of word and sentence complexity. It cannot tell whether a statement was invented, who the reader is, if someone sounds rushed, or if a point feels genuine. The scoring suite therefore has **12 editorial series** and separate hard gates. The existing `voice_check.py` provides *diagnostic metrics only* and does **not** contribute points to the 100-point editorial total.
 
