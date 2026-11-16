@@ -1,0 +1,24 @@
+{
+  "purpose": "Explain a proposal to add written transcripts to a fictional museum's audio guides",
+  "audience": "Visitors deciding how to use the museum guide on their phones",
+  "reader_knowledge": "They know there are audio guides but have not seen the transcript option",
+  "genre": "plain-language explanation",
+  "core_point": "Adding a clearly labelled transcript button may make the guides easier to use for visitors who prefer reading",
+  "writer_stance": "This is a design proposal, not a proven accessibility improvement",
+  "known_facts": [
+    "In this fictional scenario, exhibit pages currently provide audio descriptions only.",
+    "The proposed prototype adds a Transcript button that displays the same scripted description as readable text.",
+    "No visitor testing or accessibility audit has yet been conducted."
+  ],
+  "unknowns": [
+    "The effect on visitor understanding and satisfaction is unknown.",
+    "The accuracy of captions for any unscripted audio is outside this prototype."
+  ],
+  "required_details": [
+    "Explain what changes for a visitor.",
+    "Describe a possible benefit without claiming observed outcomes.",
+    "Consider a realistic limitation.",
+    "Suggest an appropriate visitor test."
+  ],
+  "length_words": 450
+}

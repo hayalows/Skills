@@ -1,0 +1,24 @@
+{
+  "version": "0.1.0",
+  "genre": "general",
+  "words": 432,
+  "sentences": 28,
+  "paragraphs": 7,
+  "avg_sentence_words": 15.43,
+  "median_sentence_words": 14.5,
+  "sentence_length_cv": 0.319,
+  "max_sentence_words": 29,
+  "mean_paragraph_words": 61.71,
+  "approx_ari_grade": 9.2,
+  "question_marks": 0,
+  "unique_word_ratio": 0.488,
+  "duplicated_paragraphs": 0,
+  "repeated_5gram_fraction": 0.0,
+  "thirds": [],
+  "flags": [],
+  "limitations": [
+    "Lexical signals are proxies, not a human-likeness score.",
+    "No semantic entailment, source verification, or audience interviews are performed.",
+    "Sentence segmentation is approximate; quoted dialogue and abbreviations may affect counts."
+  ]
+}

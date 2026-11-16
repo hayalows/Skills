@@ -1,0 +1,32 @@
+category,title,url,access,usage_note
+BYU devotional,Coming Closer to Jesus Christ,https://speeches.byu.edu/talks/dallin-h-oaks/coming-closer-to-jesus-christ/,full_page_with_transcript,Exclude site navigation and footers when measuring prose
+BYU devotional,To Those Enduring Trials with No End,https://speeches.byu.edu/talks/jeffrey-s-bednar/to-those-enduring-trials-with-no-end/,full_page_with_transcript,Includes two speakers/sections; do not treat as one uninterrupted voice
+BYU devotional,Settle This in Your Hearts,https://speeches.byu.edu/talks/neil-l-andersen/settle-this-in-your-hearts/,full_page_with_transcript,Public prepared speech
+BYU devotional,Peace and Rest Even Now,https://speeches.byu.edu/talks/patrick-kearon/peace-and-rest-even-now/,full_page_with_transcript,Public prepared speech
+BYU devotional,Be Still and Know That I Am God,https://speeches.byu.edu/talks/shayla-bott/be-still-and-know-that-i-am-god/,full_page_with_transcript,Public prepared speech
+BYU forum,Why Everyone Should Be Religious,https://speeches.byu.edu/talks/ross-g-douthat/why-everyone-should-be-religious/,event_page_without_full_transcript,Excluded from qualitative close reading
+Dan Koe,I'm begging you to write more essays,https://letters.thedankoe.com/p/im-begging-you-to-write-more-essays,full_accessible_essay,Page includes Substack UI beyond essay body
+Dan Koe,The writing habit that saved my brain,https://letters.thedankoe.com/p/the-writing-habit-that-saved-my-brain,full_accessible_essay,Page includes Substack UI beyond essay body
+Dan Koe,Learn This Skill If You Want To Thrive The Next 10 Years,https://thedankoe.com/letters/learn-this-skill-if-you-want-to-survive-the-next-10-years/,full_accessible_essay,Page includes author biography/sidebar
+Dan Koe,How To Think Originally,https://thedankoe.com/letters/how-to-think-originally/,full_accessible_essay,Page includes author biography/sidebar
+Dan Koe,How To Attack Your Big Goals & Achieve Them In 2-3 Months,https://thedankoe.com/letters/how-to-attack-your-big-goals-achieve-them-in-2-3-months/,full_accessible_essay,Page includes author biography/sidebar
+Dan Koe,You don't need a niche you need a point of view,https://thedankoe.com/letters/you-dont-need-a-niche-you-need-a-point-of-view/,full_accessible_essay,Page includes author biography/sidebar
+Dan Koe,HUMAN 3.0 – A Map To Reach The Top 1%,https://thedankoe.com/letters/human-3-0-a-map-to-reach-the-top-1/,full_accessible_essay,Page includes author biography/sidebar
+Dan Koe,Full Guide: How To Start Writing Long Form,https://letters.thedankoe.com/p/full-guide-how-to-start-writing-long,paywalled_partial,Excluded from full-text analysis
+Dan Koe,Full Guide: How I Write About Deep Ideas & Still Go Viral,https://letters.thedankoe.com/p/full-guide-how-i-write-about-deep,paywalled_partial,Excluded from full-text analysis
+Paul Graham,Writes and Write-Nots,https://paulgraham.com/writes.html,full_accessible_essay,HTML table wrapping makes automated paragraph counts unreliable
+Paul Graham,Write Simply,https://paulgraham.com/simply.html,full_accessible_essay,HTML table wrapping makes automated paragraph counts unreliable
+Paul Graham,Write Like You Talk,https://paulgraham.com/talk.html,full_accessible_essay,HTML table wrapping makes automated paragraph counts unreliable
+Paul Graham,Succinctness is Power,https://paulgraham.com/power.html,full_accessible_essay,HTML table wrapping makes automated paragraph counts unreliable
+Paul Graham,Good Writing,https://paulgraham.com/goodwriting.html,full_accessible_essay,HTML table wrapping makes automated paragraph counts unreliable
+Paul Graham,How to Write Usefully,https://paulgraham.com/useful.html,full_accessible_essay,HTML table wrapping makes automated paragraph counts unreliable
+Paul Graham,How to Do Great Work,https://paulgraham.com/greatwork.html,full_accessible_essay,HTML table wrapping makes automated paragraph counts unreliable
+Guidance,Hemingway Editor readability,https://4.hemingwayapp.com/help/docs/readability,reviewed,Readability grade is a proxy not human quality
+Guidance,OpenAI Prompt Engineering,https://developers.openai.com/api/docs/guides/prompt-engineering,reviewed,Clarity context few-shot examples and evaluation
+Guidance,Anthropic Prompting Best Practices,https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices,reviewed,Clear prompts meaningful examples and task-aligned output
+Guidance,Digital.gov Principles of Plain Language,https://digital.gov/guides/plain-language/principles,reviewed,Reader needs clear terms and usability testing
+Research,Coh-Metrix: Analysis of text on cohesion and language,https://pubmed.ncbi.nlm.nih.gov/15354684/,reviewed_research_abstract,Cohesion and discourse measures beyond surface readability
+Research,Prior knowledge text cohesion comprehension,https://iejee.com/index.php/iejee/article/view/222,reviewed_research_summary,Cohesion interacts with reader knowledge
+Research,Narrative transportation and persuasion,https://pubmed.ncbi.nlm.nih.gov/11079236/,reviewed_research_abstract,Stories can help engagement not every task
+Research,Cohesion research overview,https://soletlab.asu.edu/cohesion-publications/,reviewed_bibliography,Study bibliography; not used for unsupported causal claims
+Research,On the effect of anticipation on reading times,https://direct.mit.edu/tacl/article/doi/10.1162/tacl_a_00603/118720/On-the-Effect-of-Anticipation-on-Reading-Times,reviewed_search_summary,Surprisal research not used as author detector

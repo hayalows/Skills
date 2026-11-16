@@ -1,0 +1,53 @@
+{
+  "test_date": "2026-11-16",
+  "test_kind": "offline_reproducible_software_smoke_test",
+  "unit_tests": {
+    "passed": 13,
+    "failed": 0
+  },
+  "source_audit": {
+    "full_conference_pages_scraped": 70,
+    "substantive_talks": 66,
+    "administrative_or_ceremonial_pages": 4,
+    "full_byu_devotionals": 5,
+    "full_accessible_dan_koe_essays": 7,
+    "full_accessible_paul_graham_essays": 7,
+    "excluded_paywalled_dan_koe_pages": 2,
+    "excluded_missing_transcript_forum_pages": 1
+  },
+  "corpus_descriptive_summary": {
+    "talks_in_descriptive_subset": 66,
+    "average_sentence_words_unweighted_mean": 17.39,
+    "average_sentence_words_median": 17.05,
+    "average_sentence_words_min": 11.7,
+    "average_sentence_words_max": 25.7,
+    "median_paragraph_count": 25.0,
+    "median_sentence_length_cv": 0.56,
+    "method": "Approximate regex-based cleaned-text measurements; observational, not an optimal target"
+  },
+  "human_blind_ab_test": {
+    "status": "not_run",
+    "reason": "Requires repeated LLM-generated pairs under matched conditions and independent human ratings; neither was available in this delivery",
+    "claim_of_improvement_percent": null
+  },
+  "longform_4000_word_evaluation": {
+    "status": "software stress-tested on synthetic repetition; live long-form generation and reader testing not run",
+    "synthetic_stress_test": "longform_synthetic_stress_test.json",
+    "synthetic_words": 4018,
+    "duplicate_paragraphs_detected": 81
+  },
+  "interpretation": "Software tests validate functions and obvious planted warnings, not a measured increase in the quality of natural prose.",
+  "constructed_example": {
+    "templated_example_flags": [
+      "generic_time_opening",
+      "empty_preamble",
+      "vague_booster",
+      "generic_conclusion",
+      "absolute_terms"
+    ],
+    "grounded_example_flags": [],
+    "original_demo_words": 432,
+    "original_demo_flags": [],
+    "caveat": "Deliberately constructed examples are not held-out writing quality evidence."
+  }
+}

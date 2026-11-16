@@ -1,0 +1,5 @@
+The museum's exhibit pages currently offer audio descriptions without a written version. Some visitors may prefer to read, but they have no text option in this prototype.
+
+A proposed change would add a Transcript button beside the audio control. A visitor could listen or read the same scripted description. The text would also help someone check a name or detail without replaying an entire recording.
+
+We haven't tested the design. A small button could be hard to notice, and a transcript would not solve every accessibility need. The next step is to ask visitors to try both versions without guidance and see which controls they notice, what they understand, and where they get stuck.

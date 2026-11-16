@@ -1,0 +1,30 @@
+{
+  "input": "deliberately repetitive synthetic prose, not actual generative-model output",
+  "words": 4018,
+  "paragraphs": 82,
+  "thirds": [
+    {
+      "section": "opening",
+      "words": 1372,
+      "avg_sentence_words": 12.25
+    },
+    {
+      "section": "middle",
+      "words": 1323,
+      "avg_sentence_words": 12.25
+    },
+    {
+      "section": "ending",
+      "words": 1323,
+      "avg_sentence_words": 12.25
+    }
+  ],
+  "duplicate_paragraphs": 81,
+  "repeated_5gram_fraction": 0.988,
+  "flags": [
+    "duplicated_paragraphs",
+    "repeated_word_sequences",
+    "uniform_sentence_lengths",
+    "repeated_sentence_starts"
+  ]
+}

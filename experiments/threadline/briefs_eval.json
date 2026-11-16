@@ -1,0 +1,178 @@
+[
+  {
+    "id": "B01",
+    "genre": "customer message",
+    "purpose": "Notify customers that a hypothetical bicycle repair shop's Saturday pickup hours changed",
+    "audience": "Customers who already left bicycles for repair",
+    "reader_knowledge": "They know the workshop but not the new pickup window",
+    "core_point": "Saturday pickups will be 10 a.m. to 1 p.m. for this fictional scenario",
+    "known_facts": [
+      "Fictional scenario: Saturday pickup hours are 10 a.m. to 1 p.m. from December 5.",
+      "Customers may pick up on Monday if Saturday does not work."
+    ],
+    "unknowns": [
+      "No reason for the change was provided."
+    ],
+    "length_words": 90
+  },
+  {
+    "id": "B02",
+    "genre": "short apology",
+    "purpose": "Explain an avoidable scheduling error and the correction",
+    "audience": "A colleague arranging volunteer shifts",
+    "reader_knowledge": "They saw an incorrect rota",
+    "known_facts": [
+      "Fictional scenario: the Thursday shift was assigned to the wrong person.",
+      "The corrected rota will be shared by 4 p.m."
+    ],
+    "unknowns": [],
+    "length_words": 100
+  },
+  {
+    "id": "B03",
+    "genre": "product explainer",
+    "purpose": "Explain why a fictional museum is considering written transcripts beside audio guides",
+    "audience": "Museum visitors",
+    "reader_knowledge": "They know how to listen to guides, but not about the prototype",
+    "known_facts": [
+      "The current exhibit guide offers recorded audio only.",
+      "The proposed version adds a Transcript button with the same scripted description.",
+      "No visitor testing has occurred."
+    ],
+    "unknowns": [
+      "Actual visitor preference and comprehension effects are unknown."
+    ],
+    "length_words": 450
+  },
+  {
+    "id": "B04",
+    "genre": "FAQ",
+    "purpose": "Explain a simple password reset process for a hypothetical community website",
+    "audience": "Users who forgot passwords",
+    "reader_knowledge": "They know their account email",
+    "known_facts": [
+      "Fictional flow: choose Forgot password, enter account email, follow the reset link.",
+      "The link expires after 30 minutes."
+    ],
+    "unknowns": [
+      "Whether the email will arrive within a particular time is unknown."
+    ],
+    "length_words": 220
+  },
+  {
+    "id": "B05",
+    "genre": "practical guide",
+    "purpose": "Explain how to prepare for a first meeting with a financial adviser without offering investment recommendations",
+    "audience": "Adults new to personal financial planning",
+    "reader_knowledge": "They know their approximate income and expenses",
+    "known_facts": [
+      "A useful preparation can include listing income, expenses, debts, savings goals and questions."
+    ],
+    "unknowns": [
+      "The reader's legal and tax jurisdiction is unspecified."
+    ],
+    "length_words": 650
+  },
+  {
+    "id": "B06",
+    "genre": "short announcement",
+    "purpose": "Explain a schedule for a fictional neighborhood clean-up",
+    "audience": "Volunteers",
+    "reader_knowledge": "They know the community center",
+    "known_facts": [
+      "Fictional event: 9 a.m. Saturday at the community center.",
+      "Gloves and rubbish bags are provided.",
+      "Volunteers should bring drinking water."
+    ],
+    "unknowns": [],
+    "length_words": 130
+  },
+  {
+    "id": "B07",
+    "genre": "balanced essay",
+    "purpose": "Evaluate whether public institutions should move some services online",
+    "audience": "General readers",
+    "reader_knowledge": "Some have used online public services and some have not",
+    "known_facts": [
+      "Digital services can reduce some travel needs.",
+      "Not everyone has stable internet or the same digital skills."
+    ],
+    "unknowns": [
+      "No local cost or adoption data is supplied."
+    ],
+    "length_words": 1300
+  },
+  {
+    "id": "B08",
+    "genre": "memo",
+    "purpose": "Recommend a small trial of clearer signage for a fictional public garden",
+    "audience": "Garden volunteers",
+    "reader_knowledge": "They know visitors sometimes ask for directions",
+    "known_facts": [
+      "The existing garden has one entrance map.",
+      "The proposed trial adds two directional signs to the demonstration area.",
+      "No visitor measurements exist yet."
+    ],
+    "unknowns": [
+      "Actual wayfinding improvements are unknown."
+    ],
+    "length_words": 500
+  },
+  {
+    "id": "B09",
+    "genre": "reflective essay",
+    "purpose": "Explore how people can recognize a slow change that is easy to miss day to day",
+    "audience": "Curious general readers",
+    "reader_knowledge": "They have experienced gradual change in ordinary life",
+    "known_facts": [
+      "Use hypothetical examples only; no personal history is provided."
+    ],
+    "unknowns": [
+      "No empirical studies are supplied."
+    ],
+    "length_words": 4000
+  },
+  {
+    "id": "B10",
+    "genre": "explanatory essay",
+    "purpose": "Examine how people learn a new skill through examples, practice, feedback and revision",
+    "audience": "Learners and teachers",
+    "reader_knowledge": "They are familiar with everyday learning experiences",
+    "known_facts": [
+      "Use illustrative hypothetical learning situations.",
+      "Do not invent research statistics or quotations."
+    ],
+    "unknowns": [
+      "No specific empirical papers are supplied in the task packet."
+    ],
+    "length_words": 4000
+  },
+  {
+    "id": "B11",
+    "genre": "technical tutorial",
+    "purpose": "Explain what an HTTP 404 response means using a website example",
+    "audience": "Beginning web developers",
+    "reader_knowledge": "They know what a webpage is but not HTTP status codes",
+    "known_facts": [
+      "HTTP 404 indicates the requested resource was not found on the server.",
+      "It does not by itself prove the entire site is offline."
+    ],
+    "unknowns": [],
+    "length_words": 650
+  },
+  {
+    "id": "B12",
+    "genre": "decision note",
+    "purpose": "Help a community tool-lending shed choose how to label shared tools",
+    "audience": "Small volunteer committee",
+    "reader_knowledge": "They have a collection of shared hand tools",
+    "known_facts": [
+      "Options include labels by tool type, borrowing frequency, or a hybrid.",
+      "Each system needs clear signs."
+    ],
+    "unknowns": [
+      "The tool inventory and usage frequency are unknown."
+    ],
+    "length_words": 450
+  }
+]
