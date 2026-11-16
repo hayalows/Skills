@@ -3,8 +3,8 @@
 import json, subprocess, tempfile, unittest
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
-CLI = ROOT / 'bench_cli.py'
-CONFIG = ROOT / 'benchmark_config.json'
+CLI = ROOT / 'scripts' / 'benchmark_score.py'
+CONFIG = ROOT / 'references' / 'benchmark_config.json'
 DIMS = ('truth','reader','voice','reasoning','clarity','emotion','specificity','transitions','pacing','restraint','ending','genre')
 
 def case(**kwargs):

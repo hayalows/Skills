@@ -76,8 +76,8 @@ For the lens names and exact weights, see `benchmark_config.json`. The 100-point
 ## CLI contract
 
 ```sh
-python3 bench_cli.py --config benchmark_config.json --input ratings/editorial-scorecards.json --output reports/provisional-score-report.json
-python3 tests/bench_cli_e2e.py
+python3 scripts/benchmark_score.py --config references/benchmark_config.json --input /path/to/editorial-scorecards.json --output /path/to/benchmark-results.json
+python3 tests/benchmark_cli_e2e.py
 ```
 
 `bench_cli.py` is only an aggregator of supplied ratings. It rejects missing series, out-of-range ratings, duplicate reviewer/draft pairs and invalid weights; it blocks total scores for unverified material claims. It outputs rating provenance, individual series, expert-lens projections and aggregate editorial totals. It does not read Firecrawl or mutate GitHub. The baseline `voice_check.py` should be used separately on every sample.
