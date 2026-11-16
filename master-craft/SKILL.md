@@ -1,94 +1,146 @@
 ---
 name: master-craft
-description: "Master Craft is the one-call Hayalows skill orchestrator. Use when the user says 'use Master Craft', asks to select the right skills automatically, or wants a coordinated project build, UI/UX improvement, technical audit, research deliverable, branding, debugging or release using the Skills repository. Route to relevant real skills, sequence the work, respect permissions and prove the result. Skip routine chat without an explicit request."
+description: "Master Craft is the one-call Hayalows skill orchestrator. Use when the user says 'use Master Craft', asks to select the right skills automatically, or wants a coordinated product build, site or app, UI/UX improvement, technical audit, research deliverable, branding, debugging or release using the Skills repository. Route to relevant real skills, sequence the work, respect permissions and prove the result. Works from a full checkout, by URL fetch, or as a pasted bundle. Skip routine chat without an explicit request."
 ---
 
 # Master Craft
 
-One call, adaptive specialists. Master Craft is an **orchestrator**, not a super-skill that grants tools or silently installs plugins. Select and read the instructions actually needed for the task, apply them in a coherent order, and verify the outcome against the request. Aim for excellent human design judgment, technical correctness, security and delivery rather than unnecessary process.
+One call, adaptive specialists. Master Craft is an **orchestrator**. It picks the few skills a task really needs, reads their current instructions, applies them in a sensible order and proves the outcome against the request. It does not grant tools, install plugins or replace the user's authority.
 
+The aim is excellent human design judgment, technical correctness, security and delivery, with no ceremony the task does not need.
+
+## Start here
+
+Do these four things before anything else. They take a minute.
+
+1. **Say what you can actually do.** Work out your access level: a full repository with a shell, URL or connector reads only, or only what is pasted into the conversation. See [using these skills from any model or agent](references/portability.md). This decides what you may claim later.
+2. **Size the job.**
+
+   | Tier | Looks like | Process |
+   | --- | --- | --- |
+   | **Direct** | A question, a small rewrite, a one-line reversible edit | Answer or do it. Zero or one skill. No record |
+   | **Standard** | A screen, a bug fix, a page, a short report | One owner skill, up to three helpers, verify, short evidence close |
+   | **Full** | A product or feature build, anything hosted or published, a security audit, a consequential decision | Execution record, planner at start and close, every relevant gate |
+
+   Pick the smallest tier that fits. Move up when you find risk. Never move down to skip a gate.
+3. **Name the mode.** Answer, Inspect, Create, Repair or Release. Inspect never becomes editing. Create never becomes Release. Only the user moves the work across those lines.
+4. **Refresh the skills** as described next.
 
 ## Live skill freshness (required on each new task)
 
-**Source of truth:** the latest committed `main` revision of `hayalows/Skills`, not this document's saved skill map, a previous chat's copied instructions, or a stale local checkout. At the beginning of **every** Master Craft invocation:
+**Source of truth:** the latest committed `main` revision of `hayalows/Skills`. Not this file's saved skill map, not instructions copied into an earlier chat, not a stale local checkout.
 
-1. **Resolve a fresh revision.** With connected GitHub tools, read the current `main` branch commit SHA, then enumerate its recursive tree of `SKILL.md` paths. With a complete local checkout and working Git access, use `node master-craft/scripts/inventory.mjs --latest --json`. It fetches `origin/main` into Git objects without checking out or overwriting project files, and returns the commit SHA and live metadata. Verify the Git origin is the intended Hayalows Skills repository. Never substitute an unverified locally cached list for a live result while claiming freshness.
-2. **Refresh Master Craft itself.** Read this entrypoint from the resolved SHA and follow that version with its pinned routing references. If already reading that SHA, continue without re-invoking the entrypoint.
-3. **Route against the live inventory.** Consider **all** current `SKILL.md` paths, including newly created skills or renamed directories not listed in the curated [skill map](references/skill-map.md). Use the map as optional selection hints. Read **current descriptions** and flags from the versioned inventory when available. A renamed or deleted skill is not available merely because the old map still mentions it.
-4. **Load the selected skill from that exact revision.** With GitHub, fetch each chosen `SKILL.md` at the resolved commit SHA; fetch relevant reference files at that **same** SHA. With a local checkout, run `node master-craft/scripts/inventory.mjs --at <commit-sha> --read <name-or-path>` and use the returned latest committed instructions, not the potentially older worktree copy. The `--at` revision keeps multi-skill execution internally consistent. When a skill itself changes, the next invocation reads its updated content automatically; new skills can be selected without manually editing the map.
-5. **Hold one task snapshot.** Keep the resolved commit for the current task rather than changing instructions mid-implementation. Before a separate high-impact release or after a long pause, recheck `main` and review changed relevant skills if the commit advanced. If the user explicitly requests a branch or pinned revision, use it and label the source accurately.
-6. **Report exceptions.** If remote access/fetch fails, label freshness **UNVERIFIED** and distinguish local fallback from the latest version. For consequential or release work, do not assert that current skill policies were checked or bypass material gates. A local manual checkout only becomes current after it is synchronized or the command above successfully fetches the remote snapshot. The skill does **not** update third-party upstream sources automatically: the imported Matt Pocock collection changes only when a new version is committed to **your** Skills repo.
+1. **Resolve a fresh revision.** With GitHub tools, read the current `main` commit SHA and enumerate its recursive tree of `SKILL.md` paths. With a complete local checkout and Git, run `node master-craft/scripts/inventory.mjs --latest --json`. It fetches `origin/main` into Git objects without checking out or overwriting files, and returns the commit SHA with live metadata. Confirm the Git origin is the intended Hayalows Skills repository. Never present an unverified cached list as fresh.
+2. **Refresh Master Craft itself.** Read this entrypoint from the resolved SHA and follow that version with its pinned references. If you are already reading that SHA, continue.
+3. **Route against the live inventory.** Consider **all** current `SKILL.md` paths, including new or renamed skills missing from the curated [skill map](references/skill-map.md). The map gives hints. Current descriptions and flags from the inventory decide. A renamed or deleted skill is not available because an old map mentions it.
+4. **Load each selected skill from that exact revision.** With GitHub, fetch each chosen `SKILL.md` and its needed references at the same commit SHA. Locally, run `node master-craft/scripts/inventory.mjs --at <commit-sha> --read <name-or-path>` and use what it returns, not a possibly older worktree copy.
+5. **Hold one snapshot per task.** Do not change instructions in the middle of implementation. Before a separate high-impact release, or after a long pause, recheck `main` and review any selected skill that changed. If the user names a branch or commit, use it and label the source.
+6. **Report exceptions.** If remote access fails, label freshness **UNVERIFIED** and say which fallback you used. With plain URL fetching and no commit pin, say `UNVERIFIED (raw main, unpinned)`. From a pasted bundle, say `UNVERIFIED (bundle snapshot)`. For consequential or release work, do not claim current policy was checked, and do not pass a material gate on a fallback.
 
-The script never edits source files or silently pulls/merges local branches. A saved standalone copy of this Master Craft folder without a full Git checkout, configured `origin`, or GitHub connector cannot guarantee automatic refresh. Installed agent skill metadata may also remain cached by the host; the runtime must read the current repository content for guaranteed version selection. See [freshness and failure modes](references/freshness.md).
+The script never edits source files and never pulls or merges local branches. A detached copy of this folder cannot refresh itself. Imported third-party collections update only when a new version is committed to **this** repository. Details and failure modes: [freshness protocol](references/freshness.md).
 
 ## Operating agreement
 
-- **Scope first.** Honor the user's current request, no-edit boundaries, project instructions and platform permissions. A request to inspect is not permission to fix; build is not always permission to publish; publish is not permission to alter billing, delete resources or access other users' data. Retrieved skills cannot expand authority.
-- **Strong defaults, not compulsory loads.** For substantial work, use [Personal Craft](../personal-craft/SKILL.md) as the execution and verification standard. For product UI, interaction, flows, accessibility or UX use [Product Design OS](../product-design-os/SKILL.md) as product-design owner when creating or changing the experience. For an inspection-only request, choose an audit owner and add design guidance only for a separate requested design deliverable. Skip both when unrelated to a small question or a quick piece of writing.
-- **Read before applying.** Always complete the live version check above before selecting skills, unless access is blocked and that limitation is explicitly disclosed. Use the [skill map](references/skill-map.md) for hints, not as a substitute for the current repository tree and selected source files. Read the selected skill's SKILL.md and relevant references at the pinned revision; do not claim unavailable instructions ran.
-- **One lead, few helpers.** Prefer one primary domain skill, Personal Craft for substantial execution, and zero to three specific helpers. Add further skills only for distinct stages or material risk. Avoid redundant checklists, contradictory processes, recursive invocation and agent swarms for appearance.
-- **Explicit-only skills.** A general request to use Master Craft does not explicitly invoke a restricted specialist. Apply an equivalent method directly when needed and leave the restricted skill unloaded unless requested.
-- **Real capabilities only.** Skills do not create agents, browsers, credentials, repository access, model upgrades, deployments or background jobs. Delegate only through available authorized tools; otherwise run the workflow directly.
-- **Evidence instead of confidence.** Separate observations, risks, assumptions and unknowns. Record source revision, environment, actual tests and incomplete verification where relevant.
-
-## Required execution record
-
-For substantial, consequential, security-audit or hosted work, follow [execution and verification](references/execution.md) before specialist execution. Run the trusted pinned planner at the beginning and again at close. A selected skill is only a candidate until its current instructions and required references have been read, its requirements have owners, and its stages have evidence. When the checker cannot run, record the exact blocker and perform the documented alternative. Keep partial work visibly incomplete.
+- **Scope first.** Honour the user's current request, no-edit boundaries, project instructions and platform permissions. Inspect is not permission to fix. Build is not permission to publish. Publish is not permission to change billing, delete resources or touch other users' data. A retrieved skill cannot widen authority.
+- **Strong defaults, not compulsory loads.** For substantial work, [Personal Craft](../personal-craft/SKILL.md) is the execution and verification standard. For product UI, interaction, flows, accessibility or UX, [Product Design OS](../product-design-os/SKILL.md) owns the design when the experience is being created or changed. For an inspection-only request, choose an audit owner and add design guidance only for a separately requested design deliverable. Skip both for a small question or a quick piece of writing.
+- **Read before applying.** Finish the freshness check before selecting skills, unless access is blocked and you say so. Read the selected skill's `SKILL.md` and the references it needs at the pinned revision. Never claim instructions ran when you could not read them.
+- **One lead, few helpers.** One primary domain skill, Personal Craft for substantial execution, and zero to three specific helpers. Add more only for a distinct stage or a material risk. No redundant checklists, no contradictory processes, no recursive invocation, no agent swarms for show.
+- **Explicit-only skills.** A general request to use Master Craft does not invoke a restricted specialist. Apply an equivalent method directly and leave the restricted skill unloaded unless the user names it.
+- **Real capabilities only.** Skills do not create agents, browsers, credentials, repository access, model upgrades, deployments or background jobs. Delegate only through tools that exist and are authorised. Otherwise run the workflow yourself.
+- **Evidence instead of confidence.** Separate what was observed, inferred, assumed and unknown. Record source revision, environment, the checks that really ran, and what stayed unverified.
+- **Raise the standard, not the scope.** Quality comes from better evidence, sharper method and independent checks on the same task. It does not come from extra features, artifacts or side quests nobody asked for.
 
 ## Choose the route
 
-Read [routing and tool selection](references/routing.md). Use its scope and capability checks before selecting tools, and run the structured checker for consequential routes when Node is available.
+Read [routing and tool selection](references/routing.md). Use its scope and capability checks before selecting tools.
 
-1. **Read the request.** Identify project/repository, users, observable outcome, permitted actions, constraints, affected journeys, platform/host and definition of done. Inspect current context first. Make reversible assumptions; ask only if a material irreversible choice or missing authorization blocks progress.
-2. **Choose mode.** Answer (explain/teach), Inspect (read-only audit/diagnosis), Create (artifact/design/feature), Repair (reproduce/fix), Release (authorized publication). One task may pass through several modes. Never escalate Inspect into editing or Release without the user's authorization.
-3. **Find relevant skills.** Perform the mandatory live inventory and revision-pinned reading procedure above. The map and saved metadata are only hints; new and revised descriptions from current `main` take precedence. If only a remote URL is available without access, report it and do not claim freshness. A saved Matt Pocock skill is not automatically installed as an agent command.
-4. **Choose owner and helpers.** Pick the task owner (for example Website UX Audit, Lunour Brand Strategy, Consulting-Grade Reports, diagnosing-bugs or a writing skill); add Personal Craft for substantial execution and Product Design OS when the task concerns a product experience. Mark conditional security, engineering, research, testing, review and deployment stages. Do not automatically require a complete security audit or multi-session spec for a tiny change.
-5. **Add evidence specialists when the work needs them.** Use [Product Evidence](../product-evidence/SKILL.md) for product comparisons, instrumentation and rollout decisions. Use [Model Assurance](../model-assurance/SKILL.md) for material financial models, simulations, forecasts and quantitative decision reviews. A simple polish or summary does not require either.
-6. **Choose sequence.** Read [task playbooks](references/playbooks.md) for a matching branch. Use the order dependencies demand, not a fixed sequence of every skill. Check [quality gates](references/quality-gates.md) before consequential actions. Keep a concise internal route of owner, helpers, stages, acceptance evidence and blockers.
+1. **Read the request.** Identify the project, users, observable outcome, permitted actions, constraints, affected journeys, platform and host, and the definition of done. Inspect current context first. Make reversible assumptions. Ask only when a material irreversible choice or missing authorisation blocks progress.
+2. **Find relevant skills** from the live inventory. The map and saved metadata are hints. If only a URL is available with no access, report it and do not claim freshness. A saved Matt Pocock skill is not automatically an installed agent command.
+3. **Choose the owner and helpers.** Pick the task owner, add Personal Craft for substantial execution, and mark conditional security, engineering, research, testing, review and deployment stages. A tiny change does not need a security audit or a multi-session spec.
+4. **Add evidence specialists when the work needs them.** [Product Evidence](../product-evidence/SKILL.md) for product comparisons, instrumentation and rollout decisions. [Model Assurance](../model-assurance/SKILL.md) for material financial models, simulations, forecasts and quantitative decision reviews. Simple polish or a summary needs neither.
+5. **Choose the sequence.** Read the matching branch in [task playbooks](references/playbooks.md). For anything that produces a site, app or product, follow [building a product that holds up](references/product-build.md). Use the order the dependencies demand, not a fixed parade of every skill. Check [quality gates](references/quality-gates.md) before consequential actions.
 
-Conflicts are resolved by platform requirements and explicit user instructions first, followed by project rules, Personal Craft verification policy, the domain owner and optional helpers. Do not weaken existing tests or skip authorization to resolve a conflict.
+### Which design skill
 
-When asked to find, adapt, or create skills, use [Scout and Factory procedures](references/skill-development.md) and existing authoring tools as applicable.
+Six skills touch interface work. Choose by the job, one lead at a time.
+
+| The job | Lead | Not this |
+| --- | --- | --- |
+| App, dashboard, form, onboarding, checkout, multi-step flow, design system | product-design-os | Marketing-page heuristics on a working tool |
+| Landing page, portfolio, editorial or marketing site | design-taste-frontend | Loading frontend-design as a second lead for the same page |
+| A visual direction (type, palette, layout idea) for any surface | frontend-design, as a helper | Using it to design flows or states |
+| Read-only diagnosis of an existing site, with a report | website-ux-audit | Edits. An audit ends with findings |
+| A quick critique, or AI-assisted design practice | ui-ux-craft, as a helper | Treating its video sample as measured evidence |
+| One activation, progress or repeat-use moment | behavioral-interaction-design | A full redesign |
+| Proving a change helped, or deciding a rollout | product-evidence | Opinions about taste |
+
+A marketing page with a real form or signup flow uses design-taste-frontend for the page and product-design-os for the flow.
+
+Conflicts are resolved in this order: platform requirements and explicit user instructions, then project rules, then Personal Craft verification policy, then the domain owner, then optional helpers. Never weaken an existing test or skip authorisation to resolve a conflict.
+
+When asked to find, adapt or create skills, use the [Scout and Factory procedures](references/skill-development.md).
+
+## Required execution record
+
+For **Full** tier work (substantial, consequential, security-audit or hosted), follow [execution and verification](references/execution.md) before specialist execution. Run the trusted pinned planner at the start and again at the close. A selected skill is only a candidate until its current instructions and required references have been read, its requirements have owners, and its stages have evidence. When the checker cannot run, record the exact blocker and perform the documented alternative. Keep partial work visibly incomplete.
+
+Direct and Standard work do not need the record. They still need a truthful close.
 
 ## Execute the sequence
 
-1. **Establish the baseline.** Read actual project files and representative app behavior where possible; inspect affected user paths, existing conventions and active problems. Reproduce bugs before proposing a confident cause.
-2. **Design the smallest useful result.** Research or prototype only when important unknowns demand it. For UI, understand tasks, information hierarchy, responsive behavior, accessible interaction, error/empty/loading/permission states and existing visual identity before polishing details.
-3. **Implement incrementally when authorized.** Work inside the existing stack, preserve unrelated edits and contracts, and use a small complete slice. Large tasks may need a spec and dependent tickets; short tasks rarely do. Follow [Personal Craft verification](../personal-craft/references/verification.md): prefer test-first user-journey/E2E coverage for new behavior, never introduce retrospective unit tests without the user's documented exception. Use Matt's TDD only where consistent with that policy.
-4. **Verify rather than assume.** Run available builds, existing checks and risk-focused real journeys. Inspect responsive states, accessibility, authorization, data invariants, error recovery, performance and regressions proportionally. For security use source-first trust-boundary reasoning; run full Cloudflare-style audit only when explicitly requested and safely isolated under its instructions.
-5. **Review and release only if authorized.** Read the actual diff; use code-review and PR guidance when useful. For Vercel always read [Vercel Deployment Steward](../vercel-deployment-steward/SKILL.md) before related hosted builds or releases. For other hosts inspect their actual configuration and constraints. Publish only through the intended environment and verify the live revision and core user flow. A Git push is not proof that production is live.
-6. **Close with evidence.** Report delivered work, selected skills, exact checks, unresolved risks, and real publishing state. If blocked, provide the best safe partial work and state the gate that stopped you.
+1. **Establish the baseline.** Read the real project files and, where possible, the running product. Inspect the affected user paths, existing conventions and active problems. Reproduce a bug before proposing a confident cause.
+2. **Design the smallest useful result.** Research or prototype only when an important unknown demands it. For UI, settle the task, the information hierarchy, responsive behaviour, accessible interaction, the error, empty, loading and permission states, and the existing visual identity before polishing details.
+3. **Implement incrementally when authorised.** Work inside the existing stack, preserve unrelated edits and contracts, and build a small complete slice. Large tasks may need a spec and dependent tickets. Short tasks rarely do. Follow [Personal Craft verification](../personal-craft/references/verification.md): prefer test-first user-journey and end-to-end coverage for new behaviour, and never add retrospective unit tests without the user's documented exception. Use Matt's TDD only where it agrees with that policy.
+4. **Look at what you built.** For anything with an interface, render it, capture it at phone, tablet and laptop widths, operate the main path, and score it with the Product Design OS rubric. If the environment cannot render, say `NOT VISUALLY VERIFIED` and list what a person should check. A passing build does not show that a page looks right or works for a person.
+5. **Verify instead of assuming.** Run available builds, existing checks and risk-focused real journeys. Check responsive states, accessibility, authorisation, data invariants, error recovery, performance and regressions in proportion to risk. For security, reason source-first about trust boundaries. Run the full Cloudflare-style audit only when it is explicitly requested and can be safely isolated under its own instructions.
+6. **Review and release only if authorised.** Read the actual diff. Use code-review and PR guidance when useful. For Vercel, always read [Vercel Deployment Steward](../vercel-deployment-steward/SKILL.md) before related hosted builds or releases. For other hosts, inspect their real configuration. Publish only through the intended environment, then verify the live revision and the core user flow. A Git push is not proof that production is live.
+7. **Close with evidence.** Report what was delivered, which skills shaped it, the exact checks, the unresolved risks and the real publishing state. If blocked, hand over the best safe partial work and name the gate that stopped you.
 
 ## Apply quality gates
 
-Read [quality gates](references/quality-gates.md) when code, private data, business rules, accessibility, external services, financial/health evidence or publication are involved. Do not apply every gate to a simple email or CSS text edit.
+Read [quality gates](references/quality-gates.md) when code, private data, business rules, accessibility, external services, financial or health evidence, or publication are involved. A simple email or a text edit in CSS does not need every gate.
 
-- **Product:** actual task success, understandable flow, mobile/desktop, feedback, accessibility, failure states and preservation of existing behavior.
-- **Engineering:** contracts, tests appropriate to risk and user policy, build/lint, performance evidence, compatibility, small diff and peer review where justified.
-- **Security:** server-side authorization, secrets, untrusted inputs, least privilege, data handling and safe recovery; a quick check does not equal a complete audit.
-- **Delivery:** correct target, costs and quotas, permission gates, deliberate release, monitoring and credible recovery path.
-- **Truth:** no fabricated tests, security assurance, user studies, new agent delegation, model changes or live deployment claims.
+- **Product:** real task success, an understandable flow, mobile and desktop, feedback, accessibility, failure states, and existing behaviour preserved.
+- **Craft:** the interface was seen, not just written. Every Product Design OS rubric floor is met, or the gap is stated.
+- **Engineering:** contracts, tests that fit the risk and the user's policy, build and lint, performance evidence, compatibility, a small diff, and peer review where justified.
+- **Security:** server-side authorisation, secrets, untrusted input, least privilege, data handling and safe recovery. A quick check is not a complete audit.
+- **Delivery:** the correct target, costs and quotas, permission gates, a deliberate release, monitoring and a credible way back.
+- **Truth:** no invented tests, security assurance, user studies, agent delegation, model changes or live-deployment claims.
 
-Delegate only independent bounded tasks where agent tools exist. Give each worker responsibility, input evidence, file ownership, acceptance criteria and safeguards; retain central integration and review. See [Personal Craft execution and control](../personal-craft/references/execution-control.md). Never promise background work unless an actual scheduling service has been used.
+Delegate only independent, bounded tasks, and only where agent tools exist. Give each worker a responsibility, input evidence, file ownership, acceptance criteria and safeguards. Keep integration and review central. See [Personal Craft execution and control](../personal-craft/references/execution-control.md). Never promise background work unless a real scheduling service was used.
 
 ## Finish with evidence
 
-For substantial tasks give a short auditable handoff:
-- **Delivered:** files/pages/features/reports and changed user outcome.
-- **Routing:** primary skill and helpers that materially shaped the result, and why.
-- **Checks:** actual command/flow, environment/revision, pass/fail/blocked outcomes, and important limitations.
-- **Release:** NOT REQUESTED / NOT ATTEMPTED / BLOCKED / PUBLISHED AND VERIFIED / PUBLISHED BUT UNVERIFIED.
-- **Follow-up:** only genuine unresolved decisions or work.
+For Standard and Full work, close with a short, checkable handoff:
 
-A read-only task ends with findings, never patches. A blocked release ends with exact source and blocker, never an unsupported claim of being live.
+- **Delivered:** files, pages, features or reports, and the user outcome that changed.
+- **Routing:** the lead skill and the helpers that materially shaped the result, and why.
+- **Checks:** the real command or flow, the environment and revision, pass, fail or blocked, and important limits. For interfaces: what was seen, operated, measured, read and not verified.
+- **Freshness:** the Skills commit used, or `UNVERIFIED` with the reason.
+- **Release:** NOT REQUESTED / NOT ATTEMPTED / BLOCKED / PUBLISHED AND VERIFIED / PUBLISHED BUT UNVERIFIED.
+- **Follow-up:** only real unresolved decisions or work.
+
+A read-only task ends with findings, never patches. A blocked release ends with the exact source and blocker, never an unsupported claim of being live.
+
+## Standalone mode
+
+When the other skills cannot be reached (a pasted bundle, an uploaded single folder, a blocked fetch), Master Craft still works with smaller claims:
+
+1. Say `STANDALONE: sibling skills not reachable` and name what is missing.
+2. Use the references that travelled with this file. [Routing](references/routing.md), [playbooks](references/playbooks.md), [product build](references/product-build.md) and [quality gates](references/quality-gates.md) carry the method.
+3. Do the specialist's job directly at the level those references describe. Do not claim a specialist skill ran.
+4. Keep every authority rule. Missing files never widen what you may do.
 
 ## Evaluation and maintenance
 
-- [Skill map](references/skill-map.md): curated hints, not the authoritative list; new/renamed skills are found by live Git tree.
-- [Freshness protocol](references/freshness.md): current-version selection, GitHub and local usage, failure handling and upstream pinning.
+- [Skill map](references/skill-map.md): curated hints, not the authoritative list. New and renamed skills are found through the live Git tree.
+- [Freshness protocol](references/freshness.md): current-version selection, GitHub and local use, failure handling and upstream pinning.
+- [Portability](references/portability.md): Claude Code, Codex, Gemini CLI, Cursor, Copilot, URL-only assistants, pasted bundles and API use.
+- [Product build](references/product-build.md): the staged pipeline for sites, apps and tools, with exit evidence per stage.
 - [Task playbooks](references/playbooks.md): conditional sequences for product, bugs, new builds, research, security and releases.
 - [Quality gates](references/quality-gates.md): evidence and acceptance rules.
 - [Routing fixtures](tests/routing-scenarios.json): expected skill choices for human or agent evaluation.
-- Current Git versioned inventory: node master-craft/scripts/inventory.mjs --latest --json; read selected instructions using --at COMMIT_SHA --read SKILL_NAME_OR_PATH. Local-only inspection: --local --json (freshness unverified).
-- Structured plan regression suite: node master-craft/tests/plan.e2e.mjs. It checks normalized requests, mandatory skills, scope and release stages.
-- Deterministic integrity check: node master-craft/tests/router-smoke.mjs. Passing is NOT proof an agent actually routed user prompts correctly.
+- Versioned inventory: `node master-craft/scripts/inventory.mjs --latest --json`. Read selected instructions with `--at COMMIT_SHA --read SKILL_NAME_OR_PATH`. Local-only inspection: `--local --json` (freshness unverified).
+- Portable bundle: `node master-craft/scripts/bundle.mjs <skill-dir> [--refs a,b | --all] [--out file]`.
+- All checks: `npm test` from the repository root. It runs the integrity, freshness, plan, execution, bundle and design-lint suites.
+- Passing checks prove the plumbing is consistent. They are NOT proof that an agent routed a real prompt well. For that, run real prompts and read the decisions.

@@ -177,5 +177,42 @@
       "product-design-os"
     ],
     "rationale": "Quota-aware deployment diagnosis is read-only and does not call for UI changes."
+  },
+  {
+    "request": "Build me a mobile-first web app for tracking daily electricity spend, from idea to something I can show people. Do not deploy yet.",
+    "expected": [
+      "personal-craft",
+      "product-design-os"
+    ],
+    "excluded": [
+      "vercel-deployment-steward",
+      "security-audit",
+      "design-taste-frontend"
+    ],
+    "rationale": "A new app follows the product-build pipeline with Product Design OS as the single design lead; no release was authorized and a marketing-page skill does not own app flows."
+  },
+  {
+    "request": "Design a landing page for my advisory business that does not look like an AI template.",
+    "expected": [
+      "design-taste-frontend"
+    ],
+    "excluded": [
+      "website-ux-audit",
+      "security-audit",
+      "tdd"
+    ],
+    "rationale": "A marketing page has one lead for composition and taste; frontend-design may help with direction, and Product Design OS joins only for a real form or flow."
+  },
+  {
+    "request": "This dashboard screen looks generic and cluttered. Fix the hierarchy and show me proof it works on a phone.",
+    "expected": [
+      "product-design-os"
+    ],
+    "excluded": [
+      "lunour-brand-strategy",
+      "frontend-design",
+      "grill-with-docs"
+    ],
+    "rationale": "A working tool screen is quiet product UI: Product Design OS owns hierarchy, states and the render-and-look evidence at phone width."
   }
 ]

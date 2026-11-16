@@ -53,6 +53,21 @@ function renderMarkdown(markdown) {
     html.push(`</${listType}>`);
     listType = null;
   };
+  let table = [];
+  const cells = (row) => row.trim().replace(/^\|/, "").replace(/\|$/, "").split("|").map((cell) => cell.trim());
+  const flushTable = () => {
+    if (!table.length) return;
+    const rows = table;
+    table = [];
+    const hasHeader = rows.length > 1 && /^\s*\|?[\s:|-]+\|?\s*$/.test(rows[1]) && rows[1].includes("-");
+    if (!hasHeader) {
+      html.push(`<p>${inlineMarkdown(rows.join(" "))}</p>`);
+      return;
+    }
+    const head = cells(rows[0]).map((cell) => `<th scope="col">${inlineMarkdown(cell)}</th>`).join("");
+    const body = rows.slice(2).map((row) => `<tr>${cells(row).map((cell) => `<td>${inlineMarkdown(cell)}</td>`).join("")}</tr>`).join("");
+    html.push(`<div class="table-scroll" role="region" aria-label="Table" tabindex="0"><table><thead><tr>${head}</tr></thead><tbody>${body}</tbody></table></div>`);
+  };
 
   for (const line of lines) {
     if (line.trim().startsWith("```")) {
@@ -71,6 +86,13 @@ function renderMarkdown(markdown) {
       code.push(line);
       continue;
     }
+    if (line.trim().startsWith("|")) {
+      flushParagraph();
+      closeList();
+      table.push(line);
+      continue;
+    }
+    flushTable();
     if (!line.trim()) {
       flushParagraph();
       closeList();
@@ -119,6 +141,7 @@ function renderMarkdown(markdown) {
 
   flushParagraph();
   closeList();
+  flushTable();
   if (inCode) html.push(`<pre><code>${escapeHtml(code.join("\n"))}</code></pre>`);
   return html.join("\n");
 }

@@ -2,6 +2,21 @@
 
 Say **Use Master Craft**. It identifies the task, chooses the smallest relevant group from this repository, reads their actual SKILL.md instructions, sequences the work and verifies results. It does not force every skill into every task, replace your authority, or grant inaccessible tools.
 
+## Sized to the job
+
+Master Craft sizes each task before it starts. A question or a one-line edit runs **Direct** with no ceremony. A screen, a bug or a page runs **Standard** with one owner skill and a short evidence close. A product build, a release or an audit runs **Full** with the execution record and every relevant gate.
+
+For sites, apps and tools it follows a staged [product pipeline](references/product-build.md): brief, shape, design, build one slice, look at it, harden, ship, learn. The look stage renders the page at phone, tablet and laptop widths and scores it with the Product Design OS rubric. A passing build is not treated as proof that a page looks right.
+
+## Works from any model or agent
+
+Master Craft runs at three access levels: a full checkout with a shell, URL or connector reads, or a pasted bundle. [Portability](references/portability.md) has the install paths for Claude Code, Codex, Gemini CLI, Cursor and Copilot, a prompt for URL-only assistants, and the bundle command for chat models and APIs:
+
+    node master-craft/scripts/bundle.mjs master-craft --refs routing,playbooks,product-build,quality-gates,portability --out master-craft.bundle.md
+    node master-craft/scripts/bundle.mjs product-design-os --refs visual-direction,build-and-verify,quality-rubric --out product-design-os.bundle.md
+
+The repository root also carries `AGENTS.md`, `CLAUDE.md` and `llms.txt` so agents find the entry point on their own. When the other skills cannot be reached, Master Craft says so and runs in standalone mode with smaller claims.
+
 ## Automatic updates from your Skills repository
 
 **Master Craft now checks the latest committed `main` version of every selected skill at the start of each new task.** It also scans the current Git tree for newly added skills. The static skill map is a guide, not the source of truth. This applies to Personal Craft, Product Design OS, Vercel Deployment Steward and the imported Matt Pocock skills **as committed in your own repo**. It does not independently update Matt's upstream repository.
@@ -61,9 +76,13 @@ Not all Matt Pocock experiments work in every runtime. Commands, subagent APIs, 
 - references/routing.md: scope, tool selection and planner input contract.
 - tests/plan-cases.tsv and tests/plan.e2e.mjs: 55 realistic requests tested at the normalized-plan layer.
 - references/playbooks.md: UI, bug, new product, brand, report, security, deployment and agent workflows.
+- references/product-build.md: the staged pipeline for sites, apps and tools, with exit evidence per stage.
+- references/portability.md: access levels, install paths per tool, URL-only and bundle use, standalone mode.
+- scripts/bundle.mjs: builds one portable Markdown file from a skill folder.
+- tests/bundle.e2e.mjs: bundle, entrypoint link, agent entry file and llms.txt checks.
 - references/quality-gates.md: observable acceptance and risk conditions.
 - scripts/inventory.mjs: local and remote-fresh Git skill discovery, pinned SHA reads (Node 20+ and Git).
-- tests/routing-scenarios.json: 15 realistic manual agent-evaluation cases.
+- tests/routing-scenarios.json: 18 realistic manual agent-evaluation cases.
 - tests/freshness.e2e.mjs: local Git end-to-end regression tests of automatic revision selection, new skills, offline safety and pinned reads.
 - references/freshness.md: exact freshness contract and runtime compatibility.
 - tests/router-smoke.mjs: static checks that all current skills are mapped and fixtures remain valid.
@@ -72,11 +91,10 @@ Not all Matt Pocock experiments work in every runtime. Commands, subagent APIs, 
 Run from the repository root:
 
     node master-craft/scripts/inventory.mjs --latest --json
-    node master-craft/tests/freshness.e2e.mjs
-    node master-craft/tests/router-smoke.mjs
-    node master-craft/tests/plan.e2e.mjs
-    node master-craft/tests/execution.e2e.mjs
+    npm test
     npm run build
+
+`npm test` runs the integrity, freshness, plan, execution, bundle and design-lint suites.
 
 The validator checks completeness and structure. **It cannot prove actual LLM routing quality or production behavior.** For a new route, run a real prompt evaluation and inspect decisions before claiming improvement.
 

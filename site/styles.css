@@ -538,3 +538,21 @@ button, input { font: inherit; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; animation: none !important; }
 }
+
+.skill-document .table-scroll {
+  overflow-x: auto;
+  margin: 20px 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.skill-document .table-scroll:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.skill-document table { width: 100%; min-width: 480px; border-collapse: collapse; font-size: 15px; }
+.skill-document th, .skill-document td {
+  padding: 12px 16px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--border);
+  color: #3f413c;
+}
+.skill-document th { background: var(--surface-soft); color: var(--text); font-weight: 650; white-space: nowrap; }
+.skill-document tbody tr:last-child td { border-bottom: 0; }

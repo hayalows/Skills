@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { bundle } from "../master-craft/scripts/bundle.mjs";
 
 const root = process.cwd();
 const siteDir = path.join(root, "site");
@@ -75,3 +76,16 @@ fs.writeFileSync(path.join(distDir, "skill-index.json"), JSON.stringify(index));
 for (const asset of ["index.html", "styles.css", "app.js", "favicon.svg"]) {
   fs.copyFileSync(path.join(siteDir, asset), path.join(distDir, asset));
 }
+
+// Portable single-file bundles and the machine-readable index, for models that cannot read a repository.
+const bundles = {
+  "master-craft": { refs: ["routing", "playbooks", "product-build", "quality-gates", "portability"] },
+  "product-design-os": { refs: ["visual-direction", "build-and-verify", "quality-rubric"] },
+  "product-design-os-full": { skill: "product-design-os", all: true }
+};
+fs.mkdirSync(path.join(distDir, "bundles"), { recursive: true });
+for (const [name, options] of Object.entries(bundles)) {
+  const { text } = bundle({ root, skill: options.skill || name, refs: options.refs || [], all: Boolean(options.all) });
+  fs.writeFileSync(path.join(distDir, "bundles", name + ".md"), text);
+}
+fs.copyFileSync(path.join(root, "llms.txt"), path.join(distDir, "llms.txt"));

@@ -6,6 +6,12 @@ A practical library of reusable agent skills.
 
 [Master Craft](master-craft/SKILL.md) is the single entry point for selecting and sequencing relevant skills across this repository. Its [live-freshness protocol](master-craft/references/freshness.md) reads the latest committed `main` version and finds newly added skills without depending on a manually updated map. It uses Personal Craft for substantial execution, Product Design OS for real UI/UX, engineering/research/brand specialists as needed, and Vercel Deployment Steward for eligible releases. The [routing map](master-craft/references/skill-map.md) provides curated hints for existing skills, including Matt Pocock's collection; the current Git tree is authoritative. See [usage and installation](master-craft/README.md). It does not automatically grant tools, launch agents or publish anything.
 
+## Use from any model or agent
+
+Agents that open this repository find [`AGENTS.md`](AGENTS.md) (and `CLAUDE.md`, which imports it). Assistants that can only fetch URLs can start from [`llms.txt`](llms.txt). Chat models and APIs with no file access can take a single pasted file built with `node master-craft/scripts/bundle.mjs`. Install paths for Claude Code, Codex, Gemini CLI, Cursor and Copilot are in [portability](master-craft/references/portability.md).
+
+Run `npm test` for every check and `npm run build` for the public directory and bundles.
+
 ## Skill Library
 
 - [`behavioral-interaction-design/`](behavioral-interaction-design/SKILL.md)
@@ -56,6 +62,16 @@ It synthesizes:
 - GOV.UK form-validation patterns
 - current Core Web Vitals guidance from web.dev
 
+Version 2 adds what turns a specification into a finished screen:
+
+- a job-sizing table, so a small fix does not run a full process
+- a visual direction step, so the look is chosen for the subject instead of defaulting to a template
+- a build-and-look loop: static checks, screenshots at 360, 768 and 1280, operated checks, measured contrast
+- a ten-dimension quality rubric with a floor for each dimension
+- guidance for budget phones, metered data, weak networks and mobile payment flows
+- `assets/tokens.css`, a starter token set with measured contrast in light and dark
+- `scripts/ui-lint.mjs`, a dependency-free checker for HTML, CSS, JSX and TSX, with a contrast calculator
+
 ### Use it
 
 Start with:
@@ -96,6 +112,12 @@ Use Product Design OS to review this retention idea. Apply the ethical behavior-
 - `references/design-systems-handoff.md` — tokens, component APIs, documentation, Figma/code parity, handoff
 - `references/examples-recipes.md` — worked examples across common product categories
 - `references/audit-checklist.md` — reusable audit and pre-launch quality checklist
+- `references/visual-direction.md` — choosing a look on purpose: loudness, subject, six dials, default-look check
+- `references/build-and-verify.md` — the render-and-look loop, interaction checks, evidence words
+- `references/quality-rubric.md` — ten scored dimensions with floors and a report format
+- `references/constrained-contexts.md` — budget phones, metered data, unreliable networks, mobile payments
+- `assets/tokens.css` — starter design tokens, light and dark, contrast measured
+- `scripts/ui-lint.mjs` — static interface checks and contrast calculator (Node, no dependencies)
 - `references/source-map.md` — source provenance and current external references
 
 ## Philosophy

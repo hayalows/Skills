@@ -1,0 +1,12 @@
+interface:
+  display_name: "Product Design OS"
+  short_description: "Design, build and verify product UI and UX"
+  default_prompt: "Use $product-design-os to design or improve this product experience, build it in the existing stack, look at the rendered result, and score it against the quality rubric."
+
+policy:
+  products:
+    - chatgpt
+    - codex
+    - api
+    - atlas
+  allow_implicit_invocation: true

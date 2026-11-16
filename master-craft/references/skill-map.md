@@ -6,8 +6,10 @@ This is a **curated routing hint list**, not the authoritative inventory and not
 
 ## Core execution, product, brand, writing and reporting
 
+Six skills touch interface work. The chooser table is in the [entrypoint](../SKILL.md#which-design-skill): one lead per job.
+
 - [personal-craft](../personal-craft/SKILL.md) — Execution baseline for substantial code, research, design, QA; obey verification policy.
-- [product-design-os](../product-design-os/SKILL.md) — Product tasks: flows, UI/UX, accessibility, interaction states, responsive systems.
+- [product-design-os](../product-design-os/SKILL.md) — Product tasks: flows, UI/UX, visual direction, accessibility, interaction states, responsive systems, build-and-look verification and rubric scoring. Self-contained.
 - [behavioral-interaction-design](../behavioral-interaction-design/SKILL.md) — Specialist for user-chosen activation, progress, feedback, delight, and voluntary repeat use. Pair with Product Design OS when the wider flow needs design work.
 - [ui-ux-craft](../ui-ux-craft/SKILL.md) — Detailed interface craft and critique, backed by evidence.
 - [website-ux-audit](../website-ux-audit/SKILL.md) — Read-only or evidence-first usability diagnosis of an existing site.

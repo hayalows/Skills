@@ -2,13 +2,15 @@
 
 These are conditional stage plans, not a compulsory pipeline. Read the selected skill's actual SKILL.md first. Personal Craft is the baseline for substantial execution. Product Design OS applies when designing a product experience. Never turn inspection-only work into edits or publication.
 
+For anything that produces a site, app or tool, [building a product that holds up](product-build.md) is the full staged pipeline. The branches below are the short form.
+
 ## Existing product UI/UX
 
 1. Inspect the project, current routes, real user journeys, existing design system, code and reported pain. If user requested only an audit, use website-ux-audit and end with documented findings.
 2. Use product-design-os to map user tasks, navigation and states. Add ui-ux-craft for design/accessibility details. For marketing websites or portfolios, choose design-taste-frontend OR frontend-design rather than invoking both by default.
 3. Use product-evidence when a comparative measurement or decision gate matters. Establish before/after user outcomes and relevant mobile, desktop, touch, keyboard, search, error, loading, empty, slow connection and permission behaviors. Avoid clutter and decorative change without benefit.
 4. On authorization to edit, use personal-craft for implement/verify and Matt's tdd only if aligned with the user's test-first E2E policy. Use diagnosing-bugs if a defect requires reproduction, not for every feature.
-5. Review actual UI, code changes and regressions. For consequential changes add code-review. A complete security audit is not compulsory for a cosmetic improvement.
+5. Look at the result: run the Product Design OS static checks, render the page at phone, tablet and laptop widths, operate the main path, and score the rubric. If the environment cannot render, report NOT VISUALLY VERIFIED. Review actual UI, code changes and regressions. For consequential changes add code-review. A complete security audit is not compulsory for a cosmetic improvement.
 6. Release only on permission, with the relevant host preflight, and verify the live revision and representative path.
 
 ## Bug repair
@@ -32,7 +34,7 @@ These are conditional stage plans, not a compulsory pipeline. Read the selected 
 
 1. Pick lunour-naming for naming, lunour-brand-strategy for positioning/identity, human-copywriting for audience-directed copy. For writing as the user add papa-kojo-writing-style; never impose the user's personal voice on a client's brand.
 2. Research real audiences, competitors, claims, legal/domain availability when relevant; distinguish screening from legal clearance. Avoid fabricated evidence and clichéd generic identity work.
-3. For marketing sites add design-taste-frontend or frontend-design. Add Product Design OS only for meaningful customer flows, forms or app-like interactions.
+3. For marketing sites use design-taste-frontend as the lead and frontend-design only as a visual-direction helper. Add Product Design OS only for meaningful customer flows, forms or app-like interactions.
 4. Deliver usable original assets, explanations, audience-fit and relevant files; inspect output and rights/attribution.
 5. For finding clients, create-opportunities supports target and work-sample decisions; thoughtful-cold-email handles appropriate outreach. Never send without explicit instruction.
 

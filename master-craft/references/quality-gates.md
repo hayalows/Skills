@@ -21,6 +21,8 @@ For substantial changes record repository, branch/commit, actual command and env
 - Prefer clear affordances and restrained motion over decorations and clutter.
 - Measure performance before optimization, and separate lab results from field measurements.
 - Check that user feedback and content claims are truthful. Avoid dark patterns.
+- For a built interface, see it before calling it done: render at phone, tablet and laptop widths, operate the keyboard path and the reachable states, and measure contrast for real colour pairs. Product Design OS supplies `scripts/ui-lint.mjs` for the static floor and `references/quality-rubric.md` for scoring. Every rubric floor is met, or the gap is stated.
+- Report interface evidence as seen, operated, measured, read or not verified. Reading the code is not seeing the page.
 
 ## Engineering and verification
 
