@@ -11,6 +11,12 @@ Treat this as a working profile, not a promise of perfect imitation.
 
 Keep this profile portable. It contains writing preferences, not a biography. Do not import employers, qualifications, financial details, recipients, private correspondence, or old project facts into unrelated writing.
 
+## Approved tone calibration (16 November 2026)
+
+The user explicitly liked the **refined v1.2** draft of a one-to-one Word of Wisdom counselling essay. This is approval of the *writing style*, not confirmation of the assistant-written story as his personal history. He preferred its gentle, personal, unhurried way of explaining why advice may help, and disliked how quickly experimental v1.3 moved between instructions. He wants that style to remain readable, ideally near 90 Flesch Reading Ease when it happens naturally, but not at the cost of care and thought.
+
+When adapting this to another recipient, keep connected paragraphs, room for personal attention, honest limits, familiar words and useful reasons. Do not imitate the religious topic outside an applicable brief. The exact approved example and its scope are documented in [approved-refined-v12.md](approved-refined-v12.md), with numeric comparisons in [voice-benchmarks.md](voice-benchmarks.md). Experimental v1.4 is not approved as the default.
+
 ## Stable voice
 
 Write like a thoughtful Ghanaian friend explaining something over coffee. Use clean, natural English. Respect the reader's intelligence without making them decode the sentence.

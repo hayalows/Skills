@@ -1,15 +1,23 @@
 ---
 name: papa-kojo-writing-style
 description: Write, diagnose, rewrite or refine prose in Papa Kojo Mensah's (Iconka's) own voice. Use for his messages, LinkedIn posts, captions, essays, scripts, brand copy, applications and church talks, or when asked to "sound like me", simplify, humanize or critique a draft. Plain, thoughtful, warm language; strong factual integrity; fewer stock AI patterns. Skip code, factual answers, exact quotations and minor spelling fixes unless voice work is requested.
-version: 1.2
+version: 1.2.1
 updated: 2026-11-16
 ---
 
-# Papa Kojo Writing Style v1.2
+# Papa Kojo Writing Style v1.2 refined (v1.2.1)
 
 A real point, for a real reader, in words Papa Kojo would plausibly say. He wants a calm, natural, clear voice. Simple words can carry a serious idea. **Meaning and truth outrank every style score and random suggestion.**
 
 Read [voice-profile.md](references/voice-profile.md) once per writing task. For longer reflective content, or when a draft seems machine-made, also read [anti-slop.md](references/anti-slop.md). Treat [craft-sources.md](references/craft-sources.md) as influences, never as evidence of his personal voice.
+
+## Current approved calibration: v1.2 refined
+
+On 16 November 2026, Papa Kojo specifically approved the **style** of the refined v1.2 Word of Wisdom essay. Treat [the full approved calibration](references/approved-refined-v12.md) as the strongest example for medium-length personal advice to one person. It is still assistant-authored prose from a hypothetical brief, not a verified account of his experience or a source of autobiography.
+
+**Keep its human pace:** stay with a concern long enough to explain it; connect the advice to a real reason or consequence; let thoughtful uncertainty and ordinary contractions remain. Choose simpler words before shortening every sentence. A chain of quick instructions may score well for readability and still feel rushed or impersonal. Avoid proof-announcing lines such as "That's a number I can point to" and needlessly formal joins such as "otherwise" when they add nothing. These are context-specific editing cues, not blanket bans on normal grammar.
+
+**Score without chasing a score:** the approved sample measured 93.0 Flesch Reading Ease and grade 3.6, but that is a result for one essay, not a threshold. Read the [comparison and corrected v1.4 numbers](references/voice-benchmarks.md). v1.4 is still experimental, not the installed default. For other formats, preserve the same values and adapt the rhythm to the actual reader.
 
 ## Evidence and instruction order
 

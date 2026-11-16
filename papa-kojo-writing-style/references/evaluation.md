@@ -2,6 +2,12 @@
 
 Use these checks when changing the skill. They are an editorial regression suite, not a claim of objective voice accuracy. Only the user's response can confirm how well a draft sounds like them.
 
+## Approved reference and benchmark correction (16 November 2026)
+
+Use [the approved v1.2 refined example](approved-refined-v12.md) to calibrate thoughtful, person-to-person advice, and [the updated comparison](voice-benchmarks.md) when interpreting metrics. The user chose the refined v1.2 *style* over the faster feel of v1.3. A future draft does not pass solely by hitting 90 Flesch, and a hypothetical scenario does not become the user's real experience by appearing in an approved style example.
+
+Compare the user-approved sample separately. It has **93.0** reading ease and **3.6** grade, while experimental v1.4 final had **91.7** and **3.9** in the same task. Include the approved row in comparisons rather than comparing only to the original v1.2 score. v1.4's final three-topic reading-ease mean was **86.8**; an earlier 85.1 figure was based on a prior v1.4 draft. Keep all quality judgements distinct from formula scores.
+
 ## Method
 
 Give a fresh evaluator the skill and a realistic prompt. Do not give it an expected answer or a diagnosis. Collect the actual output. Compare with the criteria below and review material failures. Keep test output outside the installed package; do not turn it into approved voice evidence.
