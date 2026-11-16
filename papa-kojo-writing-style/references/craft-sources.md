@@ -43,3 +43,13 @@ Orwell examines stale phrasing, vagueness and language that conceals meaning. Ad
 | Editing any draft | Meaning before polish, read-aloud revision, removal of empty wording. |
 
 No source establishes that these choices always sound like Papa Kojo. Judge that through his corrections and explicit approval over time. Keep paraphrases brief and source-linked; do not build a corpus of copyrighted passages into the skill.
+
+## Research update, 2026-11-16 (v1.1)
+
+Recent X posts read verbatim on 16 Nov 2026 (8 each from @AlexHormozi, @garyvee, @thedankoe, @harrydry) plus Wikipedia's "Signs of AI writing" and Harry Dry's copywriting rules. Full AI-tell list in anti-slop.md.
+
+- Harry Dry: three tests (can I picture it, can I prove it false, could nobody else say it). Small present-tense scenes ("Walking around the park, drinking coffee, alone. It's the best part of my day. Soon I'm back on floor 6.") read as human because they're specific and a little vulnerable. Writing should "sound like you wrote it that way on purpose".
+- Alex Hormozi: at his most natural he explains with a chain of "because... and when... you..." rather than a slogan. He also uses flips ("ignorance isn't blocking you, cowardice is"), but sparingly, and with profanity and aggression that don't fit this voice. Take the chain, leave the flip.
+- Dan Koe: long, comma-joined sentences that think out loud ("Who cares if it takes 12 months or 12 years when it's going to be difficult either way."). Returns to the same few ideas again and again.
+- Gary Vaynerchuk: raw, typed-like-he-talks, ellipses, emojis and typos. Too loud for a stoic voice. The useful part is that it's obviously unpolished and one person's.
+- Finding: real writers do flip lines, but rarely. AI does it by reflex, in nearly every piece. For Papa Kojo, who asked for none, it's banned.

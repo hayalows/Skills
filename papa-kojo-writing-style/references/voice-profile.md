@@ -58,3 +58,12 @@ Prefer an explicit correction over an inferred pattern. Treat explicit approval 
 When asked to remember or refine the skill, save a minimal general rule with its date and context through the supported skill-update workflow. Store raw private samples only if separately requested and appropriate. Otherwise retain the stylistic lesson without names, links to private messages or confidential facts. If persistence is unavailable, apply the lesson in the conversation and say plainly that the saved skill was not changed.
 
 Current preference review: 2026-09-26. No assistant-written example in this package has been approved by the user as their own prose.
+
+## Evidence from his own writing (added 2026-11-16, v1.1)
+
+Read from his LinkedIn activity: one post and 20 comments, all his own words.
+- Comments are short, warm and specific. He names the person, notes one real thing, and wishes them well: "So proud of you Muta. It feels good to see you reap the results of your hardwork and resilience. Interesting times ahead. All the best!" "Great stuff, Derrick. I've been enjoying the quiz so far. Learning a lot."
+- Casual fragments come naturally to him in replies ("Learning a lot." "More wins ahead." "Well deserved."). That's his, and fine in comments and WhatsApp.
+- He uses "brother", "bro" and "big man" with friends, and emojis in comments (🎉🔥🥂🙏🏾😅).
+- His one post (late Oct 2026, internship update) is formal and grateful, told in order, with "I'm grateful" twice. Treat it as his formal register, not the stoic target.
+- High confidence (explicit, 2026-11-16): he rejects contrast flips ("Most people don't X. They Y.") as AI-sounding.
