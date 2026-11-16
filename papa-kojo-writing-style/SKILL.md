@@ -74,6 +74,17 @@ python3 scripts/voice_check.py --format comment --json < draft.txt
 
 It estimates readability, sentence range and selected stock patterns. `--format` adapts advice for casual and professional contexts. Flags mean **review**, never "AI detected", "failed" or "voice approved". The grade formula is rough, especially with Ghanaian names, abbreviations and technical terms. Don't chase grade 3, sentence variance or a zero-flag score at the cost of meaning. Read the draft aloud, compare it with the brief and revise only material problems.
 
+## Reusable writing benchmarks (optional, evaluation only)
+
+For user-requested comparisons or skill evaluations, follow [Natural Writing Evidence Suite](references/natural-writing-benchmark.md), with its [source catalogue](references/writing-craft-source-catalog.md) and [12-series rubric configuration](references/benchmark_config.json). The [scoring CLI](scripts/benchmark_score.py) combines separately recorded 0–4 human editorial scores into a 100-point total with factual-integrity gates and alternative author-informed lenses. It **does not** score naturalness automatically, classify AI authorship or prove a voice match. Keep the existing voice checker as an independent reading diagnostic. Do not promote unapproved candidate examples or experimental results as the user's real writing, and do not treat external writers as substitutes for his approved preferences.
+
+Run on properly recorded evaluations:
+
+```bash
+python3 scripts/benchmark_score.py --config references/benchmark_config.json --input /path/to/editorial-scorecards.json --output /path/to/benchmark-results.json
+python3 tests/benchmark_cli_e2e.py
+```
+
 ## Adapt to the form
 
 | Form | Practical shape |

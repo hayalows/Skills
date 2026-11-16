@@ -1,0 +1,30 @@
+{
+  "benchmark_id":"PKM Natural Writing Evidence Suite",
+  "version":"0.1.0-experimental",
+  "date":"2026-11-16",
+  "scale":{"min":0,"max":4,"anchors":{"0":"Material failure or absent","1":"Weak; several problems interfere","2":"Mixed; competent moments but notable weaknesses","3":"Strong; a few issues remain","4":"Excellent for the specific task, with concrete evidence"}},
+  "dimensions":{
+    "truth":{"weight":15,"name":"Truth and agency","probes":["No invented personal experience, thought, emotion or quotation","Preserves factual limits and degree of certainty","Claims are supportable or clearly framed as possible illustrations","Does not assign actions or outcomes to the wrong person"]},
+    "reader":{"weight":10,"name":"Reader fit and relationship","probes":["Addresses one real reader or the specified audience","Assumes only what the reader is likely to know","Tone respects the relationship and purpose","Shows awareness of the reader's likely questions"]},
+    "voice":{"weight":15,"name":"Personal and spoken voice","probes":["Comfortable to say aloud in the user's preferred register","Feels like a thinking person rather than a scripted brand","Warmth and uncertainty feel earned","Follows user corrections without inventing new habits"]},
+    "reasoning":{"weight":10,"name":"Thinking and depth","probes":["The main idea develops through reasons and consequences","Distinctions are real rather than manufactured","A meaningful complication is acknowledged","No repeated point added merely to fill length"]},
+    "clarity":{"weight":10,"name":"Clarity and comprehension","probes":["Key point can be paraphrased after one reading","Concrete verbs and familiar words where possible","Sentence structure does not obscure logic","Any necessary complex term is explained"]},
+    "emotion":{"weight":10,"name":"Emotional precision and care","probes":["Names feelings only when supported","Does not lecture or manipulate","Gives the feeling room before moving to advice","Admits difficulty and vulnerability without theatrical framing"]},
+    "specificity":{"weight":8,"name":"Specificity and evidence","probes":["Uses grounded details instead of praise or abstraction","Examples actually explain a cause or effect","Hypothetical scenes are signposted as such","Avoids invented numbers, scenes or scenes irrelevant to the point"]},
+    "transitions":{"weight":6,"name":"Transitions and coherence","probes":["Each paragraph builds on what came before","But, so, and or therefore are used for genuine relations","No abrupt topic leaps","End connects to the developed idea"]},
+    "pacing":{"weight":5,"name":"Pacing and rhythm","probes":["Space given to thoughts proportional to their importance","Not a rapid chain of short commands","Sentence and paragraph shapes vary naturally","No forced sentence-length target"]},
+    "restraint":{"weight":5,"name":"Restraint and AI-style pattern resistance","probes":["No habitual formula hooks or fake reversals","No empty moral at every paragraph end","No repeated abstract praise or heavy stock terms","Avoids mandatory metaphors, slogans, or decorative triples"]},
+    "ending":{"weight":4,"name":"Ending and useful outcome","probes":["Stops when the actual message is complete","Provides an appropriate next step only when needed","Avoids a compulsory motivational closing","Respects intended format length"]},
+    "genre":{"weight":2,"name":"Genre and format fit","probes":["Format matches essay, message or post","Opening matches the medium","No unnecessary format-specific flourishes","Length and layout suit the assigned channel"]}
+  },
+  "lenses":{
+    "Harry Dry": {"reader":20,"clarity":20,"specificity":18,"voice":12,"truth":10,"reasoning":10,"restraint":5,"ending":3,"genre":2},
+    "Alex Hormozi": {"reader":18,"reasoning":18,"specificity":15,"clarity":14,"truth":12,"ending":8,"emotion":7,"voice":5,"restraint":3},
+    "Gary Vee": {"voice":25,"truth":20,"emotion":15,"reader":12,"specificity":10,"pacing":8,"restraint":5,"reasoning":5},
+    "Russell Brunson": {"reader":15,"reasoning":18,"specificity":12,"emotion":15,"transitions":12,"pacing":10,"ending":8,"truth":10},
+    "Paul Graham": {"clarity":24,"reasoning":23,"voice":15,"truth":12,"transitions":12,"restraint":8,"reader":6},
+    "Ann Handley": {"reader":20,"voice":20,"emotion":20,"specificity":10,"pacing":10,"clarity":10,"truth":10},
+    "James Clear": {"clarity":20,"reasoning":20,"specificity":20,"reader":10,"ending":10,"truth":10,"transitions":5,"pacing":5},
+    "Zadie Smith lens (via Austin Kleon)": {"voice":25,"truth":20,"reasoning":20,"emotion":15,"specificity":10,"restraint":10}
+  }
+}
