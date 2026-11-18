@@ -25,6 +25,10 @@ v1.2.1 taught the skill what to avoid. Original teaches it who to sound like.
 
 v1.2.1 is kept whole in [versions/v1.2.1](versions/v1.2.1/README.md). The full story of every version is in [version-history.md](references/version-history.md).
 
+## Close to Speech (v3.1)
+
+When Papa asks for Close to Speech or v3.1, use [its complete instructions](versions/v3.1-close-to-speech/SKILL.md) as the writing workflow. It includes a method for preserving the speaker’s own phrasing, handling missing facts in personal statements and checking reading difficulty across long drafts.
+
 ## Order of evidence
 
 1. The current request, the reader, the form and any correction he has just made.
