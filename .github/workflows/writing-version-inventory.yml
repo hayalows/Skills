@@ -30,6 +30,20 @@ jobs:
           python3 papa-kojo-writing-style/benchmarks/version-lab/autoregister.py \
             --repo . \
             --out /tmp/pkm-writing-version-manifest.json
+      - name: Prepare matched writing requests for every version
+        run: |
+          python3 papa-kojo-writing-style/benchmarks/version-lab/prepare_matrix.py \
+            --repo . \
+            --briefs papa-kojo-writing-style/benchmarks/version-lab/public-smoke.json \
+            --out /tmp/pkm-writing-matrix \
+            --repeats 3 \
+            --model UNCONFIGURED
+      - name: Store inspectable request matrix
+        uses: actions/upload-artifact@v4
+        with:
+          name: pkm-writing-version-matrix
+          path: /tmp/pkm-writing-matrix/matrix.json
+          retention-days: 30
       - name: Store inspectable inventory
         uses: actions/upload-artifact@v4
         with:
