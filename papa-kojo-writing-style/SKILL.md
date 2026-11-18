@@ -29,6 +29,10 @@ v1.2.1 is kept whole in [versions/v1.2.1](versions/v1.2.1/README.md). The full s
 
 When Papa asks for Close to Speech or v3.1, use [its complete instructions](versions/v3.1-close-to-speech/SKILL.md) as the writing workflow. It includes a method for preserving the speaker’s own phrasing, handling missing facts in personal statements and checking reading difficulty across long drafts.
 
+## Steady Voice
+
+When Papa asks for Steady Voice, follow [its writing instructions](versions/steady-voice/SKILL.md). It combines Original's register and voice evidence with a focused check on who acted, what was promised, and what remains uncertain. Use the [evaluation protocol](benchmarks/steady-voice/README.md) to compare versions on fresh briefs.
+
 ## Order of evidence
 
 1. The current request, the reader, the form and any correction he has just made.

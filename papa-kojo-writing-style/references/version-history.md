@@ -13,6 +13,7 @@ Every version of Papa Kojo's writing skill, what it tried, and where it lives no
 | v2.0 prototype | 16 Nov 2026 | Voice bank, Grade 5, full forms, one-line plan, flow rule. Won a blind round against v1.2 but was never pushed. | Report from that session only |
 | **v3.0 "Original"** | **18 Nov 2026** | **His words first, a register dial, say-it-first drafting, presence on the page, fix recipes, register-aware checker.** | **Main `SKILL.md`** |
 | v3.1 “Close to Speech” | 18 Nov 2026 | Preserve strong original lines, ask for essential evidence, and check reading difficulty in windows. | [Selectable version](../versions/v3.1-close-to-speech/SKILL.md) |
+| Steady Voice | 18 Nov 2026 | Prioritise factual scope, register and clear prose in the same editing pass. | [Selectable version](../versions/steady-voice/SKILL.md) |
 
 ## What v3.0 keeps from each
 
