@@ -1,0 +1,65 @@
+{
+  "name": "PKM version lab public smoke fixtures",
+  "intended_use": "Fresh development tasks for verifying the matched request matrix. Public tasks are not a held-out voice-quality experiment.",
+  "briefs": [
+    {
+      "id": "S01",
+      "genre": "short message",
+      "reader": "friend who completed an unpaid apprenticeship",
+      "prompt": "Congratulate a friend on finishing a two-year apprenticeship. Say nothing about job offers, pay or plans that were not supplied.",
+      "min_words": 15,
+      "max_words": 55,
+      "must_not_contain": [
+        "new job",
+        "employer offered"
+      ]
+    },
+    {
+      "id": "S02",
+      "genre": "rewrite",
+      "reader": "volunteers who receive a notice",
+      "prompt": "Rewrite, keeping uncertainty: 'We think the start time might move to 8:30, but the organiser hasn't agreed yet. The final notice is still being prepared.' Do not make a promise.",
+      "min_words": 20,
+      "max_words": 60,
+      "must_contain": [
+        "8:30"
+      ]
+    },
+    {
+      "id": "S03",
+      "genre": "email",
+      "reader": "coordinator of a local workshop",
+      "prompt": "Ask if it is possible to use the hall from 1 PM rather than 2 PM on Saturday because the team needs an additional hour for setup. The extra cost is unknown. Ask if moving earlier would add a charge.",
+      "min_words": 55,
+      "max_words": 125,
+      "must_contain": [
+        "1 PM",
+        "2 PM"
+      ]
+    },
+    {
+      "id": "S04",
+      "genre": "public reflection",
+      "reader": "general readers interested in everyday civic services",
+      "prompt": "Explain why a printed notice and a WhatsApp announcement may reach different people. No evidence on reach or behaviour was supplied. Avoid inventing a survey, percentages or personal fieldwork.",
+      "min_words": 130,
+      "max_words": 210
+    },
+    {
+      "id": "S05",
+      "genre": "technical explanation",
+      "reader": "new website owners",
+      "prompt": "Explain the difference between a website being slow and a browser reporting a 404 for one page. Keep the explanation practical and avoid claiming the whole site is offline when one page is missing.",
+      "min_words": 115,
+      "max_words": 200
+    },
+    {
+      "id": "S06",
+      "genre": "short essay",
+      "reader": "adult readers reflecting on relationships",
+      "prompt": "Discuss the difference between being available to someone and making promises you cannot sustain. Explore how to set limits without assuming the other person is selfish. No personal experiences were supplied.",
+      "min_words": 350,
+      "max_words": 520
+    }
+  ]
+}
