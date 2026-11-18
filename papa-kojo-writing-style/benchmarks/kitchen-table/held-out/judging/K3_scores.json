@@ -1,0 +1,62 @@
+{
+"H01": {
+ "A": {"human":4,"voice":4,"flow":4,"clarity":5,"fit":4,"person":4,"truth":5,"habits":5,"note":"Clean and clear; 'Once I have those, I'll get started' slightly formal for a cousin."},
+ "B": {"human":5,"voice":5,"flow":5,"clarity":5,"fit":5,"person":4,"truth":5,"habits":5,"note":"Natural, one breath; 'first' makes the dependency clear without fuss."},
+ "C": {"human":5,"voice":5,"flow":5,"clarity":5,"fit":5,"person":4,"truth":5,"habits":5,"note":"Warm with emoji; but 'have it ready' drops that he needs details first."},
+ "rank": ["B","C","A"]
+},
+"H02": {
+ "A": {"human":4,"voice":4,"flow":5,"clarity":5,"fit":5,"person":4,"truth":5,"habits":5,"note":"Natural; 'got it done on the second try' plain and accurate."},
+ "B": {"human":5,"voice":5,"flow":4,"clarity":5,"fit":5,"person":5,"truth":5,"habits":4,"note":"'Proud of you, brother' echoes his real comments; 'Two attempts and you kept at it.' slightly fragmentary."},
+ "C": {"human":4,"voice":5,"flow":4,"clarity":5,"fit":5,"person":4,"truth":5,"habits":3,"note":"Stacked short lines: 'Well deserved, brother. More wins ahead.' feels a bit clipped."},
+ "rank": ["B","A","C"]
+},
+"H03": {
+ "A": {"human":4,"voice":4,"flow":3,"clarity":4,"fit":4,"person":4,"truth":5,"habits":5,"note":"'It's a moment a young person can face with a friend' is awkward phrasing."},
+ "B": {"human":4,"voice":4,"flow":4,"clarity":5,"fit":5,"person":4,"truth":4,"habits":5,"note":"Concise; 'A friend is often the first person to hear those words' is an unstated claim."},
+ "C": {"human":5,"voice":5,"flow":5,"clarity":5,"fit":5,"person":5,"truth":4,"habits":5,"note":"Warm, flows well; 'happy to share more about what the talk would cover' adds a small offer."},
+ "rank": ["C","B","A"]
+},
+"H04": {
+ "A": {"human":4,"voice":4,"flow":4,"clarity":5,"fit":4,"person":4,"truth":3,"habits":4,"note":"Invented: 'The booking itself still happens on each volunteer's own page' and 'free today before scrolling to next week'."},
+ "B": {"human":5,"voice":5,"flow":5,"clarity":5,"fit":5,"person":5,"truth":4,"habits":3,"note":"Warm, asks for feedback; label line 'One thing to be clear about:'."},
+ "C": {"human":4,"voice":4,"flow":4,"clarity":5,"fit":5,"person":4,"truth":5,"habits":3,"note":"Faithful; tidy maxim 'If a tool can do the clicking, students can spend that time talking.'"},
+ "rank": ["B","C","A"]
+},
+"H05": {
+ "A": {"human":4,"voice":4,"flow":4,"clarity":5,"fit":5,"person":4,"truth":5,"habits":3,"note":"Fragment triple 'Transport, school fees, a family need.'; good MoMo detail and slow-month line."},
+ "B": {"human":5,"voice":5,"flow":5,"clarity":5,"fit":5,"person":5,"truth":5,"habits":4,"note":"Concrete, calm, clear; 'This helps in two ways.' mildly announces the point."},
+ "C": {"human":5,"voice":4,"flow":5,"clarity":5,"fit":5,"person":5,"truth":5,"habits":3,"note":"Vivid but tidy triple opener 'Rent is due... School fees... A relative calls'."},
+ "rank": ["B","C","A"]
+},
+"H06": {
+ "A": {"human":4,"voice":4,"flow":4,"clarity":5,"fit":4,"person":4,"truth":4,"habits":2,"note":"Contrast flip 'doesn't tell his people that the work doesn't matter. He tells them'; added runner image."},
+ "B": {"human":5,"voice":5,"flow":5,"clarity":5,"fit":5,"person":5,"truth":4,"habits":3,"note":"Gentle, unhurried; speculation 'It seems he knew'; soft flip 'doesn't tell us to slow down and stop'."},
+ "C": {"human":4,"voice":4,"flow":5,"clarity":5,"fit":5,"person":4,"truth":5,"habits":3,"note":"Fits a church talk; 'This matters because' and triple 'rest, learn and start again'; moral ending."},
+ "rank": ["B","C","A"]
+},
+"H07": {
+ "A": {"human":4,"voice":4,"flow":4,"clarity":5,"fit":3,"person":4,"truth":5,"habits":3,"note":"Label line 'I want to be honest with you.'; never names Hayalows; bare 'Thanks.' close."},
+ "B": {"human":5,"voice":5,"flow":5,"clarity":5,"fit":5,"person":5,"truth":5,"habits":5,"note":"Honest with a real reason; names Hayalows; simple meeting ask."},
+ "C": {"human":4,"voice":4,"flow":5,"clarity":5,"fit":5,"person":4,"truth":5,"habits":4,"note":"Clear and honest; 'a clear picture' slightly stock phrasing."},
+ "rank": ["B","C","A"]
+},
+"H08": {
+ "A": {"human":5,"voice":5,"flow":5,"clarity":5,"fit":5,"person":5,"truth":5,"habits":5,"note":"Owns it plainly, 'I should have remembered'; warm, offers to make up."},
+ "B": {"human":5,"voice":5,"flow":5,"clarity":5,"fit":5,"person":5,"truth":4,"habits":5,"note":"Casual 'bro' fits; 'I only remembered now' slightly invented detail."},
+ "C": {"human":4,"voice":4,"flow":4,"clarity":5,"fit":4,"person":4,"truth":5,"habits":4,"note":"'there's no excuse for that' a bit stock; ends on greeting-card 'great year ahead'."},
+ "rank": ["A","B","C"]
+},
+"H09": {
+ "A": {"human":4,"voice":4,"flow":3,"clarity":4,"fit":4,"person":3,"truth":5,"habits":3,"note":"Stacked quotes and short imperatives feel choppy; doesn't explain signs are printed props."},
+ "B": {"human":5,"voice":5,"flow":5,"clarity":5,"fit":5,"person":4,"truth":5,"habits":5,"note":"Clear description, natural invite, all brief facts."},
+ "C": {"human":4,"voice":4,"flow":4,"clarity":5,"fit":4,"person":4,"truth":3,"habits":3,"note":"Invents meanings for each sign; forced end question 'Which one are you holding?'"},
+ "rank": ["B","A","C"]
+},
+"H10": {
+ "A": {"human":3,"voice":3,"flow":3,"clarity":4,"fit":4,"person":3,"truth":5,"habits":5,"note":"Clunky 'This is because of something we didn't expect.'; keeps stiff 'inconvenience'."},
+ "B": {"human":4,"voice":4,"flow":4,"clarity":5,"fit":5,"person":4,"truth":5,"habits":5,"note":"Clear; mixes 'could not' with 'I'm'; signature fine."},
+ "C": {"human":5,"voice":5,"flow":5,"clarity":5,"fit":5,"person":4,"truth":5,"habits":5,"note":"Plain and smooth; keeps the meaning; natural register."},
+ "rank": ["C","B","A"]
+}
+}

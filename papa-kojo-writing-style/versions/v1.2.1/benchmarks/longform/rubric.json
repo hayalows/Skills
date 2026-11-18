@@ -1,0 +1,246 @@
+{
+  "rubric_id": "PKM Longform Rubric 0.1",
+  "scale": {
+    "min": 0,
+    "max": 4,
+    "interpretation": "Rating is a person's editorial judgement; software must not infer it from readability."
+  },
+  "dimensions": {
+    "truth": {
+      "weight": 15,
+      "name": "Truth and agency",
+      "anchors": {
+        "0": "Invents personal history, quote or major factual claim",
+        "1": "Unverifiable or misleading claims throughout",
+        "2": "Mostly grounded but meaningful uncertainty or ownership slips",
+        "3": "Grounded with minor correctable omissions",
+        "4": "Every material claim is grounded, scoped and attributed fairly"
+      }
+    },
+    "reader": {
+      "weight": 6,
+      "name": "Reader fit",
+      "anchors": {
+        "0": "Addresses wrong audience or purpose",
+        "1": "Often assumes wrong context or relation",
+        "2": "Some useful fit with regular mismatches",
+        "3": "Consistently appropriate except small lapses",
+        "4": "Natural attention to reader's knowledge and needs throughout"
+      }
+    },
+    "voice": {
+      "weight": 18,
+      "name": "Natural personal voice",
+      "anchors": {
+        "0": "Generic, obviously scripted or alien to writer",
+        "1": "Predominantly performative AI-like wording",
+        "2": "Mixed; human moments but repeated staged lines",
+        "3": "Generally sounds like what the writer might say, with few stiff passages",
+        "4": "Sounds naturally like the writer across beginning, middle and end, not a copied verbal formula"
+      }
+    },
+    "reasoning": {
+      "weight": 9,
+      "name": "Long-form reasoning",
+      "anchors": {
+        "0": "No sustained argument, unsupported claims",
+        "1": "Repeats slogans or takes unexplained leaps",
+        "2": "Partial argument with thin sections or missing objections",
+        "3": "Reasons, consequences and limits developed with few gaps",
+        "4": "Sustained, layered logic that earns its conclusion and respects real objections"
+      }
+    },
+    "clarity": {
+      "weight": 7,
+      "name": "Clarity and comprehension",
+      "anchors": {
+        "0": "Key meaning confused or wrong",
+        "1": "Many hard-to-follow passages",
+        "2": "Understandable but technical/vague sections need decoding",
+        "3": "Clear with accurate explanations for most hard terms",
+        "4": "Reader can paraphrase arguments and needed concepts correctly without strain"
+      }
+    },
+    "emotion": {
+      "weight": 14,
+      "name": "Emotional honesty",
+      "anchors": {
+        "0": "Invents feelings, private memories or manipulates reader",
+        "1": "Frequent unearned emotion or false intimacy",
+        "2": "Some care but generic or overly certain feelings",
+        "3": "Emotion is precise and backed by situation, with rare weak lines",
+        "4": "Emotion arises naturally from supported facts and real limits, with no borrowed testimony"
+      }
+    },
+    "specificity": {
+      "weight": 4,
+      "name": "Evidence and meaningful detail",
+      "anchors": {
+        "0": "Unfounded anecdotes or figures",
+        "1": "Mostly abstractions or made-up examples",
+        "2": "Uneven mix of real detail and vague padding",
+        "3": "Most examples do explanatory work and are labelled",
+        "4": "Each substantial example is grounded, relevant and shows a consequence"
+      }
+    },
+    "coherence": {
+      "weight": 5,
+      "name": "Paragraph and section coherence",
+      "anchors": {
+        "0": "Sections unrelated or contradictory",
+        "1": "Frequent unexplained leaps",
+        "2": "Several repeated/restarted arguments",
+        "3": "Sections build logically with a few weak transitions",
+        "4": "Every section moves the full argument forward, without reintroducing the thesis"
+      }
+    },
+    "pacing": {
+      "weight": 5,
+      "name": "Long-run pace and rhythm",
+      "anchors": {
+        "0": "Mechanical fragments or exhausting density throughout",
+        "1": "Many hurried, repetitive or padded passages",
+        "2": "Noticeable uneven pace, thin or overlong sections",
+        "3": "Mostly comfortable spoken pace, varied by idea",
+        "4": "Patient, human pacing sustained through the whole essay"
+      }
+    },
+    "restraint": {
+      "weight": 3,
+      "name": "Restraint and formula resistance",
+      "anchors": {
+        "0": "Regular fabricated drama and clichéd flips",
+        "1": "Frequent hooks, triples, moralising lines",
+        "2": "Some recurring stock structures",
+        "3": "Mostly avoids forced formulas, minor lapses",
+        "4": "Natural and unforced throughout, including endings"
+      }
+    },
+    "ending": {
+      "weight": 2,
+      "name": "Ending",
+      "anchors": {
+        "0": "False or harmful claim, no valid finish",
+        "1": "Generic compulsory lesson or false certainty",
+        "2": "Partial resolution or needless repetition",
+        "3": "Fitting, earned conclusion",
+        "4": "Quiet, precise conclusion that closes the argument naturally"
+      }
+    },
+    "genre": {
+      "weight": 1,
+      "name": "Long essay genre fit",
+      "anchors": {
+        "0": "Wrong task or genre",
+        "1": "Often written like a script or short post",
+        "2": "Some essay depth but substantial genre mismatches",
+        "3": "Suitable essay shape",
+        "4": "Meets long-form reader purpose without a template"
+      }
+    },
+    "sentence": {
+      "weight": 11,
+      "name": "Sentence-by-sentence craft",
+      "anchors": {
+        "0": "Frequent unclear, unnatural or misleading sentences",
+        "1": "Many vague, stiff, redundant or awkward sentences",
+        "2": "Mixed sentence quality with recurring problems",
+        "3": "Most sentences serve their paragraph; a few need work",
+        "4": "Ordinary, precise and speakable sentence craft across beginning, middle and end"
+      }
+    }
+  },
+  "require_evidence": {
+    "each_dimension_min_quote": 1,
+    "focus_dimensions": [
+      "voice",
+      "emotion",
+      "sentence"
+    ],
+    "focus_dimensions_min_quotes": 2,
+    "quote_must_match_exact_text": true,
+    "quote_min_chars": 12,
+    "quote_max_chars": 400,
+    "explanation_required": true,
+    "explanation_min_chars": 20,
+    "negative_feedback_mandatory_for_rating_at_or_below": 2
+  },
+  "sentence_audit": {
+    "strategy": "stratified",
+    "sample_per_essay": 30,
+    "sample_by_section": {
+      "beginning": 10,
+      "middle": 10,
+      "end": 10
+    },
+    "labels": [
+      "clear",
+      "stiff",
+      "vague",
+      "repetitive",
+      "forced_emotion",
+      "unsupported_claim",
+      "awkward",
+      "overlong",
+      "hard_to_say",
+      "doctrinal_error"
+    ],
+    "review_all_sentences_in_finalists": true,
+    "quota_justification": "Full sentence-by-sentence review for every 2000-word draft would be costly. Audit stratified 30 sentences for every candidate, all automatically flagged risk cases, and every sentence for the final two shortlisted versions."
+  },
+  "truth_gate": {
+    "fields": [
+      "verified",
+      "fabrication",
+      "material_misstatement",
+      "scope_failure",
+      "source_error",
+      "invented_testimony"
+    ],
+    "blocking": [
+      "fabrication",
+      "material_misstatement",
+      "scope_failure",
+      "source_error",
+      "invented_testimony"
+    ],
+    "policy": "Any positive blocking flag or verified=false yields NO VALID SCORE until reviewed; no compensating style score."
+  },
+  "length_diagnostics": {
+    "window_words": 400,
+    "record": [
+      "whole_flesch",
+      "whole_grade",
+      "per_400_word_flesch",
+      "lowest_window_flesch",
+      "window_flesch_spread",
+      "word_count",
+      "paragraph_count",
+      "repeated_phrase_count",
+      "avg_syllables_per_word"
+    ],
+    "flesch_target_advisory": "85-93 for appropriate accessible reflection; never target by deleting necessary doctrine or facts.",
+    "baseline_note": "Divine Design long essay: 66.3 FRE, grade 7.3, 3052 words, avg sentence 13.4. Refined approved short advice: 93.0 FRE, grade 3.6, 361 words, avg sentence 13.4. Different texts, not a version causal estimate."
+  },
+  "study_design": {
+    "versions": [
+      "v1.2",
+      "v1.2.1",
+      "v1.3",
+      "v1.4"
+    ],
+    "runs_per_version_prompt": 3,
+    "reviewers_recommended": 3,
+    "required_owner_voice_judgement": true,
+    "blind_labels": true,
+    "match_model_and_settings": true,
+    "independent_model_invocation_required": true,
+    "record_model_parameters": true,
+    "task_level_bootstrap": true,
+    "holdouts": [
+      "LF07",
+      "LF08"
+    ],
+    "no_unverified_winner": true
+  }
+}

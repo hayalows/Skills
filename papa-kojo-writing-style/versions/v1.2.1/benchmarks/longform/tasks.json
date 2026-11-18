@@ -1,0 +1,266 @@
+{
+  "benchmark_id": "PKM-LONGFORM-2026-11-16",
+  "phase": "protocol-only",
+  "versions": [
+    {
+      "key": "v1.2",
+      "type": "git",
+      "commit": "2f580c791524859b7454b1b92430b5c4e58c8dfa",
+      "path": "papa-kojo-writing-style/SKILL.md"
+    },
+    {
+      "key": "v1.2.1",
+      "type": "git",
+      "commit": "a0f833c80a2048f69204147a3155d94880937a78",
+      "path": "papa-kojo-writing-style/SKILL.md"
+    },
+    {
+      "key": "v1.3",
+      "type": "local_zip",
+      "filename": "papa-kojo-writing-style-v1.3-DRAFT.zip",
+      "sha256": "3938fff8921e0fdbf071e7222a5259e935ed08b2b36881b20c1271d6d1c88fb2",
+      "skill_sha256": "af22dca7368cebc8989d03ee413ace1263e1ac201b855a9d0e0b0b86f3f40ae8"
+    },
+    {
+      "key": "v1.4",
+      "type": "local_zip",
+      "filename": "Papa-Kojo-Writing-Style-v1.4-Experimental-15-Essays.zip",
+      "sha256": "2233119e2594823f188ecfdb22ad8a0d2e99fb739d03af176d69aeaf154a249d",
+      "skill_sha256": "6deb7247ef436bbd2c24523a7e5d8845748f1234eafb6eaa431fc02925721b1b"
+    }
+  ],
+  "independent_runs_per_prompt": 3,
+  "same_model_settings": {
+    "model": "MUST_BE_FIXED_BY_OPERATOR",
+    "temperature": "MUST_BE_FIXED_BY_OPERATOR",
+    "top_p": "MUST_BE_FIXED_BY_OPERATOR",
+    "system_prompt_policy": "version_skill_only_plus_shared_safety",
+    "memory": "isolated_run_no_prior_drafts",
+    "tools": "same_tool_access"
+  },
+  "published_baseline": {
+    "task": "Divine Design essay",
+    "reading_ease": 66.3,
+    "grade_level": 7.3,
+    "words": 3052,
+    "sentences": 227,
+    "average_words_per_sentence": 13.4,
+    "source": "user-provided goodcalculators.com screenshot 2026-11-16",
+    "role": "regression_baseline_not_comparable_version_result"
+  },
+  "approved_style_calibration": {
+    "version": "v1.2.1",
+    "task": "Word of Wisdom private advice",
+    "reading_ease": 93,
+    "grade_level": 3.6,
+    "words": 361,
+    "role": "approved_style_example_not_longform_target"
+  },
+  "tasks": [
+    {
+      "id": "LF01",
+      "split": "development",
+      "category": "faith_reflection",
+      "title": "When service seems ordinary",
+      "target_words": 2200,
+      "min_words": 1700,
+      "max_words": 2700,
+      "reader": "Latter-day Saint adults and young adults in Ghana",
+      "brief": "Write a personal but carefully grounded reflective essay about why quiet, ordinary Church service can matter. Consider youth leadership, record checking or administrative help, and personal agency. Explain the thought at adult depth while using everyday words. Do not say God specifically directed any personal event unless the source says so. Explain scripture meanings accurately without inventing direct quotations.",
+      "allowed_facts": [
+        "The writer served a full-time mission in Nigeria from 2019 to 2021.",
+        "The writer has served as a stake auditor and in Church responsibilities involving young men.",
+        "Moses 1:39 and Mosiah 18:9 may be discussed when verified."
+      ],
+      "forbidden_claims": [
+        "Specific unheard testimonies, visions, revelations or miracles",
+        "Personal grief episodes or named conversations not supplied",
+        "Exact scripture text not checked against a reliable source"
+      ],
+      "focus": [
+        "faithful doctrine",
+        "personal claims",
+        "continuity"
+      ]
+    },
+    {
+      "id": "LF02",
+      "split": "development",
+      "category": "work_reflection",
+      "title": "What routine work teaches",
+      "target_words": 2400,
+      "min_words": 1900,
+      "max_words": 2900,
+      "reader": "A younger graduate about to start national service in Ghana",
+      "brief": "Write a long reflective essay explaining how ordinary work can teach judgement, service and care with records. Explain causes and consequences and acknowledge that a placement may also be frustrating. Keep a sincere first-person voice but never invent a particular encounter, mistake, outcome, promotion or customer quotation.",
+      "allowed_facts": [
+        "The writer studied Actuarial Science at KNUST.",
+        "The writer completed national service at Absa Bank Ghana, helping with branch operations and records.",
+        "The writer has worked in design and research."
+      ],
+      "forbidden_claims": [
+        "Invented transactions, named customers, or specific amounts",
+        "Claiming to manage or supervise operations without evidence",
+        "Claiming career success or feelings not in the brief"
+      ],
+      "focus": [
+        "honesty about experience",
+        "reasoned advice",
+        "natural emotion"
+      ]
+    },
+    {
+      "id": "LF03",
+      "split": "development",
+      "category": "finance_essay",
+      "title": "When a spending record cannot fix income",
+      "target_words": 2200,
+      "min_words": 1700,
+      "max_words": 2700,
+      "reader": "Ghanaian young adults trying to manage irregular income",
+      "brief": "Explain when tracking daily expenses helps and when the main problem is income that is too low. Consider mobile-money records, transport, food, household needs and uncertainty, without blaming people for poverty. Explain what a record can and cannot tell a person. Examples must be clearly hypothetical, not presented as the writer's own financial history.",
+      "allowed_facts": [
+        "MoMo transaction histories can help someone review payments.",
+        "Expenses may include transport, food and data; no case-specific amounts are supplied.",
+        "Income varies and budgeting alone cannot guarantee surplus."
+      ],
+      "forbidden_claims": [
+        "Invented Ghana statistics or budgets",
+        "Unverified personal debt, wealth or earnings",
+        "Pretending a hypothetical person is real"
+      ],
+      "focus": [
+        "nuance",
+        "data claims",
+        "sentences"
+      ]
+    },
+    {
+      "id": "LF04",
+      "split": "development",
+      "category": "design_essay",
+      "title": "The cost of making information hard to use",
+      "target_words": 2500,
+      "min_words": 2000,
+      "max_words": 3000,
+      "reader": "Designers and small-business owners building practical digital tools",
+      "brief": "Write a long essay on why design decisions affect understanding, time and trust. Use everyday examples such as forms, error messages and mobile-first layouts. Explain how the user sees the problem and how the designer can test an improvement. Do not claim measured conversion rates, revenue growth, or user research that is not provided.",
+      "allowed_facts": [
+        "The writer has worked in brand identity design since 2022.",
+        "The writer builds or works on web projects and cares about usability.",
+        "No measured result from a product redesign is provided."
+      ],
+      "forbidden_claims": [
+        "Invented A/B-test outcomes",
+        "Borrowed portfolio results without verification",
+        "An unsupported quote from a customer"
+      ],
+      "focus": [
+        "concrete examples",
+        "evidence discipline",
+        "line quality"
+      ]
+    },
+    {
+      "id": "LF05",
+      "split": "development",
+      "category": "mentor_essay",
+      "title": "Listening before giving advice",
+      "target_words": 1900,
+      "min_words": 1500,
+      "max_words": 2400,
+      "reader": "People mentoring younger students or graduates",
+      "brief": "Write a patient long essay about the difference between offering advice and understanding another person's situation. Include a meaningful objection: sometimes direct instruction is needed. Use hypothetical cases labelled as such. Do not assert the writer handled a real case in a particular way.",
+      "allowed_facts": [
+        "The writer has been involved with youth leadership and mentoring.",
+        "Different students face different study, work and family constraints."
+      ],
+      "forbidden_claims": [
+        "Anecdotes described as actual mentoring conversations",
+        "False claims about a student's private life",
+        "Promises that every mentoring interaction ends well"
+      ],
+      "focus": [
+        "reader care",
+        "earned emotion",
+        "argument depth"
+      ]
+    },
+    {
+      "id": "LF06",
+      "split": "development",
+      "category": "analytical_essay",
+      "title": "The risk of believing one number",
+      "target_words": 2600,
+      "min_words": 2100,
+      "max_words": 3100,
+      "reader": "Nontechnical readers interested in money, product metrics and sound decisions",
+      "brief": "Explain why a useful statistic can still mislead without its denominator, timeframe, collection method and context. Walk through illustrative examples with clearly labelled invented figures. Build the argument step by step and acknowledge when metrics are genuinely useful. Do not pretend to cite a study unless it has been verified.",
+      "allowed_facts": [
+        "The writer studied probability and financial mathematics as part of Actuarial Science.",
+        "Example metrics may be hypothetical and must be explicitly marked."
+      ],
+      "forbidden_claims": [
+        "Invented research citations or business achievements",
+        "Treating illustrative numbers as Ghana-wide facts",
+        "Replacing proper technical terms with incorrect simple ones"
+      ],
+      "focus": [
+        "technical precision",
+        "plain English",
+        "coherent reasoning"
+      ]
+    },
+    {
+      "id": "LF07",
+      "split": "holdout",
+      "category": "relationship_reflection",
+      "title": "Choosing care when plans change",
+      "target_words": 2000,
+      "min_words": 1600,
+      "max_words": 2500,
+      "reader": "Adults reflecting on friendship, commitment and family responsibilities",
+      "brief": "Write a thoughtful essay about how plans change inside close relationships and how to make room for another person's view. Be attentive without inventing confessions, private disagreements or emotional experiences. This is a HELD-OUT evaluation brief. Do not revise prompts or skills using its responses before all candidate versions finish generation.",
+      "allowed_facts": [
+        "The writer married in November 2025.",
+        "Maintaining a relationship calls for communication and practical choices."
+      ],
+      "forbidden_claims": [
+        "Imaginary marital incidents presented as facts",
+        "Claims about the spouse's feelings",
+        "Exaggerated romantic testimony"
+      ],
+      "focus": [
+        "emotional honesty",
+        "realistic transitions",
+        "restraint"
+      ]
+    },
+    {
+      "id": "LF08",
+      "split": "holdout",
+      "category": "faith_explanation",
+      "title": "How agency fits with trusting God",
+      "target_words": 2700,
+      "min_words": 2200,
+      "max_words": 3200,
+      "reader": "Latter-day Saint readers and thoughtful friends less familiar with LDS beliefs",
+      "brief": "Explain the relationship between agency, personal revelation and trust in God, without returning to or adapting the existing Divine Design essay. Use accurately sourced passages, with clear explanations in everyday language. Discuss what is known, what is a personal interpretation, and the limits of claiming that a setback was arranged by God. This is a HELD-OUT brief: do not tune style rules on the outputs before the comparison.",
+      "allowed_facts": [
+        "Latter-day Saint scripture teaches agency, including 2 Nephi 2.",
+        "Doctrine and Covenants 58:27–28 encourages willing action.",
+        "The writer has served a mission and in Church responsibilities."
+      ],
+      "forbidden_claims": [
+        "Fake revelations, spiritual feelings or miracle stories",
+        "Invented scripture quotations or doctrinal assertions",
+        "Claiming knowledge of God's intention in a specific setback"
+      ],
+      "focus": [
+        "doctrinal care",
+        "mature plain language",
+        "long-run consistency"
+      ]
+    }
+  ]
+}

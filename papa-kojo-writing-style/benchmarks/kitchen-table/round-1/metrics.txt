@@ -1,0 +1,8 @@
+version           n inRng   FRE FRElong sentCV emd contr avoid flip label sweep sign puff moral frag newNum
+iconka-writer    15    15  90.0    91.3   0.47   0     0     0    0     2     0    0    0     0    0      0
+v1.0             15    15  80.5    75.5   0.46   0    38     0    0     1     0    0    0     0    0      0
+v1.1             15    15  87.0    86.4   0.53   0    60     0    0     0     0    0    0     0    0      0
+v1.2.1           15    15  81.9    78.6   0.44   0    53     0    0     0     0    0    0     1    0      0
+v1.2             15    15  80.0    77.4   0.45   0    40     0    0     0     0    0    0     0    0      0
+v2.0-proto       15    15  85.8    81.6   0.43   0     0     0    0     0     0    0    0     0    0      0
+v3.0-original    15    15  84.0    81.1   0.47   0    16     0    0     0     0    0    0     0    0      0

@@ -1,6 +1,26 @@
-# Writing style comparison: correct baseline and provenance
+# Writing style comparison
 
-Status: 16 November 2026. **Official active style: v1.2 refined (skill package version 1.2.1).** Experimental v1.3 and v1.4 are not promoted to the active skill. The owner approved the *style* of the refined v1.2 Word of Wisdom sample, not a blind comparison of every version. The other editorial preferences remain provisional.
+## Current result (18 November 2026): v3.0 "Original" is the active version
+
+The [Kitchen Table Benchmark](../benchmarks/kitchen-table/README.md) tested every version blind, with isolated writers and judges.
+
+| Version | Round one average (15 briefs, 3 judges) | Round one first places (of 45) | Held-out average (10 new briefs, 3 judges) | Held-out first places (of 30) |
+| --- | ---: | ---: | ---: | ---: |
+| **v3.0 Original** | **4.76** | **18** | **4.53** | **13** |
+| v1.2 | 4.67 | 9 | 4.33 | 8 |
+| v1.2.1 | 4.56 | 5 | 4.42 | 9 |
+| v1.0 | 4.43 | 4 | not run | not run |
+| v2.0 prototype | 4.38 | 4 | not run | not run |
+| v1.1 | 3.96 | 5 | not run | not run |
+| Iconka Writer | 3.52 | 0 | not run | not run |
+
+Scores are AI editorial judgements out of 5, not Papa Kojo's own picks. His picks in the blind voting page outrank them. Older notes follow unchanged.
+
+---
+
+## Earlier record (16 November 2026): correct baseline and provenance
+
+Status: 16 November 2026 (superseded on 18 November by v3.0). **At that time the official active style was v1.2 refined (skill package version 1.2.1).** Experimental v1.3 and v1.4 are not promoted to the active skill. The owner approved the *style* of the refined v1.2 Word of Wisdom sample, not a blind comparison of every version. The other editorial preferences remain provisional.
 
 These are Flesch Reading Ease (FRE) estimates obtained by running the same experimental v1.4 checker on the saved text of each draft. Higher FRE means simpler sentences/words by the formula, not a percentage of naturalness. Scores can exceed 100. Each version's essay differs in wording and sometimes length; this is not a controlled human study.
 

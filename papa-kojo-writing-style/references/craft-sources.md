@@ -53,3 +53,13 @@ Recent X posts read verbatim on 16 Nov 2026 (8 each from @AlexHormozi, @garyvee,
 - Dan Koe: long, comma-joined sentences that think out loud ("Who cares if it takes 12 months or 12 years when it's going to be difficult either way."). Returns to the same few ideas again and again.
 - Gary Vaynerchuk: raw, typed-like-he-talks, ellipses, emojis and typos. Too loud for a stoic voice. The useful part is that it's obviously unpolished and one person's.
 - Finding: real writers do flip lines, but rarely. AI does it by reflex, in nearly every piece. For Papa Kojo, who asked for none, it's banned.
+
+## Research update, 2026-11-18 (v3.0 "Original")
+
+Short notes on what shaped v3.0. These are research findings and practitioner advice, not evidence of Papa Kojo's voice.
+
+- **Real samples beat descriptions.** A 2025 EMNLP study of AI imitating 400+ everyday writers found models handle structured writing like emails better than informal writing, and a second 2025 study found a few real examples improved style matching far more than none ([Wang et al.](https://arxiv.org/abs/2509.14543v1)). This is why v3.0 puts the voice bank first and asks for more of his own writing.
+- **Human writing is less uniform.** A December 2025 stylometry study from University College Cork found AI prose clusters tightly while human writing stays more varied and idiosyncratic ([UCC news](https://www.ucc.ie/en/news/2025/new-study-reveals-that-ai-cannot-fully-write-like-a-human.html)). v3.0 lets length follow the thought and flags paragraphs that all match, instead of chasing one rhythm.
+- **Editing an AI draft keeps its fingerprint.** A pre-registered 2026 study found people who post-edited AI drafts still ended closer to AI style than to their own unassisted writing ([arXiv 2604.24444](https://arxiv.org/abs/2604.24444)). v3.0 therefore starts from the point said out loud ("Say it first") rather than polishing a generic first draft.
+- **Wikipedia's "Signs of AI writing".** Editors catalogue negative parallelism ("It's not just X, it's Y"), the rule of three, puffed importance, vague attribution, signposting and outline-like conclusions, and stress these are signs, not proof ([summary](https://www.beutlerink.com/blog/how-to-spot-ai-writing)). Each now has a named fix in [revision-recipes.md](revision-recipes.md).
+- **Clean is not the same as human.** Practitioner humaniser guides built on that page warn that sterile, voiceless writing is as easy to spot as slop. This became the "person on the page" move.

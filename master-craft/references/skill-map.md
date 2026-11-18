@@ -21,7 +21,7 @@ Six skills touch interface work. The chooser table is in the [entrypoint](../SKI
 - [lunour-naming](../lunour-naming/SKILL.md) — Company/product/feature naming and screening.
 - [human-copywriting](../human-copywriting/SKILL.md) — Audience-aware persuasive or explanatory original writing.
 - [humanize-my-writing](../humanize-my-writing/SKILL.md) — Repair existing prose while preserving meaning and voice.
-- [papa-kojo-writing-style](../papa-kojo-writing-style/SKILL.md) — User-authored voice for messages, posts, emails and essays.
+- [papa-kojo-writing-style](../papa-kojo-writing-style/SKILL.md) — Papa Kojo's own voice (v3.0 "Original") for messages, posts, emails, talks and essays.
 - [thoughtful-cold-email](../thoughtful-cold-email/SKILL.md) — Relevant ethical outreach and proposal messages.
 - [create-opportunities](../create-opportunities/SKILL.md) — Find real clients/jobs, generate proof of work and bounded proposals.
 - [consulting-grade-reports-decks](../consulting-grade-reports-decks/SKILL.md) — Research-led business analyses, briefs and persuasive report structure.

@@ -1,0 +1,1322 @@
+{
+ "B01": {
+  "A": {
+   "human": 4,
+   "voice": 4,
+   "flow": 4,
+   "clarity": 5,
+   "fit": 4,
+   "person": 4,
+   "truth": 5,
+   "habits": 5,
+   "note": "Warm and plain; \"We're still good, my brother\" keeps friendship."
+  },
+  "B": {
+   "human": 4,
+   "voice": 4,
+   "flow": 4,
+   "clarity": 5,
+   "fit": 4,
+   "person": 4,
+   "truth": 5,
+   "habits": 4,
+   "note": "Natural; \"Let's still link up soon, yeah?\" slightly foreign tag question."
+  },
+  "C": {
+   "human": 4,
+   "voice": 3,
+   "flow": 4,
+   "clarity": 5,
+   "fit": 4,
+   "person": 4,
+   "truth": 5,
+   "habits": 5,
+   "note": "Full forms feel stiff for WhatsApp; \"You know I have your back\" good."
+  },
+  "D": {
+   "human": 4,
+   "voice": 4,
+   "flow": 4,
+   "clarity": 5,
+   "fit": 4,
+   "person": 4,
+   "truth": 4,
+   "habits": 5,
+   "note": "\"it's taking all I have right now\" adds detail not in brief."
+  },
+  "E": {
+   "human": 4,
+   "voice": 4,
+   "flow": 4,
+   "clarity": 5,
+   "fit": 4,
+   "person": 4,
+   "truth": 5,
+   "habits": 5,
+   "note": "No name, opens \"Bro\"; emoji fits; plain and kind."
+  },
+  "F": {
+   "human": 4,
+   "voice": 4,
+   "flow": 5,
+   "clarity": 5,
+   "fit": 4,
+   "person": 4,
+   "truth": 4,
+   "habits": 5,
+   "note": "Smooth; \"taking everything I have right now\" overstates brief."
+  },
+  "G": {
+   "human": 5,
+   "voice": 5,
+   "flow": 5,
+   "clarity": 5,
+   "fit": 5,
+   "person": 5,
+   "truth": 5,
+   "habits": 5,
+   "note": "\"I know month end can be tight\" shows care; names amount; warm."
+  },
+  "rank": [
+   "G",
+   "A",
+   "B",
+   "E",
+   "C",
+   "F",
+   "D"
+  ]
+ },
+ "B02": {
+  "A": {
+   "human": 4,
+   "voice": 4,
+   "flow": 5,
+   "clarity": 5,
+   "fit": 4,
+   "person": 3,
+   "truth": 5,
+   "habits": 5,
+   "note": "Short and warm; generic \"So good to see this.\""
+  },
+  "B": {
+   "human": 4,
+   "voice": 4,
+   "flow": 4,
+   "clarity": 5,
+   "fit": 4,
+   "person": 3,
+   "truth": 5,
+   "habits": 5,
+   "note": "\"Wishing you a strong start\" fine; no Absa link."
+  },
+  "C": {
+   "human": 3,
+   "voice": 3,
+   "flow": 4,
+   "clarity": 5,
+   "fit": 3,
+   "person": 3,
+   "truth": 4,
+   "habits": 4,
+   "note": "Long; \"move forward after our time at Absa\" implies a judgement."
+  },
+  "D": {
+   "human": 5,
+   "voice": 5,
+   "flow": 5,
+   "clarity": 5,
+   "fit": 5,
+   "person": 5,
+   "truth": 5,
+   "habits": 5,
+   "note": "Absa link, \"More wins ahead\" matches his real phrase, emoji."
+  },
+  "E": {
+   "human": 3,
+   "voice": 3,
+   "flow": 3,
+   "clarity": 4,
+   "fit": 3,
+   "person": 3,
+   "truth": 3,
+   "habits": 3,
+   "note": "\"Your new clients are in good hands\" invented claim; choppy fragments."
+  },
+  "F": {
+   "human": 4,
+   "voice": 5,
+   "flow": 5,
+   "clarity": 5,
+   "fit": 5,
+   "person": 4,
+   "truth": 5,
+   "habits": 5,
+   "note": "\"Well deserved.\" echoes his voice; clean."
+  },
+  "G": {
+   "human": 4,
+   "voice": 5,
+   "flow": 5,
+   "clarity": 5,
+   "fit": 5,
+   "person": 4,
+   "truth": 5,
+   "habits": 5,
+   "note": "\"More wins ahead\" fits; no Absa mention."
+  },
+  "rank": [
+   "D",
+   "G",
+   "F",
+   "A",
+   "B",
+   "C",
+   "E"
+  ]
+ },
+ "B03": {
+  "A": {
+   "human": 3,
+   "voice": 4,
+   "flow": 3,
+   "clarity": 5,
+   "fit": 4,
+   "person": 4,
+   "truth": 5,
+   "habits": 4,
+   "note": "Choppy one-line paragraphs; \"would give us that\" vague."
+  },
+  "B": {
+   "human": 5,
+   "voice": 4,
+   "flow": 5,
+   "clarity": 5,
+   "fit": 5,
+   "person": 4,
+   "truth": 5,
+   "habits": 5,
+   "note": "Clear, polite, all facts, right length."
+  },
+  "C": {
+   "human": 5,
+   "voice": 4,
+   "flow": 5,
+   "clarity": 5,
+   "fit": 5,
+   "person": 4,
+   "truth": 5,
+   "habits": 5,
+   "note": "Clear; \"before we confirm the change\" sensible."
+  },
+  "D": {
+   "human": 4,
+   "voice": 4,
+   "flow": 4,
+   "clarity": 5,
+   "fit": 4,
+   "person": 4,
+   "truth": 5,
+   "habits": 5,
+   "note": "\"Thank you.\" then \"Best regards\" redundant sign-off."
+  },
+  "E": {
+   "human": 4,
+   "voice": 4,
+   "flow": 5,
+   "clarity": 5,
+   "fit": 5,
+   "person": 4,
+   "truth": 4,
+   "habits": 5,
+   "note": "\"before guests arrive\" adds unstated detail; otherwise good."
+  },
+  "F": {
+   "human": 4,
+   "voice": 4,
+   "flow": 5,
+   "clarity": 5,
+   "fit": 5,
+   "person": 4,
+   "truth": 5,
+   "habits": 5,
+   "note": "Clean and complete; asks for amount."
+  },
+  "G": {
+   "human": 4,
+   "voice": 4,
+   "flow": 4,
+   "clarity": 5,
+   "fit": 4,
+   "person": 4,
+   "truth": 4,
+   "habits": 5,
+   "note": "\"we want everything ready before guests arrive\" invented reason."
+  },
+  "rank": [
+   "B",
+   "C",
+   "F",
+   "D",
+   "E",
+   "A",
+   "G"
+  ]
+ },
+ "B04": {
+  "A": {
+   "human": 2,
+   "voice": 2,
+   "flow": 3,
+   "clarity": 4,
+   "fit": 3,
+   "person": 3,
+   "truth": 4,
+   "habits": 1,
+   "note": "\"Here is what stood out\", \"Image after image. No context.\", \"Think about that.\" fragments, labels, closing questions."
+  },
+  "B": {
+   "human": 3,
+   "voice": 3,
+   "flow": 3,
+   "clarity": 4,
+   "fit": 3,
+   "person": 4,
+   "truth": 3,
+   "habits": 2,
+   "note": "Sales opener question; food metaphor invented; \"I still don't have the full answer\" invented."
+  },
+  "C": {
+   "human": 4,
+   "voice": 4,
+   "flow": 4,
+   "clarity": 5,
+   "fit": 4,
+   "person": 4,
+   "truth": 5,
+   "habits": 4,
+   "note": "Calm; \"here's one change worth making\" label-ish."
+  },
+  "D": {
+   "human": 4,
+   "voice": 4,
+   "flow": 4,
+   "clarity": 5,
+   "fit": 4,
+   "person": 4,
+   "truth": 5,
+   "habits": 4,
+   "note": "Good; \"who it was for, what wasn't working and what you set out to change\" triple."
+  },
+  "E": {
+   "human": 5,
+   "voice": 5,
+   "flow": 5,
+   "clarity": 5,
+   "fit": 5,
+   "person": 4,
+   "truth": 5,
+   "habits": 5,
+   "note": "Calm, concrete, plain takeaway; \"a busy person can find them\" good."
+  },
+  "F": {
+   "human": 4,
+   "voice": 4,
+   "flow": 4,
+   "clarity": 5,
+   "fit": 4,
+   "person": 4,
+   "truth": 5,
+   "habits": 3,
+   "note": "\"here's one change worth trying\" label; moral closing line."
+  },
+  "G": {
+   "human": 4,
+   "voice": 4,
+   "flow": 4,
+   "clarity": 5,
+   "fit": 4,
+   "person": 4,
+   "truth": 5,
+   "habits": 4,
+   "note": "\"the portfolio has not done its job\" slight moral line."
+  },
+  "rank": [
+   "E",
+   "C",
+   "D",
+   "G",
+   "F",
+   "B",
+   "A"
+  ]
+ },
+ "B05": {
+  "A": {
+   "human": 4,
+   "voice": 4,
+   "flow": 4,
+   "clarity": 5,
+   "fit": 4,
+   "person": 4,
+   "truth": 4,
+   "habits": 3,
+   "note": "Kumasi shop scene invented; \"busy only tells you... It does not tell you\" contrast."
+  },
+  "B": {
+   "human": 3,
+   "voice": 2,
+   "flow": 3,
+   "clarity": 4,
+   "fit": 3,
+   "person": 3,
+   "truth": 4,
+   "habits": 1,
+   "note": "\"Here is the thing.\" label; \"On paper... In your hand\" flips; \"trap\"."
+  },
+  "C": {
+   "human": 3,
+   "voice": 3,
+   "flow": 2,
+   "clarity": 3,
+   "fit": 3,
+   "person": 3,
+   "truth": 3,
+   "habits": 3,
+   "note": "Opening fragments; rice-pot cousin metaphor invented and confusing."
+  },
+  "D": {
+   "human": 5,
+   "voice": 4,
+   "flow": 5,
+   "clarity": 5,
+   "fit": 5,
+   "person": 4,
+   "truth": 5,
+   "habits": 4,
+   "note": "Explains well; \"busy... can even make it wider\" real insight."
+  },
+  "E": {
+   "human": 4,
+   "voice": 4,
+   "flow": 5,
+   "clarity": 5,
+   "fit": 5,
+   "person": 4,
+   "truth": 5,
+   "habits": 4,
+   "note": "\"next week turns into next month\" concrete; slight \"just stuck\" flip."
+  },
+  "F": {
+   "human": 4,
+   "voice": 3,
+   "flow": 4,
+   "clarity": 4,
+   "fit": 4,
+   "person": 4,
+   "truth": 5,
+   "habits": 3,
+   "note": "\"Being busy and having cash are two different things\"; \"ask a quieter question\" puffy."
+  },
+  "G": {
+   "human": 5,
+   "voice": 5,
+   "flow": 5,
+   "clarity": 5,
+   "fit": 5,
+   "person": 4,
+   "truth": 5,
+   "habits": 5,
+   "note": "Calm, clear causes, \"like rent or the next order\" concrete."
+  },
+  "rank": [
+   "G",
+   "D",
+   "E",
+   "A",
+   "F",
+   "C",
+   "B"
+  ]
+ },
+ "B06": {
+  "A": {
+   "human": 3,
+   "voice": 3,
+   "flow": 3,
+   "clarity": 5,
+   "fit": 4,
+   "person": 4,
+   "truth": 5,
+   "habits": 2,
+   "note": "\"Here is the thing.\" label; \"Maybe most of all\" fragment; question close."
+  },
+  "B": {
+   "human": 5,
+   "voice": 5,
+   "flow": 5,
+   "clarity": 5,
+   "fit": 5,
+   "person": 5,
+   "truth": 5,
+   "habits": 5,
+   "note": "Warm, honest \"Some weeks we will not get it right\"; practical."
+  },
+  "C": {
+   "human": 4,
+   "voice": 4,
+   "flow": 4,
+   "clarity": 5,
+   "fit": 4,
+   "person": 4,
+   "truth": 5,
+   "habits": 4,
+   "note": "Solid; list of reports, customers, school; neat closing line."
+  },
+  "D": {
+   "human": 5,
+   "voice": 4,
+   "flow": 5,
+   "clarity": 5,
+   "fit": 4,
+   "person": 5,
+   "truth": 5,
+   "habits": 4,
+   "note": "Honest limit about jobs that cannot stop; no greeting."
+  },
+  "E": {
+   "human": 4,
+   "voice": 3,
+   "flow": 3,
+   "clarity": 4,
+   "fit": 3,
+   "person": 4,
+   "truth": 2,
+   "habits": 2,
+   "note": "Football half-time analogy invented; promise \"the Lord helps us carry the work\"; moral close."
+  },
+  "F": {
+   "human": 4,
+   "voice": 4,
+   "flow": 5,
+   "clarity": 5,
+   "fit": 4,
+   "person": 4,
+   "truth": 5,
+   "habits": 4,
+   "note": "Good; \"a day that truly belongs to Him\" moral ending."
+  },
+  "G": {
+   "human": 4,
+   "voice": 4,
+   "flow": 4,
+   "clarity": 5,
+   "fit": 4,
+   "person": 4,
+   "truth": 5,
+   "habits": 4,
+   "note": "Thoughtful; \"None of these things are wicked\" slight grammar slip."
+  },
+  "rank": [
+   "B",
+   "D",
+   "G",
+   "F",
+   "C",
+   "A",
+   "E"
+  ]
+ },
+ "B07": {
+  "A": {
+   "human": 4,
+   "voice": 4,
+   "flow": 5,
+   "clarity": 5,
+   "fit": 4,
+   "person": 4,
+   "truth": 5,
+   "habits": 5,
+   "note": "Kind; no prayer mention for church brother."
+  },
+  "B": {
+   "human": 5,
+   "voice": 5,
+   "flow": 5,
+   "clarity": 5,
+   "fit": 5,
+   "person": 5,
+   "truth": 5,
+   "habits": 5,
+   "note": "Warm, praying, offers help before Saturday."
+  },
+  "C": {
+   "human": 4,
+   "voice": 4,
+   "flow": 5,
+   "clarity": 5,
+   "fit": 5,
+   "person": 4,
+   "truth": 5,
+   "habits": 5,
+   "note": "Good; \"I plan to be\" honest."
+  },
+  "D": {
+   "human": 3,
+   "voice": 3,
+   "flow": 4,
+   "clarity": 5,
+   "fit": 4,
+   "person": 3,
+   "truth": 5,
+   "habits": 4,
+   "note": "\"thoughts and prayers\" cliche; stiff full forms."
+  },
+  "E": {
+   "human": 4,
+   "voice": 4,
+   "flow": 4,
+   "clarity": 5,
+   "fit": 5,
+   "person": 4,
+   "truth": 5,
+   "habits": 4,
+   "note": "\"Please don't feel you need to reply\" thoughtful; \"thoughts and prayers\" cliche."
+  },
+  "F": {
+   "human": 4,
+   "voice": 4,
+   "flow": 4,
+   "clarity": 5,
+   "fit": 4,
+   "person": 4,
+   "truth": 4,
+   "habits": 4,
+   "note": "\"to stand with you\" slightly puffed."
+  },
+  "G": {
+   "human": 5,
+   "voice": 5,
+   "flow": 5,
+   "clarity": 5,
+   "fit": 5,
+   "person": 4,
+   "truth": 5,
+   "habits": 5,
+   "note": "Short, sincere, signed."
+  },
+  "rank": [
+   "B",
+   "G",
+   "C",
+   "A",
+   "E",
+   "F",
+   "D"
+  ]
+ },
+ "B08": {
+  "A": {
+   "human": 5,
+   "voice": 4,
+   "flow": 5,
+   "clarity": 5,
+   "fit": 5,
+   "person": 5,
+   "truth": 5,
+   "habits": 5,
+   "note": "Owns delay, confirms Thursday, asks if it affects bakery."
+  },
+  "B": {
+   "human": 4,
+   "voice": 4,
+   "flow": 5,
+   "clarity": 5,
+   "fit": 5,
+   "person": 4,
+   "truth": 5,
+   "habits": 5,
+   "note": "Clean and short; \"fell behind\" fine."
+  },
+  "C": {
+   "human": 4,
+   "voice": 4,
+   "flow": 4,
+   "clarity": 5,
+   "fit": 4,
+   "person": 4,
+   "truth": 5,
+   "habits": 5,
+   "note": "Formal full forms; \"trusting me with your bakery's logo\" kind."
+  },
+  "D": {
+   "human": 4,
+   "voice": 4,
+   "flow": 4,
+   "clarity": 5,
+   "fit": 4,
+   "person": 4,
+   "truth": 4,
+   "habits": 5,
+   "note": "\"If anything about the brief has changed\" useful; double sorry."
+  },
+  "E": {
+   "human": 4,
+   "voice": 4,
+   "flow": 4,
+   "clarity": 5,
+   "fit": 4,
+   "person": 4,
+   "truth": 4,
+   "habits": 4,
+   "note": "\"I take responsibility\" good; offers changes not in brief."
+  },
+  "F": {
+   "human": 3,
+   "voice": 3,
+   "flow": 3,
+   "clarity": 5,
+   "fit": 3,
+   "person": 4,
+   "truth": 3,
+   "habits": 3,
+   "note": "\"I owe you an apology.\" label; \"That date is firm.\" invented promise; choppy."
+  },
+  "G": {
+   "human": 5,
+   "voice": 4,
+   "flow": 5,
+   "clarity": 5,
+   "fit": 5,
+   "person": 5,
+   "truth": 5,
+   "habits": 5,
+   "note": "Warm, \"I'm back on it now\"; flexible close."
+  },
+  "rank": [
+   "A",
+   "G",
+   "B",
+   "D",
+   "C",
+   "E",
+   "F"
+  ]
+ },
+ "B09": {
+  "A": {
+   "human": 4,
+   "voice": 4,
+   "flow": 4,
+   "clarity": 5,
+   "fit": 4,
+   "person": 3,
+   "truth": 5,
+   "habits": 5,
+   "note": "Plain and accurate; omits Nkra and a bit thin."
+  },
+  "B": {
+   "human": 3,
+   "voice": 3,
+   "flow": 3,
+   "clarity": 5,
+   "fit": 3,
+   "person": 3,
+   "truth": 4,
+   "habits": 2,
+   "note": "\"could be the kindest thing a stranger reads today\" puffed sales close."
+  },
+  "C": {
+   "human": 5,
+   "voice": 4,
+   "flow": 5,
+   "clarity": 5,
+   "fit": 5,
+   "person": 4,
+   "truth": 5,
+   "habits": 5,
+   "note": "\"Write what you would want to hear\" helpful; names Nkra."
+  },
+  "D": {
+   "human": 4,
+   "voice": 4,
+   "flow": 4,
+   "clarity": 5,
+   "fit": 5,
+   "person": 4,
+   "truth": 5,
+   "habits": 4,
+   "note": "Good; \"stays a safe place\" slight puff."
+  },
+  "E": {
+   "human": 5,
+   "voice": 4,
+   "flow": 5,
+   "clarity": 5,
+   "fit": 5,
+   "person": 5,
+   "truth": 5,
+   "habits": 5,
+   "note": "\"Write the way you would write to a friend\" warm guidance."
+  },
+  "F": {
+   "human": 4,
+   "voice": 4,
+   "flow": 4,
+   "clarity": 5,
+   "fit": 4,
+   "person": 4,
+   "truth": 4,
+   "habits": 4,
+   "note": "\"could be the thing they read today\" slight overclaim."
+  },
+  "G": {
+   "human": 3,
+   "voice": 3,
+   "flow": 3,
+   "clarity": 3,
+   "fit": 3,
+   "person": 3,
+   "truth": 4,
+   "habits": 3,
+   "note": "Coins metaphor with parenthetical; \"waits... folded\" too poetic."
+  },
+  "rank": [
+   "E",
+   "C",
+   "D",
+   "A",
+   "F",
+   "B",
+   "G"
+  ]
+ },
+ "B10": {
+  "A": {
+   "human": 2,
+   "voice": 2,
+   "flow": 3,
+   "clarity": 4,
+   "fit": 3,
+   "person": 3,
+   "truth": 4,
+   "habits": 1,
+   "note": "Rushed fragments; \"Here is the case for it\" labels; \"lost little and learned a lot\"; closing question."
+  },
+  "B": {
+   "human": 5,
+   "voice": 5,
+   "flow": 5,
+   "clarity": 5,
+   "fit": 5,
+   "person": 4,
+   "truth": 5,
+   "habits": 5,
+   "note": "Calm, balanced, clear objection and limits."
+  },
+  "C": {
+   "human": 4,
+   "voice": 4,
+   "flow": 4,
+   "clarity": 5,
+   "fit": 4,
+   "person": 4,
+   "truth": 5,
+   "habits": 4,
+   "note": "\"really underfed\" objection good; slightly long and listy."
+  },
+  "D": {
+   "human": 4,
+   "voice": 4,
+   "flow": 4,
+   "clarity": 5,
+   "fit": 4,
+   "person": 4,
+   "truth": 5,
+   "habits": 3,
+   "note": "\"The real objection is this:\" label; \"don't fail for lack... They fail because\" flip; moral end."
+  },
+  "E": {
+   "human": 5,
+   "voice": 5,
+   "flow": 5,
+   "clarity": 5,
+   "fit": 5,
+   "person": 4,
+   "truth": 5,
+   "habits": 5,
+   "note": "Unhurried, honest objection, sensible advice."
+  },
+  "F": {
+   "human": 4,
+   "voice": 4,
+   "flow": 4,
+   "clarity": 5,
+   "fit": 4,
+   "person": 5,
+   "truth": 5,
+   "habits": 3,
+   "note": "\"Rent, transport, data\" concrete; \"Check your contract. Count your hours.\" stacked close."
+  },
+  "G": {
+   "human": 3,
+   "voice": 3,
+   "flow": 3,
+   "clarity": 4,
+   "fit": 3,
+   "person": 4,
+   "truth": 4,
+   "habits": 2,
+   "note": "Bucket metaphor; \"works like a chain\"; fragment list of \"When...\"."
+  },
+  "rank": [
+   "B",
+   "E",
+   "C",
+   "F",
+   "D",
+   "G",
+   "A"
+  ]
+ },
+ "B11": {
+  "A": {
+   "human": 4,
+   "voice": 4,
+   "flow": 4,
+   "clarity": 5,
+   "fit": 4,
+   "person": 4,
+   "truth": 4,
+   "habits": 5,
+   "note": "\"closed or running in the background\" adds; \"I'll keep you posted\" small promise."
+  },
+  "B": {
+   "human": 4,
+   "voice": 5,
+   "flow": 4,
+   "clarity": 5,
+   "fit": 4,
+   "person": 4,
+   "truth": 5,
+   "habits": 5,
+   "note": "Keeps \"I think maybe\"; emoji; full forms."
+  },
+  "C": {
+   "human": 4,
+   "voice": 4,
+   "flow": 4,
+   "clarity": 5,
+   "fit": 4,
+   "person": 4,
+   "truth": 4,
+   "habits": 5,
+   "note": "\"please do not count on that date\" adds emphasis; fine."
+  },
+  "D": {
+   "human": 5,
+   "voice": 5,
+   "flow": 5,
+   "clarity": 5,
+   "fit": 5,
+   "person": 5,
+   "truth": 5,
+   "habits": 5,
+   "note": "Keeps certainty, practical test tip, warm thanks."
+  },
+  "E": {
+   "human": 5,
+   "voice": 4,
+   "flow": 5,
+   "clarity": 5,
+   "fit": 5,
+   "person": 4,
+   "truth": 5,
+   "habits": 5,
+   "note": "Clear, practical; \"may be able\" keeps hedge."
+  },
+  "F": {
+   "human": 4,
+   "voice": 4,
+   "flow": 5,
+   "clarity": 5,
+   "fit": 4,
+   "person": 4,
+   "truth": 5,
+   "habits": 5,
+   "note": "Clean and faithful; less practical."
+  },
+  "G": {
+   "human": 4,
+   "voice": 5,
+   "flow": 4,
+   "clarity": 5,
+   "fit": 4,
+   "person": 4,
+   "truth": 5,
+   "habits": 5,
+   "note": "Faithful hedge; \"keep the app open on your screen\" practical."
+  },
+  "rank": [
+   "D",
+   "G",
+   "E",
+   "B",
+   "F",
+   "A",
+   "C"
+  ]
+ },
+ "B12": {
+  "A": {
+   "human": 3,
+   "voice": 3,
+   "flow": 3,
+   "clarity": 4,
+   "fit": 2,
+   "person": 3,
+   "truth": 3,
+   "habits": 1,
+   "note": "\"You run the shop. You serve... You chase\" triple; sales question close; drifts from meaning."
+  },
+  "B": {
+   "human": 4,
+   "voice": 4,
+   "flow": 5,
+   "clarity": 5,
+   "fit": 5,
+   "person": 4,
+   "truth": 5,
+   "habits": 4,
+   "note": "Keeps meaning closely; \"never only numbers\" soft flip."
+  },
+  "C": {
+   "human": 4,
+   "voice": 4,
+   "flow": 4,
+   "clarity": 5,
+   "fit": 4,
+   "person": 4,
+   "truth": 5,
+   "habits": 3,
+   "note": "\"Yes, we work with numbers. But what we really care about\" contrast flip."
+  },
+  "D": {
+   "human": 3,
+   "voice": 3,
+   "flow": 3,
+   "clarity": 4,
+   "fit": 4,
+   "person": 3,
+   "truth": 4,
+   "habits": 4,
+   "note": "\"money know-how is sharp and up to date\" awkward; \"sit with you\" adds."
+  },
+  "E": {
+   "human": 4,
+   "voice": 4,
+   "flow": 4,
+   "clarity": 5,
+   "fit": 5,
+   "person": 4,
+   "truth": 5,
+   "habits": 4,
+   "note": "Faithful; \"Managing the numbers is part... The bigger aim\" soft flip."
+  },
+  "F": {
+   "human": 4,
+   "voice": 4,
+   "flow": 4,
+   "clarity": 5,
+   "fit": 3,
+   "person": 4,
+   "truth": 5,
+   "habits": 5,
+   "note": "Clean but under 70 words."
+  },
+  "G": {
+   "human": 5,
+   "voice": 5,
+   "flow": 5,
+   "clarity": 5,
+   "fit": 5,
+   "person": 5,
+   "truth": 5,
+   "habits": 4,
+   "note": "Concrete \"where the money comes from\"; small triple; clear care."
+  },
+  "rank": [
+   "G",
+   "B",
+   "E",
+   "F",
+   "C",
+   "D",
+   "A"
+  ]
+ },
+ "B13": {
+  "A": {
+   "human": 5,
+   "voice": 5,
+   "flow": 5,
+   "clarity": 5,
+   "fit": 5,
+   "person": 5,
+   "truth": 5,
+   "habits": 5,
+   "note": "Plain, honest, each fact explained without puffing."
+  },
+  "B": {
+   "human": 3,
+   "voice": 3,
+   "flow": 3,
+   "clarity": 5,
+   "fit": 3,
+   "person": 4,
+   "truth": 4,
+   "habits": 3,
+   "note": "\"You want an intern who starts with the user\" presumptuous opener; \"matters a great deal\"."
+  },
+  "C": {
+   "human": 4,
+   "voice": 4,
+   "flow": 4,
+   "clarity": 5,
+   "fit": 4,
+   "person": 4,
+   "truth": 5,
+   "habits": 4,
+   "note": "Good; \"a habit of working with data\" fine."
+  },
+  "D": {
+   "human": 3,
+   "voice": 3,
+   "flow": 3,
+   "clarity": 4,
+   "fit": 2,
+   "person": 4,
+   "truth": 4,
+   "habits": 2,
+   "note": "Sweeping opener; maths teacher analogy; \"I don't have awards or metrics\" undercuts."
+  },
+  "E": {
+   "human": 4,
+   "voice": 4,
+   "flow": 4,
+   "clarity": 5,
+   "fit": 5,
+   "person": 4,
+   "truth": 4,
+   "habits": 5,
+   "note": "Good; \"question assumptions\" slight added claim."
+  },
+  "F": {
+   "human": 4,
+   "voice": 4,
+   "flow": 4,
+   "clarity": 5,
+   "fit": 5,
+   "person": 5,
+   "truth": 5,
+   "habits": 5,
+   "note": "Clear, caring; slightly long."
+  },
+  "G": {
+   "human": 4,
+   "voice": 4,
+   "flow": 4,
+   "clarity": 5,
+   "fit": 4,
+   "person": 4,
+   "truth": 5,
+   "habits": 4,
+   "note": "\"that mix of design, building and customer understanding\" triple."
+  },
+  "rank": [
+   "A",
+   "F",
+   "E",
+   "C",
+   "G",
+   "B",
+   "D"
+  ]
+ },
+ "B14": {
+  "A": {
+   "human": 4,
+   "voice": 4,
+   "flow": 4,
+   "clarity": 5,
+   "fit": 4,
+   "person": 4,
+   "truth": 5,
+   "habits": 5,
+   "note": "Warm and plain; \"that meant a lot\"."
+  },
+  "B": {
+   "human": 4,
+   "voice": 4,
+   "flow": 4,
+   "clarity": 5,
+   "fit": 4,
+   "person": 4,
+   "truth": 5,
+   "habits": 5,
+   "note": "Fine; slightly formal."
+  },
+  "C": {
+   "human": 5,
+   "voice": 5,
+   "flow": 5,
+   "clarity": 5,
+   "fit": 5,
+   "person": 4,
+   "truth": 5,
+   "habits": 5,
+   "note": "Natural and brief."
+  },
+  "D": {
+   "human": 3,
+   "voice": 3,
+   "flow": 3,
+   "clarity": 5,
+   "fit": 4,
+   "person": 4,
+   "truth": 4,
+   "habits": 3,
+   "note": "\"not walking this road alone\" journey cliche; short fragments."
+  },
+  "E": {
+   "human": 4,
+   "voice": 4,
+   "flow": 4,
+   "clarity": 5,
+   "fit": 4,
+   "person": 5,
+   "truth": 4,
+   "habits": 4,
+   "note": "\"You didn't have to\" assumes; \"God bless you\" fits church."
+  },
+  "F": {
+   "human": 4,
+   "voice": 4,
+   "flow": 5,
+   "clarity": 5,
+   "fit": 5,
+   "person": 4,
+   "truth": 5,
+   "habits": 5,
+   "note": "Clean and warm."
+  },
+  "G": {
+   "human": 5,
+   "voice": 5,
+   "flow": 5,
+   "clarity": 5,
+   "fit": 5,
+   "person": 5,
+   "truth": 5,
+   "habits": 5,
+   "note": "\"knowing someone was following how I was doing\" specific and real."
+  },
+  "rank": [
+   "G",
+   "C",
+   "F",
+   "A",
+   "B",
+   "E",
+   "D"
+  ]
+ },
+ "B15": {
+  "A": {
+   "human": 4,
+   "voice": 4,
+   "flow": 5,
+   "clarity": 5,
+   "fit": 5,
+   "person": 4,
+   "truth": 4,
+   "habits": 5,
+   "note": "\"The few minutes of planning\" adds a time figure."
+  },
+  "B": {
+   "human": 4,
+   "voice": 4,
+   "flow": 5,
+   "clarity": 5,
+   "fit": 4,
+   "person": 4,
+   "truth": 5,
+   "habits": 5,
+   "note": "Faithful and plain; a bit bare."
+  },
+  "C": {
+   "human": 5,
+   "voice": 4,
+   "flow": 5,
+   "clarity": 5,
+   "fit": 5,
+   "person": 4,
+   "truth": 5,
+   "habits": 5,
+   "note": "Clear; \"fewer wrong guesses about what I want\" good."
+  },
+  "D": {
+   "human": 3,
+   "voice": 3,
+   "flow": 4,
+   "clarity": 5,
+   "fit": 4,
+   "person": 3,
+   "truth": 5,
+   "habits": 3,
+   "note": "\"Why?\" forced question."
+  },
+  "E": {
+   "human": 3,
+   "voice": 3,
+   "flow": 3,
+   "clarity": 5,
+   "fit": 3,
+   "person": 3,
+   "truth": 5,
+   "habits": 2,
+   "note": "\"Why?\" plus \"Try it on your next build. Plan first, then prompt.\" sales close."
+  },
+  "F": {
+   "human": 3,
+   "voice": 3,
+   "flow": 3,
+   "clarity": 4,
+   "fit": 3,
+   "person": 4,
+   "truth": 3,
+   "habits": 3,
+   "note": "Market list analogy; \"Still finding out\" invented uncertainty."
+  },
+  "G": {
+   "human": 5,
+   "voice": 5,
+   "flow": 5,
+   "clarity": 5,
+   "fit": 5,
+   "person": 4,
+   "truth": 5,
+   "habits": 5,
+   "note": "Faithful, natural, small payoff line."
+  },
+  "rank": [
+   "G",
+   "C",
+   "B",
+   "A",
+   "D",
+   "F",
+   "E"
+  ]
+ }
+}

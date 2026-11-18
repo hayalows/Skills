@@ -1,5 +1,7 @@
 # Papa Kojo voice profile
 
+> **v3.0 "Original" note (18 Nov 2026).** This profile still holds his stated preferences and the avoid-word list. His own words and corrections now live in [voice-bank.md](voice-bank.md), which outranks this file. Contractions are settled by the [register dial](register-dial.md): natural in Chat, Comment, Message and personal Long form (his comments and the approved essay use them), full forms in Formal writing and wherever he asks.
+
 ## Evidence and confidence
 
 Treat this as a working profile, not a promise of perfect imitation.

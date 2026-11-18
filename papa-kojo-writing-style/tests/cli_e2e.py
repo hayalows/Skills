@@ -77,9 +77,9 @@ def test_checker_banned_and_scope():
 
 def test_packaging_and_advice():
     skill = (ROOT / "SKILL.md").read_text()
-    for path in ["references/anti-slop.md", "references/voice-profile.md", "references/craft-sources.md", "scripts/voice_dice.py", "scripts/voice_check.py", "tests/cli_e2e.py"]:
+    for path in ["references/voice-profile.md", "references/craft-sources.md", "scripts/voice_dice.py", "scripts/voice_check.py", "tests/cli_e2e.py"]:
         check(path in skill, f"missing reference {path}")
-    check("version: 1.2" in skill, "version label missing")
+    check("version: 3.0" in skill, "version label missing")
     check("meaning" in skill.lower() and "facts" in skill.lower(), "factual safeguards missing")
     test = run("voice_dice.py", ["--format", "reflective"])
     check(test.returncode == 0 and "Entry:" in test.stdout, "legacy plain text usage broken")
