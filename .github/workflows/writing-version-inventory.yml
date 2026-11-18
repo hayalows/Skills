@@ -25,6 +25,19 @@ jobs:
           fetch-depth: 0
       - name: Verify auto-registration behavior
         run: python3 -m unittest discover -s papa-kojo-writing-style/benchmarks/version-lab -p 'test_*.py' -v
+      - name: Verify shared writing checkers and long-form reading windows
+        run: |
+          python3 papa-kojo-writing-style/tests/original_check_e2e.py
+          python3 - <<'PY'
+          import json, subprocess, sys
+          line = "The committee has a plan, but the time is not confirmed. We can explain the proposal without pretending that a decision has been made. "
+          text = line * 18
+          proc = subprocess.run([sys.executable, 'papa-kojo-writing-style/scripts/reading_windows.py'], input=text, capture_output=True, text=True, check=True)
+          report = json.loads(proc.stdout)
+          assert report['words'] >= 250
+          assert report['grade_estimate'] is not None and len(report['windows']) >= 1
+          print('Reading-window smoke test passed:', report['words'], 'words')
+          PY
       - name: Register versions, without generating or grading
         run: |
           python3 papa-kojo-writing-style/benchmarks/version-lab/autoregister.py \
