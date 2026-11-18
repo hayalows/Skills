@@ -1,0 +1,65 @@
+name: Writing skill version registry
+
+on:
+  push:
+    paths:
+      - "papa-kojo-writing-style/SKILL.md"
+      - "papa-kojo-writing-style/versions/**"
+      - "papa-kojo-writing-style/benchmarks/version-lab/**"
+  pull_request:
+    paths:
+      - "papa-kojo-writing-style/SKILL.md"
+      - "papa-kojo-writing-style/versions/**"
+      - "papa-kojo-writing-style/benchmarks/version-lab/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  inventory:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify auto-registration behavior
+        run: python3 -m unittest discover -s papa-kojo-writing-style/benchmarks/version-lab -p 'test_*.py' -v
+      - name: Verify shared writing checkers and long-form reading windows
+        run: |
+          python3 papa-kojo-writing-style/tests/original_check_e2e.py
+          python3 - <<'PY'
+          import json, subprocess, sys
+          line = "The committee has a plan, but the time is not confirmed. We can explain the proposal without pretending that a decision has been made. "
+          text = line * 18
+          proc = subprocess.run([sys.executable, 'papa-kojo-writing-style/scripts/reading_windows.py'], input=text, capture_output=True, text=True, check=True)
+          report = json.loads(proc.stdout)
+          assert report['words'] >= 250
+          assert report['grade_estimate'] is not None and len(report['windows']) >= 1
+          print('Reading-window smoke test passed:', report['words'], 'words')
+          PY
+      - name: Register versions, without generating or grading
+        run: |
+          python3 papa-kojo-writing-style/benchmarks/version-lab/autoregister.py \
+            --repo . \
+            --out /tmp/pkm-writing-version-manifest.json
+      - name: Prepare matched writing requests for every version
+        run: |
+          python3 papa-kojo-writing-style/benchmarks/version-lab/prepare_matrix.py \
+            --repo . \
+            --briefs papa-kojo-writing-style/benchmarks/version-lab/public-smoke.json \
+            --out /tmp/pkm-writing-matrix \
+            --repeats 3 \
+            --model UNCONFIGURED
+      - name: Store inspectable request matrix
+        uses: actions/upload-artifact@v4
+        with:
+          name: pkm-writing-version-matrix
+          path: /tmp/pkm-writing-matrix/matrix.json
+          retention-days: 30
+      - name: Store inspectable inventory
+        uses: actions/upload-artifact@v4
+        with:
+          name: pkm-writing-version-manifest
+          path: /tmp/pkm-writing-version-manifest.json
+          retention-days: 30
