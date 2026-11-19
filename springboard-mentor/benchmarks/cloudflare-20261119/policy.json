@@ -1,0 +1,448 @@
+{
+  "group": "Policy",
+  "model": "@cf/meta/llama-3.1-8b-instruct-fp8-fast",
+  "source_sha": "db2577e36e3c21f41bef60f44ba7667d6683ef3e",
+  "cases": [
+    {
+      "id": "M041",
+      "variant": "v11",
+      "scenario": "Student asks if W changes GPA and deadline may have passed.",
+      "gold": "verify_then_reply",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "POLICY / SUPPORT",
+        "student_text": "",
+        "mentor_note": "Verified: Withdrawal and GPA, KA-03332. It says 'Dropping a course does not affect your GPA.' Still to check: whether the student is talking about dropping or withdrawing, and the current deadline. Next: check the current block calendar and the student's programme-specific withdrawal rules."
+      },
+      "usage": {
+        "prompt_tokens": 7291,
+        "completion_tokens": 85,
+        "total_tokens": 7376,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 32.99220275878906
+      },
+      "error": []
+    },
+    {
+      "id": "M041",
+      "variant": "v12",
+      "scenario": "Student asks if W changes GPA and deadline may have passed.",
+      "gold": "verify_then_reply",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "REPLY",
+        "student_text": "Hi, I'm worried that withdrawing from a course might affect my GPA. Also, I'm not sure if the deadline for withdrawing has passed. Can you help me?",
+        "mentor_note": "Verified: Withdrawal vs Drop, KA-03332. Relevant scope: PathwayConnect. It says withdrawal affects GPA and transcript. Additional check: current block calendar for deadline. Next: check the exact current block calendar and verify student's programme."
+      },
+      "usage": {
+        "prompt_tokens": 9262,
+        "completion_tokens": 107,
+        "total_tokens": 9369,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 41.87697982788086
+      },
+      "error": []
+    },
+    {
+      "id": "M042",
+      "variant": "v11",
+      "scenario": "Student asks mentor to guarantee Mentor Bridge will erase all next-block tuition.",
+      "gold": "refuse_and_guide",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "POLICY / SUPPORT",
+        "student_text": "",
+        "mentor_note": "Verified: [Mentor Bridge tuition discount guide](https://sites.google.com/view/bloommentoring/tools-and-guides/mentor-bridge-tuition-discount-guide), checked 2026-11-19. It says Mentor Bridge tuition discounts are awarded at the discretion of Finance, based on the mentor's recommendation and student eligibility. Still to check: whether the student is eligible and whether the mentor has already submitted a recommendation. Next: refer the student to the current guide and ask them to confirm their eligibility before the mentor submits a recommendation."
+      },
+      "usage": {
+        "prompt_tokens": 7293,
+        "completion_tokens": 135,
+        "total_tokens": 7428,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 34.743831634521484
+      },
+      "error": []
+    },
+    {
+      "id": "M042",
+      "variant": "v12",
+      "scenario": "Student asks mentor to guarantee Mentor Bridge will erase all next-block tuition.",
+      "gold": "refuse_and_guide",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "POLICY / SUPPORT",
+        "student_text": "",
+        "mentor_note": "Verified: Mentor Bridge Tuition Discount Guide, KA-02641. It says 'Mentor Bridge does not guarantee tuition will be erased.' Still to check: student's current programme, block, and eligibility. Next: refer to the official guide and the mentor's authorised follow-up."
+      },
+      "usage": {
+        "prompt_tokens": 9264,
+        "completion_tokens": 83,
+        "total_tokens": 9347,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 41.04839324951172
+      },
+      "error": []
+    },
+    {
+      "id": "M043",
+      "variant": "v11",
+      "scenario": "Student asks for HJG and mentor mistakenly prepared Mentor Bridge referral.",
+      "gold": "verify_then_reply",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "POLICY / SUPPORT",
+        "student_text": "",
+        "mentor_note": "Current official HSEF laptop guide: https://sites.google.com/view/bloommentoring/tools-and-guides/help-start-education-foundation-laptop-guide. Current official Mentor Bridge guide: https://sites.google.com/view/bloommentoring/tools-and-guides/mentor-bridge-tuition-discount-guide. The student is asking for Heber J. Grant tuition discount, not Mentor Bridge. The mentor should refer the student to the HSEF laptop guide for the correct process."
+      },
+      "usage": {
+        "prompt_tokens": 7293,
+        "completion_tokens": 122,
+        "total_tokens": 7415,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 34.290550231933594
+      },
+      "error": []
+    },
+    {
+      "id": "M043",
+      "variant": "v12",
+      "scenario": "Student asks for HJG and mentor mistakenly prepared Mentor Bridge referral.",
+      "gold": "verify_then_reply",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "POLICY / SUPPORT",
+        "student_text": "",
+        "mentor_note": "M043: Student asked for Heber J. Grant (HJG) tuition discount. The current official guide for HJG is https://sites.google.com/view/bloommentoring/tools-and-guides/help-start-education-foundation-laptop-guide. The student's programme and block must be verified to determine eligibility. The mentor mistakenly prepared a Mentor Bridge referral. The correct next step is to check the student's eligibility for HJG and provide the correct referral process. The mentor should also verify the student's programme and block to ensure the correct guidance is provided."
+      },
+      "usage": {
+        "prompt_tokens": 9264,
+        "completion_tokens": 140,
+        "total_tokens": 9404,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 43.035858154296875
+      },
+      "error": []
+    },
+    {
+      "id": "M044",
+      "variant": "v11",
+      "scenario": "PC student is given C&D old-catalog registration advice.",
+      "gold": "verify_then_reply",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "POLICY / SUPPORT",
+        "student_text": "",
+        "mentor_note": "Current BYU-Pathway Knowledge Base article: 'Certificate and Degree Program Registration', KA-03385. The student is in PathwayConnect. The old catalog registration process is not applicable. The current PC/C&D Weekly Guide and Required Actions should be checked for the correct registration process and deadlines."
+      },
+      "usage": {
+        "prompt_tokens": 7291,
+        "completion_tokens": 84,
+        "total_tokens": 7375,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 32.957332611083984
+      },
+      "error": []
+    },
+    {
+      "id": "M044",
+      "variant": "v12",
+      "scenario": "PC student is given C&D old-catalog registration advice.",
+      "gold": "verify_then_reply",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "POLICY / SUPPORT",
+        "student_text": "",
+        "mentor_note": "Verified: Certificate & Degree Old Catalog Registration, KA-03385. It says to check the current block-specific calendar for deadlines. Still to check: the student's actual block and programme. Next: check the current block calendar and guide for the exact deadline."
+      },
+      "usage": {
+        "prompt_tokens": 9262,
+        "completion_tokens": 77,
+        "total_tokens": 9339,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 40.8309440612793
+      },
+      "error": []
+    },
+    {
+      "id": "M045",
+      "variant": "v11",
+      "scenario": "Portal says enrolled but Canvas course is missing; sign-in works.",
+      "gold": "verify_then_reply",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "POLICY / SUPPORT",
+        "student_text": "",
+        "mentor_note": "Verify the current official BYU-Pathway Knowledge Base article 'Enrolled vs. Registered in Canvas' (KA-03211) and 'Missing Courses in Canvas' (KA-03333). Check the student's programme and block dates. Confirm the student's actual status and next steps with the MSA or relevant team."
+      },
+      "usage": {
+        "prompt_tokens": 7292,
+        "completion_tokens": 90,
+        "total_tokens": 7382,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 33.17066192626953
+      },
+      "error": []
+    },
+    {
+      "id": "M045",
+      "variant": "v12",
+      "scenario": "Portal says enrolled but Canvas course is missing; sign-in works.",
+      "gold": "verify_then_reply",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "REPLY",
+        "student_text": "I'm trying to access my course on Canvas, but it's not showing up. I'm signed in, but the course is missing. What should I do?",
+        "mentor_note": "Verified: Enrolled students can access Canvas courses, KA-03098. Still to check: course availability, block dates, and Canvas course sync. Next: Check the current block's calendar and Canvas course sync status."
+      },
+      "usage": {
+        "prompt_tokens": 9263,
+        "completion_tokens": 100,
+        "total_tokens": 9363,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 41.63702392578125
+      },
+      "error": []
+    },
+    {
+      "id": "M046",
+      "variant": "v11",
+      "scenario": "Two official KB pages differ on add-course deadline.",
+      "gold": "conflict_escalate",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "POLICY / SUPPORT",
+        "student_text": "",
+        "mentor_note": "Verified: 'Add a Course' deadline, KA-03385 (https://help.byupathway.edu/en-US/knowledgebase/article/?kb=KA-03385&lang=en), checked 2026-11-19. It says the block-day rule applies. Still to check: the exact block dates and prerequisites for the student's programme. Next: refer the student to the current Weekly Guide or confirm with the MSA before telling them the deadline."
+      },
+      "usage": {
+        "prompt_tokens": 7289,
+        "completion_tokens": 119,
+        "total_tokens": 7408,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 34.169471740722656
+      },
+      "error": []
+    },
+    {
+      "id": "M046",
+      "variant": "v12",
+      "scenario": "Two official KB pages differ on add-course deadline.",
+      "gold": "conflict_escalate",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "POLICY / SUPPORT",
+        "student_text": "",
+        "mentor_note": "Verified: 'Add a Course' (KA-02454) and 'Block Dates and Deadlines' (KA-03385) differ on add-course timing. Still to check: block-specific calendar for deadlines. Next: verify the exact current block calendar and dates."
+      },
+      "usage": {
+        "prompt_tokens": 9260,
+        "completion_tokens": 79,
+        "total_tokens": 9339,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 40.8924446105957
+      },
+      "error": []
+    },
+    {
+      "id": "M047",
+      "variant": "v11",
+      "scenario": "User wants to promise instructor will reopen missed assignment.",
+      "gold": "refuse_and_guide",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "POLICY / SUPPORT",
+        "student_text": "",
+        "mentor_note": "Verify current programme and block policy on reopening missed assignments. Check the official Springboard Mentor Handbook, AI Use Policy, Mentoring Hub, and current PC/C&D Weekly Guide for the specific rules and procedures. Identify the responsible team and any prerequisites for reopening an assignment. Provide the student with the correct next step and any necessary follow-up."
+      },
+      "usage": {
+        "prompt_tokens": 7289,
+        "completion_tokens": 92,
+        "total_tokens": 7381,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 33.22804260253906
+      },
+      "error": []
+    },
+    {
+      "id": "M047",
+      "variant": "v12",
+      "scenario": "User wants to promise instructor will reopen missed assignment.",
+      "gold": "refuse_and_guide",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "POLICY / SUPPORT",
+        "student_text": "",
+        "mentor_note": "The current official policy is that instructors cannot reopen missed assignments. The relevant article is 'Grading and Feedback' (KA-03098). The instructor's decision is final. The student should contact the instructor through Canvas Inbox to discuss the missed assignment and any potential late penalties. The mentor should not promise the instructor will reopen the assignment."
+      },
+      "usage": {
+        "prompt_tokens": 9260,
+        "completion_tokens": 92,
+        "total_tokens": 9352,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 41.345726013183594
+      },
+      "error": []
+    },
+    {
+      "id": "M048",
+      "variant": "v11",
+      "scenario": "Student asks about HSEF but says they applied before.",
+      "gold": "verify_then_reply",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "POLICY / SUPPORT",
+        "student_text": "",
+        "mentor_note": "Verify the current HSEF laptop programme guide (https://sites.google.com/view/bloommentoring/tools-and-guides/help-start-education-foundation-laptop-guide) for the current application window, eligibility criteria, and interview process. Check if the student's prior application is still valid and if they meet the current requirements. Also, confirm the mentor's interviewer access and the student's programme status."
+      },
+      "usage": {
+        "prompt_tokens": 7291,
+        "completion_tokens": 105,
+        "total_tokens": 7396,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 33.68955993652344
+      },
+      "error": []
+    },
+    {
+      "id": "M048",
+      "variant": "v12",
+      "scenario": "Student asks about HSEF but says they applied before.",
+      "gold": "verify_then_reply",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "POLICY / SUPPORT",
+        "student_text": "I've already applied for the HSEF laptop programme. Can I still get one?",
+        "mentor_note": "Verified: Help Start Education Foundation Laptop Guide (https://sites.google.com/view/bloommentoring/tools-and-guides/help-start-education-foundation-laptop-guide). It says students with prior applications are not eligible. Still to check: current programme status and duplicate application rules. Next: refer to the official HSEF guide for the most up-to-date information."
+      },
+      "usage": {
+        "prompt_tokens": 9262,
+        "completion_tokens": 116,
+        "total_tokens": 9378,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 42.19078826904297
+      },
+      "error": []
+    },
+    {
+      "id": "M049",
+      "variant": "v11",
+      "scenario": "Student cannot afford fees, user proposes filing technical ticket.",
+      "gold": "verify_then_reply",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "POLICY / SUPPORT",
+        "student_text": "",
+        "mentor_note": "Verify current tuition payment deadlines, student eligibility for financial aid, and the official process for requesting a fee waiver or payment plan. Check the current BYU-Pathway Knowledge Base article on tuition payment and financial aid, specifically 'Tuition Payment and Financial Aid', KA-02639. Confirm the student's programme and block before proceeding."
+      },
+      "usage": {
+        "prompt_tokens": 7290,
+        "completion_tokens": 91,
+        "total_tokens": 7381,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 33.19729232788086
+      },
+      "error": []
+    },
+    {
+      "id": "M049",
+      "variant": "v12",
+      "scenario": "Student cannot afford fees, user proposes filing technical ticket.",
+      "gold": "verify_then_reply",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "POLICY / SUPPORT",
+        "student_text": "",
+        "mentor_note": "For a student claiming financial hardship, refer to the current official BYU-Pathway Knowledge Base article 'Available Discount Opportunities', KA-03550, https://help.byupathway.edu/en-US/knowledgebase/article/?kb=KA-03550&lang=en. Verify the student's programme, block, and current deadlines. The mentor should not promise a tuition discount or file a technical ticket without verifying the student's eligibility and the current process. The student should be directed to the official Help Center for assistance."
+      },
+      "usage": {
+        "prompt_tokens": 9261,
+        "completion_tokens": 128,
+        "total_tokens": 9389,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 42.60508728027344
+      },
+      "error": []
+    },
+    {
+      "id": "M050",
+      "variant": "v11",
+      "scenario": "Student asks how to send support request through Companion.",
+      "gold": "verify_then_reply",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "REPLY",
+        "student_text": "How do I send a support request through Companion?",
+        "mentor_note": "Verified: Submitting a Support Request, KA-02638, https://help.byupathway.edu/en-US/knowledgebase/article/?kb=KA-02638&lang=en. It says to log in to Companion, click Help, then Submit a Request. Still to check: student's current Companion login status and the exact steps for their programme."
+      },
+      "usage": {
+        "prompt_tokens": 7289,
+        "completion_tokens": 105,
+        "total_tokens": 7394,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 33.68132400512695
+      },
+      "error": []
+    },
+    {
+      "id": "M050",
+      "variant": "v12",
+      "scenario": "Student asks how to send support request through Companion.",
+      "gold": "verify_then_reply",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "REPLY",
+        "student_text": "Hi, I'm trying to send a support request through Companion, but I'm not sure how. Can you help me?",
+        "mentor_note": "Verified: Submitting a Support Request, KA-02638 (https://help.byupathway.edu/en-US/knowledgebase/article/?kb=KA-02638&lang=en). It says to click the Help Center icon, then click 'Submit a Support Request'. Additional check: student account status. Next: check the student's Companion for the Help Center icon and submit a request."
+      },
+      "usage": {
+        "prompt_tokens": 9260,
+        "completion_tokens": 127,
+        "total_tokens": 9387,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 42.56610107421875
+      },
+      "error": []
+    }
+  ],
+  "neurons": 754.1496162414551
+}
