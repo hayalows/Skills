@@ -1,0 +1,138 @@
+{
+  "model": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+  "cases": [
+    {
+      "case_id": "M001",
+      "variant": "v11",
+      "group": "Outreach",
+      "scenario": "Week 5 first contact: no prior chat, PC student, unknown goal; current PC guide has not been opened.",
+      "gold": "verify_then_outreach",
+      "answer": {
+        "route": "OUTREACH",
+        "student_text": "Hi, I'm Papa Kojo, your Springboard Mentor. What brings you to BYU-Pathway this semester?",
+        "mentor_note": "First contact, Week 5, no prior conversation, PC student"
+      },
+      "usage": {
+        "prompt_tokens": 6203,
+        "completion_tokens": 57,
+        "total_tokens": 6260,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 177.0934600830078
+      },
+      "model": "@cf/meta/llama-3.3-70b-instruct-sd"
+    },
+    {
+      "case_id": "M001",
+      "variant": "v12",
+      "group": "Outreach",
+      "scenario": "Week 5 first contact: no prior chat, PC student, unknown goal; current PC guide has not been opened.",
+      "gold": "verify_then_outreach",
+      "answer": {
+        "route": "OUTREACH",
+        "student_text": "",
+        "mentor_note": "Check current PC Week 5 guide for focus and deadlines before drafting first contact message"
+      },
+      "usage": {
+        "prompt_tokens": 8665,
+        "completion_tokens": 36,
+        "total_tokens": 8701,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 238.44833374023438
+      },
+      "model": "@cf/meta/llama-3.3-70b-instruct-sd"
+    },
+    {
+      "case_id": "M031",
+      "variant": "v11",
+      "group": "Followup",
+      "scenario": "Mentor promised withdrawal guidance before Monday; now Wednesday; student already made final decision.",
+      "gold": "repair",
+      "answer": {
+        "route": "reply",
+        "student_text": "",
+        "mentor_note": "Acknowledge delay, confirm student's decision and offer support for next steps"
+      },
+      "usage": {
+        "prompt_tokens": 7078,
+        "completion_tokens": 32,
+        "total_tokens": 7110,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 195.3075408935547
+      },
+      "model": "@cf/meta/llama-3.3-70b-instruct-sd"
+    },
+    {
+      "case_id": "M031",
+      "variant": "v12",
+      "group": "Followup",
+      "scenario": "Mentor promised withdrawal guidance before Monday; now Wednesday; student already made final decision.",
+      "gold": "repair",
+      "answer": {
+        "route": "REPLY",
+        "student_text": "",
+        "mentor_note": "Respect completed decision, verify what comes next"
+      },
+      "usage": {
+        "prompt_tokens": 9366,
+        "completion_tokens": 28,
+        "total_tokens": 9394,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 255.50393676757812
+      },
+      "model": "@cf/meta/llama-3.3-70b-instruct-sd"
+    },
+    {
+      "case_id": "M037",
+      "variant": "v11",
+      "group": "Followup",
+      "scenario": "Meeting is booked for tomorrow; user wants to record it attended today.",
+      "gold": "do_not_update",
+      "answer": {
+        "route": "follow-up",
+        "student_text": "",
+        "mentor_note": "Cannot record meeting as attended before it happens; wait until after tomorrow's meeting."
+      },
+      "usage": {
+        "prompt_tokens": 7076,
+        "completion_tokens": 35,
+        "total_tokens": 7111,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 195.8686065673828
+      },
+      "model": "@cf/meta/llama-3.3-70b-instruct-sd"
+    },
+    {
+      "case_id": "M037",
+      "variant": "v12",
+      "group": "Followup",
+      "scenario": "Meeting is booked for tomorrow; user wants to record it attended today.",
+      "gold": "do_not_update",
+      "answer": {
+        "route": "documentation",
+        "student_text": "",
+        "mentor_note": "Cannot record meeting as attended before it happens; wait until after the meeting to update the status."
+      },
+      "usage": {
+        "prompt_tokens": 9364,
+        "completion_tokens": 37,
+        "total_tokens": 9401,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 257.2938537597656
+      },
+      "model": "@cf/meta/llama-3.3-70b-instruct-sd"
+    }
+  ],
+  "neurons": 1319.5157318115234
+}
