@@ -64,6 +64,34 @@ All cases below are **invented examples** for testing the skill. They are not re
 
 **Avoid:** Adding a new question or meeting invitation solely to keep the chat active.
 
+## 8. The student has done the requested action
+
+**Mentor asked:** "Have you explained the issue to your instructor in Canvas?"
+
+**Student:** "Yes, but I haven't heard back."
+
+**Good continuation:** Focus on the timing and response status, help the student choose an appropriate next step using current official guidance. Do **not** re-explain how to contact an instructor.
+
+## 9. A policy claim needs a real article
+
+**Student asks:** "Does a W affect my GPA, and do I still owe tuition?"
+
+**Good pattern:** Read the current official dropping/withdrawal article and relevant block calendar. Give the sourced answer, then add a mentor note with "Difference Between Dropping and Withdrawing from a Course (KA-03332)" and the live URL, noting any deadline that still needs verification.
+
+**Avoid:** Guessing the date, giving a generic link to the Knowledge Base, or putting a citation dump in the WhatsApp message.
+
+## 10. Student implies a different need from their literal words
+
+**Student:** "The classes are fine, but I want part-time work so I can pay fees."
+
+**Good pattern:** Understand that the immediate problem is **tuition funding**, not poor grades. Check whether the student has used a named employment resource and whether any verified alternative tuition assistance is pertinent. Ask only the next stage-relevant question, without assuming an employer will respond.
+
+**Avoid:** Writing a new weekly grade-check outreach, or manufacturing an emotional statement.
+
+## 11. Voice regression
+
+Given a short student answer, reject any draft that begins with the student's name and "Good to hear, I understand why..." as routine filler. Apply **v3.0 Original / Message register**: one natural line, no repeated question, no added signature or meeting link. Do not silently use another writing-style version.
+
 ## Review rubric
 
 Test the proposed text against five questions:
@@ -71,6 +99,8 @@ Test the proposed text against five questions:
 2. **Non-repetition:** Does it avoid all questions and explanations the mentor already covered?
 3. **Natural voice:** Could Papa Kojo say it aloud without a template tone or needless student's name?
 4. **Progress and promises:** Is the next step proportionate, and are plans kept separate from actions?
-5. **Policy and privacy:** Are consequential facts verified, within role, and handled without protected data?
+5. **Policy and privacy:** Are consequential facts verified through a primary article or guide, correctly linked, within role, and handled without protected data?
+6. **Intent:** Does it help the student advance towards their actual goal rather than treating one symptom in isolation?
+7. **Voice:** Was v3.0 Original used, and is it a natural continuation rather than an outreach template?
 
 Any failure merits revision before presenting the draft.

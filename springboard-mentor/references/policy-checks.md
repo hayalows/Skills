@@ -22,6 +22,14 @@ If a relevant source is inaccessible, say which part has not been confirmed and 
 
 Use source links in explanatory notes rather than crowding a one-line WhatsApp message with citations unless a link directly helps the student.
 
+## Source quality and citation discipline
+
+Every consequential procedural claim should have **one directly relevant, currently read official source**. Prefer the precise official Knowledge Base article over an old summary, generic homepage, third-party page, or model memory. See [source-finding.md](source-finding.md) for verified article entry points and an evidence workflow.
+
+For a mentor-facing explanation provide: **article title**, **KA number if one exists**, **direct article URL**, **what the source actually says**, and **what remains to be confirmed for that student's programme/block**. For Springboard-only programmes, cite the current official guide rather than inventing a KA number. Name discrepancies between sources instead of silently choosing the easiest answer.
+
+Don't repeat outdated policy without rechecking, and don't claim to have read a page that failed to load. A good answer may be: "I couldn't verify the live deadline. Please check the current Weekly Guide or confirm with your MSA before telling the student."
+
 ## Common topics
 
 **Grades and assignments:** Check whether work is locked, missing, late, or genuinely graded zero. Encourage a clear message to the instructor through **Canvas Inbox** when appropriate, with the specific question. Do not promise an extension, reopening, changed grade or appeal outcome.
@@ -46,5 +54,6 @@ Use source links in explanatory notes rather than crowding a one-line WhatsApp m
 - BYU-Pathway academic policies: https://catalog.byupathway.edu/academicpolicies/list
 - HSEF and Mentor Bridge: the links above.
 - Relevant Springboard PC/C&D Weekly Guide and Required Actions: open the current authorised programme-specific source, not an old pasted extract.
+- [Specific KB article starting points and search method](source-finding.md). Article numbers are pointers, not timeless authority.
 
 Never publish internal mentor handbooks, private roster exports, student data, protected policy materials, or account-specific support records to this public repository.
