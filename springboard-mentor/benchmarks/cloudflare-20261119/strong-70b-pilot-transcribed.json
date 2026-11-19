@@ -1,0 +1,112 @@
+{
+  "method": "Observed direct external inference; text faithfully transcribed from live tool result shown in this conversation, not a new inference run",
+  "requested_model": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+  "source_sha": "db2577e36e3c21f41bef60f44ba7667d6683ef3e",
+  "cases": [
+    {
+      "case_id": "M011",
+      "variant": "v11",
+      "gold": "reply",
+      "answer": {
+        "route": "reply",
+        "student_text": "Glad you found the course! For the quizzes, let's try checking if there are any technical issues or if there's a specific error message when you try to submit. Can you tell me more about what happens when you attempt to submit a quiz?",
+        "mentor_note": "Investigate quiz submission issue"
+      },
+      "usage": {
+        "neurons": 180.5218048095703
+      }
+    },
+    {
+      "case_id": "M011",
+      "variant": "v12",
+      "gold": "reply",
+      "answer": {
+        "route": "reply",
+        "student_text": "Glad you found the course! Can you tell me more about the issue with submitting quizzes? What error message are you seeing?",
+        "mentor_note": "Verify quiz submission issue"
+      },
+      "usage": {
+        "neurons": 222.185302734375
+      }
+    },
+    {
+      "case_id": "M023",
+      "variant": "v11",
+      "gold": "no_reply",
+      "answer": {
+        "route": "no_reply_needed_yet",
+        "student_text": "",
+        "mentor_note": "Promise to send link on Friday"
+      },
+      "usage": {
+        "neurons": 170.91409301757812
+      }
+    },
+    {
+      "case_id": "M023",
+      "variant": "v12",
+      "gold": "no_reply",
+      "answer": {
+        "route": "no_reply_needed_yet",
+        "student_text": "",
+        "mentor_note": "Promise pending"
+      },
+      "usage": {
+        "neurons": 217.08331298828125
+      }
+    },
+    {
+      "case_id": "M013",
+      "variant": "v11",
+      "gold": "verify_then_reply",
+      "answer": {
+        "route": "reply",
+        "student_text": "To withdraw from one course, please contact your instructor through Canvas Inbox to discuss your options. I'll also check the current deadline for course withdrawal in your block.",
+        "mentor_note": "Verify withdrawal deadline"
+      },
+      "usage": {
+        "neurons": 176.11422729492188
+      }
+    },
+    {
+      "case_id": "M013",
+      "variant": "v12",
+      "gold": "verify_then_reply",
+      "answer": {
+        "route": "reply",
+        "student_text": "To withdraw from one course, please contact your instructor through Canvas Inbox to discuss your options. What is the course you're considering withdrawing from?",
+        "mentor_note": "Verify instructor contact process"
+      },
+      "usage": {
+        "neurons": 222.48825073242188
+      }
+    },
+    {
+      "case_id": "M003",
+      "variant": "v11",
+      "gold": "block",
+      "answer": {
+        "route": "outreach",
+        "student_text": "",
+        "mentor_note": "New assignments checked"
+      },
+      "usage": {
+        "neurons": 169.76527404785156
+      }
+    },
+    {
+      "case_id": "M003",
+      "variant": "v12",
+      "gold": "block",
+      "answer": {
+        "route": "outreach",
+        "student_text": "",
+        "mentor_note": "New assignments in Portal"
+      },
+      "usage": {
+        "neurons": 216.95851135253906
+      }
+    }
+  ],
+  "neurons": 1576.030776977539
+}
