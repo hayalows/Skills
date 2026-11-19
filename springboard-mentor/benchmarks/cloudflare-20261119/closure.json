@@ -1,0 +1,448 @@
+{
+  "group": "Closure",
+  "model": "@cf/meta/llama-3.1-8b-instruct-fp8-fast",
+  "source_sha": "db2577e36e3c21f41bef60f44ba7667d6683ef3e",
+  "cases": [
+    {
+      "id": "M021",
+      "variant": "v11",
+      "scenario": "Mentor answered question; student says much appreciated; no commitments pending.",
+      "gold": "close",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "no reply needed yet",
+        "student_text": "",
+        "mentor_note": "No further action required; conversation closed."
+      },
+      "usage": {
+        "prompt_tokens": 7009,
+        "completion_tokens": 33,
+        "total_tokens": 7042,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 30.017641067504883
+      },
+      "error": []
+    },
+    {
+      "id": "M021",
+      "variant": "v12",
+      "scenario": "Mentor answered question; student says much appreciated; no commitments pending.",
+      "gold": "close",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "no reply needed yet",
+        "student_text": "",
+        "mentor_note": ""
+      },
+      "usage": {
+        "prompt_tokens": 8764,
+        "completion_tokens": 25,
+        "total_tokens": 8789,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 36.966773986816406
+      },
+      "error": []
+    },
+    {
+      "id": "M022",
+      "variant": "v11",
+      "scenario": "Student sends smile emoji after mentor's resource; no outstanding item.",
+      "gold": "no_reply",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "no reply needed yet",
+        "student_text": "",
+        "mentor_note": "No outstanding item, student has acknowledged the resource."
+      },
+      "usage": {
+        "prompt_tokens": 7009,
+        "completion_tokens": 35,
+        "total_tokens": 7044,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 30.08737564086914
+      },
+      "error": []
+    },
+    {
+      "id": "M022",
+      "variant": "v12",
+      "scenario": "Student sends smile emoji after mentor's resource; no outstanding item.",
+      "gold": "no_reply",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "no reply needed yet",
+        "student_text": "",
+        "mentor_note": ""
+      },
+      "usage": {
+        "prompt_tokens": 8764,
+        "completion_tokens": 25,
+        "total_tokens": 8789,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 36.966773986816406
+      },
+      "error": []
+    },
+    {
+      "id": "M023",
+      "variant": "v11",
+      "scenario": "Student says okay after mentor promises a Friday link.",
+      "gold": "no_reply",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "REPLY",
+        "student_text": "Thanks, I'm looking forward to it.",
+        "mentor_note": ""
+      },
+      "usage": {
+        "prompt_tokens": 7006,
+        "completion_tokens": 32,
+        "total_tokens": 7038,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 29.970417022705078
+      },
+      "error": []
+    },
+    {
+      "id": "M023",
+      "variant": "v12",
+      "scenario": "Student says okay after mentor promises a Friday link.",
+      "gold": "no_reply",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "no reply needed yet",
+        "student_text": "",
+        "mentor_note": "M023: Friday link still pending; no update needed yet."
+      },
+      "usage": {
+        "prompt_tokens": 8761,
+        "completion_tokens": 38,
+        "total_tokens": 8799,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 37.40769958496094
+      },
+      "error": []
+    },
+    {
+      "id": "M024",
+      "variant": "v11",
+      "scenario": "Mentor replied after the latest incoming message; user asks what to send next.",
+      "gold": "no_reply",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "REPLY",
+        "student_text": "What should I send next?",
+        "mentor_note": "Continue from the last unanswered point, no new greeting or generic weekly message."
+      },
+      "usage": {
+        "prompt_tokens": 7011,
+        "completion_tokens": 44,
+        "total_tokens": 7055,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 30.409423828125
+      },
+      "error": []
+    },
+    {
+      "id": "M024",
+      "variant": "v12",
+      "scenario": "Mentor replied after the latest incoming message; user asks what to send next.",
+      "gold": "no_reply",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "no_reply_needed_yet",
+        "student_text": "",
+        "mentor_note": "The mentor has already replied to the student's latest message."
+      },
+      "usage": {
+        "prompt_tokens": 8766,
+        "completion_tokens": 38,
+        "total_tokens": 8804,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 37.42829513549805
+      },
+      "error": []
+    },
+    {
+      "id": "M025",
+      "variant": "v11",
+      "scenario": "Student says thanks but includes a new grade question.",
+      "gold": "reply",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "REPLY",
+        "student_text": "Thanks for your help, but I'm still waiting to hear about my grade for the last assignment. Can you check on it for me?",
+        "mentor_note": ""
+      },
+      "usage": {
+        "prompt_tokens": 7006,
+        "completion_tokens": 51,
+        "total_tokens": 7057,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 30.632905960083008
+      },
+      "error": []
+    },
+    {
+      "id": "M025",
+      "variant": "v12",
+      "scenario": "Student says thanks but includes a new grade question.",
+      "gold": "reply",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "REPLY",
+        "student_text": "Thanks for your help, but I just checked my grades and I'm worried about my GPA. Can you help me figure out what I need to do?",
+        "mentor_note": ""
+      },
+      "usage": {
+        "prompt_tokens": 8761,
+        "completion_tokens": 54,
+        "total_tokens": 8815,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 37.96558380126953
+      },
+      "error": []
+    },
+    {
+      "id": "M026",
+      "variant": "v11",
+      "scenario": "Student says no more help needed after receiving full answer.",
+      "gold": "close",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "no reply needed yet",
+        "student_text": "",
+        "mentor_note": "No further action required. The student has confirmed they have the information they needed."
+      },
+      "usage": {
+        "prompt_tokens": 7007,
+        "completion_tokens": 41,
+        "total_tokens": 7048,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 30.288345336914062
+      },
+      "error": []
+    },
+    {
+      "id": "M026",
+      "variant": "v12",
+      "scenario": "Student says no more help needed after receiving full answer.",
+      "gold": "close",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "no reply needed yet",
+        "student_text": "",
+        "mentor_note": "Student has received full answer and no longer needs help."
+      },
+      "usage": {
+        "prompt_tokens": 8762,
+        "completion_tokens": 36,
+        "total_tokens": 8798,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 37.34208297729492
+      },
+      "error": []
+    },
+    {
+      "id": "M027",
+      "variant": "v11",
+      "scenario": "Student can sign in but still cannot access course page.",
+      "gold": "reply",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "REPLY",
+        "student_text": "Hi, I'm still having trouble accessing my course page. I can sign in but it says I don't have permission. Can you help me figure out what's going on?",
+        "mentor_note": "Verify Canvas course page access rules, check the student's programme and block, and confirm who can act on this issue. The student has already tried signing in."
+      },
+      "usage": {
+        "prompt_tokens": 7007,
+        "completion_tokens": 91,
+        "total_tokens": 7098,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 32.03173828125
+      },
+      "error": []
+    },
+    {
+      "id": "M027",
+      "variant": "v12",
+      "scenario": "Student can sign in but still cannot access course page.",
+      "gold": "reply",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "REPLY",
+        "student_text": "Hi, I'm still having trouble accessing my course page. I can sign in but it's not showing up. Can you help me with this?",
+        "mentor_note": "Verified KB article: Canvas Login Issues. Next step: Check Canvas Inbox for instructor messages and contact them for further assistance."
+      },
+      "usage": {
+        "prompt_tokens": 8762,
+        "completion_tokens": 77,
+        "total_tokens": 8839,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 38.771663665771484
+      },
+      "error": []
+    },
+    {
+      "id": "M028",
+      "variant": "v11",
+      "scenario": "Student shares a successful result for the first time without asking a question.",
+      "gold": "reply",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "REPLY",
+        "student_text": "I finally got a job! I'm so excited!",
+        "mentor_note": ""
+      },
+      "usage": {
+        "prompt_tokens": 7010,
+        "completion_tokens": 34,
+        "total_tokens": 7044,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 30.05662727355957
+      },
+      "error": []
+    },
+    {
+      "id": "M028",
+      "variant": "v12",
+      "scenario": "Student shares a successful result for the first time without asking a question.",
+      "gold": "reply",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "REPLY",
+        "student_text": "I finally got a job! I'm so excited to start working and earning a steady income.",
+        "mentor_note": ""
+      },
+      "usage": {
+        "prompt_tokens": 8765,
+        "completion_tokens": 42,
+        "total_tokens": 8807,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 37.56364440917969
+      },
+      "error": []
+    },
+    {
+      "id": "M029",
+      "variant": "v11",
+      "scenario": "Student says I'll see after offered meeting, with no acceptance.",
+      "gold": "no_reply",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "REPLY",
+        "student_text": "I'll see after our meeting",
+        "mentor_note": "No acceptance; follow up on meeting outcome"
+      },
+      "usage": {
+        "prompt_tokens": 7009,
+        "completion_tokens": 39,
+        "total_tokens": 7048,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 30.226848602294922
+      },
+      "error": []
+    },
+    {
+      "id": "M029",
+      "variant": "v12",
+      "scenario": "Student says I'll see after offered meeting, with no acceptance.",
+      "gold": "no_reply",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "REPLY",
+        "student_text": "I'll see about the meeting, thanks.",
+        "mentor_note": "No acceptance; follow up with a specific check-in date and time to confirm the meeting."
+      },
+      "usage": {
+        "prompt_tokens": 8764,
+        "completion_tokens": 50,
+        "total_tokens": 8814,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 37.838470458984375
+      },
+      "error": []
+    },
+    {
+      "id": "M030",
+      "variant": "v11",
+      "scenario": "Student sends thumbs-up but agreed callback tomorrow remains.",
+      "gold": "no_reply",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "no reply needed yet",
+        "student_text": "",
+        "mentor_note": "Callback agreed for tomorrow; no further action needed today."
+      },
+      "usage": {
+        "prompt_tokens": 7006,
+        "completion_tokens": 36,
+        "total_tokens": 7042,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 30.109888076782227
+      },
+      "error": []
+    },
+    {
+      "id": "M030",
+      "variant": "v12",
+      "scenario": "Student sends thumbs-up but agreed callback tomorrow remains.",
+      "gold": "no_reply",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "no reply needed yet",
+        "student_text": "",
+        "mentor_note": ""
+      },
+      "usage": {
+        "prompt_tokens": 8761,
+        "completion_tokens": 25,
+        "total_tokens": 8786,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 36.95441818237305
+      },
+      "error": []
+    }
+  ],
+  "neurons": 679.0366172790527
+}
