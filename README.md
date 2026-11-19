@@ -16,6 +16,7 @@ Run `npm test` for every check and `npm run build` for the public directory and 
 
 - [Interface Workshop](interface-workshop/SKILL.md) · Build and practise responsive interface design through real tasks.
 - [Engineering Workshop](engineering-workshop/SKILL.md) · Build, debug and verify software through working examples.
+- [Springboard Mentor](springboard-mentor/SKILL.md) · Continue student conversations naturally, verify institutional guidance, apply REACH, and track confirmed follow-ups.
 
 - [`behavioral-interaction-design/`](behavioral-interaction-design/SKILL.md)
 - `consulting-grade-reports-decks/`

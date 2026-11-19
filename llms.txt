@@ -8,6 +8,7 @@ Read a skill entrypoint first, then only the references it points to for the tas
 
 - [master-craft](https://raw.githubusercontent.com/hayalows/Skills/main/master-craft/SKILL.md): Master Craft is the one-call Hayalows skill orchestrator.
 - [product-design-os](https://raw.githubusercontent.com/hayalows/Skills/main/product-design-os/SKILL.md): Design, redesign, audit, specify or build the UI and UX of a digital product: websites, web apps, mobile apps, dashboards, forms, onboarding, checkout, search, pricing pages, design systems and components.
+- [springboard-mentor](https://raw.githubusercontent.com/hayalows/Skills/main/springboard-mentor/SKILL.md): Mentor reply, policy, outreach, REACH, follow-up and documentation workflow; use Papa Kojo Writing Style v3.0 for voice.
 - [personal-craft](https://raw.githubusercontent.com/hayalows/Skills/main/personal-craft/SKILL.md): Apply Papa Kojo's Luna-first working agreement to substantial coding, debugging, architecture, product design, research, data, documents, and automation.
 - [Using these skills from any model or agent](https://raw.githubusercontent.com/hayalows/Skills/main/master-craft/references/portability.md): Install paths, URL-only use, pasted bundles and API use.
 - [Building a product that holds up](https://raw.githubusercontent.com/hayalows/Skills/main/master-craft/references/product-build.md): The staged pipeline for sites, apps and tools.
