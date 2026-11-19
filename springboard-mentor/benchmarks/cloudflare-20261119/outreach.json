@@ -1,0 +1,448 @@
+{
+  "group": "Outreach",
+  "model": "@cf/meta/llama-3.1-8b-instruct-fp8-fast",
+  "source_sha": "db2577e36e3c21f41bef60f44ba7667d6683ef3e",
+  "cases": [
+    {
+      "id": "M001",
+      "variant": "v11",
+      "scenario": "Week 5 first contact: no prior chat, PC student, unknown goal; current PC guide has not been opened.",
+      "gold": "verify_then_outreach",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "outreach",
+        "student_text": "Hi, I'm in PathwayConnect. I'm not sure what to do next. Can you help me?",
+        "mentor_note": "Current PC guide not checked; unknown student goal; first contact; Week 5; no prior chat"
+      },
+      "usage": {
+        "prompt_tokens": 6179,
+        "completion_tokens": 67,
+        "total_tokens": 6246,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 27.784740447998047
+      },
+      "error": []
+    },
+    {
+      "id": "M001",
+      "variant": "v12",
+      "scenario": "Week 5 first contact: no prior chat, PC student, unknown goal; current PC guide has not been opened.",
+      "gold": "verify_then_outreach",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "outreach",
+        "student_text": "Hi, I'm excited to start Week 5 of PathwayConnect. I'm not sure what to focus on this week. Can you help me get started?",
+        "mentor_note": "Verified PC guide: Week 5 focus is on [link to PC guide]."
+      },
+      "usage": {
+        "prompt_tokens": 8641,
+        "completion_tokens": 73,
+        "total_tokens": 8714,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 38.13385009765625
+      },
+      "error": []
+    },
+    {
+      "id": "M002",
+      "variant": "v11",
+      "scenario": "Week 4 first contact: C&D student previously said mobile internet is limited; class status unknown.",
+      "gold": "outreach",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "outreach",
+        "student_text": "Hi, I'm still having trouble with my mobile internet. I'm not sure if I'm in class this week or not. Can you help me check?",
+        "mentor_note": "Week 4 C&D guide, student's prior message about mobile internet, current class status unknown. Verify class status and Required Actions in the current guide before responding."
+      },
+      "usage": {
+        "prompt_tokens": 6175,
+        "completion_tokens": 88,
+        "total_tokens": 6263,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 28.500490188598633
+      },
+      "error": []
+    },
+    {
+      "id": "M002",
+      "variant": "v12",
+      "scenario": "Week 4 first contact: C&D student previously said mobile internet is limited; class status unknown.",
+      "gold": "outreach",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "outreach",
+        "student_text": "Hi, I'm still having trouble with mobile internet. I'm not sure if I'm registered for this week's class yet. Can you help me check?",
+        "mentor_note": "Verified Week 4 C&D guide; student previously reported limited mobile internet; class status unknown. Next step: check student's class registration and provide a suitable solution for internet access."
+      },
+      "usage": {
+        "prompt_tokens": 8637,
+        "completion_tokens": 91,
+        "total_tokens": 8728,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 38.7449951171875
+      },
+      "error": []
+    },
+    {
+      "id": "M003",
+      "variant": "v11",
+      "scenario": "User wants one BCC email sent to every newly assigned student.",
+      "gold": "block",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "verify_policy",
+        "student_text": "",
+        "mentor_note": "Verify the current Springboard Mentor Handbook and AI Use Policy for sending BCC emails to newly assigned students. Check the programme and block policies for email contact. Identify the responsible team and any necessary approvals."
+      },
+      "usage": {
+        "prompt_tokens": 6168,
+        "completion_tokens": 63,
+        "total_tokens": 6231,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 27.599964141845703
+      },
+      "error": []
+    },
+    {
+      "id": "M003",
+      "variant": "v12",
+      "scenario": "User wants one BCC email sent to every newly assigned student.",
+      "gold": "block",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "verify_policy_and_portal",
+        "student_text": "",
+        "mentor_note": "Verify the current Springboard Mentor Handbook and AI Use Policy for any restrictions on sending BCC emails to students. Check the Mentor Portal for any existing rules or procedures related to student communication. Note that the user's request may require a policy update or a change in the mentor's workflow."
+      },
+      "usage": {
+        "prompt_tokens": 8630,
+        "completion_tokens": 82,
+        "total_tokens": 8712,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 38.40235137939453
+      },
+      "error": []
+    },
+    {
+      "id": "M004",
+      "variant": "v11",
+      "scenario": "Student has an unanswered registration question, yet user asks for weekly outreach today.",
+      "gold": "reply",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "check_registration_status",
+        "student_text": "Hi, I wanted to check on my registration for this week. I'm not sure if I'm on the right track.",
+        "mentor_note": "Verify current programme and block policy; check official registration deadlines and Required Actions; confirm who can act on registration; give the next authorised step; refer unresolved cases to the proper team or MSA."
+      },
+      "usage": {
+        "prompt_tokens": 6170,
+        "completion_tokens": 88,
+        "total_tokens": 6258,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 28.47989845275879
+      },
+      "error": []
+    },
+    {
+      "id": "M004",
+      "variant": "v12",
+      "scenario": "Student has an unanswered registration question, yet user asks for weekly outreach today.",
+      "gold": "reply",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "reply_to_student",
+        "student_text": "Hi, I wanted to follow up on my registration question from last week. I'm still unsure about the next steps.",
+        "mentor_note": "Verify the current registration process and deadlines for the student's programme. Provide a direct answer to their question and any necessary follow-up steps."
+      },
+      "usage": {
+        "prompt_tokens": 8632,
+        "completion_tokens": 75,
+        "total_tokens": 8707,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 38.1665153503418
+      },
+      "error": []
+    },
+    {
+      "id": "M005",
+      "variant": "v11",
+      "scenario": "Student prefers email; user requests a new WhatsApp introduction.",
+      "gold": "outreach",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "no_reply_needed_yet",
+        "student_text": "",
+        "mentor_note": "Verify the student's preferred communication channel and update the record accordingly."
+      },
+      "usage": {
+        "prompt_tokens": 6166,
+        "completion_tokens": 39,
+        "total_tokens": 6205,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 26.754899978637695
+      },
+      "error": []
+    },
+    {
+      "id": "M005",
+      "variant": "v12",
+      "scenario": "Student prefers email; user requests a new WhatsApp introduction.",
+      "gold": "outreach",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "check_previous_conversation",
+        "student_text": "",
+        "mentor_note": "Verify if the student has previously mentioned a preference for email or if there's an existing conversation where they've expressed a preference for a different communication channel."
+      },
+      "usage": {
+        "prompt_tokens": 8628,
+        "completion_tokens": 55,
+        "total_tokens": 8683,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 37.45268630981445
+      },
+      "error": []
+    },
+    {
+      "id": "M006",
+      "variant": "v11",
+      "scenario": "Previous individual email was sent two days ago without response; user proposes saying student ignored mentor.",
+      "gold": "followup",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "ask_one_necessary_question",
+        "student_text": "Before we assume the student ignored us, let's check if the email was delivered and if there's a valid reason for not responding yet.",
+        "mentor_note": "Verify email delivery status and check the current programme and block policy for response times and acceptable delays."
+      },
+      "usage": {
+        "prompt_tokens": 6173,
+        "completion_tokens": 73,
+        "total_tokens": 6246,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 27.969236373901367
+      },
+      "error": []
+    },
+    {
+      "id": "M006",
+      "variant": "v12",
+      "scenario": "Previous individual email was sent two days ago without response; user proposes saying student ignored mentor.",
+      "gold": "followup",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "check_email_status",
+        "student_text": "",
+        "mentor_note": "Verify if the student has checked their email or if there's a known issue with the email service. If the student has checked and still hasn't responded, consider sending a follow-up email or checking the student's current status in the Portal."
+      },
+      "usage": {
+        "prompt_tokens": 8635,
+        "completion_tokens": 72,
+        "total_tokens": 8707,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 38.07426834106445
+      },
+      "error": []
+    },
+    {
+      "id": "M007",
+      "variant": "v11",
+      "scenario": "New student local time is 22:40; first contact is nonurgent.",
+      "gold": "defer",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "no_reply_needed_yet",
+        "student_text": "",
+        "mentor_note": "No reply needed yet. Student is active at 22:40, and the first contact is nonurgent."
+      },
+      "usage": {
+        "prompt_tokens": 6171,
+        "completion_tokens": 48,
+        "total_tokens": 6219,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 27.089303970336914
+      },
+      "error": []
+    },
+    {
+      "id": "M007",
+      "variant": "v12",
+      "scenario": "New student local time is 22:40; first contact is nonurgent.",
+      "gold": "defer",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "outreach",
+        "student_text": "Hi, I'm new to PathwayConnect. I'm in Ghana and my local time is 22:40. I'm looking forward to learning with you.",
+        "mentor_note": "Verified student's local time and non-urgent first contact. Next step: check current PC/C&D guide for outreach focus and Required Actions."
+      },
+      "usage": {
+        "prompt_tokens": 8633,
+        "completion_tokens": 84,
+        "total_tokens": 8717,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 38.48444366455078
+      },
+      "error": []
+    },
+    {
+      "id": "M008",
+      "variant": "v11",
+      "scenario": "C&D student already submitted all known assignments; week focus is grade review.",
+      "gold": "outreach",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "no_reply_needed_yet",
+        "student_text": "",
+        "mentor_note": "Verify the current week's guide and the student's programme for grade review specifics, deadlines and required actions. Check the student's current grade status and any outstanding requirements in the Mentor Portal."
+      },
+      "usage": {
+        "prompt_tokens": 6170,
+        "completion_tokens": 63,
+        "total_tokens": 6233,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 27.60820198059082
+      },
+      "error": []
+    },
+    {
+      "id": "M008",
+      "variant": "v12",
+      "scenario": "C&D student already submitted all known assignments; week focus is grade review.",
+      "gold": "outreach",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "no_reply_needed_yet",
+        "student_text": "",
+        "mentor_note": "Student has completed all known assignments; week focus is grade review. No reply needed yet."
+      },
+      "usage": {
+        "prompt_tokens": 8632,
+        "completion_tokens": 44,
+        "total_tokens": 8676,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 37.08561325073242
+      },
+      "error": []
+    },
+    {
+      "id": "M009",
+      "variant": "v11",
+      "scenario": "Student asked not to be contacted on WhatsApp; user proposes mass SMS.",
+      "gold": "block",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "POLICY_SUPPORT",
+        "student_text": "",
+        "mentor_note": "Verify current programme and block policy on contacting students who have opted out of WhatsApp. Check the official Springboard Mentor Handbook and AI Use Policy for guidance on mass SMS and student consent. Consider referring the student to the proper team or MSA for further support."
+      },
+      "usage": {
+        "prompt_tokens": 6169,
+        "completion_tokens": 75,
+        "total_tokens": 6244,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 28.022497177124023
+      },
+      "error": []
+    },
+    {
+      "id": "M009",
+      "variant": "v12",
+      "scenario": "Student asked not to be contacted on WhatsApp; user proposes mass SMS.",
+      "gold": "block",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "check_policy",
+        "student_text": "",
+        "mentor_note": "Verify current Springboard policy on contacting students who have opted out of WhatsApp, and check if mass SMS is a permitted alternative. Consider the student's preference and the potential impact on their experience."
+      },
+      "usage": {
+        "prompt_tokens": 8631,
+        "completion_tokens": 61,
+        "total_tokens": 8692,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 37.67424774169922
+      },
+      "error": []
+    },
+    {
+      "id": "M010",
+      "variant": "v11",
+      "scenario": "Only an old Week 2 template is available; user asks for Week 6 outreach.",
+      "gold": "verify_then_outreach",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "outreach_library_review",
+        "student_text": "I need to send a Week 6 outreach message, but I only have a Week 2 template. Can I use it or do I need to create a new one?",
+        "mentor_note": "Verify the Week 6 PC/C&D guide for Required Actions, official deadlines, and current links. Check if the Week 2 template can be adapted for Week 6 or if a new template is needed. Consider the student's prior conversations, open commitments, and sensible contact times."
+      },
+      "usage": {
+        "prompt_tokens": 6173,
+        "completion_tokens": 117,
+        "total_tokens": 6290,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 29.503421783447266
+      },
+      "error": []
+    },
+    {
+      "id": "M010",
+      "variant": "v12",
+      "scenario": "Only an old Week 2 template is available; user asks for Week 6 outreach.",
+      "gold": "verify_then_outreach",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "check_current_weekly_guide",
+        "student_text": "",
+        "mentor_note": "Verify the current PC or C&D Weekly Guide for Week 6's focus, Required Actions, official deadlines, and programme-specific reminders before drafting outreach."
+      },
+      "usage": {
+        "prompt_tokens": 8635,
+        "completion_tokens": 56,
+        "total_tokens": 8691,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 37.51638412475586
+      },
+      "error": []
+    }
+  ],
+  "neurons": 659.0480098724365
+}
