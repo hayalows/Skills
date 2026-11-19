@@ -1,0 +1,448 @@
+{
+  "group": "Continuation",
+  "model": "@cf/meta/llama-3.1-8b-instruct-fp8-fast",
+  "source_sha": "db2577e36e3c21f41bef60f44ba7667d6683ef3e",
+  "cases": [
+    {
+      "id": "M011",
+      "variant": "v11",
+      "scenario": "Mentor asked if student found the course; student says yes, but quizzes cannot submit.",
+      "gold": "reply",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "REPLY",
+        "student_text": "Yes, I found the course. But I'm having trouble submitting quizzes.",
+        "mentor_note": "Course found, quiz submission issue. Check Canvas submission deadlines and instructor support (KA-12345)."
+      },
+      "usage": {
+        "prompt_tokens": 7400,
+        "completion_tokens": 59,
+        "total_tokens": 7459,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 32.53456115722656
+      },
+      "error": []
+    },
+    {
+      "id": "M011",
+      "variant": "v12",
+      "scenario": "Mentor asked if student found the course; student says yes, but quizzes cannot submit.",
+      "gold": "reply",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "REPLY",
+        "student_text": "I've found the course, but I'm having trouble submitting the quizzes.",
+        "mentor_note": "Course found, quizzes submission issue. Check Canvas submission deadlines and quiz settings (KA-12345)."
+      },
+      "usage": {
+        "prompt_tokens": 9155,
+        "completion_tokens": 59,
+        "total_tokens": 9214,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 39.762638092041016
+      },
+      "error": []
+    },
+    {
+      "id": "M012",
+      "variant": "v11",
+      "scenario": "Student quotes old tuition message but adds the portal now shows the payment.",
+      "gold": "reply",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "REPLY",
+        "student_text": "I already made the decision because you replied too late. I didn't feel supported. How does the assistance process work?",
+        "mentor_note": "Difference Between Dropping and Withdrawing from a Course (KA-03332), https://pathway.byu.edu/kb/article/KA-03332, still to verify the deadline for the current block."
+      },
+      "usage": {
+        "prompt_tokens": 7397,
+        "completion_tokens": 89,
+        "total_tokens": 7486,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 33.568241119384766
+      },
+      "error": []
+    },
+    {
+      "id": "M012",
+      "variant": "v12",
+      "scenario": "Student quotes old tuition message but adds the portal now shows the payment.",
+      "gold": "reply",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "REPLY",
+        "student_text": "I already explained that I've paid my tuition. The portal now shows it.",
+        "mentor_note": "Verified article: Tuition Payment and Refund Policy (KA-01234). Student has made payment. Next step: confirm payment status with Finance."
+      },
+      "usage": {
+        "prompt_tokens": 9152,
+        "completion_tokens": 69,
+        "total_tokens": 9221,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 40.098960876464844
+      },
+      "error": []
+    },
+    {
+      "id": "M013",
+      "variant": "v11",
+      "scenario": "Student writes thanks then asks if they can withdraw one course today.",
+      "gold": "verify_then_reply",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "REPLY",
+        "student_text": "Thanks. Can I withdraw from one course today?",
+        "mentor_note": "Withdrawal policy (KA-03332), current block calendar, and deadline for withdrawal requests"
+      },
+      "usage": {
+        "prompt_tokens": 7396,
+        "completion_tokens": 52,
+        "total_tokens": 7448,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 32.27401351928711
+      },
+      "error": []
+    },
+    {
+      "id": "M013",
+      "variant": "v12",
+      "scenario": "Student writes thanks then asks if they can withdraw one course today.",
+      "gold": "verify_then_reply",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "REPLY",
+        "student_text": "Thanks. Can I withdraw from one course today?",
+        "mentor_note": "Withdrawal policy and deadlines: https://pathway.byu.edu/article/withdrawal-from-courses (KA-12345)"
+      },
+      "usage": {
+        "prompt_tokens": 9151,
+        "completion_tokens": 59,
+        "total_tokens": 9210,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 39.74616241455078
+      },
+      "error": []
+    },
+    {
+      "id": "M014",
+      "variant": "v11",
+      "scenario": "Mentor asked about schedule; student says free only Tuesday afternoon.",
+      "gold": "reply",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "REPLY",
+        "student_text": "I'm free on Tuesday afternoons.",
+        "mentor_note": "Schedule availability, no further action needed."
+      },
+      "usage": {
+        "prompt_tokens": 7395,
+        "completion_tokens": 40,
+        "total_tokens": 7435,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 31.85148048400879
+      },
+      "error": []
+    },
+    {
+      "id": "M014",
+      "variant": "v12",
+      "scenario": "Mentor asked about schedule; student says free only Tuesday afternoon.",
+      "gold": "reply",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "REPLY",
+        "student_text": "I'm free on Tuesday afternoons. What's next?",
+        "mentor_note": "Schedule: Tuesday afternoons available; next step: discuss specific time and task"
+      },
+      "usage": {
+        "prompt_tokens": 9150,
+        "completion_tokens": 53,
+        "total_tokens": 9203,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 39.532840728759766
+      },
+      "error": []
+    },
+    {
+      "id": "M015",
+      "variant": "v11",
+      "scenario": "Student has an existing support ticket closed while original problem persists.",
+      "gold": "verify_then_reply",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "REPLY",
+        "student_text": "I still have the issue with my grades not updating. I had already submitted a ticket about it, but it got closed saying it was resolved. I'm still waiting for my grades to update.",
+        "mentor_note": "Closed ticket: KA-12345. Current grade update policy: Difference Between Dropping and Withdrawing from a Course (KA-03332). Verify if the student's situation meets the criteria for a reopened ticket."
+      },
+      "usage": {
+        "prompt_tokens": 7395,
+        "completion_tokens": 105,
+        "total_tokens": 7500,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 34.117889404296875
+      },
+      "error": []
+    },
+    {
+      "id": "M015",
+      "variant": "v12",
+      "scenario": "Student has an existing support ticket closed while original problem persists.",
+      "gold": "verify_then_reply",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "REPLY",
+        "student_text": "I still have the issue with my job profile. I submitted a ticket but it got closed saying it was resolved. But it's still not working.",
+        "mentor_note": "Closed ticket: KA-12345. Verify current job profile support process and deadlines. Ask student to check the ticket status and escalate if necessary."
+      },
+      "usage": {
+        "prompt_tokens": 9150,
+        "completion_tokens": 82,
+        "total_tokens": 9232,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 40.54400634765625
+      },
+      "error": []
+    },
+    {
+      "id": "M016",
+      "variant": "v11",
+      "scenario": "Student asks about checking grades and official withdrawal deadline.",
+      "gold": "verify_then_reply",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "REPLY",
+        "student_text": "I checked my grades and one course is at 70%. I also want to know the official withdrawal deadline for this semester.",
+        "mentor_note": "Difference Between Dropping and Withdrawing from a Course (KA-03332), https://pathway.byu.edu/kb/article/KA-03332, still need to verify the current semester's withdrawal deadline."
+      },
+      "usage": {
+        "prompt_tokens": 7393,
+        "completion_tokens": 91,
+        "total_tokens": 7484,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 33.62150192260742
+      },
+      "error": []
+    },
+    {
+      "id": "M016",
+      "variant": "v12",
+      "scenario": "Student asks about checking grades and official withdrawal deadline.",
+      "gold": "verify_then_reply",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "REPLY",
+        "student_text": "Hi, I wanted to check if I can see my grades and also what's the deadline for withdrawing from the course?",
+        "mentor_note": "Verified: 'Checking Your Grades' (KA-01234) and 'Withdrawal and Dropping Courses' (KA-09876). Deadline for withdrawal is 2 weeks from today. Next step: check Canvas for grades and confirm withdrawal eligibility."
+      },
+      "usage": {
+        "prompt_tokens": 9148,
+        "completion_tokens": 97,
+        "total_tokens": 9245,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 41.05878448486328
+      },
+      "error": []
+    },
+    {
+      "id": "M017",
+      "variant": "v11",
+      "scenario": "Student complains mentor repeated identical sign-in advice three times.",
+      "gold": "repair",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "REPLY",
+        "student_text": "I feel frustrated that you kept telling me the same thing about signing in. I already know how to do it.",
+        "mentor_note": "Repeated advice was given three times; verify the student's actual sign-in status and provide a direct answer or a helpful next step."
+      },
+      "usage": {
+        "prompt_tokens": 7394,
+        "completion_tokens": 72,
+        "total_tokens": 7466,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 32.963130950927734
+      },
+      "error": []
+    },
+    {
+      "id": "M017",
+      "variant": "v12",
+      "scenario": "Student complains mentor repeated identical sign-in advice three times.",
+      "gold": "repair",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "REPLY",
+        "student_text": "I feel frustrated that you kept telling me to sign in to Canvas. I already did that three times. Can you help me with something else?",
+        "mentor_note": "Repeated advice was given; student has already completed the action. Next step: ask one focused question to help the student advance towards their goal."
+      },
+      "usage": {
+        "prompt_tokens": 9149,
+        "completion_tokens": 80,
+        "total_tokens": 9229,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 40.470149993896484
+      },
+      "error": []
+    },
+    {
+      "id": "M018",
+      "variant": "v11",
+      "scenario": "Student asks if portal status Active proves next-block registration.",
+      "gold": "verify_then_reply",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "POLICY / SUPPORT",
+        "student_text": "",
+        "mentor_note": "Portal status Active does not confirm next-block registration. Check the current block calendar and Required Actions for the next step. (KA-12345)"
+      },
+      "usage": {
+        "prompt_tokens": 7394,
+        "completion_tokens": 54,
+        "total_tokens": 7448,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 32.33551025390625
+      },
+      "error": []
+    },
+    {
+      "id": "M018",
+      "variant": "v12",
+      "scenario": "Student asks if portal status Active proves next-block registration.",
+      "gold": "verify_then_reply",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "REPLY",
+        "student_text": "If my portal status is Active, does that mean I'm registered for the next block?",
+        "mentor_note": "Check Portal Status article (KA-12345) for current rules on portal status and block registration. Verify programme and block-specific conditions."
+      },
+      "usage": {
+        "prompt_tokens": 9149,
+        "completion_tokens": 68,
+        "total_tokens": 9217,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 40.05173873901367
+      },
+      "error": []
+    },
+    {
+      "id": "M019",
+      "variant": "v11",
+      "scenario": "Student declines Mentor Bridge discussion and instead asks about other tuition options.",
+      "gold": "verify_then_reply",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "REPLY",
+        "student_text": "I'm not sure about the Mentor Bridge discount. Are there other ways to get help with tuition?",
+        "mentor_note": "Refer to 'Tuition Assistance and Scholarships' (KA-01234) for alternative options. Verify student eligibility and deadlines."
+      },
+      "usage": {
+        "prompt_tokens": 7396,
+        "completion_tokens": 69,
+        "total_tokens": 7465,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 32.86676788330078
+      },
+      "error": []
+    },
+    {
+      "id": "M019",
+      "variant": "v12",
+      "scenario": "Student declines Mentor Bridge discussion and instead asks about other tuition options.",
+      "gold": "verify_then_reply",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "REPLY",
+        "student_text": "I'm not interested in the Mentor Bridge discount. Are there other ways to pay for tuition?",
+        "mentor_note": "Tuition Assistance Options (KA-01234) - https://pathway.byu.edu/article/KA-01234"
+      },
+      "usage": {
+        "prompt_tokens": 9151,
+        "completion_tokens": 67,
+        "total_tokens": 9218,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 40.02510452270508
+      },
+      "error": []
+    },
+    {
+      "id": "M020",
+      "variant": "v11",
+      "scenario": "Student said last week they might leave school but now plans to return next block.",
+      "gold": "reply",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "REPLY",
+        "student_text": "I've decided to come back next block. I'm glad I can continue.",
+        "mentor_note": "Verified: BYU-Pathway Knowledge Base article 'Returning to a Course' (KA-01234). Next step: discuss any outstanding issues and Required Actions from the previous block."
+      },
+      "usage": {
+        "prompt_tokens": 7399,
+        "completion_tokens": 75,
+        "total_tokens": 7474,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 33.08832931518555
+      },
+      "error": []
+    },
+    {
+      "id": "M020",
+      "variant": "v12",
+      "scenario": "Student said last week they might leave school but now plans to return next block.",
+      "gold": "reply",
+      "model": "@cf/meta/llama-3.1-8b-fast-v2",
+      "answer": {
+        "route": "REPLY",
+        "student_text": "I've changed my mind, I'm coming back next block.",
+        "mentor_note": "Verified that the student's goal has changed from leaving to returning. Next step: discuss the reasons for the change and any support needed for a successful return."
+      },
+      "usage": {
+        "prompt_tokens": 9154,
+        "completion_tokens": 67,
+        "total_tokens": 9221,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 40.03746032714844
+      },
+      "error": []
+    }
+  ],
+  "neurons": 730.5492725372314
+}
