@@ -13,7 +13,7 @@ let skills = [];
 let activeCategory = "All";
 let query = "";
 
-const categoryOrder = ["All", "Product & UX", "Design & Frontend", "Writing", "Brand", "Reports & Research", "Workflow"];
+const categoryOrder = ["All", "Product & UX", "Design & Frontend", "Engineering", "Writing", "Brand", "Reports & Research", "Workflow"];
 
 function escapeHtml(value = "") {
   return value.replace(/[&<>"']/g, (char) => ({

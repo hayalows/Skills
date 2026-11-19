@@ -14,6 +14,9 @@ Read a skill entrypoint first, then only the references it points to for the tas
 
 ## Skills
 
+- [interface-workshop](https://raw.githubusercontent.com/hayalows/Skills/main/interface-workshop/SKILL.md): Build and practise responsive interface design through real tasks.
+- [engineering-workshop](https://raw.githubusercontent.com/hayalows/Skills/main/engineering-workshop/SKILL.md): Build, debug and verify software through working examples.
+
 - [behavioral-interaction-design](https://raw.githubusercontent.com/hayalows/Skills/main/behavioral-interaction-design/SKILL.md): Design or audit ethical product interactions that help people start, make progress, enjoy a task, or return for a goal they chose.
 - [consulting-grade-reports-decks](https://raw.githubusercontent.com/hayalows/Skills/main/consulting-grade-reports-decks/SKILL.md): Plan and create research-led reports, white papers, analyst reports, SME diagnostics, client deliverables, pitch decks, and decision documents with a premium consulting-style narrative: a clear puzzle, evidence, usefu...
 - [create-opportunities](https://raw.githubusercontent.com/hayalows/Skills/main/create-opportunities/SKILL.md): Turn career, freelance, business, creative, and learning goals into evidence-backed opportunities through useful work.

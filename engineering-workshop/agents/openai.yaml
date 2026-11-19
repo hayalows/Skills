@@ -1,0 +1,4 @@
+interface:
+  display_name: "Engineering Workshop"
+  short_description: "Build reliable software and practise engineering judgment"
+  default_prompt: "Use $engineering-workshop to work through this task and verify the result."

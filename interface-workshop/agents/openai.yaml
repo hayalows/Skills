@@ -1,0 +1,4 @@
+interface:
+  display_name: "Interface Workshop"
+  short_description: "Build usable frontends and practise design judgment"
+  default_prompt: "Use $interface-workshop to work through this task and verify the result."

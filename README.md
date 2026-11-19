@@ -14,6 +14,9 @@ Run `npm test` for every check and `npm run build` for the public directory and 
 
 ## Skill Library
 
+- [Interface Workshop](interface-workshop/SKILL.md) · Build and practise responsive interface design through real tasks.
+- [Engineering Workshop](engineering-workshop/SKILL.md) · Build, debug and verify software through working examples.
+
 - [`behavioral-interaction-design/`](behavioral-interaction-design/SKILL.md)
 - `consulting-grade-reports-decks/`
 - `design-taste-frontend/`
