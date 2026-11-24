@@ -75,7 +75,7 @@ def test_skill_links():
                  "references/version-history.md", "references/thought-led-composition.md", "scripts/original_check.py", "versions/v1.2.1/README.md"]:
         check(path in skill, f"SKILL.md does not link {path}")
         check((ROOT / path).exists(), f"{path} missing")
-    check("version: 3.0.2" in skill and "codename: Original" in skill, "version label missing")
+    check("version: 3.0.3" in skill and "codename: Original" in skill, "version label missing")
     check("—" not in skill, "SKILL.md uses an em dash")
 
 

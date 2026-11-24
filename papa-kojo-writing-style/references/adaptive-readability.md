@@ -1,6 +1,6 @@
 # Adaptive readability
 
-Original v3.0.2. Keep the voice and the thought-led composition gate from 3.0.1. The aim is to reduce the work a reader has to do to understand a real idea.
+Original v3.0.2 base engine, retained unchanged for reproducibility. Original 3.0.3 uses the [voice-first review layer](voice-first-review.md) by default for substantial prose. Keep the voice and the thought-led composition gate from 3.0.1. The aim is to reduce the work a reader has to do to understand a real idea.
 
 ## Targets are guides, not pass marks
 
@@ -26,7 +26,15 @@ Aim near Grade 4 to 6 for everyday prose. The audience and requested form come f
 
 ## CLI
 
-From the skill root:
+From the skill root, use the new review layer for writing and the frozen engine for historical comparisons:
+
+```bash
+python3 scripts/readability_review.py --profile educational --protect "National Identification Authority" < draft.txt
+python3 scripts/readability_review.py --profile educational --before draft.txt --protect "National Identification Authority" < revised.txt
+python3 tests/test_readability_review.py
+```
+
+The original commands remain supported:
 
 ```bash
 python3 scripts/adaptive_readability.py --profile educational --protect "National Identification Authority" < draft.txt

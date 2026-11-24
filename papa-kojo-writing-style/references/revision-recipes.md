@@ -57,6 +57,8 @@ Would he really end it this way? Good endings he uses: a forward wish, a thank-y
 
 ## Pass 5a. Reading effort
 
+Apply [voice-first-review.md](voice-first-review.md) first. Preserve a good line from the user's notes. Explain a new concept with a familiar mechanism or example where useful. Use the dictionary-first review layer; review disagreements and difficult windows rather than chasing a grade. Reject any edit that changes the claim or makes the draft feel hurried, stilted or unlike the user.
+
 Use [adaptive-readability.md](adaptive-readability.md). Read the draft for the reader's level; examine the hardest passages before changing easy ones. Prefer familiar words and active verbs. Explain necessary terms. Split a sentence only at a real turn of thought; do not create a run of short fragments. Compare the revision with the earlier draft and preserve names, numbers, qualifications and the actual point. Run the composition review again after any readability edits. Keep the best draft, not necessarily the one with the highest score.
 
 ## Pass 6. The dial
