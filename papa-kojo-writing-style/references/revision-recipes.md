@@ -55,6 +55,10 @@ If none is there, add one from the facts you have. Never invent one.
 
 Would he really end it this way? Good endings he uses: a forward wish, a thank-you, a clear ask, a small next step, an honest limit. Weak endings: a recap, a moral, a slogan, a question nobody needs to answer.
 
+## Pass 5a. Reading effort
+
+Use [adaptive-readability.md](adaptive-readability.md). Read the draft for the reader's level; examine the hardest passages before changing easy ones. Prefer familiar words and active verbs. Explain necessary terms. Split a sentence only at a real turn of thought; do not create a run of short fragments. Compare the revision with the earlier draft and preserve names, numbers, qualifications and the actual point. Run the composition review again after any readability edits. Keep the best draft, not necessarily the one with the highest score.
+
 ## Pass 6. The dial
 
 Check the register's rules in [register-dial.md](register-dial.md): contractions, emoji, fragments, length. Then check his avoid-words and that there are no em dashes.
