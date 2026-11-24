@@ -1,0 +1,135 @@
+{
+  "description": "Synthetic engineering regression cases, selected before this candidate was tested. Not a blind held-out or human preference dataset.",
+  "conversation": [
+    [
+      "Picture an apprentice who buys his tools.",
+      true
+    ],
+    [
+      "Suppose a bus owner has two drivers.",
+      true
+    ],
+    [
+      "Imagine a nurse who works at night.",
+      true
+    ],
+    [
+      "Consider a student who pays fees late.",
+      true
+    ],
+    [
+      "Think of a family that pays rent in advance.",
+      true
+    ],
+    [
+      "Take a farmer who needs money for seed.",
+      true
+    ],
+    [
+      "Say I want to learn design.",
+      true
+    ],
+    [
+      "Say a prayer before you leave.",
+      false
+    ],
+    [
+      "Take a seat that is close to the door.",
+      false
+    ],
+    [
+      "Picture the damaged part with your phone.",
+      false
+    ],
+    [
+      "Imagine a circle and mark its centre.",
+      false
+    ],
+    [
+      "Take your receipt to the office.",
+      false
+    ],
+    [
+      "Let us take a shop for example.",
+      false
+    ],
+    [
+      "If you sell on credit, record the debt.",
+      false
+    ],
+    [
+      "Consider the costs before signing.",
+      false
+    ],
+    [
+      "The owner said, “Suppose you sell a car.”",
+      false
+    ]
+  ],
+  "composition": [
+    [
+      "The room is warm, bright and quiet.",
+      true
+    ],
+    [
+      "She opened the door, checked the lock and turned off the light.",
+      true
+    ],
+    [
+      "By noon, the shop had sold bread, milk and eggs.",
+      true
+    ],
+    [
+      "Bring your ID, receipt and signed form.",
+      true
+    ],
+    [
+      "Clear records will not fix a weak product, a poor location, or a month when customers have less to spend.",
+      true
+    ],
+    [
+      "When you know what cash is in your hand, what sits on the shelf, and what is still out with buyers, you stop guessing.",
+      true
+    ],
+    [
+      "You can decide when to restock, when to say no politely, and when to hold back.",
+      true
+    ],
+    [
+      "The air is cool, the streets are quiet, and birds are singing.",
+      true
+    ],
+    [
+      "In the first week, sales rose, and the owner paid the rent.",
+      false
+    ],
+    [
+      "By Friday night, the sales book looks great, and the owner feels proud of a hard week.",
+      false
+    ],
+    [
+      "Still, there is a big gap between no credit at all and credit with no limit.",
+      false
+    ],
+    [
+      "Over a month, though, missing notes wipe out the cushion.",
+      false
+    ],
+    [
+      "When you check the drawer, you see cash and MoMo side by side.",
+      false
+    ],
+    [
+      "The room is quiet, and the light is soft.",
+      false
+    ],
+    [
+      "When prices rise, people save less and buy less.",
+      false
+    ],
+    [
+      "We spent GH₵10,000 and paid the supplier.",
+      false
+    ]
+  ]
+}
