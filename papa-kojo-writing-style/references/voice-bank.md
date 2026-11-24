@@ -49,6 +49,7 @@ On 24 November 2026 he preferred the revised reflective essay about dawn over it
 
 | Date | Correction | Scope |
 | --- | --- | --- |
+| 24 Nov 2026 | Noticed that batches can repeatedly use approved shared-example phrases and similar structures. Wants each piece shaped by its actual subject, with natural variation rather than a new template. Preserve his voice and avoid compulsory examples. | Comparable essays and other batches; no ban on a useful phrase |
 | 24 Nov 2026 | Approved the overall style of the 3.0.3 reflective essay On Staying Curious, with a correction to detached example introductions. Prefers a shared invitation such as "let us" or a natural conditional when explaining a thought to one person; avoid making either a compulsory phrase. | Reflective and explanatory prose; approved style, not evidence of lived events |
 | 24 Nov 2026 | Preferred Original 3.0.1 over 3.0.0 in a side-by-side educational essay comparison. Asked for improved reading ease through Python without losing the natural voice. | Long form; single comparison, not a blind result |
 | 24 Nov 2026 | Avoid examples and observations added merely to complete a group of three. The revised dawn essay with connected observations was preferred. Make the review explicit and test the checker on single occurrences. | All registers; strongest evidence in reflective essays |

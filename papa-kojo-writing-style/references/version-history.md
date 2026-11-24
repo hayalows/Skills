@@ -16,6 +16,7 @@ Every version of Papa Kojo's writing skill, what it tried, and where it lives no
 | **v3.0.2 Original** | **24 Nov 2026** | **Adaptive readability analysis, audience targets, local difficulty reports, protected terms and literal before/after review.** | **Main `SKILL.md`** |
 | **v3.0.3 Original** | **24 Nov 2026** | **Voice-first review, dictionary-first dual estimates, target tolerance, tail-aware reading windows and scope review.** | **Main `SKILL.md`** |
 | **v3.0.4 Original** | **24 Nov 2026** | **One-person conversation, concrete shared examples, register-aware advisory checker and protection against repeated invitations.** | **Main `SKILL.md`** |
+| **v3.0.5 Original** | **24 Nov 2026** | **Thought-specific structure, cross-draft scaffold review, optional batch diagnostics.** | **Main `SKILL.md`** |
 | v3.1 “Close to Speech” | 18 Nov 2026 | Preserve strong original lines, ask for essential evidence, and check reading difficulty in windows. | [Selectable version](../versions/v3.1-close-to-speech/SKILL.md) |
 | Steady Voice | 18 Nov 2026 | Prioritise factual scope, register and clear prose in the same editing pass. | [Selectable version](../versions/steady-voice/SKILL.md) |
 
@@ -49,3 +50,7 @@ The 30-task single-model pilot suggested that the added 3.0.2 editing pass impro
 ## Original maintenance update (3.0.4)
 
 The user approved the overall style of On Staying Curious (3.0.3) while identifying two detached example openings that did not sound like him. This patch records the scoped correction and adds a conversational review alongside, rather than replacing, the existing composition and readability tools. Harry Dry's published craft advice informs reader involvement and concrete detail, not personal voice evidence. The new tests exercise surface detection and exceptions. A fresh targeted draft comparison is a development test, not proof of general voice improvement.
+
+## Original maintenance update (3.0.5)
+
+The user identified cross-essay repetition of previously approved conversational openings and structure. Add thought-specific planning and a bounded batch review, with an optional standalone diagnostic for repeated phrase families and locations. Preserve prior tools, voice rules and the independent checker. Harry Dry and Dan Koe inform general craft only. The ten-pair pilot is development evidence, not independent blind validation or proof of unique authorship.

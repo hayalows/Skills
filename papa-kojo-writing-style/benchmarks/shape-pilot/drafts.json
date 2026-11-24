@@ -1,0 +1,62 @@
+[
+  {
+    "id": "patience",
+    "brief": "Explain why patience can be active, using a hypothetical learner.",
+    "before": "Patience is something I think we need when we are learning. Sometimes we want to see how much we have grown before we have given ourselves enough time to grow.\n\nLet us say you are learning to play the piano. You may spend a week trying to play a song and still find it hard to get through the first few lines. If you spend some time each day working on the part you find hard, there is a good chance that you will get better at it.\n\nOf course, there are times when you need to change the way you learn. Patience gives you time to see if the work you are doing is helping.",
+    "after": "You could spend a week learning a song on the piano and still find it hard to get through the first few lines. It would help to find the part where you keep making a mistake and give that part some time each day.\n\nHow much better will you play after another week of practice? You may find that you can now play a line that gave you trouble on the first day. If you haven't made much progress, it may be worth changing the way you practise. Give the work enough time to help before you decide that it isn't working."
+  },
+  {
+    "id": "budget",
+    "brief": "Explain how small recurring costs affect a monthly budget; use GH₵5 per day for 30 days.",
+    "before": "A budget can tell us quite a lot about the way we use our money. What we spend each day may seem small when we look at it on its own.\n\nLet us say you spend GH₵5 each day on something you could do without. Over 30 days, that comes to GH₵150. That may be money you would have liked to set aside for a bill at the end of the month.\n\nI think it helps to look at what we spend over a longer period. You may still choose to spend the money, but you can make that choice with a better idea of how it affects your plans.",
+    "after": "GH₵5 a day may seem like a small amount of money. Over 30 days, it comes to GH₵150. If you have a bill to pay at the end of the month, knowing this amount could help you decide how to use that money.\n\nThere is a reason I find a monthly budget useful. It puts the cost of things I pay for each day in a form I can compare with the other things I need to pay for. I may still choose to spend the money. At least I have a better idea of what that choice will mean for me at the end of the month."
+  },
+  {
+    "id": "design",
+    "brief": "Explain why a poster needs a clear reading order.",
+    "before": "The way we arrange things on a poster can make it easier for someone to understand what we want them to know. We need to think about what the person will see first.\n\nLet us take a poster for an event, for example. If the name of the event is hard to find because the page has too many large words, the person reading it may not know what the poster is about. We can make the name easier to see and give the date and place a clear position.\n\nOf course, a poster can still look good while doing this. The design should help the person get the information they need.",
+    "after": "When someone looks at a poster for an event, what would they need to know first? The name of the event seems like a good place to start. But if the other words are just as large as the name, it may take a while to work out which ones to read first.\n\nI would give the name enough space to be seen and put the date and place where they are easy to find. There is still a great deal I can do with the rest of the design. I just need to keep in mind how the person will read the poster."
+  },
+  {
+    "id": "rain",
+    "brief": "Explain why rain can flood streets, distinguishing causes.",
+    "before": "When it rains heavily, the water that falls on a road needs somewhere to go. Some of it flows into drains and some may collect in low parts of the road.\n\nIf the drains are blocked, for example, water may build up faster than it can flow away. But even a clear drain may not be able to carry all the water when the rain is very heavy.\n\nI think it helps to understand the cause before deciding what to do about flooding. Clearing rubbish from drains can help where the blockage is the problem. Where the drain is too small, we may need to look at how much water it was built to carry.",
+    "after": "Water can collect on a road even when there is no rubbish in the drains. During a heavy rain, a drain may receive more water than it was built to carry. Water can also collect in low parts of the road.\n\nIf rubbish has blocked the drain, clearing it can help water flow away. But if the drain is already clear and too small for the amount of water that reaches it, we may need a different solution. Before we decide what work needs to be done on a road that floods, it helps to know which of these problems is present."
+  },
+  {
+    "id": "reading",
+    "brief": "Explain why rereading a difficult passage can help.",
+    "before": "There are times when I read a page and find that I cannot explain what I have just read. I think one way to deal with this is to give the page a bit more time.\n\nLet us say you are reading a book on a subject you know little about. If there is a word you do not understand, the next few sentences may be hard to follow as well. It may help to find out what that word means and read the passage again.\n\nOf course, we do not have to read every page of every book in this way. It depends on what we want to learn from the book.",
+    "after": "There are times when I read a page and find that I cannot explain what I have just read. I'd rather go back to the part I didn't understand than read several more pages and have the same problem.\n\nA word I don't know may be the reason I'm finding the next few sentences hard to follow. Once I know what it means, I can read those sentences again and see if they now make sense to me. I wouldn't need to do that with every page of every book. It depends on what I'd like to learn from the book."
+  },
+  {
+    "id": "backup",
+    "brief": "Explain why an untested backup is not enough.",
+    "before": "When we make a copy of a file, we hope that we will be able to get it back if we lose the original. But there is a difference between having a copy and knowing that we can use it.\n\nIf a shop keeps its sales records on a computer, for example, the owner may save a copy on another drive. It would help to open the copy from time to time to see if the records are there.\n\nThis is why I think it is worth testing a backup before we need it. We may find a problem while we still have the files we want to protect.",
+    "after": "A shop owner may have a copy of his sales records on another drive and still have little idea whether he can use it if his computer stops working.\n\nThe time to find out is while the original records are still there. He could try opening the copy from time to time and see if he can get the records back. If there is a problem with the copy, he may still have time to make another one.\n\nThis is what makes testing a backup useful. Having a copy of a file gives us a chance of getting it back, but we need to know that the copy works."
+  },
+  {
+    "id": "kindness",
+    "brief": "Explain how to help a friend without assuming their needs.",
+    "before": "I think there is a lot we can do for a friend when we give ourselves time to listen. Sometimes we may have an idea of what would help them before we know what they are going through.\n\nLet us say a friend tells you that he is having trouble paying his rent. You may want to give him advice about how to use his money. But it would help to know if he has lost his job or if there is another reason why he cannot pay the rent.\n\nOf course, we may not always be in a position to give the help that is needed. We can still listen and be clear about what we can do.",
+    "after": "If a friend tells me he can't pay his rent, I'd want to know a little more about what has happened before I tell him how to use his money. He may have lost his job. In that case, advice on spending less may be of little help if he has no money coming in.\n\nI may find that I am unable to give him the kind of help he needs. But I can hear him out and be clear about what I can do. Giving him some time to talk could help me understand his needs before I offer any advice."
+  },
+  {
+    "id": "plants",
+    "brief": "Explain the role of leaves in a plant.",
+    "before": "A green leaf does quite a lot of work for a plant. It contains chlorophyll, which helps it absorb light from the sun. The plant uses the energy in that light to make sugars from water and carbon dioxide.\n\nSome of the sugar can be used to help the plant grow. Some can be stored for use later, when the plant cannot make enough food.\n\nIf a plant is kept in a place with too little light, it may not be able to make as much sugar as it needs. This is one reason why the amount of light a plant gets matters.",
+    "after": "A green leaf does quite a lot of work for a plant. It contains chlorophyll, which helps it absorb light from the sun. The plant uses the energy in that light to make sugars from water and carbon dioxide.\n\nSome of the sugar can be used to help the plant grow. Some can be stored for use later, when the plant cannot make enough food.\n\nIf a plant is kept in a place with too little light, it may not be able to make as much sugar as it needs. This is one reason why the amount of light a plant gets matters."
+  },
+  {
+    "id": "price",
+    "brief": "Explain why falling inflation need not mean falling prices; hypothetical GH₵100, 10%, 5%.",
+    "before": "When we hear that inflation has gone down, we may expect the things we buy to cost less. But lower inflation can mean that prices are still going up, only at a slower rate.\n\nLet us say a basket of goods costs GH₵100. If its price goes up by 10%, it will cost GH₵110. If the price then goes up by 5%, it will cost GH₵115.50. The rate at which the price went up has fallen, but the basket costs more than it did before.\n\nI think this is worth keeping in mind when we hear news about inflation. We need to look at how much the things we buy actually cost.",
+    "after": "A basket of goods that costs GH₵100 at the start of a year can help us understand what happens when inflation falls. After a rise of 10%, it costs GH₵110. A further rise of 5% brings the price to GH₵115.50.\n\nThe second rise is smaller than the first, but the basket costs more than it did before. That is how the rate of inflation can fall while prices keep going up. When we hear that inflation has fallen, we need to know what has fallen. The news tells us about the rate at which prices are changing. To know what we can afford, we still need to look at the actual prices."
+  },
+  {
+    "id": "time",
+    "brief": "Explain why estimating time for work requires accounting for interruptions.",
+    "before": "When I want to set aside time for a piece of work, I need to think about the time I can really spend on it. An hour on my calendar may not be a full hour of work.\n\nIf I set aside an hour to read, for example, and spend twenty minutes answering messages, I will have forty minutes left for the book. I may need to set aside more time or decide when I will answer the messages.\n\nOf course, there are times when a message needs an immediate reply. I think the aim is to make a plan that allows for the things that are likely to come up.",
+    "after": "When I want to read for an hour, I could set aside an hour on my calendar. But if I use twenty minutes of that time to answer messages, I have forty minutes left for the book.\n\nI think it would help to be clear about whether I want to spend an hour reading or an hour on reading and other work. If I need a full hour with the book, I may need to allow more time or decide when I will answer messages. A message may need an immediate reply, so I would also like to leave a bit of room for that in my plan."
+  }
+]
