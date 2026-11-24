@@ -1,6 +1,6 @@
 # Voice-first review
 
-Original 3.0.3. The aim is clear thought in the user's natural language. Python gives evidence about reading effort; an editor decides what belongs on the page.
+Introduced in Original 3.0.3; retained in 3.0.4. Apply the [one-person conversation review](one-person-conversation.md) alongside it. The aim is clear thought in the user's natural language. Python gives evidence about reading effort; an editor decides what belongs on the page.
 
 ## Keep what already works
 
@@ -14,7 +14,7 @@ For difficult ideas, first say what happens in plain language. Explain the reaso
 2. Run `scripts/readability_review.py` with the audience profile. Auto mode uses CMU pronunciation data if installed and reports the heuristic estimate as a second view; otherwise it reports an explicit heuristic fallback. No package installation is required. Examine the hardest windows, including the end, and note estimator disagreement. Use the same mode for all comparisons.
 3. Revise a specific difficulty rather than rewriting the whole piece. Prefer a familiar verb, a clearer subject or a concrete explanation. Read the surrounding sentences aloud and preserve connected thoughts. If the draft is already easy and natural, leave it alone. Check whether short sentences are accumulating or paragraphs are starting in the same way.
 4. Compare with the original and the best accepted draft using `--before` and `--protect` for names and terms, and `--require` for exact phrases that must remain. Review numeric and literal changes, changes in certainty/negation/role cues, and any missing required phrase. These signals do not prove or disprove semantic equivalence. Read the actual sentences against the brief. Confirm the same actor, action, cause, limit, scope, evidence and emotional intent. Check that the explanation is technically sound and that the reader has everything required.
-5. Read as the intended reader and as the user. Ask whether the candidate is easier to grasp, whether it sounds speakable and whether every detail still contributes. Run the thought-led composition review and register checker after revisions. Do not accept a candidate that loses necessary meaning, voice or fit even if the score rises. Make no more than three targeted passes; stop when another would add little or make the writing worse. If the tools are unavailable, carry out the editorial checks manually and do not report invented measurements.
+5. Read as the intended reader and as the user. Ask whether the candidate is easier to grasp, whether it sounds speakable and whether every detail still contributes. Run the thought-led composition review, register checker and, for longform and posts, the one-person conversation checker after revisions. Do not add questions or reader address merely to clear a flag. Do not accept a candidate that loses necessary meaning, voice or fit even if the score rises. Make no more than three targeted passes; stop when another would add little or make the writing worse. If the tools are unavailable, carry out the editorial checks manually and do not report invented measurements.
 
 For short messages, comments and captions, use manual clarity, reader fit and tone review. The formulas on samples below 100 words or five sentences are diagnostics only.
 

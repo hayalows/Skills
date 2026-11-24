@@ -15,6 +15,7 @@ Every version of Papa Kojo's writing skill, what it tried, and where it lives no
 | **v3.0.1 Original** | **24 Nov 2026** | **Thought-led composition, mandatory semantic review, single-occurrence candidate detection and an optional CLI review gate. Retains Original as the default.** | **Main `SKILL.md`** |
 | **v3.0.2 Original** | **24 Nov 2026** | **Adaptive readability analysis, audience targets, local difficulty reports, protected terms and literal before/after review.** | **Main `SKILL.md`** |
 | **v3.0.3 Original** | **24 Nov 2026** | **Voice-first review, dictionary-first dual estimates, target tolerance, tail-aware reading windows and scope review.** | **Main `SKILL.md`** |
+| **v3.0.4 Original** | **24 Nov 2026** | **One-person conversation, concrete shared examples, register-aware advisory checker and protection against repeated invitations.** | **Main `SKILL.md`** |
 | v3.1 “Close to Speech” | 18 Nov 2026 | Preserve strong original lines, ask for essential evidence, and check reading difficulty in windows. | [Selectable version](../versions/v3.1-close-to-speech/SKILL.md) |
 | Steady Voice | 18 Nov 2026 | Prioritise factual scope, register and clear prose in the same editing pass. | [Selectable version](../versions/steady-voice/SKILL.md) |
 
@@ -44,3 +45,7 @@ The user preferred 3.0.1 in a side-by-side historical essay comparison and reque
 ## Original maintenance update (3.0.3)
 
 The 30-task single-model pilot suggested that the added 3.0.2 editing pass improved readability, while estimator choice changed exact target hit rates. This motivates using both estimates, tolerating small boundary differences, retaining natural easy text, and prioritising the reader's grasp of the concept. Close to Speech informed the least-edit rule. The frozen 3.0.2 scoring engine and prior versions are unchanged. The new layer adds diagnostic coverage and editorial instructions; it does not establish that 3.0.3 prose wins against 3.0.2 without a new held-out comparison and actual user judgments.
+
+## Original maintenance update (3.0.4)
+
+The user approved the overall style of On Staying Curious (3.0.3) while identifying two detached example openings that did not sound like him. This patch records the scoped correction and adds a conversational review alongside, rather than replacing, the existing composition and readability tools. Harry Dry's published craft advice informs reader involvement and concrete detail, not personal voice evidence. The new tests exercise surface detection and exceptions. A fresh targeted draft comparison is a development test, not proof of general voice improvement.

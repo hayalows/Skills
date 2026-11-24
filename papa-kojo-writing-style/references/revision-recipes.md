@@ -16,6 +16,10 @@ Could two paragraphs swap places without anything breaking? If yes, the thread i
 
 Read [thought-led-composition.md](thought-led-composition.md). Scan every sentence for coordinated examples, adjectives and parallel clauses, and read across paragraphs for repeated openings, symmetry and unnecessary conclusions. For each group, ask what each part contributes. If one detail is enough, develop it. If details depend on each other, make that link clear. Keep independently necessary facts and lists, regardless of their length. Do not replace a routine three with a routine two. A checker flag is a review prompt; never treat a numerical pattern as proof of bad writing. Finish this pass before returning any draft, including a short message.
 
+## Pass 2b. One-person conversation
+
+For reflective essays and explanatory posts, use [one-person-conversation.md](one-person-conversation.md). Review illustrative bare commands, especially openings such as "Take a small shop that..." and "Say I want to...". A shared invitation, a conditional example or a direct continuation can help. Do not add a stock introduction when the thought already flows. Preserve actual instructions, quotations and register. Review repeated invitations and questions before delivery. In formal prose and short correspondence, do not force conversational address.
+
 ## Pass 3. Habits that sound like a machine
 
 | Habit | How it shows up | What to do instead |
