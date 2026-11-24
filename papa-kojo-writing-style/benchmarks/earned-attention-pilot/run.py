@@ -23,5 +23,10 @@ for col in ("before","after"):
         rows.append({"id":d["id"],"words":m["words"],"ease":m["ease_estimate"],"grade":m["grade_estimate"],"flags":[f["type"] for f in r["flags"]],"status":r["audience_status"],"strict":r["strict_grade5_target"]})
     substantial=[r for r in rows if r["status"]!="short_sample"]
     out[col]={"rows":rows,"substantial":len(substantial),"mean_ease":round(statistics.mean(r["ease"] for r in substantial),2),"mean_grade":round(statistics.mean(r["grade"] for r in substantial),2),"strict_passes":sum(r["strict"] is True for r in substantial),"style_flags":sum(len(r["flags"]) for r in rows),"edge_candidates":review([(d["id"],d[col]) for d in data])["candidates"]}
+matched={r["id"] for r in out["before"]["rows"] if r["status"]!="short_sample"} & {r["id"] for r in out["after"]["rows"] if r["status"]!="short_sample"}
+out["matched_substantial"]={"ids":sorted(matched)}
+for col in ("before","after"):
+    rows=[r for r in out[col]["rows"] if r["id"] in matched]
+    out["matched_substantial"][col]={"count":len(rows),"mean_ease":round(statistics.mean(r["ease"] for r in rows),2) if rows else None,"mean_grade":round(statistics.mean(r["grade"] for r in rows),2) if rows else None,"strict_passes":sum(r["strict"] is True for r in rows)}
 out["unchanged"]=sum(d["before"]==d["after"] for d in data)
 print(json.dumps(out,ensure_ascii=False,indent=2))
