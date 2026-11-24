@@ -68,7 +68,7 @@ def sentences(text):
     text = re.sub(r"(?<=\d)\.(?=\d)", "\ue000", text)
     text = re.sub(r"\b(?:Mr|Mrs|Ms|Dr|Prof|St|Jr|Sr|vs)\.",lambda m:m[0][:-1]+"\ue000",text,flags=re.I)
     text = re.sub(r"\b(?:[A-Za-z]\.){2,}",lambda m:m[0][:-1].replace(".","\ue000")+".",text)
-    text = re.sub(r"(?i)\b(?:a\ue000m|p\ue000m|e\ue000g|i\ue000e)\.(?=\s+[a-z0-9])",lambda m:m[0][:-1]+"\ue000",text)
+    text = re.sub(r"\b(?i:a\ue000m|p\ue000m|e\ue000g|i\ue000e)\.(?=\s+[a-z0-9])",lambda m:m[0][:-1]+"\ue000",text)
     return [s.replace("\ue000",".").strip() for s in re.split(r"(?<=[.!?])\s+|(?<=[.!?][\"”’])\s+|\n\s*\n",text) if WORD.search(s)]
 
 @lru_cache(maxsize=2)
@@ -127,6 +127,9 @@ def triplet(s):
             # Keep parallel dependent clauses; strip ordinary conditional preface.
             if not re.match(r"^(?:what|when|how|where|who|if)\b",parts[1],re.I):
                 parts=parts[1:]
+            elif len(parts)>=4 and re.match(r"^(?:and|or)\s+(?:what|when|how|where|who|if)\b",parts[2],re.I):
+                # A coordinated dependent list followed by the main clause.
+                parts=parts[:3]
         if len(parts)<2: continue
         if any(DISCOURSE.match(p) for p in parts[1:]): continue
         tail=parts[-1]
