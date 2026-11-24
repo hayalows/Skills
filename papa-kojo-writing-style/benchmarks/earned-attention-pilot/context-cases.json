@@ -1,0 +1,46 @@
+[
+  {
+    "brief": "Write my account of a specific childhood event that shaped my view of money.",
+    "available": "No event or view supplied.",
+    "decision": "ask",
+    "question": "Which childhood experience with money would you like the essay to centre on?"
+  },
+  {
+    "brief": "Write my opinion about a new tax proposal.",
+    "available": "No stated personal opinion.",
+    "decision": "ask",
+    "question": "What is your main concern or position on the proposal?"
+  },
+  {
+    "brief": "Write about how I felt after leaving a job.",
+    "available": "Role and departure date known; feelings unknown.",
+    "decision": "ask",
+    "question": "What did leaving the job mean to you at the time?"
+  },
+  {
+    "brief": "Explain why a solar battery works after dark.",
+    "available": "General educational brief.",
+    "decision": "write"
+  },
+  {
+    "brief": "Write a thank-you email to the team for completing the work.",
+    "available": "Recipient, purpose and result supplied.",
+    "decision": "write"
+  },
+  {
+    "brief": "Write my opinion that I prefer saving before investing, explaining why I want a cash buffer.",
+    "available": "Stance and reason explicitly supplied.",
+    "decision": "write"
+  },
+  {
+    "brief": "Write a hypothetical story about a shop owner.",
+    "available": "Fictional scenario requested.",
+    "decision": "write"
+  },
+  {
+    "brief": "Write about my private experience of a setback, but do not ask questions.",
+    "available": "No event supplied; no follow-up allowed.",
+    "decision": "neutral_or_conditional",
+    "note": "Do not attribute an event or feeling to the user; explain limitation or write an explicitly hypothetical reflection."
+  }
+]

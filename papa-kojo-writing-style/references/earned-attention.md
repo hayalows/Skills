@@ -1,0 +1,41 @@
+# Earned attention (Original 3.0.6)
+
+The aim is to give the reader a genuine reason to begin, continue and finish. Keep Original 3.0.5 intact in substance: truth before style, the author's own evidence before outside craft, one-person conversation, thought-specific shape, natural rhythm, and the bounded editorial checks. No mandatory hook, format, question, conflict, story, payoff formula or diversity quota.
+
+## Read the person before writing
+When the user requests writing in his voice or about his life, identify the actual point of view, experience or decision that the piece needs. Distinguish a known fact about him from a known opinion held by him. A preference for a style is not agreement with the facts or beliefs in an AI draft.
+
+- If the brief and reliable available context give enough material, write. Do not ask for permission or repeat a question already answered.
+- If a personal stance, memory, emotion, motive, result or observation is essential and missing, use relevant available context first where permitted. If it remains missing, stop before drafting and ask one natural, focused question that could change the piece. Wait for his answer. Do not fill the gap with a likely belief or generic personal anecdote.
+- If the missing detail is incidental, omit it. A factual explanation, explicit hypothetical, fictional piece, routine message or clearly supplied brief may need no personal question. Do not manufacture a gap to trigger a question.
+- Respect an explicit instruction to work without follow-up: state the necessary assumption or use a clearly hypothetical/neutral treatment; never claim invented personal facts. For example, if asked for an essay about how a private setback changed his view and no details are known, ask what happened or what changed, whichever is the essential missing fact. If asked to explain a scientific concept for a general reader, answer directly.
+- Incorporate the user's answer faithfully, at the level of certainty given. Never infer a belief from occupation, location, demographics or a previous unapproved draft.
+
+## Find what deserves attention
+Before composing, look for a concrete observation, question that really matters, meaningful consequence, unfamiliar link between ideas, true personal detail or a fact that changes what the reader understands. This is an exploration of the subject, not a menu of openings. If additional public facts are needed, research them and keep attribution. A personal question may be more useful than outside research when the missing thing is his perspective.
+
+David Ogilvy's account of his [Rolls-Royce research and headline](https://ogilvy.relayto.com/e/ogilvy-on-advertising-dq85bunnm5ady) illustrates the value of finding a specific fact before writing the headline. Harry Dry's [copywriting tips](https://marketingexamples.com/copywriting/tips) and [conversational guide](https://marketingexamples.com/copywriting/conversational/) inform specificity, honesty, economy and connected lines. Dan Koe's [writing and attention guide](https://thedankoe.com/letters/learn-this-skill-if-you-want-to-survive-the-next-10-years/) and [persuasion frameworks](https://thedankoe.com/letters/the-greatest-skill-of-the-21st-century/) inform the relationship between angle, relevance and depth. Alex Hormozi's [100M Leads](https://shop.acquisition.com/products/single-hardback) describes Hook, Retain, Reward. Borrow the craft, never their autobiographies, sales promises, signature phrases, ideology or authority as evidence of the user's voice.
+
+The user preferred the intellectual-curiosity opening in a four-option exercise: building a map can lead to learning how roads are measured. This is scoped evidence that he likes a connection between a concrete task and the deeper question it raises. It is not permission to reuse that sentence pattern or claim a new experience for him.
+
+For a complex or substantial brief, consider another honest starting point if useful. Select the one that best fits the piece, not the one with the strongest emotional pressure. The first line can be quiet. Do not manufacture conflict, conceal the answer just to hold attention, add a number without a source, introduce an irrelevant anecdote, or create an artificial cliffhanger. A routine message can simply state its purpose. A headline and the body opening have different jobs. Write either only when the requested form needs it.
+
+## Develop the thought
+The opening sets an expectation, even when it makes no explicit promise. Follow its implication, show the reasoning, provide relevant evidence or make the matter clear with a concrete detail. Let each new paragraph give the reader something they could not get from the one before. Use questions, examples, a story, explanation, objection or practical step only where they serve the thought. Do not stretch a small idea into a long article or force sections to be the same length. For sales copy, use the actual customer's problem and desired result; problem/solution and attention/interest/desire/action are possible craft models, not default templates. Avoid fabricated urgency, exaggerated pain and unsupported benefit claims.
+
+## Finish well
+Ask what the reader needs at the end of this specific piece. Sometimes it is a clear answer or a practical action; sometimes a limitation, a well-earned implication, a return to an earlier detail with new meaning, or simply the last useful thought. Do not force a call to action, moral, question, motivational line, circular callback or summary. Stop when the piece has delivered what the opening led the reader to expect. A closing should follow the argument and preserve its uncertainty.
+
+## Revise as a whole
+After drafting, reread the opening with the middle and the ending. A better starting point may have emerged while writing. Check whether the first paragraph earns its place, whether the reader has enough context, whether each paragraph advances the idea, and whether the last paragraph completes the work. Move or cut only where that makes the piece better. Read it aloud for pace. Maintain the existing maximum of three targeted editing passes across all reviews, not three extra hook passes. Do not chase scores or clear every surface warning.
+
+If earlier comparable drafts are actually available, compare the opening, development and ending. For a batch, keep a temporary note of the angles and use the existing batch review where appropriate. Revisit repeated moves that do not serve the current subject. The same story can support different honest questions, consequences or points of view when the supplied facts permit it; do not manufacture a fresh angle by changing what happened. If the same story is used for the same purpose, useful shared wording may remain. No guarantee of unique text across arbitrary future calls or unseen drafts.
+
+Optional companion:
+```sh
+python3 scripts/arc_review.py draft1.txt draft2.txt
+```
+Reports normalized exact and near overlap between opening paragraphs or closing paragraphs across supplied drafts. It is an advisory review of wording, not an interest, voice, authorship or quality score. It does not read unseen history, store files or rewrite prose. Use the existing batch_shape_review.py for wider scaffold families. Review the actual ideas manually.
+
+## Learn, with consent and evidence
+This is a bounded editorial learning loop, not autonomous recursive self-improvement of model weights or an always-running agent. During a task, use the user's explicit correction or chosen option immediately. When he approves a lesson, record only the reusable style principle and its scope through an approved versioned update; keep private personal material out of the public repository. Do not store an unapproved AI draft as voice evidence or promote a metric as a preference. Keep rejected suggestions and accepted lessons distinct. Before changing the shared skill, compare fresh examples, test existing behaviours and preserve the old commit. Never silently modify the skill, its evaluators, or the test labels. If persistent context or prior drafts are unavailable, state that limitation when it matters and work with the current brief. Human approval outranks all automated estimates.

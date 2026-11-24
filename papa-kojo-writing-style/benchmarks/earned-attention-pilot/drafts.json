@@ -1,0 +1,38 @@
+[
+  {
+    "id": "maps",
+    "brief": "Explain why two map services can disagree on the estimated journey time. Fictional/general example, not autobiography.",
+    "before": "Maps can help us get to the places we want to go. But the time a map gives us for a trip may not always be the time it will take. Two maps may even give us a different time for the same trip.\n\nEach service needs to know which roads we can use and how long we may spend on them. The roads it knows about and the data it has on traffic may differ from those another service uses. That can affect the route it gives us.\n\nI think it helps to keep this in mind when we use a map. The time on the screen is an estimate, and the map may need to change it as we move.",
+    "after": "You can enter the same place in two map apps and get two different times for the trip. Why would one app think you can get there sooner?\n\nPart of the answer lies in what each service knows about the roads. One may know of a road that the other does not have on its map. The data each service has on traffic can also affect the time it thinks you will spend on the road.\n\nSo the route we see depends in part on what the map knows when we ask for help. If the service gets new data about traffic while we are on the road, the time we see may change."
+  },
+  {
+    "id": "cash",
+    "brief": "Explain that profit and cash can differ; hypothetical sale on credit, bill due before customer pays.",
+    "before": "A business can make a profit and still have trouble paying its bills. This can happen when the money it expects to get from a sale has not come in yet.\n\nIf a shop sells goods on credit, it may make a profit on that sale. But the supplier may ask to be paid before the customer pays the shop. The owner will then need to find money to pay the supplier while waiting for the customer.\n\nThat is why it helps to keep track of the money that comes in as well as the profit a business makes. A shop needs cash to pay its bills.",
+    "after": "A supplier may ask to be paid on Monday for goods a shop has already sold on credit. The shop may have made a profit on those goods, but the money is still with the customer.\n\nIf the customer is going to pay at the end of the month, the owner needs to find cash to pay the supplier before then. The profit on the sale tells us one thing about the business, while the time when the cash comes in tells us something else.\n\nWhen I look at the accounts of a shop, I'd want to know when the money from its sales is due to come in. That could help me work out if the shop can pay the bills it has now."
+  },
+  {
+    "id": "quiet",
+    "brief": "General reflective essay about listening without assuming what a friend needs. No personal history supplied.",
+    "before": "If a friend comes to me with a problem, I'd like to give him time to explain what has happened. I may think I know what would help him before he has finished telling me about it.\n\nThere may be more to the problem than I can see at first. A friend who is worried about a bill may need help finding work rather than help drawing up a budget. It would be hard to know that if I did not let him talk.\n\nI may not be able to give him all the help he needs. But I'd like to be someone he can talk to without feeling that he has to defend himself.",
+    "after": "If a friend comes to me with a problem, I'd like to give him time to explain what has happened. I may think I know what would help him before he has finished telling me about it.\n\nThere may be more to the problem than I can see at first. A friend who is worried about a bill may need help finding work rather than help drawing up a budget. It would be hard to know that if I did not let him talk.\n\nI may not be able to give him all the help he needs. But I'd like to be someone he can talk to without feeling that he has to defend himself."
+  },
+  {
+    "id": "science",
+    "brief": "Explain why a battery can power a device in the dark after being charged by a solar panel. No personal experience.",
+    "before": "A solar panel can use light from the sun to make electricity. The amount of power it can give us depends in part on the light that reaches it.\n\nIf we want to use a device after the sun goes down, we can use a battery to store energy while there is still light. The battery stores energy in chemical form and can give us electricity when we need it.\n\nSo the device does not have to be in the sun to work. As long as the battery has enough charge, it can supply power to the device.",
+    "after": "A lamp can run on energy from the sun even in the middle of the night. It needs a way to store some of the energy it gets during the day.\n\nA solar panel can turn light from the sun into electricity. We can use the power from the panel to charge a battery with the right equipment. The battery stores energy in chemical form, which it can turn back into electrical energy when we turn on the lamp.\n\nThe lamp can keep working after the sun goes down as long as the battery has enough charge. How long it lasts depends on how much energy the battery can supply and how much power the lamp needs."
+  },
+  {
+    "id": "message",
+    "brief": "Write a short request to a colleague to send a meeting agenda before 10 a.m. No persuasive hook.",
+    "before": "Hi, could you please send me the meeting agenda before 10 a.m.? I'd like to have some time to go through it before the meeting. Thank you.",
+    "after": "Hi, could you please send me the meeting agenda before 10 a.m.? I'd like to have some time to go through it before the meeting. Thank you."
+  },
+  {
+    "id": "sales",
+    "brief": "Hypothetical bookkeeping tool can record a sale and mark it paid; do not promise actual automatic reconciliation or savings. Write short sales copy.",
+    "before": "Keeping track of sales and payments can take time. Our bookkeeping tool gives you a way to record the things you sell and mark them as paid when the money comes in.\n\nYou can use it to keep your sales and payment status in one place. If you sell to a customer on credit, you can record that sale and mark it paid when the customer pays.\n\nTry the tool to see how it might fit the way you keep your books.",
+    "after": "Which of today's sales have been paid for?\n\nWith this bookkeeping tool, you can record a sale when it happens and mark it paid when the customer pays. If you sell on credit, you can leave that sale unpaid in your records until the money comes in.\n\nYou can go back to the record when you need to check which sales have been marked paid. Try it with a few of your sales and see if it fits the way you keep your books."
+  }
+]

@@ -17,6 +17,7 @@ Every version of Papa Kojo's writing skill, what it tried, and where it lives no
 | **v3.0.3 Original** | **24 Nov 2026** | **Voice-first review, dictionary-first dual estimates, target tolerance, tail-aware reading windows and scope review.** | **Main `SKILL.md`** |
 | **v3.0.4 Original** | **24 Nov 2026** | **One-person conversation, concrete shared examples, register-aware advisory checker and protection against repeated invitations.** | **Main `SKILL.md`** |
 | **v3.0.5 Original** | **24 Nov 2026** | **Thought-specific structure, cross-draft scaffold review, optional batch diagnostics.** | **Main `SKILL.md`** |
+| **v3.0.6 Original** | **24 Nov 2026** | **Earned attention, whole-piece arc review, essential personal-context gate and bounded approval-based learning.** | **Main `SKILL.md`** |
 | v3.1 “Close to Speech” | 18 Nov 2026 | Preserve strong original lines, ask for essential evidence, and check reading difficulty in windows. | [Selectable version](../versions/v3.1-close-to-speech/SKILL.md) |
 | Steady Voice | 18 Nov 2026 | Prioritise factual scope, register and clear prose in the same editing pass. | [Selectable version](../versions/steady-voice/SKILL.md) |
 
@@ -54,3 +55,7 @@ The user approved the overall style of On Staying Curious (3.0.3) while identify
 ## Original maintenance update (3.0.5)
 
 The user identified cross-essay repetition of previously approved conversational openings and structure. Add thought-specific planning and a bounded batch review, with an optional standalone diagnostic for repeated phrase families and locations. Preserve prior tools, voice rules and the independent checker. Harry Dry and Dan Koe inform general craft only. The ten-pair pilot is development evidence, not independent blind validation or proof of unique authorship.
+
+## Original maintenance update (3.0.6)
+
+The user preferred an intellectual-curiosity opening connecting map building with a deeper question. He asked for interesting beginnings, substantive middles, natural endings and a focused question when his essential personal perspective is missing. Add a single integrated craft guide and an optional opening/closing overlap diagnostic. Ogilvy, Dry, Koe and Hormozi inform craft, not personal voice. No autonomous learning or promise of infinite uniqueness. Existing scoring engines and 3.0.5 batch review are frozen. Paired development examples are not independent preference evidence.
