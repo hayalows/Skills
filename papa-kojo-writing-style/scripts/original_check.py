@@ -15,7 +15,7 @@ import re
 import statistics
 import sys
 
-VERSION = "3.0.0"
+VERSION = "3.0.1"
 REGISTERS = ("chat", "comment", "message", "post", "longform", "formal")
 CASUAL = {"chat", "comment"}
 LONGER = {"post", "longform"}
@@ -93,6 +93,62 @@ def syllables(word):
     return max(1, len(re.findall(r"[aeiouy]{1,2}", word)))
 
 
+COMPOSITION_FLAGS = {'rule_of_three', 'parallel_overuse', 'opening_repetition'}
+
+# These are review candidates, not judgments about meaning.
+INTRO = re.compile(r"^(?:(?:and|but|so)\s+)?(?:if|when|while|although|though|because|since|before|after|unless|once|as|even if|for example|for instance|of course|however|instead|in fact|by the time)\b", re.I)
+LINK = re.compile(r"^(?:but|because|so|yet|although|though|if|when|while|since|unless|as|before|after|which|who|where|with|rather than)\b", re.I)
+JOIN = re.compile(r"\b(?:and|or)\b", re.I)
+
+
+def composition_candidates(ss):
+    """Find surface patterns; leave the necessity of each item to the editor."""
+    candidates = []
+    for i, sentence in enumerate(ss, 1):
+        # Ignore thousands separators and explicit quoted/code material.
+        masked = re.sub(r"(?<=\d),(?=\d)", "", sentence)
+        if re.search(r'[`"“”]', masked):
+            continue
+        parts = [p.strip() for p in masked.strip(".!?; ").split(",")]
+        if len(parts) < 2 or not all(parts) or INTRO.match(parts[0]):
+            continue
+        if any(LINK.match(p) for p in parts[1:]):
+            continue
+        # Oxford comma or a list with no comma before the last conjunction.
+        last = parts[-1]
+        if JOIN.match(last):
+            items = parts[:-1] + [JOIN.sub("", last, count=1).strip()]
+        else:
+            joins = list(JOIN.finditer(last))
+            if len(joins) != 1:
+                continue
+            j = joins[0]
+            items = parts[:-1] + [last[:j.start()].strip(), last[j.end():].strip()]
+        if len(items) < 3 or any(not p or not re.search(r"[A-Za-z]", p) for p in items):
+            continue
+        if any(JOIN.match(p) or LINK.match(p) or INTRO.match(p) for p in items[1:]):
+            continue
+        candidates.append((i, sentence))
+    return candidates
+
+
+def composition_review(ss):
+    flags = []
+    candidates = composition_candidates(ss)
+    for i, sentence in candidates:
+        flags.append(("rule_of_three", sentence, f"Sentence {i}: review each coordinated item. Keep necessary lists; develop one detail or remove padding if the rhythm drove the choice."))
+    if len(candidates) >= 2:
+        flags.append(("parallel_overuse", "; ".join(str(i) for i, _ in candidates), "Several sentences use lists of three or more. Check the overall rhythm; keep only independently useful items."))
+    # Adjacent repeated two-word openings: one common word alone is not evidence.
+    openings = [tuple(re.findall(r"[A-Za-z]+(?:['’][A-Za-z]+)?", s.lower())[:2]) for s in ss]
+    for i in range(2, len(openings)):
+        if len(openings[i]) == 2 and openings[i] == openings[i-1] == openings[i-2]:
+            flags.append(("opening_repetition", " / ".join(ss[i-2:i+1]), "Three adjacent sentences share an opening. Check for a rhetorical template; retain intentional repetition if it serves the meaning."))
+            break
+    return flags
+
+
+
 def scan(text, register):
     ws = words(text)
     ss = sentences(text)
@@ -149,9 +205,8 @@ def scan(text, register):
         plen = [len(words(p)) for p in paras]
         if statistics.mean(plen) and statistics.pstdev(plen) / statistics.mean(plen) < 0.15:
             add("too_even_paragraphs", str(plen), "Paragraphs need not match; let a short point have a short paragraph.")
-    triples = re.findall(r"\b\w+(?: \w+)?, \w+(?: \w+)?,? and \w+", text)
-    if register in LONGER and len(triples) >= 3:
-        add("rule_of_three", triples[0], "Use the real number of items, not three by habit.")
+    for fid, example, advice in composition_review(ss):
+        add(fid, example, advice)
     if register in LONGER and paras and paras[-1].rstrip().endswith("?"):
         add("question_ending", paras[-1][-80:], "End on the useful line or a next step unless he wants answers.")
     if register in LONGER and nw >= 80 and grade is not None and grade > 8:
@@ -167,11 +222,13 @@ def main():
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--register", choices=REGISTERS, default="post")
     p.add_argument("--json", action="store_true")
+    p.add_argument("--composition-gate", action="store_true", help="Exit 2 if composition review candidates are present; necessary lists may remain after editorial review.")
     a = p.parse_args()
     data = scan(sys.stdin.read(), a.register)
+    exit_status = 2 if a.composition_gate and any(f["id"] in COMPOSITION_FLAGS for f in data["flags"]) else 0
     if a.json:
         print(json.dumps(data, indent=2, ensure_ascii=False))
-        return
+        return exit_status
     m = data["metrics"]
     print(f"ORIGINAL CHECK {VERSION} | register: {a.register}")
     print(f"Words {m['words']} | sentences {m['sentences']} | paragraphs {m['paragraphs']} | "
@@ -181,7 +238,8 @@ def main():
     for f in data["flags"]:
         print(f"- {f['id']}: {f['example']}  ->  {f['advice']}")
     print(data["notice"])
+    return exit_status
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

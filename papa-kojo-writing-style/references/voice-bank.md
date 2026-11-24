@@ -39,14 +39,17 @@ These come from how he writes and dictates his requests. They show how his mind 
 - **He leans on "very" and "really" for weight, and "maybe" when he is exploring.** Allow one where he would truly stress something. Do not stack them.
 - **Spoken fillers stay spoken.** "And all that", "and stuff like that" and repeated "you know" do not go into written prose.
 
-## 4. The draft he approved for style
+## 4. Drafts he approved for style
 
 On 16 November 2026 he approved the style of the refined v1.2 Word of Wisdom essay: [approved-refined-v12.md](approved-refined-v12.md). It is AI-written and its story is hypothetical, so use it for pace and warmth only. What he liked: it stays with a concern long enough to explain it, links advice to a real reason, keeps gentle uncertainty ("I think", "may"), uses contractions, and moves at a calm, personal pace. What he did not like in its rival (v1.3): quick instruction after quick instruction, which felt rushed and impersonal.
+
+On 24 November 2026 he preferred the revised reflective essay about dawn over its first draft after identifying the repeated rule-of-three habit. The lesson is to develop an observation through a real connection rather than fill a rhythmic template. See [thought-led-composition.md](thought-led-composition.md). This is approval of the AI-written revision's style, not evidence of a personal experience or of his position on inflation. The subsequent inflation essay is a transfer example, not a separately approved voice sample.
 
 ## 5. Corrections he has made (newest first)
 
 | Date | Correction | Scope |
 | --- | --- | --- |
+| 24 Nov 2026 | Avoid examples and observations added merely to complete a group of three. The revised dawn essay with connected observations was preferred. Make the review explicit and test the checker on single occurrences. | All registers; strongest evidence in reflective essays |
 | 18 Nov 2026 | Labels and tag lines like "Work, systems & service" feel AI-made. Use fewer labels and less text. | Web and profile copy; a good general instinct |
 | 18 Nov 2026 | Do not make claims a stranger cannot check. | Everywhere |
 | 16 Nov 2026 | "Most people don't run out of money on a big day. They run out on the small ones." feels AI-written. No contrast flips. | Everywhere |

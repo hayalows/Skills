@@ -1,9 +1,9 @@
 ---
 name: papa-kojo-writing-style
 description: Write, rewrite, humanise or check anything Papa Kojo Mensah (Iconka) will send or post as himself, in his own voice. Use for WhatsApp messages, comments, emails, LinkedIn and X posts, the Clarity Before Growth newsletter, applications, client and brand copy, church talks, scripts and essays, and whenever he says "write like me", "sound like me", "humanise this" or "make this less AI". Plain, warm, easy English with real context and no invented facts. Skip code, factual answers and exact quotations.
-version: 3.0.0
+version: 3.0.1
 codename: Original
-updated: 2026-11-18
+updated: 2026-11-24
 ---
 
 # Papa Kojo Writing Style v3.0 "Original"
@@ -21,7 +21,8 @@ v1.2.1 taught the skill what to avoid. Original teaches it who to sound like.
 - **Say it first.** Every draft starts from the point said out loud to one reader, not from a template.
 - **A person on the page.** Clean writing with no AI habits can still sound empty. Each piece needs a real stance, a real detail, real care or an honest limit, taken only from the facts given.
 - **Fix recipes** for each AI habit, with the move to make instead: [revision-recipes.md](references/revision-recipes.md).
-- **A new checker**, `scripts/original_check.py`, that reads the draft against its register.
+- **A register-aware checker**, `scripts/original_check.py`, that reads the draft against its register and flags composition candidates from the first occurrence.
+- **Thought-led composition (3.0.1).** Develop the point before adding examples. The author's correction about forced groups of three applies to every register, including short essays.
 
 v1.2.1 is kept whole in [versions/v1.2.1](versions/v1.2.1/README.md). The full story of every version is in [version-history.md](references/version-history.md).
 
@@ -37,7 +38,7 @@ When Papa asks for Steady Voice, follow [its writing instructions](versions/stea
 
 1. The current request, the reader, the form and any correction he has just made.
 2. His own words and corrections in [voice-bank.md](references/voice-bank.md).
-3. The one draft he approved for style: [approved-refined-v12.md](references/approved-refined-v12.md).
+3. Drafts he approved for style, scoped to their form: [approved-refined-v12.md](references/approved-refined-v12.md) and the reflective-essay calibration in [thought-led-composition.md](references/thought-led-composition.md).
 4. His stated preferences in [voice-profile.md](references/voice-profile.md).
 5. General craft in [craft-sources.md](references/craft-sources.md). Outside writers teach technique. They are never evidence of his voice.
 
@@ -49,15 +50,16 @@ A recent correction beats an older habit within its scope. An AI draft stays an 
 2. **Fence the facts.** Privately sort what you know into *Given* (from the brief or conversation), *General* (plain facts almost any reader already accepts) and *Missing*. A claim about how people usually behave ("a friend is often the first to hear") is Missing unless the brief gives it. Nothing moves from Missing to Given. Leave it out, write around it, use a clear placeholder like [date], or ask one short question if it would change the whole piece.
 3. **Say it first.** Before drafting, say the point the way he would say it out loud to this one reader, in one or two plain sentences. For example: "The shop is busy, but the money is stuck with suppliers and customers." Write the piece from that spoken line.
 4. **Follow the thread.** Each sentence, and each paragraph, answers the question the last one raised. A useful order is: what is happening, why, what it means for this reader, what to do, and the honest limit. Use only the steps the piece needs. Join ideas with the real link between them: so, but, because, that means, and.
-5. **Put a person in it.** Before you finish, check that the piece has at least one of these: his real stance said plainly, a concrete detail from the brief, care for the reader's actual situation, or an honest limit. Never invent anything to pass this check.
-6. **Read it at the table.** Read the draft aloud as him, to this reader. Fix what he would trip over or would never say. Then do the passes in [revision-recipes.md](references/revision-recipes.md). For longer pieces, run the checker:
+5. **Develop the thought, not the pattern.** Start with the detail that best explains the point. Follow its reason, effect or next question before adding another example. Never add an item to complete a rhythm. Apply the mandatory [composition gate](references/thought-led-composition.md) in every register.
+6. **Put a person in it.** Before you finish, check that the piece has at least one of these: his real stance said plainly, a concrete detail from the brief, care for the reader's actual situation, or an honest limit. Never invent anything to pass this check.
+7. **Read it at the table and review before delivery.** Read the draft aloud as him, to this reader. Fix what he would trip over or would never say. Run the passes in [revision-recipes.md](references/revision-recipes.md), including the composition gate even for a short message. When Python is available, run the checker for the actual register, inspect every composition candidate, revise where needed and rerun. When tools are unavailable, perform the same review manually. Do not claim a check was run if it was not.
 
 ```bash
-python3 scripts/original_check.py --register post < draft.txt
+python3 scripts/original_check.py --register longform --composition-gate < draft.txt
 python3 scripts/original_check.py --register chat --json < draft.txt
 ```
 
-A flag means "look again". It never means "AI detected", and a clean result never means "sounds like him".
+A flag means "look again". It never means "AI detected", and a clean result never means "sounds like him". The optional composition gate exits with status 2 when it finds surface candidates. A necessary enumeration can stay after the editor confirms why its items belong; do not rewrite true facts just to clear a flag. The semantic review is mandatory even when the checker finds nothing.
 
 ## Words and sentences
 

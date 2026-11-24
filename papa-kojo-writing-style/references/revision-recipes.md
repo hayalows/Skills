@@ -12,6 +12,10 @@ Is every name, number, date, role, feeling and event in the brief or the convers
 
 Could two paragraphs swap places without anything breaking? If yes, the thread is weak. Make each paragraph answer the question the one before it raised. Cut any paragraph that restarts the point.
 
+## Pass 2a. Thought-led composition (required in every register)
+
+Read [thought-led-composition.md](thought-led-composition.md). Scan every sentence for coordinated examples, adjectives and parallel clauses, and read across paragraphs for repeated openings, symmetry and unnecessary conclusions. For each group, ask what each part contributes. If one detail is enough, develop it. If details depend on each other, make that link clear. Keep independently necessary facts and lists, regardless of their length. Do not replace a routine three with a routine two. A checker flag is a review prompt; never treat a numerical pattern as proof of bad writing. Finish this pass before returning any draft, including a short message.
+
 ## Pass 3. Habits that sound like a machine
 
 | Habit | How it shows up | What to do instead |
@@ -21,7 +25,7 @@ Could two paragraphs swap places without anything breaking? If yes, the thread i
 | **Small borrowed experience** | "I had to hunt for the email." "You may know this feeling." "I was so moved." added to a brief that never said so | Keep to what the brief says happened. Report the finding ("several made contact details hard to find"), not an invented scene of how it felt. |
 | **Label before the point** | "Here is the thing." "The reason is often simple." "What tracking can do is..." "This matters because..." "The lesson?" | Delete the label and start with the point itself. |
 | **Moral at the end** | "And that is what real friendship means." "Small steps lead to big change." "A small thing is a good place to start." after an invitation | Stop at the last useful sentence, or end with a plain next step. |
-| **Rule of three for rhythm** | "clear, simple and powerful", three examples every time, three parallel opening scenes ("Rent is due... School fees come up... A relative calls...") | Use the real number of items. Two is fine. One is often best. |
+| **Rule of three for rhythm** | "clear, simple and powerful", three examples every time, three parallel opening scenes ("Rent is due... School fees come up... A relative calls...") | Use the real number of items. Review even the first occurrence. Prefer a developed detail when it does the job; keep a necessary list of any length. |
 | **Neat maxim** | A tidy quotable line that sums up the post: "If a tool can do the clicking, students can spend that time talking." | Cut it, or replace it with the plain practical point or the next step. One honest plain sentence beats a clever one. |
 | **Stacked fragments** | "No guessing. No stress. Just results." | Join them into one sentence. In Chat and Comment his own short lines ("Well deserved. More wins ahead.") are real and fine, but keep to one or two. |
 | **Sweeping opener** | "Many people...", "In today's world...", "Have you ever...?" | Open on this reader's actual situation or the fact from the brief. |
