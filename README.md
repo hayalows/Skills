@@ -22,6 +22,7 @@ Run `npm test` for every check and `npm run build` for the public directory and 
 - `consulting-grade-reports-decks/`
 - `design-taste-frontend/`
 - `frontend-design/`
+- [`gemini-frontend-design/`](gemini-frontend-design/SKILL.md) (Google Gemini, Apache-2.0; [original source](https://github.com/google-gemini/demolab/tree/main/skills/gemini-frontend-design))
 - `human-copywriting/`
 - `humanize-my-writing/`
 - `luna-astra-behavior/`
