@@ -1,4 +1,5 @@
 import fs from "node:fs";
+import { parseRoutingBlock, routingError } from "./routing-policy.mjs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
@@ -23,51 +24,23 @@ function gitRaw(...argv) {
   });
 }
 function git(...argv) { return gitRaw(...argv).trimEnd(); }
-function parseScalar(raw) {
-  const value = raw.trim();
-  if (value === "true") return true;
-  if (value === "false") return false;
-  if (value.startsWith('"') && value.endsWith('"')) {
-    try { return JSON.parse(value); } catch { return value.slice(1, -1); }
-  }
-  if (value.startsWith("'") && value.endsWith("'")) return value.slice(1, -1).replaceAll("''", "'");
-  if (value.startsWith("[") && value.endsWith("]")) {
-    return value.slice(1, -1).split(",").map((v) => parseScalar(v)).filter((v) => v !== "");
-  }
-  return value;
-}
 function parseMetadata(content, file) {
   const match = content.match(/^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/);
   if (!match) return { name: path.basename(path.dirname(file)), description: "", error: "missing frontmatter" };
   const fields = Object.create(null);
-  let routing = null;
+  let routing = null, routingProblem = null;
   const lines = match[1].split(/\r?\n/);
   for (let i = 0; i < lines.length; i++) {
     const pair = lines[i].match(/^([a-zA-Z][\w-]*):\s*(.*)$/);
     if (!pair) continue;
-    if (pair[1] === "routing" && pair[2].trim() === "") {
-      routing = Object.create(null);
-      let activeListKey = null;
-      while (i + 1 < lines.length && (/^\s{2,}/.test(lines[i + 1]) || lines[i + 1].trim() === "")) {
-        const sub = lines[++i];
-        if (!sub.trim()) continue;
-        const listItem = sub.match(/^\s{4,}-\s+(.*)$/);
-        if (listItem && activeListKey) {
-          routing[activeListKey].push(parseScalar(listItem[1]));
-          continue;
-        }
-        const subPair = sub.match(/^\s{2,}([a-zA-Z][\w-]*):\s*(.*)$/);
-        if (subPair) {
-          const val = subPair[2].trim();
-          if (val === "") {
-            routing[subPair[1]] = [];
-            activeListKey = subPair[1];
-          } else {
-            routing[subPair[1]] = parseScalar(val);
-            activeListKey = null;
-          }
-        }
-      }
+    if (pair[1] === "routing") {
+      const block = [];
+      while (i + 1 < lines.length && (/^\s{2,}/.test(lines[i + 1]) || lines[i + 1].trim() === "")) block.push(lines[++i]);
+      try {
+        if (routing || routingProblem) throw Error("duplicate routing block");
+        if (pair[2].trim()) throw Error("routing requires a flat indented block");
+        routing = parseRoutingBlock(block);
+      } catch (error) { routingProblem = error.message; }
       continue;
     }
     let value = pair[2].trim();
@@ -88,7 +61,21 @@ function parseMetadata(content, file) {
     requires_explicit_invocation: fields["disable-model-invocation"] === "true"
   };
   if (routing) meta.routing = routing;
+  if (routingProblem) meta.error = "invalid routing metadata: " + routingProblem;
   return meta;
+}
+// Sidecar keeps imported upstream skill instructions byte-for-byte intact.
+function sidecarPath(p) { return p.replace(/SKILL\.md$/, "routing.json"); }
+function withSidecar(item, raw) {
+  if (raw == null) return item;
+  try {
+    if (item.routing || item.error) throw Error("ambiguous or invalid frontmatter routing");
+    const routing = JSON.parse(raw);
+    const error = routingError(routing);
+    if (error) throw Error(error);
+    item.routing = routing;
+  } catch (error) { item.error = "invalid routing sidecar: " + error.message; }
+  return item;
 }
 function isSkill(p) {
   if (!p.endsWith("/SKILL.md") || p.startsWith("/") || p.includes("\\") || p.split("/").includes("..")) return false;
@@ -112,11 +99,16 @@ function localPaths() {
 }
 function remotePaths(commit) {
   const entries = gitRaw("ls-tree", "-r", "-z", "--full-tree", commit).split("\0").filter(Boolean);
-  return entries.map((row) => {
+  const all = entries.map(row => {
     const separator = row.indexOf("\t");
     return { info: row.slice(0, separator), path: row.slice(separator + 1) };
-  }).filter((entry) => isSkill(entry.path) && /^100(?:644|755) blob /.test(entry.info)).map((entry) => ({
-    path: entry.path, sha: entry.info.split(" ")[2]
+  });
+  const blobs = all.filter(entry => /^100(?:644|755) blob /.test(entry.info));
+  const byPath = new Map(blobs.map(entry => [entry.path, entry.info.split(" ")[2]]));
+  const allPaths = new Set(all.map(entry => entry.path));
+  return blobs.filter(entry => isSkill(entry.path)).map(entry => ({
+    path: entry.path, sha: byPath.get(entry.path),
+    ...(byPath.has(sidecarPath(entry.path)) ? { routing_sha: byPath.get(sidecarPath(entry.path)) } : allPaths.has(sidecarPath(entry.path)) ? { invalid_sidecar: true } : {})
   })).sort((a,b)=>a.path.localeCompare(b.path));
 }
 function resolvePath(specifier, paths) {
@@ -160,12 +152,21 @@ try {
     for (const item of items) {
       const content = gitRaw("show", revision + ":" + item.path);
       Object.assign(item, parseMetadata(content, item.path), { origin: origin(item.path) });
+      if (item.invalid_sidecar) item.error = "routing sidecar must be a regular file";
+      if (item.routing_sha) withSidecar(item, gitRaw("show", revision + ":" + sidecarPath(item.path)));
     }
   } else {
-    items = localPaths().map((p) => ({
-      path: p, origin: origin(p),
-      ...parseMetadata(fs.readFileSync(path.join(root, p), "utf8"), p)
-    }));
+    items = localPaths().map(p => {
+      const item = { path: p, origin: origin(p), ...parseMetadata(fs.readFileSync(path.join(root, p), "utf8"), p) };
+      const sidecar = path.join(root, sidecarPath(p));
+      let stat;
+      try { stat = fs.lstatSync(sidecar); } catch (error) { if (error.code !== "ENOENT") throw error; }
+      if (stat) {
+        if (!stat.isFile()) item.error = "routing sidecar must be a regular file";
+        else withSidecar(item, fs.readFileSync(sidecar, "utf8"));
+      }
+      return item;
+    });
     try { revision = git("rev-parse", "HEAD"); } catch { /* unversioned checkout */ }
   }
   const selected = resolvePath(specifier, items);

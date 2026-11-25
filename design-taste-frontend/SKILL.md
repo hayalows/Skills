@@ -1,6 +1,10 @@
 ---
 name: design-taste-frontend
 description: Design and refine landing pages, portfolios, editorial sites and marketing websites with intentional composition, truthful content and careful frontend execution. Use for a new visual direction or a marketing-site redesign. Preserve approved brand choices and working behavior. Use a product UX workflow for dashboards, data tables and multi-step applications.
+routing:
+  roles: [lead]
+  category: interface-design
+  exclusive_role: ui-lead
 ---
 
 # Design Taste for Frontend

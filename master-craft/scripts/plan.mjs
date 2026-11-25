@@ -1,4 +1,5 @@
 import fs from "node:fs";
+import { canonicalRole, defaultRole, roles, routingError } from "./routing-policy.mjs";
 import { checkExecution, executionPlan } from "./execution.mjs";
 import { pathToFileURL } from "node:url";
 
@@ -18,6 +19,15 @@ export function plan(intent, snapshot) {
   const blockers = [];
   const stages = ["baseline"];
   const skills = [];
+  const assignedRoles = Object.create(null);
+  const proposals = intent.specialists ?? [];
+  const explicitSkills = intent.explicitSkills ?? [];
+  const requestedRoles = intent.specialistRoles ?? {};
+  if (!Array.isArray(proposals) || proposals.some(v => typeof v !== "string") ||
+      !Array.isArray(explicitSkills) || explicitSkills.some(v => typeof v !== "string" || !proposals.includes(v)) ||
+      !requestedRoles || typeof requestedRoles !== "object" || Array.isArray(requestedRoles)) {
+    throw new Error("Invalid specialist selection, explicit override or role map");
+  }
   const verified = /^[0-9a-f]{40}$/i.test(snapshot.revision ?? "") &&
     ((snapshot.verified_latest === true && ["git-origin-main", "github-main"].includes(snapshot.source)) ||
       (snapshot.source === "pinned-git-commit" && intent.pinnedRevision === snapshot.revision));
@@ -33,8 +43,12 @@ export function plan(intent, snapshot) {
       throw new Error("Candidate is recursive or requires explicit invocation: " + file);
     }
     const routing = skill.routing;
+    if (routing !== undefined && routingError(routing)) {
+      blockers.push("invalid-routing-metadata:" + file);
+      return;
+    }
     if (routing?.minimum_complexity === "substantial" && !intent.substantial) {
-      const canOverride = routing.explicit_override !== false && explicit;
+      const canOverride = routing.explicit_override === true && explicit;
       if (!canOverride) {
         blockers.push("trivial-task-skill-rejected:" + file);
         return;
@@ -48,38 +62,43 @@ export function plan(intent, snapshot) {
   if (intent.securityReview === true) select("security-audit/SKILL.md", true);
   if (intent.measureProduct) select("product-evidence/SKILL.md", true);
   if (intent.validateModel) select("model-assurance/SKILL.md", true);
-  for (const file of intent.specialists ?? []) {
-    select(file, false, (intent.explicitSkills ?? []).includes(file));
+  for (const file of proposals) {
+    select(file, false, explicitSkills.includes(file));
   }
   if (hosting && intent.host === "vercel") select("vercel-deployment-steward/SKILL.md", true);
 
   const exclusiveOwners = new Map();
+  for (const file of Object.keys(requestedRoles)) {
+    if (!skills.includes(file)) blockers.push("role-for-unselected-skill:" + file);
+  }
   for (const file of skills) {
-    const meta = inventory.get(file);
-    const routing = meta?.routing;
-    if (!routing) continue;
-    const assignedRole = intent.specialistRoles?.[file];
-    const isSupporting = assignedRole === "supporting" || assignedRole === "helper";
-    if (routing.exclusive_role && !isSupporting) {
-      if (exclusiveOwners.has(routing.exclusive_role)) {
-        blockers.push("exclusive-role-conflict:" + routing.exclusive_role);
-      } else {
-        exclusiveOwners.set(routing.exclusive_role, file);
-      }
+    const routing = inventory.get(file)?.routing;
+    const allowedRoles = routing?.roles ?? roles;
+    let role = Object.hasOwn(requestedRoles, file) ? canonicalRole(requestedRoles[file]) : defaultRole(routing);
+    if (!allowedRoles.includes(role)) {
+      blockers.push("invalid-specialist-role:" + file);
+      // Invalid roles cannot bypass exclusive ownership.
+      role = defaultRole(routing);
     }
-    for (const conflict of routing.conflicts_with ?? []) {
-      const hit = skills.find((other) => other !== file && (other === conflict || inventory.get(other)?.name === conflict));
-      if (hit) {
-        const pair = [file, hit].sort().join(":");
-        const code = "skill-conflict:" + pair;
+    assignedRoles[file] = role;
+    if (routing?.exclusive_role && role !== "supporting") {
+      if (exclusiveOwners.has(routing.exclusive_role)) {
+        const code = "exclusive-role-conflict:" + routing.exclusive_role;
+        if (!blockers.includes(code)) blockers.push(code);
+      } else exclusiveOwners.set(routing.exclusive_role, file);
+    }
+    for (const conflict of routing?.conflicts_with ?? []) {
+      for (const hit of skills.filter(other => other !== file && (other === conflict || inventory.get(other)?.name === conflict))) {
+        const code = "skill-conflict:" + [file, hit].sort().join(":");
         if (!blockers.includes(code)) blockers.push(code);
       }
     }
   }
 
-  if (intent.mode === "repair") stages.push("reproduce");
+  const routingBlocked = blockers.length > 0;
+  if (intent.mode === "repair" && !routingBlocked) stages.push("reproduce");
   if (intent.measureProduct || intent.validateModel) stages.push("define-evidence");
-  if (intent.mode === "repair" || (intent.mode === "create" && !(intent.hostedBuild && intent.existingArtifact === true))) stages.push("implement");
+  if (!routingBlocked && (intent.mode === "repair" || (intent.mode === "create" && !(intent.hostedBuild && intent.existingArtifact === true)))) stages.push("implement");
   if (intent.mode === "inspect") stages.push("inspect");
   stages.push("verify");
   if (readOnly && (intent.releaseAuthorized || intent.hostedBuild)) blockers.push("read-only-host-action-conflict");
@@ -94,7 +113,7 @@ export function plan(intent, snapshot) {
   }
   stages.push("report");
 
-  return { revision: snapshot.revision, skills, stages, blockers };
+  return { revision: snapshot.revision, skills, specialistRoles: assignedRoles, stages, blockers };
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {

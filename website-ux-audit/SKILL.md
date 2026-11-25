@@ -1,6 +1,10 @@
 ---
 name: website-ux-audit
 description: "Audit a live website, prototype, or code-backed web experience for task success, clarity, accessibility, responsive behaviour, performance, trust, and end-to-end user flow. Use when the user asks for a website UX audit, usability review, journey critique, funnel review, or flow improvement plan."
+routing:
+  roles: [lead]
+  category: interface-audit
+  exclusive_role: ui-lead
 ---
 
 # Website UX Audit

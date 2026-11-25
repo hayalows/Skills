@@ -1,6 +1,10 @@
 ---
 name: product-design-os
 description: "Design, redesign, audit, specify or build the UI and UX of a digital product: websites, web apps, mobile apps, dashboards, forms, onboarding, checkout, search, pricing pages, design systems and components. Use when a task changes what a user sees or does, when a screen looks generic or confusing, or when a design needs to be turned into working, verified code. Covers flows, hierarchy, visual direction, states, accessibility, performance, ethical engagement, a render-and-look verification loop and a scored quality rubric. Self-contained: works alone or under Master Craft."
+routing:
+  roles: [lead]
+  category: interface-design
+  exclusive_role: ui-lead
 ---
 
 # Product Design OS
