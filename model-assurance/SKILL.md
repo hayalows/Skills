@@ -1,6 +1,11 @@
 ---
 name: model-assurance
 description: "Build, challenge, or validate decision models, financial spreadsheets, forecasts, simulations, and quantitative comparisons when formulas, assumptions, uncertainty, or backtests could change a decision. Use for scenario design, independent recalculation, break-even thresholds, and model review. Skip simple arithmetic and reports that only summarize existing findings."
+routing:
+  roles: [lead, specialist, supporting]
+  default_role: specialist
+  category: quantitative-assurance
+  complements: [product-evidence]
 ---
 # Model Assurance
 

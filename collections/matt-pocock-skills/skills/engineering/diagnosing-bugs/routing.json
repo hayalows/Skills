@@ -1,0 +1,11 @@
+{
+  "roles": [
+    "lead",
+    "specialist"
+  ],
+  "category": "debugging",
+  "complements": [
+    "tdd",
+    "engineering-workshop"
+  ]
+}

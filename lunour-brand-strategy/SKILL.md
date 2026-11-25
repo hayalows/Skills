@@ -1,6 +1,10 @@
 ---
 name: lunour-brand-strategy
 description: "End-to-end brand strategy and identity guidance for companies, products, and founders. Use when a user asks for positioning, a rebrand, brand messaging, voice and tone, visual identity direction, logo or typography strategy, brand guidelines, a brand audit, brand architecture, templates, rollout planning, or a complete brand system."
+routing:
+  roles: [lead, specialist]
+  category: branding
+  complements: [lunour-naming, design-taste-frontend]
 ---
 
 # Brand Strategy and Identity

@@ -1,4 +1,4 @@
-# Routing metadata (V2.1)
+# Routing metadata (V2.2)
 
 Master Craft keeps semantic interpretation in the host model. The planner enforces declared rules; it cannot prove a request was correctly classified or that an override was actually authorized. Do not mark a task substantial just to evade a complexity guard. Do not label a skill explicit unless the user actually requested it.
 
@@ -12,6 +12,7 @@ Optional skill frontmatter, using a restricted flat mapping and lists:
       category: orchestration
       exclusive_role: workflow-lead
       conflicts_with: [other-skill]
+      complements: [helper-skill]
 
 - minimum_complexity: optional; currently only substantial is supported.
 - explicit_override: optional boolean; defaults to false. Only the exact user-requested skill can override minimum complexity. No override bypasses permissions, conflicts or allowed roles.
@@ -19,6 +20,7 @@ Optional skill frontmatter, using a restricted flat mapping and lists:
 - category: optional descriptive token; not an automatic routing rule.
 - exclusive_role: optional shared ownership token; requires the lead role to be declared. A non-supporting selection claims the exclusive role. Two owners block the plan. Supporting is permitted only when declared.
 - conflicts_with: optional list of exact relative skill paths or skill names. Any matching selected pair blocks, regardless of role.
+- complements: optional advisory list of skill names or relative paths that pair well with this skill; imposes no restriction.
 
 The parser supports the documented block, scalar strings/booleans and simple inline or indented lists; it is not a general YAML parser. Unknown or malformed policy fails closed. For a verbatim third-party import, an adjacent regular-file routing.json with the same flat schema is supported instead of editing upstream frontmatter (not both). Remote snapshots carry the sidecar blob SHA; Full execution contracts record it as routingBlob alongside the skill blob. Read policy and skill instructions at the same pinned commit.
 

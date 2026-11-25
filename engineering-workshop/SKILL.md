@@ -1,6 +1,11 @@
 ---
 name: engineering-workshop
 description: "Plan, build, debug, refactor and verify working software, or teach engineering judgment using a real change. Use for backend features, APIs, data consistency, architecture tradeoffs, integrations, performance regressions and end-to-end delivery."
+routing:
+  roles: [lead, specialist, supporting]
+  default_role: lead
+  category: engineering
+  complements: [tdd, code-review, diagnosing-bugs]
 ---
 
 # Engineering Workshop

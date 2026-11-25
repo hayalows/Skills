@@ -1,6 +1,10 @@
 ---
 name: human-copywriting
 description: "Write, rewrite, diagnose, and structure natural human-sounding copy, posts, scripts, messages, applications, and essays using clear thinking, concrete detail, audience-aware structure, and ethical persuasion. Use when writing must feel like a real person and move a reader to understand or act."
+routing:
+  roles: [lead, specialist, supporting]
+  category: writing
+  complements: [papa-kojo-writing-style]
 ---
 
 # Human Copywriting

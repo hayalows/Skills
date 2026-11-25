@@ -1,0 +1,12 @@
+{
+  "roles": [
+    "specialist",
+    "supporting"
+  ],
+  "default_role": "supporting",
+  "category": "architecture",
+  "complements": [
+    "domain-modeling",
+    "improve-codebase-architecture"
+  ]
+}

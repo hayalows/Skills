@@ -1,6 +1,10 @@
 ---
 name: premium-editorial-report-pdf
 description: "Create polished, evidence-led editorial reports and professional presentation decks with strong serif headlines, clear sans-serif text, generous whitespace, restrained colour, meaningful photography, and readable data storytelling. Use for annual, impact, research, insight, strategy, investor, board, case-study, proposal, white-paper, thought-leadership PDFs, and editable PowerPoint presentations."
+routing:
+  roles: [lead, specialist, supporting]
+  category: reporting
+  complements: [consulting-grade-reports-decks]
 ---
 
 # Premium Editorial Reports & Decks

@@ -1,0 +1,10 @@
+{
+  "roles": [
+    "lead",
+    "specialist"
+  ],
+  "category": "prototyping",
+  "complements": [
+    "product-design-os"
+  ]
+}

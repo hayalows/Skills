@@ -1,6 +1,11 @@
 ---
 name: product-evidence
 description: "Plan or assess evidence for a product decision using task-based usability benchmarks, instrumentation checks, controlled experiments, or staged rollout criteria. Use when comparing before/after product outcomes, testing a design hypothesis, diagnosing an apparent metric change, or deciding whether measured evidence supports shipping. Skip ordinary visual polish and audits that only need expert observations."
+routing:
+  roles: [lead, specialist, supporting]
+  default_role: specialist
+  category: product-evidence
+  complements: [product-design-os, model-assurance]
 ---
 # Product Evidence
 

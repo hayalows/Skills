@@ -1,6 +1,10 @@
 ---
 name: consulting-grade-reports-decks
 description: "Plan and create research-led reports, white papers, analyst reports, SME diagnostics, client deliverables, pitch decks, and decision documents with a premium consulting-style narrative: a clear puzzle, evidence, useful framework, honest nuance, and audience-specific action. Use for Hayalows, GSE equity research, Clarity Before Growth, client work, or any request to turn research, business data, or an idea into a credible PDF report or PowerPoint deck."
+routing:
+  roles: [lead, specialist]
+  category: reporting
+  complements: [premium-editorial-report-pdf, model-assurance]
 ---
 
 # Consulting-Grade Reports & Decks

@@ -1,0 +1,8 @@
+{
+  "roles": [
+    "specialist",
+    "supporting"
+  ],
+  "default_role": "specialist",
+  "category": "planning"
+}

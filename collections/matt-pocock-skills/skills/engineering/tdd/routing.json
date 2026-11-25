@@ -1,0 +1,12 @@
+{
+  "roles": [
+    "specialist",
+    "supporting"
+  ],
+  "default_role": "supporting",
+  "category": "testing",
+  "complements": [
+    "diagnosing-bugs",
+    "engineering-workshop"
+  ]
+}

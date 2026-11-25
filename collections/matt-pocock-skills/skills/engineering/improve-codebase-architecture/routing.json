@@ -1,0 +1,13 @@
+{
+  "minimum_complexity": "substantial",
+  "explicit_override": true,
+  "roles": [
+    "lead",
+    "specialist"
+  ],
+  "category": "architecture",
+  "complements": [
+    "codebase-design",
+    "tdd"
+  ]
+}

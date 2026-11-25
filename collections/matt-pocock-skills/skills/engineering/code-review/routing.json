@@ -1,0 +1,12 @@
+{
+  "roles": [
+    "specialist",
+    "supporting"
+  ],
+  "default_role": "supporting",
+  "category": "code-review",
+  "complements": [
+    "tdd",
+    "engineering-workshop"
+  ]
+}

@@ -1,6 +1,11 @@
 ---
 name: humanize-my-writing
 description: Write, diagnose, rewrite, or polish prose so it sounds natural, specific, and recognizably like Papa Kojo Mensah (Iconka). Use for emails, messages, posts, essays, applications, business copy, teaching material, captions, comments, and other content when the user asks to humanize text, remove AI-sounding language, diagnose robotic writing, write like them, preserve their voice, simplify wording, or make a draft conversational.
+routing:
+  roles: [specialist, supporting]
+  default_role: supporting
+  category: writing
+  complements: [papa-kojo-writing-style]
 ---
 
 # Humanize My Writing

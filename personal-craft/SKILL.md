@@ -1,6 +1,12 @@
 ---
 name: personal-craft
 description: Apply Papa Kojo's Luna-first working agreement to substantial coding, debugging, architecture, product design, research, data, documents, and automation. Use for end-to-end implementation, evidence-based audits, requests for polished design or building taste, or explicit personal-craft invocation. Pair with relevant domain skills. Skip simple factual answers and trivial text edits unless explicitly invoked.
+routing:
+  minimum_complexity: substantial
+  explicit_override: true
+  roles: [specialist, supporting]
+  default_role: supporting
+  category: execution-discipline
 ---
 # Personal Craft
 

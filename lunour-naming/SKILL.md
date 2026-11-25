@@ -1,6 +1,10 @@
 ---
 name: lunour-naming
 description: "Strategy-led naming for companies, products, services, features, and renames. Use when a user asks for name ideas, a name evaluation, a rename, brand naming, a product or feature name, a shortlist, naming territories, domain or trademark research, or help choosing between candidate names."
+routing:
+  roles: [lead, specialist]
+  category: branding
+  complements: [lunour-brand-strategy]
 ---
 
 # Company and Product Naming

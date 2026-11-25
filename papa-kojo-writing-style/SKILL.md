@@ -4,6 +4,10 @@ description: Write, rewrite, humanise or check anything Papa Kojo Mensah (Iconka
 version: 3.0.6
 codename: Original
 updated: 2026-11-24
+routing:
+  roles: [lead, specialist, supporting]
+  category: personal-voice
+  complements: [human-copywriting]
 ---
 
 # Papa Kojo Writing Style v3.0 "Original"

@@ -3,6 +3,10 @@ name: springboard-mentor
 description: Help Papa Kojo Mensah serve BYU-Pathway Worldwide students as a Springboard Mentor. Use for continuing student WhatsApp threads, checking official mentoring procedures, REACH-informed support, personalised outreach, follow-up plans, documentation, and mentor-workflow reviews. Continue the conversation instead of restarting it; verify current programme and block policy; protect student privacy.
 version: 1.2.0
 updated: 2026-11-19
+routing:
+  roles: [lead, specialist]
+  category: mentoring
+  complements: [papa-kojo-writing-style]
 ---
 
 # Springboard Mentor

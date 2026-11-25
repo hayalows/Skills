@@ -1,6 +1,10 @@
 ---
 name: vercel-deployment-steward
 description: "Use before releasing, pushing, previewing, or debugging Vercel projects. Audit account-wide deployment history, duplicate builds, and Hobby usage; distinguish advisory planning thresholds from actual platform acceptance, check Git-vs-API results, and verify production without wasteful retries."
+routing:
+  roles: [specialist, supporting]
+  default_role: specialist
+  category: deployment
 ---
 
 # Vercel Deployment Steward

@@ -1,0 +1,12 @@
+{
+  "roles": [
+    "specialist",
+    "supporting"
+  ],
+  "default_role": "specialist",
+  "category": "planning",
+  "complements": [
+    "to-tickets",
+    "implement-spec"
+  ]
+}

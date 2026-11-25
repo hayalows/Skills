@@ -1,6 +1,10 @@
 ---
 name: create-opportunities
 description: Turn career, freelance, business, creative, and learning goals into evidence-backed opportunities through useful work. Use for getting unstuck, choosing jobs or apprenticeships, building complementary skills, researching employers or clients, preparing targeted audits and work samples, requesting introductions or feedback, drafting cold outreach or public pitches, building a credible body of work, and reviewing experiments. Synthesizes Jay Yang's You Can Just Do Things and Work With The Best into practical workflows with constraints, templates, source references, and delivery checks.
+routing:
+  roles: [lead, specialist]
+  category: strategy
+  complements: [thoughtful-cold-email, papa-kojo-writing-style]
 ---
 
 # Create Opportunities

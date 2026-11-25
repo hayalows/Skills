@@ -1,6 +1,10 @@
 ---
 name: thoughtful-cold-email
 description: Research, plan, write, critique, personalize, and improve honest cold emails and outreach sequences for sales, freelance services, partnerships, jobs, media, research, introductions, and other goals. Use when asked to contact someone new, develop an outreach campaign, analyze a cold email, or apply The Cold Email Manifesto to a specific situation.
+routing:
+  roles: [lead, specialist]
+  category: outreach
+  complements: [papa-kojo-writing-style, human-copywriting]
 ---
 
 # Thoughtful Cold Email

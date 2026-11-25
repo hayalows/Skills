@@ -7,7 +7,7 @@ const unique = arr => new Set(arr).size === arr.length;
 
 export function routingError(r) {
   if (!plain(r)) return "routing must be an object";
-  const keys = ["minimum_complexity", "explicit_override", "roles", "default_role", "category", "exclusive_role", "conflicts_with"];
+  const keys = ["minimum_complexity", "explicit_override", "roles", "default_role", "category", "exclusive_role", "conflicts_with", "complements"];
   if (Object.keys(r).some(k => !keys.includes(k))) return "unknown routing field";
   if (Object.hasOwn(r, "minimum_complexity") && r.minimum_complexity !== "substantial") return "unsupported minimum_complexity";
   if (Object.hasOwn(r, "explicit_override") && typeof r.explicit_override !== "boolean") return "explicit_override must be boolean";
@@ -16,6 +16,7 @@ export function routingError(r) {
   if (Object.hasOwn(r, "category") && !token(r.category)) return "invalid category";
   if (Object.hasOwn(r, "exclusive_role") && (!token(r.exclusive_role) || !r.roles?.includes("lead"))) return "exclusive_role requires a declared lead role";
   if (Object.hasOwn(r, "conflicts_with") && (!Array.isArray(r.conflicts_with) || !unique(r.conflicts_with) || r.conflicts_with.some(v => typeof v !== "string" || !/^[a-z0-9][a-z0-9_./-]*$/i.test(v) || v.split("/").includes("..")))) return "invalid conflicts_with list";
+  if (Object.hasOwn(r, "complements") && (!Array.isArray(r.complements) || !unique(r.complements) || r.complements.some(v => typeof v !== "string" || !/^[a-z0-9][a-z0-9_./-]*$/i.test(v) || v.split("/").includes("..")))) return "invalid complements list";
   return null;
 }
 export function defaultRole(r) {
