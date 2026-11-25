@@ -1,6 +1,10 @@
 ---
 name: interface-workshop
 description: "Design, implement, critique or teach responsive UI and UX in a real frontend. Use for visual hierarchy, mobile interactions, design-to-code, awkward flows, or practising design judgment on a screen."
+routing:
+  roles: [lead, supporting]
+  category: interface-design
+  exclusive_role: ui-lead
 ---
 
 # Interface Workshop

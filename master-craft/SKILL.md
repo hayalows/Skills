@@ -74,9 +74,11 @@ Six skills touch interface work. Choose by the job, one lead at a time.
 | One activation, progress or repeat-use moment | behavioral-interaction-design | A full redesign |
 | Proving a change helped, or deciding a rollout | product-evidence | Opinions about taste |
 
-A marketing page with a real form or signup flow uses design-taste-frontend for the page and product-design-os for the flow.
+A marketing page with a real form or signup flow uses separate plans: design-taste-frontend for the page and product-design-os for the flow.
 
 Conflicts are resolved in this order: platform requirements and explicit user instructions, then project rules, then Personal Craft verification policy, then the domain owner, then optional helpers. Never weaken an existing test or skip authorisation to resolve a conflict.
+
+For design and orchestration routes, use [routing metadata](references/routing-metadata.md). The planner validates declared roles and prevents competing UI leads. Choose one lead, explicitly assign compatible visual helpers, or split a marketing page and a distinct product flow into separate plans. A routing blocker stops affected work; changing role labels cannot override the declared policy. Keep one source revision for each plan.
 
 When asked to find, adapt or create skills, use the [Scout and Factory procedures](references/skill-development.md).
 

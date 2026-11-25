@@ -45,6 +45,7 @@ try {
   git(author, "config", "user.name", "Skills Test");
   git(author, "remote", "add", "origin", bare);
   write(author, "master-craft/scripts/inventory.mjs", fs.readFileSync(sourceScript, "utf8"));
+  write(author, "master-craft/scripts/routing-policy.mjs", fs.readFileSync(path.join(path.dirname(sourceScript), "routing-policy.mjs"), "utf8"));
   write(author, "master-craft/SKILL.md", skill("master-craft", "initial"));
   write(author, "product-design-os/SKILL.md", skill("product-design-os", "v1"));
   git(author, "add", ".");

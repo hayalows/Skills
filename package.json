@@ -4,6 +4,6 @@
   "version": "1.0.0",
   "scripts": {
     "build": "node site/build.mjs",
-    "test": "node master-craft/tests/router-smoke.mjs && node master-craft/tests/freshness.e2e.mjs && node master-craft/tests/plan.e2e.mjs && node master-craft/tests/execution.e2e.mjs && node master-craft/tests/bundle.e2e.mjs && node master-craft/tests/v2-routing.e2e.mjs && node product-design-os/tests/ui-lint.e2e.mjs && node agent-team-architect/tests/reference-workflow.mjs && node agent-team-architect/tests/evidence-workflow.mjs && node agent-team-architect/tests/domain-benchmark.mjs"
+    "test": "node master-craft/tests/router-smoke.mjs && node master-craft/tests/freshness.e2e.mjs && node master-craft/tests/plan.e2e.mjs && node master-craft/tests/execution.e2e.mjs && node master-craft/tests/bundle.e2e.mjs && node master-craft/tests/v2-routing.e2e.mjs && node master-craft/tests/v21-routing.e2e.mjs && node product-design-os/tests/ui-lint.e2e.mjs && node agent-team-architect/tests/reference-workflow.mjs && node agent-team-architect/tests/evidence-workflow.mjs && node agent-team-architect/tests/domain-benchmark.mjs"
   }
 }

@@ -1,6 +1,9 @@
 ---
 name: ui-ux-craft
 description: Evidence-weighted UI and UX craft for designing, reviewing, or rebuilding digital products. Use when a task involves interface design, user flows, information architecture, visual systems, responsive states, usability, accessibility, design critique, AI-assisted product design, or turning a rough idea into a polished working experience.
+routing:
+  roles: [supporting]
+  category: interface-design
 ---
 
 # UI/UX Craft

@@ -1,0 +1,8 @@
+{
+  "roles": [
+    "lead",
+    "supporting"
+  ],
+  "category": "interface-design",
+  "exclusive_role": "ui-lead"
+}

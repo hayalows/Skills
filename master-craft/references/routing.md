@@ -38,8 +38,9 @@ Input is JSON with `snapshot` (the inventory JSON) and `intent`:
 | releaseToolAvailable | An authorized, usable route exists for the intended host action, including the ability to verify its outcome |
 | freshnessRequired | Current instructions are material to a consequential stage |
 | specialists | Optional exact inventory paths proposed by the agent |
-| explicitSkills | Optional subset of paths expressly requested by the user |
+| explicitSkills | Optional subset of proposed paths expressly requested by the user |
+| specialistRoles | Optional mapping of selected exact skill paths to declared lead, specialist or supporting roles (helper is an alias for supporting); defaults come from routing metadata |
 
-The result supplies mandatory skills, ordered checkpoints, and blockers. A blocker must be resolved before its affected stage. Missing required skills prevent that domain work until resolved. Host preflight includes provider-specific approval, quota, target, scope and rollback checks. Treat a hosted build or Git operation with automatic deployment as a release action when it can publish. The script never authorizes, publishes, or establishes that the agent interpreted the request correctly. The agent chooses candidates and reads them before action. Use the playbooks for task-specific details.
+The result supplies mandatory skills, resolved specialist roles, ordered checkpoints, and blockers. See [routing metadata](routing-metadata.md) for the schema and real design examples. A blocker must be resolved before its affected stage. Missing required skills prevent that domain work until resolved. Host preflight includes provider-specific approval, quota, target, scope and rollback checks. Treat a hosted build or Git operation with automatic deployment as a release action when it can publish. The script never authorizes, publishes, or establishes that the agent interpreted the request correctly. The agent chooses candidates and reads them before action. Use the playbooks for task-specific details.
 
 For connector inventory, set source to `github-main` and verified_latest to true only after resolving current main and enumerating the complete pinned tree. A user-selected pin uses source `pinned-git-commit` and the matching intent.pinnedRevision.

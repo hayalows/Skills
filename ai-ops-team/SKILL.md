@@ -10,6 +10,7 @@ routing:
   roles:
     - lead
     - specialist
+  default_role: specialist
   category: orchestration
 ---
 

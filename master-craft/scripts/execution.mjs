@@ -115,14 +115,18 @@ export function checkExecution(route, intent, snapshot, input) {
   const contracts = new Map(Object.entries(input.contracts ?? {}));
   const toolPlan = input.toolPlan ?? {};
   const stageOwners = new Set(graph.stages.map(({ owner }) => owner));
-  require(route.skills.length ? contracts.has(input.primary) : input.primary == null, "primary-specialist-required");
+  require(route.skills.length ? route.skills.includes(input.primary) && contracts.has(input.primary) : input.primary == null, "primary-specialist-required");
+  if (route.skills.some(file => route.specialistRoles?.[file] === "lead")) {
+    require(route.specialistRoles?.[input.primary] !== "supporting", "supporting-skill-cannot-own-lead-plan");
+  }
   require(contracts.size === route.skills.length, "selected-contract-count-mismatch");
   for (const file of route.skills) {
     const skill = snapshot.skills.find((item) => item.path === file);
     const contract = contracts.get(file);
     require(nonempty(contract?.why) && nonempty(contract?.procedure) && nonempty(contract?.restrictions) &&
       Array.isArray(contract?.references) && contract.references.every(nonempty) && nonempty(contract?.loadEvidence) &&
-      contract?.revision === route.revision && (!skill?.sha || contract?.blob === skill.sha), "skill-contract-invalid:" + file);
+      contract?.revision === route.revision && (!skill?.sha || contract?.blob === skill.sha) &&
+      (!skill?.routing_sha || contract?.routingBlob === skill.routing_sha), "skill-contract-invalid:" + file);
     require(stageOwners.has(file) || (Array.isArray(contract?.stages) && contract.stages.length > 0 &&
       contract.stages.every((id) => id !== "report" && graph.stages.some((stage) => stage.id === id))), "skill-stage-missing:" + file);
   }

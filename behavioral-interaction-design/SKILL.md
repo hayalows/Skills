@@ -1,6 +1,9 @@
 ---
 name: behavioral-interaction-design
 description: "Design or audit ethical product interactions that help people start, make progress, enjoy a task, or return for a goal they chose. Use for first-use activation, onboarding drop-off, emotional design, microcopy, progress and feedback, curiosity, playful moments, voluntary challenges, gamification, defaults, and retention tied to recurring user value. Based on Stephen P. Anderson's Seductive Interaction Design. Use broader UX guidance for general layout, design systems, and full product flows."
+routing:
+  roles: [specialist, supporting]
+  category: interaction-design
 ---
 
 # Behavioral Interaction Design
