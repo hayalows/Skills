@@ -16,6 +16,7 @@ Read a skill entrypoint first, then only the references it points to for the tas
 ## Skills
 
 - [agent-team-architect](https://raw.githubusercontent.com/hayalows/Skills/main/agent-team-architect/SKILL.md): Build, audit and test multi-agent workflows, role contracts, handoffs, repair loops and approval gates.
+- [ai-ops-team](https://raw.githubusercontent.com/hayalows/Skills/main/ai-ops-team/SKILL.md): 4-agent AI Ops Team (Lead, Scout, Scribe, Checker) wired as a Google ADK 2.x graph with parallel research, 2-round quality loop, and human approval.
 
 - [interface-workshop](https://raw.githubusercontent.com/hayalows/Skills/main/interface-workshop/SKILL.md): Build and practise responsive interface design through real tasks.
 - [engineering-workshop](https://raw.githubusercontent.com/hayalows/Skills/main/engineering-workshop/SKILL.md): Build, debug and verify software through working examples.

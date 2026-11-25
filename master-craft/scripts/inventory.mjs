@@ -51,7 +51,7 @@ function parseMetadata(content, file) {
 }
 function isSkill(p) {
   if (!p.endsWith("/SKILL.md") || p.startsWith("/") || p.includes("\\") || p.split("/").includes("..")) return false;
-  return !p.split("/").some((part) => [".git", "node_modules", "dist", "coverage", ".next"].includes(part));
+  return !p.split("/").some((part) => [".git", "node_modules", "dist", "coverage", ".next", "versions"].includes(part));
 }
 function origin(p) {
   return p.startsWith("collections/matt-pocock-skills/") ? "matt-pocock" : "hayalows";
