@@ -149,7 +149,7 @@ Run the gates that apply. They are not optional when they apply.
 
 Do not ship a visually generic template by default. No unearned eyebrow labels, decorative chips, nested card cages, fake telemetry, decorative numbering, repeated headings, generic hero layouts, button walls, or unplanned typography. Utilities and reading surfaces start with useful content. Default to at most two font families and three body sizes (four for genuinely dense tools), no visible first-screen text below 13px, and consistent sentence-case labels. Preserve real status, instructions, categories, accessible names, legal copy, task actions and approved brand conventions. A deliberate exception must name its user benefit, location and evidence. An unresolved violation or unverified applicable check is not a pass. Touch work checks only the affected surface and adjacent regressions.
 
-Use `references/visual-integrity-gate.md` for the named rules, critique and exception process. A screenshot not inspected is not evidence. A successful build is not visual approval.
+Use `references/visual-integrity-gate.md` for the named rules, critique and exception process. A screenshot not inspected is not evidence. A successful build is not visual approval. For substantial visual work with Node available, run `node product-design-os/scripts/visual-gate.mjs report.json` against the per-surface gate record before claiming a pass. This validates report completeness, not the truth of its evidence.
 
 ### Interface restraint and the UX / DX / AX gate
 
@@ -266,6 +266,7 @@ Load only what the task needs.
 | Explore distinctive directions without wasting effort | `references/creative-exploration.md` |
 | Browser-side rendered measurements (read-only) | `scripts/visual-probe.js` |
 | Static visual warning rules | `scripts/visual-lint.mjs` |
+| Visual gate report completeness check | `scripts/visual-gate.mjs` |
 | Buttons, forms, navigation, search, dialogs, tables, states | `references/component-patterns.md` |
 | Accessibility | `references/accessibility.md` |
 | Retention, habits, notifications, engagement ethics | `references/behavior-ethics.md` |

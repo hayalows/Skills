@@ -86,7 +86,7 @@ Look at each image as a first-time user would, then as a critic.
 
 For substantial visual work, also inspect the opening, every major scrolled section and the footer at true viewport height, at least on phone and desktop. A full-page capture helps compare rhythm but does not replace viewport captures. Check fixed header separation, image crops, text against imagery, layout at intermediate widths, and the usable static/reduced-motion state. Use the [visual craft rubric](visual-craft-engine.md#6-score-visual-craft-separately) only for rendered evidence; an unavailable screenshot is unverified.
 
-Run the [Visual Integrity Gate](visual-integrity-gate.md) and its screenshot-first critic. Capture real scrolled viewport states, not just tall contact sheets. Record evidence IDs and issues before reading the design rationale. Run the read-only browser probe when possible. Write down what you see, not what you intended. Fix structural issues first and render again. After an authorized release, verify the final public revision rather than relying on a successful build.
+Run the [Visual Integrity Gate](visual-integrity-gate.md) and its screenshot-first critic. Capture real scrolled viewport states, not just tall contact sheets. Record evidence IDs and issues before reading the design rationale. Run the read-only browser probe when possible. Write down what you see, not what you intended. Fix structural issues first and render again. For substantial work, save the gate report and run `node product-design-os/scripts/visual-gate.mjs report.json`. Validate evidence itself separately. After an authorized release, verify the final public revision rather than relying on a successful build.
 
 ## 6. Interaction checks
 

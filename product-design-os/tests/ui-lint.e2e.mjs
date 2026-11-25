@@ -7,6 +7,7 @@ import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { contrastRatio } from "../scripts/ui-lint.mjs";
 import "./visual-lint.test.mjs";
+import "./visual-gate.test.mjs";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const cli = path.join(here, "../scripts/ui-lint.mjs");

@@ -39,6 +39,16 @@ Statuses: PASS, FAIL, EXCEPTION, NV (not verified), NA (not applicable). An exce
 
 Run static visual warnings via ui-lint and the browser probe at the checked viewport/state. They generate leads, not a verdict. Inspect the actual page to confirm them. Report measurements with evidence, not invented scores. A successful production build and a screenshot URL are not visual approval. If a user authorizes publishing despite known limitations, state the unresolved risks and verification status before claiming readiness; do not claim a passed gate.
 
+## Machine-checkable record
+
+For Screen, Flow or Product work with a shell, save a JSON report alongside review evidence and run:
+
+```bash
+node product-design-os/scripts/visual-gate.mjs report.json
+```
+
+Structure: `{"surfaces":[{"name":"route / state","rules":[{"id":"VI01","status":"PASS","scope":"390×844, default","reason":"Observed primary control before scrolling","evidence":[{"kind":"seen","ref":"home-390.png"}]}]}]}`. This is a shape example, not a complete report or an actual test result. Include every VI01–VI12 record per surface, marking out-of-scope checks NA with reasons. An EXCEPTION also requires `need` and `alternative` text. For a repaired defect, set `fixed:true` and include `retest` evidence records. Record different viewport/state observations together where appropriate. The checker rejects missing and duplicate rule records, FAIL/NV, missing rationale, source-only visual passes, unjustified exceptions and missing retest evidence. It cannot verify whether the screenshots exist, are current, show all needed states, or support the claim; reviewers must inspect them. A clean report does not waive accessibility, product or visual judgment.
+
 ## Calibration examples
 
 - Calculator: remove the slogan, duplicate section title and inset result cage. Keep amount labels, exchange-rate caveat and source date. Use space saved to reveal the first estimate.
