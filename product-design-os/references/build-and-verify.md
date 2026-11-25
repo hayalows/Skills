@@ -84,6 +84,8 @@ Look at each image as a first-time user would, then as a critic.
 - Do images load, with the right crop, and no distortion?
 - Does anything look like a default you did not choose? See `visual-direction.md`.
 
+For substantial visual work, also inspect the opening, every major scrolled section and the footer at true viewport height, at least on phone and desktop. A full-page capture helps compare rhythm but does not replace viewport captures. Check fixed header separation, image crops, text against imagery, layout at intermediate widths, and the usable static/reduced-motion state. Use the [visual craft rubric](visual-craft-engine.md#6-score-visual-craft-separately) only for rendered evidence; an unavailable screenshot is unverified.
+
 Write down what you see, not what you intended. Then fix the largest problem first and render again.
 
 ## 6. Interaction checks

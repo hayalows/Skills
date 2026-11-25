@@ -28,6 +28,8 @@ Different surfaces need different amounts of personality.
 
 A common failure is putting landing-page drama into a tool, or tool-grade plainness on a landing page.
 
+For new or materially redesigned surfaces, use [Visual Craft Engine](visual-craft-engine.md) to choose a surface mode and opening composition. Quiet tools should not inherit a campaign page's hero rules. Keep the existing system and explicit brief above the module's defaults.
+
 ## 3. Find the direction in the subject
 
 Do not start from a palette. Start from the thing itself.
@@ -80,7 +82,7 @@ When the brief asks for one of these looks, do it well. The brief wins. The prob
 These hold whatever the style.
 
 - **One dominant thing per view.** Squint. If three things compete, demote two.
-- **Few sizes, clearly different.** Adjacent type sizes should differ by a visible step. Five sizes on one screen is usually the limit.
+- **Few sizes, clearly different.** Adjacent type sizes should differ by a visible step. Start with three body roles for expressive or reading pages and four for dense tools; retain additional roles when real hierarchy, readability or an existing design system requires them. See [Visual Craft Engine](visual-craft-engine.md).
 - **Hierarchy from weight and colour before size.** A muted label next to a strong value reads better than two sizes.
 - **Space shows grouping.** Related things sit closer than unrelated things. The gap inside a group is smaller than the gap between groups, always.
 - **Align to a few edges.** Count the left edges on a screen. Fewer is calmer.

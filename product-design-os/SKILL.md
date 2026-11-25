@@ -1,6 +1,8 @@
 ---
 name: product-design-os
 description: "Design, redesign, audit, specify or build the UI and UX of a digital product: websites, web apps, mobile apps, dashboards, forms, onboarding, checkout, search, pricing pages, design systems and components. Use when a task changes what a user sees or does, when a screen looks generic or confusing, or when a design needs to be turned into working, verified code. Covers flows, hierarchy, visual direction, states, accessibility, performance, ethical engagement, a render-and-look verification loop and a scored quality rubric. Self-contained: works alone or under Master Craft."
+metadata:
+  version: "3.0.0"
 ---
 
 # Product Design OS
@@ -92,13 +94,13 @@ Reference: `references/interface-craft.md` for layout, grids, spacing, type, col
 
 ### 5. Choose a visual direction
 
-Skip this step when a brand or design system already exists: use it.
+When a brand or design system exists, use it and preserve its approved identity. Choose composition and visual emphasis within that system; propose a new direction separately only when the brief allows.
 
 Otherwise decide on purpose, in this order: how loud the surface should be (a tool used for hours is quiet, a landing page can be loud), what belongs to the subject's own world, three words for the feeling, and one signature element. Then set six dials: type voice, colour, density, shape, imagery and motion. Record them as tokens. Start from `assets/tokens.css` and change the values.
 
 Check the direction against one question: would this exact look have come out for a different product? If yes, it is a default, not a choice.
 
-Reference: `references/visual-direction.md`.
+Reference: `references/visual-direction.md`. For a new or materially redesigned surface, also load `references/visual-craft-engine.md`: select the surface mode before composing, choose a signature tied to the subject, and apply its adaptable type, imagery, motion and restraint defaults. Content and task access outrank visual novelty.
 
 ### 6. Design components as behaviour
 
@@ -121,7 +123,7 @@ When the task includes implementation, build one complete slice with real conten
 3. Look at each capture as a first-time user. Write down what you see, not what you intended.
 4. Operate it: keyboard path, 200% zoom, empty, error, slow network, double submit, back and refresh.
 5. Measure contrast for real colour pairs: `ui-lint.mjs contrast <fg> <bg>`.
-6. Fix the largest problem first. Render again.
+6. For a new or materially redesigned page, inspect the complete page from opening viewport to footer (and meaningful scrolled states at real viewport height). Check the visual craft gate. Fix the largest problem first. Render again.
 
 Expect two or three passes. Most quality arrives after the first.
 
@@ -132,6 +134,8 @@ Reference: `references/build-and-verify.md`.
 ### 8. Score, then hand off
 
 Score the result on the ten dimensions in `references/quality-rubric.md`. Each dimension has a floor. Any score below its floor sends the work back into the loop, whatever the total.
+
+For new or materially redesigned surfaces, also score the separate visual rubric in `references/visual-craft-engine.md`. Do not add its points to the product rubric or trade accessibility and task floors for aesthetics. Touch repairs do not require full visual scoring.
 
 Then hand off what the task needs: tokens, type and colour roles, spacing scale, component anatomy with variants and states, interaction and responsive behaviour, content rules, accessibility requirements, analytics events if needed, performance expectations, and acceptance criteria that design and engineering can both check.
 
@@ -250,6 +254,8 @@ Load only what the task needs.
 | Cognition, journeys, mental models, IA | `references/foundations.md` |
 | Layout, type, spacing, colour, cards, heroes, dashboards | `references/interface-craft.md` |
 | Choosing a look on purpose | `references/visual-direction.md` |
+| Adaptive composition, art direction and visual scoring | `references/visual-craft-engine.md` |
+| Comparing skill versions fairly | `references/visual-benchmark.md` |
 | Buttons, forms, navigation, search, dialogs, tables, states | `references/component-patterns.md` |
 | Accessibility | `references/accessibility.md` |
 | Retention, habits, notifications, engagement ethics | `references/behavior-ethics.md` |
@@ -350,4 +356,5 @@ Ready to ship when, in addition:
 - the keyboard path, zoom and the reachable states were operated
 - contrast was measured for the real colour pairs
 - every rubric dimension meets its floor, with evidence
+- for substantial visual work, the applicable visual craft rubric meets its floors with rendered evidence
 - the report says plainly what was seen, operated, measured, read and not verified

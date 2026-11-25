@@ -96,6 +96,8 @@ Add the ten scores for a total out of 40.
 | 30 to 35 | Good. Ready for real users |
 | 36 to 40 | Excellent. Check that the evidence supports each 4 |
 
+For new or substantially redesigned interfaces, the separate [visual craft rubric](visual-craft-engine.md#6-score-visual-craft-separately) evaluates the visual execution. Report both scores independently; visual points cannot rescue a failed product dimension. A deliberate static or text-only design can meet visual craft standards without added media or motion.
+
 The floors matter more than the total. A beautiful screen that fails keyboard use is not ready. A plain screen that passes every floor is.
 
 ## How to use it honestly
