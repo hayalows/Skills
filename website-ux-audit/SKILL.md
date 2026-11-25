@@ -4,6 +4,7 @@ description: "Audit a live website, prototype, or code-backed web experience for
 routing:
   roles: [lead]
   category: interface-audit
+  allowed_modes: [inspect]
   exclusive_role: ui-lead
 ---
 

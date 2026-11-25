@@ -20,7 +20,7 @@ test("every active skill has valid metadata and a unique name",()=>{
 test("every eligible skill routes individually",()=>{
   for(const skill of snapshot.skills){
     if(skill.name==="master-craft") continue;
-    const r=plan({...base,specialists:[skill.path],explicitSkills:skill.requires_explicit_invocation?[skill.path]:[]},snapshot);
+    const r=plan({...base,mode:skill.routing?.allowed_modes?.[0]??base.mode,specialists:[skill.path],explicitSkills:skill.requires_explicit_invocation?[skill.path]:[]},snapshot);
     assert.ok(r.skills.includes(skill.path),skill.name);
     assert.deepEqual(r.blockers,[],skill.name);
   }
@@ -30,8 +30,11 @@ test("all actual competing design lead pairs block",()=>{
   assert.ok(leads.length>=5);
   for(let i=0;i<leads.length;i++)for(let j=i+1;j<leads.length;j++){
     const r=plan({...base,specialists:[leads[i].path,leads[j].path]},snapshot);
-    assert.ok(r.blockers.includes("exclusive-role-conflict:ui-lead"));
+    if ([leads[i],leads[j]].some(s=>s.routing?.allowed_modes&&!s.routing.allowed_modes.includes(base.mode))) assert.ok(r.blockers.some(b=>b.startsWith("skill-mode-rejected:")));
+    else assert.ok(r.blockers.includes("exclusive-role-conflict:ui-lead"));
     assert.ok(!r.stages.includes("implement"));
+    const inspect=plan({...base,mode:"inspect",specialists:[leads[i].path,leads[j].path]},snapshot);
+    assert.ok(inspect.blockers.includes("exclusive-role-conflict:ui-lead"));
   }
 });
 test("actual product design and compatible visual helpers",()=>{
@@ -63,12 +66,12 @@ test("invalid and stray role assignments blocked",()=>{
 });
 test("orchestration guard and authorized override remain intact",()=>{
   for(const name of ["agent-team-architect","ai-ops-team"]){
-    const no=run([name],{mode:"answer",substantial:false});
-    assert.ok(no.blockers.includes("trivial-task-skill-rejected:"+p(name)));
+    if(name==="ai-ops-team") assert.throws(()=>run([name],{mode:"answer",substantial:false}),/requires explicit invocation/);
+    else assert.ok(run([name],{mode:"answer",substantial:false}).blockers.includes("trivial-task-skill-rejected:"+p(name)));
     const yes=run([name],{mode:"answer",substantial:false,explicitSkills:[p(name)]});
     assert.deepEqual(yes.blockers,[]);
   }
-  const team=run(["agent-team-architect","ai-ops-team"]);
+  const team=run(["agent-team-architect","ai-ops-team"],{explicitSkills:[p("ai-ops-team")]});
   assert.deepEqual(team.blockers,[]);
   assert.equal(team.specialistRoles[p("agent-team-architect")],"lead");
   assert.equal(team.specialistRoles[p("ai-ops-team")],"specialist");

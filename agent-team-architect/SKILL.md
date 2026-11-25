@@ -8,6 +8,7 @@ routing:
     - lead
     - specialist
   category: orchestration
+  exclusive_role: workflow-lead
 ---
 
 # Agent Team Architect

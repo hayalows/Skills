@@ -51,6 +51,7 @@ const substantial = plan({
   mode: "create",
   substantial: true,
   specialists: ["agent-team-architect/SKILL.md", "ai-ops-team/SKILL.md"],
+  explicitSkills: ["ai-ops-team/SKILL.md"],
 }, current);
 assert.deepEqual(substantial.blockers, []);
 assert.ok(substantial.skills.includes("agent-team-architect/SKILL.md"));

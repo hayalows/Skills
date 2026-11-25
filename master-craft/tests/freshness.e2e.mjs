@@ -4,6 +4,8 @@ import os from "node:os";
 import path from "node:path";
 import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
+import { plan } from "../scripts/plan.mjs";
+import { catalogue } from "../scripts/catalogue.mjs";
 
 const sourceScript = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../scripts/inventory.mjs");
 const scratch = fs.mkdtempSync(path.join(os.tmpdir(), "master-craft-fresh-"));
@@ -61,12 +63,35 @@ try {
   write(author, "master-craft/SKILL.md", skill("master-craft", "current"));
   write(author, "product-design-os/SKILL.md", skill("product-design-os", "v2"));
   write(author, "novel-skill/SKILL.md", skill("novel-skill", "initial"));
+  write(author, "extensions/novel-policy/SKILL.md", skill("novel-policy", "initial"));
+  write(author, "extensions/novel-policy/routing.json", JSON.stringify({ roles: ["lead"], allowed_modes: ["inspect"], category: "research" }));
+  write(author, "novel-skill/versions/archive/SKILL.md", skill("archived-fixture", "initial"));
   git(author, "add", ".");
   git(author, "commit", "-m", "Update old and add new skill");
   git(author, "push", "origin", "main");
   const fresh = JSON.parse(run("--latest", "--json").stdout);
   assert.notEqual(fresh.revision, first.revision, "Snapshot SHA must advance");
   assert.ok(fresh.skills.some((item) => item.name === "novel-skill"), "Previously unmapped skill must be discovered");
+  const plain = fresh.skills.find(item => item.name === "novel-skill");
+  const policy = fresh.skills.find(item => item.name === "novel-policy");
+  assert.ok(plain && plain.routing === undefined, "New skill needs no routing metadata");
+  assert.deepEqual(policy.routing.allowed_modes, ["inspect"]);
+  assert.match(policy.routing_sha, /^[a-f0-9]{40}$/);
+  assert.ok(!fresh.skills.some(item => item.name === "archived-fixture"));
+  const intent = { mode:"inspect", host:"none", substantial:false, productDesign:false, measureProduct:false, validateModel:false, hostedBuild:false, releaseAuthorized:false, freshnessRequired:true, releaseToolAvailable:false };
+  for (const selected of [plain, policy]) {
+    const route = plan({...intent, specialists:[selected.path]}, fresh);
+    assert.deepEqual(route.blockers, []);
+    assert.ok(route.skills.includes(selected.path));
+  }
+  const denied = plan({...intent, mode:"create", specialists:[policy.path], explicitSkills:[policy.path]}, fresh);
+  assert.ok(denied.blockers.includes("skill-mode-rejected:"+policy.path+":create"));
+  assert.ok(!denied.stages.includes("implement"));
+  const portable = catalogue(fresh);
+  assert.ok(portable.includes(fresh.revision+"/"+plain.path));
+  assert.ok(portable.includes(fresh.revision+"/"+policy.path));
+  assert.ok(portable.includes(fresh.revision+"/extensions/novel-policy/routing.json"));
+  assert.ok(!portable.includes("archived-fixture"));
   assert.ok(fresh.skills.some((item) => item.name === "product-design-os" && item.description.includes("v2")), "Updated metadata must come from fetched version");
   assert.ok(run("--at", fresh.revision, "--read", "master-craft").stdout.includes("VERSION: current"));
   assert.ok(run("--at", first.revision, "--read", "master-craft").stdout.includes("VERSION: initial"));
@@ -99,7 +124,7 @@ try {
   const unsafe = runExpectFailure("--at", newer.revision, "--read", "../../outside/SKILL.md");
   assert.notEqual(unsafe.status, 0, "Skill selector must reject traversal");
 
-  console.log("PASS: latest revision, updated instructions, new-skill discovery, pinned snapshot, clean worktree, blocked refresh, explicit offline mode and safe paths");
+  console.log("PASS: latest revision, dynamic new-skill discovery and routing (with and without policy), generated catalogue, pinned snapshot, clean worktree, blocked refresh, explicit offline mode and safe paths");
 } finally {
   fs.rmSync(scratch, { recursive: true, force: true });
 }

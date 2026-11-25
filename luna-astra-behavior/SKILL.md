@@ -1,6 +1,7 @@
 ---
 name: luna-astra-behavior
 description: Apply a disciplined evidence, execution and self-review workflow when explicitly asked for Luna-to-Astra behavior or higher-judgment handling of a difficult task. Improve reliability without claiming to change the active model or its capabilities. Use alongside domain skills; skip routine replies unless invoked.
+disable-model-invocation: true
 routing:
   minimum_complexity: substantial
   explicit_override: true

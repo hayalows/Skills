@@ -2,6 +2,8 @@
 
 > A library of agent skills in the open Agent Skills layout. Each skill is a folder with a SKILL.md entrypoint and optional references, scripts and assets. Start with Master Craft, which selects and sequences the others. Product Design OS is the self-contained UI and UX skill.
 
+This is a curated entrypoint, not the complete live registry. For the full current catalogue, run node master-craft/scripts/catalogue.mjs --latest or enumerate the current pinned Git tree. AI Ops Team and Luna Astra Behaviour are explicit-only.
+
 Read a skill entrypoint first, then only the references it points to for the task. Relative links inside a skill resolve against that skill folder. A skill is instructions only: it grants no tools and no permission.
 
 ## Start here
@@ -16,7 +18,7 @@ Read a skill entrypoint first, then only the references it points to for the tas
 ## Skills
 
 - [agent-team-architect](https://raw.githubusercontent.com/hayalows/Skills/main/agent-team-architect/SKILL.md): Build, audit and test multi-agent workflows, role contracts, handoffs, repair loops and approval gates.
-- [ai-ops-team](https://raw.githubusercontent.com/hayalows/Skills/main/ai-ops-team/SKILL.md): 4-agent AI Ops Team (Lead, Scout, Scribe, Checker) wired as a Google ADK 2.x graph with parallel research, 2-round quality loop, and human approval.
+- [ai-ops-team](https://raw.githubusercontent.com/hayalows/Skills/main/ai-ops-team/SKILL.md): Explicit invocation only. 4-agent AI Ops Team (Lead, Scout, Scribe, Checker) wired as a Google ADK 2.x graph with parallel research, 2-round quality loop, and human approval.
 
 - [interface-workshop](https://raw.githubusercontent.com/hayalows/Skills/main/interface-workshop/SKILL.md): Build and practise responsive interface design through real tasks.
 - [engineering-workshop](https://raw.githubusercontent.com/hayalows/Skills/main/engineering-workshop/SKILL.md): Build, debug and verify software through working examples.
