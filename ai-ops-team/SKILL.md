@@ -4,6 +4,13 @@ description: >-
   4-agent AI Ops Team (Lead, Scout, Scribe, Checker) wired as a Google ADK 2.x
   graph with parallel research, a 2-round quality loop, human-in-the-loop
   approval, and weekly improvement.
+routing:
+  minimum_complexity: substantial
+  explicit_override: true
+  roles:
+    - lead
+    - specialist
+  category: orchestration
 ---
 
 # AI Ops Team Skill

@@ -1,6 +1,13 @@
 ---
 name: agent-team-architect
 description: Design, build, test and improve AI agent teams, swarms, graph workflows and recurring agent jobs. Use for multi-agent orchestration, delegation, explicit handoffs, evidence-first evaluation, bounded repairs, approval gates, workflow audits and comparative agent benchmarking. Do not use for a simple task that one agent or deterministic code can complete reliably.
+routing:
+  minimum_complexity: substantial
+  explicit_override: true
+  roles:
+    - lead
+    - specialist
+  category: orchestration
 ---
 
 # Agent Team Architect

@@ -23,14 +23,53 @@ function gitRaw(...argv) {
   });
 }
 function git(...argv) { return gitRaw(...argv).trimEnd(); }
+function parseScalar(raw) {
+  const value = raw.trim();
+  if (value === "true") return true;
+  if (value === "false") return false;
+  if (value.startsWith('"') && value.endsWith('"')) {
+    try { return JSON.parse(value); } catch { return value.slice(1, -1); }
+  }
+  if (value.startsWith("'") && value.endsWith("'")) return value.slice(1, -1).replaceAll("''", "'");
+  if (value.startsWith("[") && value.endsWith("]")) {
+    return value.slice(1, -1).split(",").map((v) => parseScalar(v)).filter((v) => v !== "");
+  }
+  return value;
+}
 function parseMetadata(content, file) {
   const match = content.match(/^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/);
   if (!match) return { name: path.basename(path.dirname(file)), description: "", error: "missing frontmatter" };
   const fields = Object.create(null);
+  let routing = null;
   const lines = match[1].split(/\r?\n/);
   for (let i = 0; i < lines.length; i++) {
     const pair = lines[i].match(/^([a-zA-Z][\w-]*):\s*(.*)$/);
     if (!pair) continue;
+    if (pair[1] === "routing" && pair[2].trim() === "") {
+      routing = Object.create(null);
+      let activeListKey = null;
+      while (i + 1 < lines.length && (/^\s{2,}/.test(lines[i + 1]) || lines[i + 1].trim() === "")) {
+        const sub = lines[++i];
+        if (!sub.trim()) continue;
+        const listItem = sub.match(/^\s{4,}-\s+(.*)$/);
+        if (listItem && activeListKey) {
+          routing[activeListKey].push(parseScalar(listItem[1]));
+          continue;
+        }
+        const subPair = sub.match(/^\s{2,}([a-zA-Z][\w-]*):\s*(.*)$/);
+        if (subPair) {
+          const val = subPair[2].trim();
+          if (val === "") {
+            routing[subPair[1]] = [];
+            activeListKey = subPair[1];
+          } else {
+            routing[subPair[1]] = parseScalar(val);
+            activeListKey = null;
+          }
+        }
+      }
+      continue;
+    }
     let value = pair[2].trim();
     if (/^[|>][+-]?$/.test(value)) {
       const chunks = [];
@@ -43,11 +82,13 @@ function parseMetadata(content, file) {
     }
     fields[pair[1]] = value;
   }
-  return {
+  const meta = {
     name: fields.name || path.basename(path.dirname(file)),
     description: fields.description || "",
     requires_explicit_invocation: fields["disable-model-invocation"] === "true"
   };
+  if (routing) meta.routing = routing;
+  return meta;
 }
 function isSkill(p) {
   if (!p.endsWith("/SKILL.md") || p.startsWith("/") || p.includes("\\") || p.split("/").includes("..")) return false;

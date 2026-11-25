@@ -32,6 +32,14 @@ export function plan(intent, snapshot) {
     if (file === "master-craft/SKILL.md" || (skill.requires_explicit_invocation && !explicit)) {
       throw new Error("Candidate is recursive or requires explicit invocation: " + file);
     }
+    const routing = skill.routing;
+    if (routing?.minimum_complexity === "substantial" && !intent.substantial) {
+      const canOverride = routing.explicit_override !== false && explicit;
+      if (!canOverride) {
+        blockers.push("trivial-task-skill-rejected:" + file);
+        return;
+      }
+    }
     if (!skills.includes(file)) skills.push(file);
   }
 
@@ -44,6 +52,30 @@ export function plan(intent, snapshot) {
     select(file, false, (intent.explicitSkills ?? []).includes(file));
   }
   if (hosting && intent.host === "vercel") select("vercel-deployment-steward/SKILL.md", true);
+
+  const exclusiveOwners = new Map();
+  for (const file of skills) {
+    const meta = inventory.get(file);
+    const routing = meta?.routing;
+    if (!routing) continue;
+    const assignedRole = intent.specialistRoles?.[file];
+    const isSupporting = assignedRole === "supporting" || assignedRole === "helper";
+    if (routing.exclusive_role && !isSupporting) {
+      if (exclusiveOwners.has(routing.exclusive_role)) {
+        blockers.push("exclusive-role-conflict:" + routing.exclusive_role);
+      } else {
+        exclusiveOwners.set(routing.exclusive_role, file);
+      }
+    }
+    for (const conflict of routing.conflicts_with ?? []) {
+      const hit = skills.find((other) => other !== file && (other === conflict || inventory.get(other)?.name === conflict));
+      if (hit) {
+        const pair = [file, hit].sort().join(":");
+        const code = "skill-conflict:" + pair;
+        if (!blockers.includes(code)) blockers.push(code);
+      }
+    }
+  }
 
   if (intent.mode === "repair") stages.push("reproduce");
   if (intent.measureProduct || intent.validateModel) stages.push("define-evidence");
