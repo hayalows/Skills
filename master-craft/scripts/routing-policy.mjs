@@ -1,4 +1,5 @@
 // Restricted flat routing schema, not a general YAML parser.
+export const modes = Object.freeze(["answer", "inspect", "create", "repair", "release"]);
 export const roles = Object.freeze(["lead", "specialist", "supporting"]);
 export const canonicalRole = role => role === "helper" ? "supporting" : role;
 const token = v => typeof v === "string" && /^[a-z][a-z0-9-]*$/.test(v);
@@ -7,8 +8,9 @@ const unique = arr => new Set(arr).size === arr.length;
 
 export function routingError(r) {
   if (!plain(r)) return "routing must be an object";
-  const keys = ["minimum_complexity", "explicit_override", "roles", "default_role", "category", "exclusive_role", "conflicts_with", "complements"];
+  const keys = ["minimum_complexity", "explicit_override", "roles", "default_role", "category", "exclusive_role", "conflicts_with", "complements", "allowed_modes"];
   if (Object.keys(r).some(k => !keys.includes(k))) return "unknown routing field";
+  if (Object.hasOwn(r, "allowed_modes") && (!Array.isArray(r.allowed_modes) || !r.allowed_modes.length || !unique(r.allowed_modes) || r.allowed_modes.some(v => !modes.includes(v)))) return "invalid allowed_modes";
   if (Object.hasOwn(r, "minimum_complexity") && r.minimum_complexity !== "substantial") return "unsupported minimum_complexity";
   if (Object.hasOwn(r, "explicit_override") && typeof r.explicit_override !== "boolean") return "explicit_override must be boolean";
   if (Object.hasOwn(r, "roles") && (!Array.isArray(r.roles) || !r.roles.length || !unique(r.roles) || r.roles.some(v => !roles.includes(v)))) return "invalid allowed roles";

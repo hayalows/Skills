@@ -9,14 +9,12 @@ const inventory = JSON.parse(execFileSync(process.execPath, [file("../scripts/in
 const current = { ...inventory, source: "git-origin-main", verified_latest: true };
 
 const selectable = inventory.skills.filter((s) => s.path !== "master-craft/SKILL.md");
-assert.equal(selectable.length, 66, `Expected 66 selectable skills, got ${selectable.length}`);
+assert.ok(selectable.length > 0, "Inventory must contain selectable skills");
 
-// 1. All 66 selectable skills have valid routing metadata.
+// 1. Validate every declared policy, while keeping future metadata optional.
 for (const skill of selectable) {
-  assert.ok(skill.routing, `Missing routing metadata on ${skill.path}`);
-  assert.equal(routingError(skill.routing), null, `Invalid routing metadata on ${skill.path}`);
-  assert.ok(Array.isArray(skill.routing.roles) && skill.routing.roles.length > 0, `Missing roles on ${skill.path}`);
-  assert.ok(skill.routing.category, `Missing category on ${skill.path}`);
+  assert.ok(!skill.error && skill.description, "Invalid metadata: " + skill.path);
+  if (skill.routing !== undefined) assert.equal(routingError(skill.routing), null, "Invalid routing metadata: " + skill.path);
 }
 
 const base = {
@@ -31,13 +29,13 @@ const base = {
   releaseToolAvailable: false,
 };
 
-// 2. Test every single one of the 66 skills individually for zero false rejections.
+// 2. Test every discovered selectable skill individually against its declared policy.
 for (const skill of selectable) {
-  const needsSubstantial = skill.routing.minimum_complexity === "substantial";
+  const needsSubstantial = skill.routing?.minimum_complexity === "substantial";
   const explicitSkills = skill.requires_explicit_invocation ? [skill.path] : [];
   const res = plan({
     ...base,
-    mode: skill.path === "website-ux-audit/SKILL.md" ? "inspect" : "create",
+    mode: skill.routing?.allowed_modes?.[0] ?? "create",
     substantial: needsSubstantial,
     specialists: [skill.path],
     explicitSkills,
@@ -103,6 +101,7 @@ const combos = [
       mode: "create",
       substantial: true,
       specialists: ["agent-team-architect/SKILL.md", "ai-ops-team/SKILL.md"],
+      explicitSkills: ["ai-ops-team/SKILL.md"],
     },
   },
   {
@@ -136,12 +135,7 @@ for (const combo of combos) {
 }
 
 // 4. Verify substantial guard on newly annotated heavy skills & explicit override.
-const heavyTrivial = plan({
-  ...base,
-  mode: "answer",
-  specialists: ["luna-astra-behavior/SKILL.md"],
-}, current);
-assert.ok(heavyTrivial.blockers.includes("trivial-task-skill-rejected:luna-astra-behavior/SKILL.md"));
+assert.throws(() => plan({ ...base, mode: "answer", specialists: ["luna-astra-behavior/SKILL.md"] }, current), /requires explicit invocation/);
 
 const heavyOverride = plan({
   ...base,

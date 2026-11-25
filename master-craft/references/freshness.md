@@ -5,7 +5,7 @@
 Master Craft uses the newest **committed** revision on the default `main` branch of `hayalows/Skills` when a new task begins. If you change Personal Craft, Product Design OS, Vercel Deployment Steward, or any other skill in this GitHub repository and commit it to `main`, the next invocation must read that version.
 
 - **Updates:** the latest instruction file replaces any cached instructions from an earlier session.
-- **New skills:** the current recursive tree is scanned for every `SKILL.md`, even if the new skill isn't listed in the curated `references/skill-map.md`.
+- **New skills:** the current recursive tree is scanned for active SKILL.md files, even if the new skill is not in the curated skill map or llms.txt. Archived versions are excluded. Optional routing metadata is validated when present; a valid new skill without it is still eligible.
 - **Renamed/removed skills:** the current tree decides what exists; old map links are merely hints.
 - **Additional reference files:** fetch the chosen skill's needed files from **the same commit** to prevent mixing old instructions with new references.
 - **Third-party collections:** an imported Matt Pocock/Cloudflare skill is latest only relative to **your** copy. Its upstream original is *not* auto-synced into your repository.
@@ -35,6 +35,8 @@ This reads `origin/main` into the **Git object database** and returns:
 - `verified_latest: true` when the remote fetch succeeded.
 - `revision`: the exact commit SHA.
 - `skills`: all current SKILL.md paths, names, descriptions, origin and blob SHA.
+
+For a complete portable catalogue run node master-craft/scripts/catalogue.mjs --latest (or --at COMMIT_SHA). It is generated from the inventory, without a manual registry.
 
 After choosing a skill, load the pinned version using the revision returned by the first command:
 

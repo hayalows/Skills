@@ -1,4 +1,4 @@
-# Routing metadata (V2.2)
+# Routing metadata (V2.3)
 
 Master Craft keeps semantic interpretation in the host model. The planner enforces declared rules; it cannot prove a request was correctly classified or that an override was actually authorized. Do not mark a task substantial just to evade a complexity guard. Do not label a skill explicit unless the user actually requested it.
 
@@ -13,13 +13,15 @@ Optional skill frontmatter, using a restricted flat mapping and lists:
       exclusive_role: workflow-lead
       conflicts_with: [other-skill]
       complements: [helper-skill]
+      allowed_modes: [inspect, create]
 
 - minimum_complexity: optional; currently only substantial is supported.
 - explicit_override: optional boolean; defaults to false. Only the exact user-requested skill can override minimum complexity. No override bypasses permissions, conflicts or allowed roles.
 - roles: nonempty unique list of lead, specialist, supporting. Defaults to all three for older skills without role metadata. default_role must be declared; otherwise lead is preferred when declared, or the first declared role, or specialist for a legacy skill.
 - category: optional descriptive token; not an automatic routing rule.
-- exclusive_role: optional shared ownership token; requires the lead role to be declared. A non-supporting selection claims the exclusive role. Two owners block the plan. Supporting is permitted only when declared.
+- exclusive_role: optional shared ownership token; requires the lead role to be declared. Only a declared lead selection claims the exclusive role. Two lead owners block the plan. Specialist and supporting assignments must be explicitly allowed by the skill.
 - conflicts_with: optional list of exact relative skill paths or skill names. Any matching selected pair blocks, regardless of role.
+- allowed_modes: optional nonempty unique list drawn from answer, inspect, create, repair, release. Missing means unrestricted by this field. Explicit invocation does not override mode limits.
 - complements: optional advisory list of skill names or relative paths that pair well with this skill; imposes no restriction.
 
 The parser supports the documented block, scalar strings/booleans and simple inline or indented lists; it is not a general YAML parser. Unknown or malformed policy fails closed. For a verbatim third-party import, an adjacent regular-file routing.json with the same flat schema is supported instead of editing upstream frontmatter (not both). Remote snapshots carry the sidecar blob SHA; Full execution contracts record it as routingBlob alongside the skill blob. Read policy and skill instructions at the same pinned commit.
@@ -32,5 +34,9 @@ Product Design OS owns product interfaces, Design Taste owns marketing pages, Ge
      "specialistRoles":{"gemini-frontend-design/SKILL.md":"supporting"}}
 
 This combines the mandatory product-design owner with a visual helper. With the role omitted, both default to lead and the plan blocks. A lead-only skill cannot become a helper by changing a string. The planner returns specialistRoles with resolved roles for inspection. Do not execute affected work while routing blockers remain; revise the plan. A routing-blocked plan omits implementation and hosted release stages. On Full tasks, record why each selected skill is necessary in the existing execution contract why, along with procedure, restrictions, references and revision. A nonempty rationale is not evidence of correct semantic routing.
+
+AI Ops Team and Luna Astra Behaviour require explicit user invocation, even on substantial tasks. Agent Team Architect can be selected automatically for substantial orchestration; AI Ops may be an explicitly requested specialist under that lead. Website UX Audit only accepts inspect. Split audit and implementation into separate plans.
+
+New skills with valid SKILL.md files need no registry entry or routing metadata. Optional metadata is recommended and validated when present; tests iterate over discovery rather than expecting a fixed count. Use the generated catalogue for a complete portable list.
 
 Archived versions stay out of automatic discovery; use a deliberately pinned historical source when needed. Run the full repository test command before changing active policy.

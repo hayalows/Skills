@@ -1,9 +1,8 @@
 import fs from "node:fs";
-import { canonicalRole, defaultRole, roles, routingError } from "./routing-policy.mjs";
+import { canonicalRole, defaultRole, roles, modes, routingError } from "./routing-policy.mjs";
 import { checkExecution, executionPlan } from "./execution.mjs";
 import { pathToFileURL } from "node:url";
 
-const modes = ["answer", "inspect", "create", "repair", "release"];
 const hosts = ["none", "unknown", "vercel", "other"];
 const flags = ["substantial", "productDesign", "measureProduct", "validateModel", "hostedBuild", "releaseAuthorized", "freshnessRequired", "releaseToolAvailable"];
 
@@ -47,6 +46,10 @@ export function plan(intent, snapshot) {
       blockers.push("invalid-routing-metadata:" + file);
       return;
     }
+    if (routing?.allowed_modes && !routing.allowed_modes.includes(intent.mode)) {
+      blockers.push("skill-mode-rejected:" + file + ":" + intent.mode);
+      return;
+    }
     if (routing?.minimum_complexity === "substantial" && !intent.substantial) {
       const canOverride = routing.explicit_override === true && explicit;
       if (!canOverride) {
@@ -81,7 +84,7 @@ export function plan(intent, snapshot) {
       role = defaultRole(routing);
     }
     assignedRoles[file] = role;
-    if (routing?.exclusive_role && role !== "supporting") {
+    if (routing?.exclusive_role && role === "lead") {
       if (exclusiveOwners.has(routing.exclusive_role)) {
         const code = "exclusive-role-conflict:" + routing.exclusive_role;
         if (!blockers.includes(code)) blockers.push(code);

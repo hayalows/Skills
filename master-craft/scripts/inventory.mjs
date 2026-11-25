@@ -74,6 +74,7 @@ function withSidecar(item, raw) {
     const error = routingError(routing);
     if (error) throw Error(error);
     item.routing = routing;
+    item.routing_source = "sidecar";
   } catch (error) { item.error = "invalid routing sidecar: " + error.message; }
   return item;
 }

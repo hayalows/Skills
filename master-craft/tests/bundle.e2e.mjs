@@ -72,12 +72,11 @@ for (const skill of ["master-craft", "product-design-os"]) {
 assert.ok(read("AGENTS.md").includes("master-craft/SKILL.md"), "AGENTS.md must point at Master Craft");
 assert.ok(read("CLAUDE.md").includes("@AGENTS.md"), "CLAUDE.md must import AGENTS.md");
 const index = read("llms.txt");
-for (const item of fs.readdirSync(root, { withFileTypes: true })) {
-  if (!item.isDirectory() || item.name.startsWith(".")) continue;
-  if (fs.existsSync(path.join(root, item.name, "SKILL.md"))) {
-    assert.ok(index.includes("/" + item.name + "/SKILL.md"), "llms.txt is missing " + item.name);
-  }
-}
+// llms.txt is a curated entrypoint; the generated catalogue is exhaustive and grows automatically.
+const inventory = JSON.parse(spawnSync(process.execPath, [path.join(root,"master-craft/scripts/inventory.mjs"),"--local","--json"], {encoding:"utf8"}).stdout);
+const generated = spawnSync(process.execPath,[path.join(root,"master-craft/scripts/catalogue.mjs"),"--local"],{encoding:"utf8"});
+assert.equal(generated.status,0,generated.stderr);
+for (const skill of inventory.skills) assert.ok(generated.stdout.includes("/"+skill.path+")"), "Dynamic catalogue missing "+skill.path);
 for (const m of index.matchAll(/https:\/\/raw\.githubusercontent\.com\/hayalows\/Skills\/main\/([^)\s]+)/g)) {
   assert.ok(fs.existsSync(path.join(root, m[1])), "llms.txt links a missing path: " + m[1]);
 }
