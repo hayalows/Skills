@@ -275,3 +275,7 @@ Do not copy book pages, diagrams, or long excerpts into derivative project docum
 Source: https://github.com/google-gemini/demolab/tree/main/skills/gemini-frontend-design
 
 Version 1.0.0; upstream SKILL.md blob `a9dbdc92e08e7ba7dfba3f5cc00b077bf662e357`. Apache-2.0; [upstream licence](gemini-frontend-design-LICENSE.txt). The Visual Craft Engine adapts the source's composition examples, type discipline, imagery and motion guidance, clutter checks and full-page critique into a conditional product workflow. The adapted text changes the source's hard aesthetic prohibitions into defaults with explicit exceptions. These are design hypotheses and craft conventions, not measured evidence of better outcomes. The original skill remains unchanged in the repository.
+
+### v3.1 extension
+
+The mandatory Visual Integrity Gate and its stricter typography, opening, clutter, motion and full-page review rules adapt the same Gemini Frontend Design v1.0.0 source. The Ghana Money redesign (hayalows/ghanamoney, commits 34f0cbf through 793a626) supplied concrete examples of mobile navigation overflow, buried results, nested cards, overlapping 3D captions and inherited headline-size chart legends. These are observed examples, not independent comparative evidence. The original Apache-2.0 notice remains in this folder.

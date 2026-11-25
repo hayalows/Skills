@@ -36,7 +36,7 @@ node product-design-os/scripts/ui-lint.mjs contrast "#555f6e" "#ffffff"
 
 Scan the folder that holds the shared stylesheet as well as the page, because focus and reduced-motion rules are judged across every file scanned.
 
-Fix every error. Read every warning. A clean run is a floor. It cannot see layout, contrast of rendered pairs, focus order or whether the screen makes sense.
+Fix every error. Review each visual warning as a candidate against the rendered surface. Record the decision and any necessary exception in the Visual Integrity Gate. A clean run is a floor. It cannot see layout, contrast of rendered pairs, focus order or whether the screen makes sense.
 
 ## 4. Render it and look
 
@@ -54,7 +54,7 @@ Use whatever the environment offers, in this order of preference:
    Add `--force-dark-mode` for a dark theme pass. A `file://` path works for a static page. Inside a container, Chrome may also need `--no-sandbox`.
 3. Screenshots supplied by the user.
 
-Capture at least a narrow phone width (360), a tablet width (768) and a laptop width (1280). Add the widest layout you support when the design is fluid.
+Capture at least a narrow phone width (360), the 390 × 844 mobile reference, a tablet width (768) and a laptop width (1280). Add the widest layout you support when the design is fluid.
 
 **If nothing can render the page**, say so. Mark the result `NOT VISUALLY VERIFIED`, review the code against the checks below as far as reading allows, and list exactly what a person should look at. Never describe how a page looks when you have not seen it.
 
@@ -80,13 +80,13 @@ Look at each image as a first-time user would, then as a critic.
 **Detail**
 
 - Is body text comfortably readable? Is muted text still legible?
-- Are there more than about five text sizes or more than one accent colour competing?
+- Are there more than three rendered body text sizes (four for dense tools), more than two authored font families, any first-screen visible text below 13px, or competing accents? Use the browser probe and classify exceptions rather than counting CSS declarations.
 - Do images load, with the right crop, and no distortion?
 - Does anything look like a default you did not choose? See `visual-direction.md`.
 
 For substantial visual work, also inspect the opening, every major scrolled section and the footer at true viewport height, at least on phone and desktop. A full-page capture helps compare rhythm but does not replace viewport captures. Check fixed header separation, image crops, text against imagery, layout at intermediate widths, and the usable static/reduced-motion state. Use the [visual craft rubric](visual-craft-engine.md#6-score-visual-craft-separately) only for rendered evidence; an unavailable screenshot is unverified.
 
-Write down what you see, not what you intended. Then fix the largest problem first and render again.
+Run the [Visual Integrity Gate](visual-integrity-gate.md) and its screenshot-first critic. Capture real scrolled viewport states, not just tall contact sheets. Record evidence IDs and issues before reading the design rationale. Run the read-only browser probe when possible. Write down what you see, not what you intended. Fix structural issues first and render again. After an authorized release, verify the final public revision rather than relying on a successful build.
 
 ## 6. Interaction checks
 

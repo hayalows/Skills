@@ -11,6 +11,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
+import { visualLint } from "./visual-lint.mjs";
 
 const SKIP_DIRS = new Set(["node_modules", ".git", "dist", "build", ".next", "coverage", "vendor"]);
 const EXTENSIONS = new Set([".html", ".htm", ".css", ".jsx", ".tsx", ".vue", ".svelte", ".astro"]);
@@ -232,6 +233,7 @@ export function lintText(source, file = "input.html", project = "") {
     }
     if (css) checkStyles(css, add, firstLine, project);
   }
+  findings.push(...visualLint(source, file));
   return findings.sort((a, b) => a.line - b.line);
 }
 

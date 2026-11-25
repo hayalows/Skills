@@ -6,6 +6,7 @@ import path from "node:path";
 import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { contrastRatio } from "../scripts/ui-lint.mjs";
+import "./visual-lint.test.mjs";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const cli = path.join(here, "../scripts/ui-lint.mjs");
@@ -40,7 +41,7 @@ try {
   const found = rules(badResult);
   for (const rule of ["zoom-blocked", "lang-missing", "title-missing", "main-missing", "h1-multiple", "heading-skip",
     "img-alt", "click-non-control", "link-placeholder", "control-name", "field-label", "autoplay-sound",
-    "tabindex-positive", "focus-removed", "text-tiny", "reduced-motion", "viewport-height"]) {
+    "tabindex-positive", "focus-removed", "text-tiny", "reduced-motion", "viewport-height", "visual-transition-all", "visual-small-text"]) {
     assert.ok(found.includes(rule), "expected rule " + rule + " in " + found.join(","));
   }
 

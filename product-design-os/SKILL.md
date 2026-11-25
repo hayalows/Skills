@@ -2,7 +2,7 @@
 name: product-design-os
 description: "Design, redesign, audit, specify or build the UI and UX of a digital product: websites, web apps, mobile apps, dashboards, forms, onboarding, checkout, search, pricing pages, design systems and components. Use when a task changes what a user sees or does, when a screen looks generic or confusing, or when a design needs to be turned into working, verified code. Covers flows, hierarchy, visual direction, states, accessibility, performance, ethical engagement, a render-and-look verification loop and a scored quality rubric. Self-contained: works alone or under Master Craft."
 metadata:
-  version: "3.0.0"
+  version: "3.1.0"
 ---
 
 # Product Design OS
@@ -100,7 +100,7 @@ Otherwise decide on purpose, in this order: how loud the surface should be (a to
 
 Check the direction against one question: would this exact look have come out for a different product? If yes, it is a default, not a choice.
 
-Reference: `references/visual-direction.md`. For a new or materially redesigned surface, also load `references/visual-craft-engine.md`: select the surface mode before composing, choose a signature tied to the subject, and apply its adaptable type, imagery, motion and restraint defaults. Content and task access outrank visual novelty.
+Reference: `references/visual-direction.md`. For a new or materially redesigned surface, also load `references/visual-craft-engine.md`: select the surface mode before composing, choose a signature tied to the subject, and apply its adaptable type, imagery, motion and restraint defaults. Content and task access outrank visual novelty. For new, redesigned or audited visual surfaces, apply the mandatory [Visual Integrity Gate](references/visual-integrity-gate.md). For substantial new visual direction, explore distinct compositions using [Creative Exploration](references/creative-exploration.md) before choosing one.
 
 ### 6. Design components as behaviour
 
@@ -118,12 +118,12 @@ Reference: `references/component-patterns.md` for buttons, forms, navigation, se
 
 When the task includes implementation, build one complete slice with real content, then run the look loop:
 
-1. Run the static floor: `node product-design-os/scripts/ui-lint.mjs <path>`. Fix every error.
-2. Render the page and capture it at 360, 768 and 1280 wide.
+1. Run the static floor: `node product-design-os/scripts/ui-lint.mjs <path>`. Fix every error. Review all `visual-*` findings; verify them in context and record any justified exception. A warning is a candidate, not permission to ignore it.
+2. Render the page and capture it at 360, 390 × 844, 768 and 1280 wide. Check 320px reflow. For substantial visual work capture each major section at real viewport height; run `scripts/visual-probe.js` in a browser where available.
 3. Look at each capture as a first-time user. Write down what you see, not what you intended.
 4. Operate it: keyboard path, 200% zoom, empty, error, slow network, double submit, back and refresh.
 5. Measure contrast for real colour pairs: `ui-lint.mjs contrast <fg> <bg>`.
-6. For a new or materially redesigned page, inspect the complete page from opening viewport to footer (and meaningful scrolled states at real viewport height). Check the visual craft gate. Fix the largest problem first. Render again.
+6. For a new or materially redesigned page, run the screenshot-first critic in the Visual Integrity Gate, including the opening, scrolled sections, footer and alternate states. Fix structural problems before styling. Re-render the affected views, inspect them again, and verify the final deployed revision when publishing is authorized.
 
 Expect two or three passes. Most quality arrives after the first.
 
@@ -135,7 +135,7 @@ Reference: `references/build-and-verify.md`.
 
 Score the result on the ten dimensions in `references/quality-rubric.md`. Each dimension has a floor. Any score below its floor sends the work back into the loop, whatever the total.
 
-For new or materially redesigned surfaces, also score the separate visual rubric in `references/visual-craft-engine.md`. Do not add its points to the product rubric or trade accessibility and task floors for aesthetics. Touch repairs do not require full visual scoring.
+For new or materially redesigned surfaces, also score the separate visual rubric in `references/visual-craft-engine.md`. Do not add its points to the product rubric or trade accessibility and task floors for aesthetics. Touch repairs do not require full visual scoring. The Visual Integrity Gate is independent of both rubrics: a confirmed unresolved violation or missing applicable evidence blocks a visual pass, regardless of score. Record exceptions and missing evidence explicitly.
 
 Then hand off what the task needs: tokens, type and colour roles, spacing scale, component anatomy with variants and states, interaction and responsive behaviour, content rules, accessibility requirements, analytics events if needed, performance expectations, and acceptance criteria that design and engineering can both check.
 
@@ -144,6 +144,12 @@ Reference: `references/design-systems-handoff.md`, `references/audit-checklist.m
 ## Gates
 
 Run the gates that apply. They are not optional when they apply.
+
+### Visual Integrity Gate (mandatory for visual work)
+
+Do not ship a visually generic template by default. No unearned eyebrow labels, decorative chips, nested card cages, fake telemetry, decorative numbering, repeated headings, generic hero layouts, button walls, or unplanned typography. Utilities and reading surfaces start with useful content. Default to at most two font families and three body sizes (four for genuinely dense tools), no visible first-screen text below 13px, and consistent sentence-case labels. Preserve real status, instructions, categories, accessible names, legal copy, task actions and approved brand conventions. A deliberate exception must name its user benefit, location and evidence. An unresolved violation or unverified applicable check is not a pass. Touch work checks only the affected surface and adjacent regressions.
+
+Use `references/visual-integrity-gate.md` for the named rules, critique and exception process. A screenshot not inspected is not evidence. A successful build is not visual approval.
 
 ### Interface restraint and the UX / DX / AX gate
 
@@ -256,6 +262,10 @@ Load only what the task needs.
 | Choosing a look on purpose | `references/visual-direction.md` |
 | Adaptive composition, art direction and visual scoring | `references/visual-craft-engine.md` |
 | Comparing skill versions fairly | `references/visual-benchmark.md` |
+| Mandatory visual rules, exceptions and screenshot critique | `references/visual-integrity-gate.md` |
+| Explore distinctive directions without wasting effort | `references/creative-exploration.md` |
+| Browser-side rendered measurements (read-only) | `scripts/visual-probe.js` |
+| Static visual warning rules | `scripts/visual-lint.mjs` |
 | Buttons, forms, navigation, search, dialogs, tables, states | `references/component-patterns.md` |
 | Accessibility | `references/accessibility.md` |
 | Retention, habits, notifications, engagement ethics | `references/behavior-ethics.md` |
@@ -357,4 +367,5 @@ Ready to ship when, in addition:
 - contrast was measured for the real colour pairs
 - every rubric dimension meets its floor, with evidence
 - for substantial visual work, the applicable visual craft rubric meets its floors with rendered evidence
+- all applicable Visual Integrity Gate rules pass or have documented, evidence-based exceptions; unknown evidence is explicitly unverified, not a pass
 - the report says plainly what was seen, operated, measured, read and not verified

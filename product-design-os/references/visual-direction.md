@@ -75,7 +75,7 @@ Signs of an unconsidered default:
 - glass blur, glow and gradient borders with no meaning
 - every section animating in on scroll
 
-When the brief asks for one of these looks, do it well. The brief wins. The problem is only the look you reached for without deciding.
+When the brief asks for one of these looks, do it well. A specific approved brief may justify an aesthetic exception, but never a failure of accessibility, safety, honesty or task access. Record the exception in the [Visual Integrity Gate](visual-integrity-gate.md). The problem is a look you reached for without deciding.
 
 ## 6. Rules that keep any direction looking professional
 

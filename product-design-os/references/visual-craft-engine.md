@@ -1,6 +1,8 @@
-# Visual Craft Engine (v3)
+# Visual Craft Engine (v3.1)
 
 Use for a new or materially redesigned interface, not a small bug fix. This module sharpens visual execution inside Product Design OS. It does not override accessibility, real user needs, brand requirements, evidence, performance, or interaction states. Adapted and modified from Google Gemini Frontend Design v1.0.0 (Apache-2.0); see [source map](source-map.md) and [licence](gemini-frontend-design-LICENSE.txt).
+
+The [Visual Integrity Gate](visual-integrity-gate.md) is mandatory for applicable visual work, not optional aesthetic advice. It takes precedence over loose defaults in this reference. For substantial new directions use [Creative Exploration](creative-exploration.md) to compare distinct ideas before implementation.
 
 ## 1. Choose a surface mode
 
@@ -32,9 +34,9 @@ Plan the rhythm through every major section. Give each section a job and choose 
 
 ## 3. Type, colour and proportion
 
-Start with one or two type families, three body-size roles for expressive or reading work (section heading, body, supporting text), and a fourth for genuinely dense utility work if necessary. The main display title and wordmark may use separate roles. Existing systems, localization, content hierarchy and accessibility can justify extra roles. Keep body prose and its lists at the same readable scale; distinguish roles by weight, grouping and colour before adding another size. Use tabular figures for aligned numbers rather than a new font family unless the subject needs one.
+Use at most two type families, and at most three rendered body-size roles (section heading, body, supporting text), with a fourth for genuinely dense utilities. Treat additional sizes as exceptions, not normal discretion. The main display title and wordmark may use separate roles. Existing systems, localization, content hierarchy and accessibility can justify extra roles. Keep body prose and its lists at the same readable scale; distinguish roles by weight, grouping and colour before adding another size. Use tabular figures for aligned numbers rather than a new font family unless the subject needs one.
 
-Aim for about 45 to 75 characters per line, with 65 as a starting point. Do not use this as a fixed width on phones. Avoid tiny first-screen text; increase sizes rather than hide important content. Test 320px, 200% zoom, long strings and currency glyphs. Do not use aggressive tracking or tight leading when they harm legibility.
+Aim for about 45 to 75 characters per line, with 65 as a starting point. Do not use this as a fixed width on phones. First-screen visible text must be at least 13 CSS px at default text scale, except a documented essential existing convention that remains readable. Increase sizes rather than hide important content. Use the computed browser probe; CSS declarations alone cannot establish compliance. Test 320px, 200% zoom, long strings and currency glyphs. Do not use aggressive tracking or tight leading when they harm legibility.
 
 Explore palettes grounded in materials, audience and brand, rather than reflex cream and rust or dark neon. Give text, backgrounds and state colours semantic tokens. A broad expressive colour field is fine if it does not weaken interactive meaning. Measure real text and control contrast, including across the image crop at each breakpoint.
 
@@ -67,4 +69,4 @@ Record a concrete observation, viewport/state and smallest fix for each weak sco
 
 ## 7. Review and revise
 
-Capture 360, 768 and 1280 widths, plus 320 reflow and relevant edge cases. Inspect the real opening viewport, each major scrolled section, and the footer at desktop and phone heights. A full-page image is helpful for overall rhythm but not a substitute for checking fixed navigation and interaction. Operate the main action, keyboard path and reduced-motion state. Check real contrast and loading behaviour. Fix the most material problem, then rerender and rescore. If tools cannot render the result, state NOT VISUALLY VERIFIED.
+Capture 360, 390 × 844, 768 and 1280 widths, plus 320 reflow and relevant edge cases. Run the screenshot-first critic and record each applicable gate ID before the visual rubric. Inspect the real opening viewport, each major scrolled section, and the footer at desktop and phone heights. A full-page image is helpful for overall rhythm but not a substitute for checking fixed navigation and interaction. Operate the main action, keyboard path and reduced-motion state. Check real contrast and loading behaviour. Fix the most material problem, then rerender and rescore. If tools cannot render the result, state NOT VISUALLY VERIFIED.

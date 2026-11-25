@@ -1,7 +1,7 @@
 interface:
   display_name: "Product Design OS"
   short_description: "Design, build and verify product UI and UX"
-  default_prompt: "Use $product-design-os to design or improve this product experience, build it in the existing stack, look at the rendered result, and score it against the quality rubric."
+  default_prompt: "Use $product-design-os to design or improve this product experience, build it in the existing stack, inspect the rendered result, pass the Visual Integrity Gate, and score it against both applicable quality rubrics."
 
 policy:
   products:

@@ -90,6 +90,8 @@ For a live product, audit the real flow when access is available. A marketing sc
 
 # 5. Visual Hierarchy
 
+Apply the [Visual Integrity Gate](visual-integrity-gate.md) with screenshot evidence for visual audits. Report concrete patterns and user effects; do not infer authorship from appearance.
+
 - Does each screen have one clear purpose?
 - Is the primary action visually clear?
 - Are secondary actions subordinate?
