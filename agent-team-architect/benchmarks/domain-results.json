@@ -1,0 +1,195 @@
+{
+  "count": 12,
+  "passed": 12,
+  "result": [
+    {
+      "id": "audit-correct",
+      "domain": "research",
+      "expected": "completed",
+      "status": "completed",
+      "pass": true,
+      "score": 100,
+      "coverage": 100,
+      "blockers": [],
+      "range": [
+        100,
+        100
+      ]
+    },
+    {
+      "id": "audit-version-misattribution",
+      "domain": "research",
+      "expected": "failed",
+      "status": "failed",
+      "pass": true,
+      "score": 50,
+      "coverage": 100,
+      "blockers": [
+        "benchmarkVersion: mandatory floor failed"
+      ],
+      "range": [
+        50,
+        50
+      ]
+    },
+    {
+      "id": "audit-fake-independent-review",
+      "domain": "research",
+      "expected": "failed",
+      "status": "failed",
+      "pass": true,
+      "score": 70,
+      "coverage": 100,
+      "blockers": [
+        "independent: mandatory floor failed"
+      ],
+      "range": [
+        70,
+        70
+      ]
+    },
+    {
+      "id": "execution-claim-correct",
+      "domain": "engineering",
+      "expected": "completed",
+      "status": "completed",
+      "pass": true,
+      "score": 100,
+      "coverage": 100,
+      "blockers": [],
+      "range": [
+        100,
+        100
+      ]
+    },
+    {
+      "id": "execution-claim-invented",
+      "domain": "engineering",
+      "expected": "failed",
+      "status": "failed",
+      "pass": true,
+      "score": 0,
+      "coverage": 100,
+      "blockers": [
+        "count: mandatory floor failed"
+      ],
+      "range": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "finance-correct",
+      "domain": "finance",
+      "expected": "completed",
+      "status": "completed",
+      "pass": true,
+      "score": 100,
+      "coverage": 100,
+      "blockers": [],
+      "range": [
+        100,
+        100
+      ]
+    },
+    {
+      "id": "finance-unit-error",
+      "domain": "finance",
+      "expected": "failed",
+      "status": "failed",
+      "pass": true,
+      "score": 70,
+      "coverage": 100,
+      "blockers": [
+        "unit: mandatory floor failed"
+      ],
+      "range": [
+        70,
+        70
+      ]
+    },
+    {
+      "id": "writing-with-supplied-rating",
+      "domain": "writing",
+      "expected": "completed",
+      "status": "completed",
+      "pass": true,
+      "score": 91,
+      "coverage": 100,
+      "blockers": [],
+      "range": [
+        91,
+        91
+      ]
+    },
+    {
+      "id": "writing-missing-user-judgment",
+      "domain": "writing",
+      "expected": "unverified",
+      "status": "unverified",
+      "pass": true,
+      "score": null,
+      "coverage": 50,
+      "blockers": [
+        "voice: trusted adapter unavailable or method mismatch"
+      ],
+      "range": [
+        50,
+        100
+      ]
+    },
+    {
+      "id": "writing-invented-experience",
+      "domain": "writing",
+      "expected": "failed",
+      "status": "failed",
+      "pass": true,
+      "score": 66,
+      "coverage": 100,
+      "blockers": [
+        "inventedExperience: mandatory floor failed"
+      ],
+      "range": [
+        66,
+        66
+      ]
+    },
+    {
+      "id": "writing-altered-certainty",
+      "domain": "writing",
+      "expected": "failed",
+      "status": "failed",
+      "pass": true,
+      "score": 66,
+      "coverage": 100,
+      "blockers": [
+        "certainty: mandatory floor failed"
+      ],
+      "range": [
+        66,
+        66
+      ]
+    },
+    {
+      "id": "trusted-adversarial-veto",
+      "domain": "research",
+      "expected": "failed",
+      "status": "failed",
+      "pass": true,
+      "score": 99,
+      "coverage": 100,
+      "blockers": [
+        "adversarial: mandatory floor failed"
+      ],
+      "range": [
+        99,
+        99
+      ]
+    }
+  ],
+  "trustBoundary": {
+    "status": "completed",
+    "expectedLimitation": "A compromised trusted host adapter can fabricate evidence and award a pass. The runtime cannot authenticate a source from its text alone.",
+    "countedAsProtection": false
+  }
+}
