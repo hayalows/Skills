@@ -12,6 +12,23 @@ routing:
 
 Deliver useful, reliable, carefully designed work. Optimize finished quality and total execution cost. Treat “world class” as an ambition to demonstrate through observable outcomes, never a guarantee or a style preset.
 
+## Start here: depth before execution
+
+Read and apply this gate first whenever Personal Craft is invoked. It adapts the four questions in [Be Ambitious](https://github.com/DannyMac180/skills/tree/main/be-ambitious). The goal is a **deeper version of the same task, not a bigger one**. Respect explicit user intent, scope, permissions and higher-priority instructions before any action.
+
+Before settling on an approach, answer these four questions internally, using available context and inspecting relevant primary material where authorized:
+
+1. **Expert move:** What would an exceptional practitioner do here that the user has not asked for? Identify the specific hidden assumption, failure mode, overlooked variable or decision that could change the outcome. Do not invent extra requirements or rely on a role label as evidence.
+2. **Primary material:** What is the rawest relevant evidence available? Start as close to the source as possible: actual code and runtime behavior, transaction-level data, original financial statements, user observations, source documents or measurements. Verify access and provenance; mark unavailable inputs and do not treat summaries as equivalent to raw evidence.
+3. **Specific method:** Which named methods, tools or checks will resolve the important uncertainty, and why? Choose the lightest defensible approach. Challenge plausible competing explanations rather than merely confirming the initial assumption.
+4. **Independent proof:** What evidence other than the agent's or user's opinion would demonstrate success or failure? Specify an observable criterion before acting where feasible. Identify a result that would disprove the proposed conclusion. Distinguish a real measurement, reproducible test or source reconciliation from an expert judgment or a proxy.
+
+**Convert the answers into decisions.** Silently refine the working brief while preserving its objective, deliverable, constraints and authority. For substantial or uncertain work, carry each material answer into the approach: what to inspect, what to do differently, what to verify, and what would change the conclusion. If new evidence overturns an assumption, revise the approach within scope. Do not merely recite these questions or promise to apply a method; actually use it when feasible.
+
+For an execution request, perform the authorized improved task and verify the result. For a prompt-only request, return the rewritten prompt without executing it. For an audit-only request, do not edit. For simple or fully specified work, run the gate briefly and proceed directly; no compulsory expanded brief, research, tests, tool calls or visible checklist. When raw evidence, independent review or a suitable environment is unavailable, use the best justified fallback, disclose the limitation, and narrow the claim. Never invent measurements, test results, sources, expert reviews or access.
+
+At completion, check whether the expert move, primary evidence, chosen method and independent success criterion actually influenced the work. Report material findings, evidence and unresolved gaps, not a ritual four-part report. Stop when the scoped outcome is supported. If the gate would not change the approach, do not manufacture extra work.
+
 ## Load only what the task needs
 
 - For any execution: follow this core workflow.
@@ -46,19 +63,6 @@ Choose one primary domain workflow and add only the supporting guidance needed. 
 | Audit only | Inspect and prioritize findings | Evidence, impact, proposed remedy; no edits |
 
 Prefer one worker. Do not create a committee, elaborate plan, testing framework, or research report for a small change. Stop optional polishing once acceptance criteria are met and remaining changes are subjective preferences. Close material gaps before stopping.
-
-## Raise the standard, not the scope
-
-Apply the core method from [Be Ambitious](https://github.com/DannyMac180/skills/tree/main/be-ambitious) to substantial or uncertain tasks. The goal is a **deeper version of the same task**, through better evidence, sharper methods and independent checks, not additional features, artifacts, stakeholders or side quests.
-
-Before choosing an approach, briefly resolve four questions at a level proportional to the task:
-
-1. **Expert move:** What would a capable specialist check or challenge that is easy to miss here? Name the specific decision, failure mode or assumption rather than invoking expertise in the abstract.
-2. **Primary material:** What is the closest available source of truth? Prefer the actual repository, logs, user flow, source document, raw data or observed behavior over summaries and second-hand claims.
-3. **Specific method:** Which concrete test, comparison, inspection, standard, tool or experiment will resolve the uncertainty, and why is it suitable? Choose the lightest defensible method.
-4. **Independent proof:** What observable evidence outside the model's opinion would distinguish success from failure? Set a pass/fail criterion where possible: a passing existing test, reproduced fix, verified source value, successful real task, accessibility check or measured performance.
-
-Use the answers to improve the existing brief and execution plan. For an execution request, **do the authorized work and verify it**; do not stop after rewriting the user's prompt. When the user asks specifically for a prompt upgrade, return a stronger, scoped prompt grounded in these four answers without executing it unless requested. Keep this as a thinking and verification gate, not mandatory ceremony for every small edit.
 
 ## 1. Establish the actual task
 
